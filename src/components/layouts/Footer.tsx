@@ -1,0 +1,75 @@
+// import React from 'react'
+import Logo from '../../assets/images/Logo'
+import { Link } from 'react-router-dom'
+import Icons from '../../assets/images/icons/Icon'
+
+interface Link {
+  label: string;
+  url: string;
+}
+
+interface Section {
+  title: string;
+  links: Link[];
+}
+
+const Footer: React.FC<{ sections: Section[] }> = ({ sections }) => {
+  return (
+
+    <footer className="border-t border-gray-100 pt-32 pb-8 dark:border-gray-800">
+      <div>
+        <div className="m-auto space-y-8 px-4 text-gray-600 dark:text-gray-400 sm:px-12 xl:max-w-6xl xl:px-0">
+          <div className="grid grid-cols-8 gap-6 md:gap-0">
+            <div className="col-span-8 md:col-span-2 lg:col-span-3">
+              <div className="flex h-full items-center justify-between gap-6 border-b border-white py-6 dark:border-gray-800 md:flex-col md:items-start md:justify-between md:space-y-6 md:border-none md:py-0">
+                <div>
+                  <Link to="#" aria-label="ampire logo" className="flex items-center">
+                    <Logo />
+                  </Link>
+                  <Link to="#" className="mt-2 inline-block text-sm">Designed by Tailus in Lubumbashi </Link>
+                </div>
+
+                <div className="flex gap-6">
+                  <Link to="#" target="_blank" aria-label="github" className="hover:text-primary dark:hover:text-primaryLight">
+                    <span className="sr-only">Github</span>
+                    {Icons.git()}
+                  </Link>
+                  <Link to="#" target="_blank" aria-label="twitter" className="hover:text-primary dark:hover:text-primaryLight">
+                    <span className="sr-only">Twitter</span>
+                    {Icons.twitter()}
+                  </Link>
+                  <Link to="#" target="_blank" aria-label="medium" className="hover:text-primary dark:hover:text-primaryLight">
+                    <span className="sr-only">Medium</span>
+                    {Icons.medium()}
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="col-span-8 md:col-span-6 lg:col-span-5">
+              <div className="grid grid-cols-2 gap-6 pb-16 sm:grid-cols-3 md:pl-16">
+                {sections.map((section, index) => (
+                  <div key={index}>
+                    <h2 className="text-base font-medium text-gray-800 dark:text-gray-200">{section.title}</h2>
+                    <ul className="mt-4 list-inside space-y-4">
+                      {section.links.map((link, linkIndex) => (
+                        <li key={linkIndex}>
+                          <Link to={link.url} className="text-sm duration-100 hover:text-primary dark:hover:text-white">{link.label}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+              <div className="flex justify-between text-sm md:pl-16">
+                <span>&copy; tailus 2003 - Present</span>
+                <span>All right reserved</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  )
+}
+
+export default Footer
