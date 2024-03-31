@@ -1,5 +1,7 @@
 import { Route, Routes } from "react-router-dom"
+
 import Home from "./pages/home"
+import ScrollToHashElementBehavior from "./components/behaviors/ScrollToHashElementBehavior"
 import Header from "./components/layouts/Header"
 import Footer from "./components/layouts/Footer"
 import Contact from "./pages/contact";
@@ -52,6 +54,8 @@ function App() {
 
   return (
     <>
+      <ScrollToHashElementBehavior />
+      
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
