@@ -38,6 +38,12 @@ const Header = () => {
   const toggleNavbar = () => {
     setIsNavbarActive(prevState => !prevState);
   }
+  
+  const closeNavbar = () => {
+    if (isNavbarActive) {
+      toggleNavbar();
+    }
+  }
     
   return (
     <header>
@@ -45,7 +51,7 @@ const Header = () => {
         <div className="mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
           <div className="relative flex flex-wrap items-center justify-between gap-6 lg:gap-0 lg:py-4">
             <div className="relative z-20 flex w-full justify-between md:px-0 lg:w-max">
-              <Link to="/#home" aria-label="HAUS Property Services Logo" className="nav-link flex items-center space-x-2" onClick={toggleNavbar}>
+              <Link to="/#home" aria-label="HAUS Property Services Logo" className="nav-link flex items-center space-x-2" onClick={closeNavbar}>
                 {Icons.Logo(document.body.classList.contains('dark') ? fullConfig.theme.colors.white : fullConfig.theme.colors.black)}
               </Link>
 
@@ -60,7 +66,7 @@ const Header = () => {
                 <ul className="space-y-6 text-base font-medium tracking-wide lg:flex lg:space-y-0 lg:text-sm">
                   {navLinks.map((link, index) => (
                     <li key={index}>
-                      <Link to={link.path} onClick={toggleNavbar} className="nav-link block transition hover:text-primary dark:hover:text-primaryLight lg:px-4">
+                      <Link to={link.path} onClick={closeNavbar} className="nav-link block transition hover:text-primary dark:hover:text-primaryLight lg:px-4">
                         <span>{link.label}</span>
                       </Link>
                     </li>
@@ -69,7 +75,7 @@ const Header = () => {
               </div>
 
               <div className="mt-12 -ml-1 flex w-full flex-col space-y-2 border-primary/10 dark:border-gray-700 sm:flex-row md:w-max lg:mt-0 lg:mr-6 lg:space-y-0 lg:border-l lg:pl-6">
-                <Link to="/contact/" onClick={toggleNavbar} className="relative ml-auto flex h-9 w-full items-center justify-center before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-primaryLight sm:px-4 lg:before:border lg:before:border-gray-200 lg:before:bg-gray-100 lg:dark:before:bg-gray-800">
+                <Link to="/contact/" onClick={closeNavbar} className="relative ml-auto flex h-9 w-full items-center justify-center before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-primaryLight sm:px-4 lg:before:border lg:before:border-gray-200 lg:before:bg-gray-100 lg:dark:before:bg-gray-800">
                   <span className="relative text-sm font-semibold text-white dark:text-gray-900 lg:text-primary lg:dark:text-white">Get started</span>
                 </Link>
               </div>
