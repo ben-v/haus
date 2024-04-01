@@ -2,6 +2,7 @@
 import { useState } from 'react';
 
 import { Link } from 'react-router-dom'
+import Icons from '../../assets/images/icons/Icon'
 
 // import Logo from '../../assets/images/Logo';
 import Sun from '../../assets/images/Sun';
@@ -34,26 +35,15 @@ const Header = () => {
   const toggleNavbar = () => {
     setIsNavbarActive(prevState => !prevState);
   }
-
-  // useEffect(() => {
-  //   const href = window.location.href.substring(
-  //     window.location.href.lastIndexOf('#') + 1
-  //   );
-  //   const element = document.getElementById(href);
-  //   if (element) {
-  //     element.scrollIntoView({ behavior: 'smooth' });
-  //   }
-  // }, []);
     
   return (
-
     <header>
       <nav id="navbar" className={`fixed inset-x-0 z-20 w-full border-b border-gray-100 bg-white/80 backdrop-blur dark:border-gray-700/30 dark:bg-gray-900/80 ${isNavbarActive ? 'navbar-active' : ''}`}>
         <div className="mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
           <div className="relative flex flex-wrap items-center justify-between gap-6 lg:gap-0 lg:py-4">
             <div className="relative z-20 flex w-full justify-between md:px-0 lg:w-max">
               <Link to="/#home" aria-label="HAUS Property Services Logo" className="nav-link flex items-center space-x-2">
-                <img className="h-9 w-auto" src="/logos/logo.svg" />
+                {Icons.Logo("black")}
               </Link>
 
               <button aria-label="hamburger" id="hamburger" className="relative -mr-6 p-6 lg:hidden" onClick={toggleNavbar}>

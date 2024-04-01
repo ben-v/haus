@@ -25,22 +25,23 @@ const Footer: React.FC<{ sections: Section[] }> = ({ sections }) => {
               <div className="flex h-full items-center justify-between gap-6 border-b border-white py-6 dark:border-gray-800 md:flex-col md:items-start md:justify-between md:space-y-6 md:border-none md:py-0">
                 <div>
                   <Link to="/#home" aria-label="HAUS Property Services Logo" className="flex items-center">
-                    <img className="h-7 w-auto " src="/logos/logo_medium_gray.svg" />
+                    {/* <img className="h-7 w-auto " src="/logos/logo_medium_gray.svg" /> */}
+                    {Icons.Logo(undefined, "h-8")}
                   </Link>
                 </div>
 
                 <div className="flex gap-6">
-                  <Link to="#" target="_blank" aria-label="github" className="hover:text-primary dark:hover:text-primaryLight">
-                    <span className="sr-only">Github</span>
-                    {Icons.git()}
+                  <Link to="https://www.facebook.com/haus.property.svcs" target="_blank" aria-label="facebook">
+                    <span className="sr-only">Facebook</span>
+                    {Icons.Facebook()}
                   </Link>
-                  <Link to="#" target="_blank" aria-label="twitter" className="hover:text-primary dark:hover:text-primaryLight">
-                    <span className="sr-only">Twitter</span>
-                    {Icons.twitter()}
+                  <Link to="https://www.instagram.com/haus.property.svcs" target="_blank" aria-label="instagram">
+                    <span className="sr-only">Instagram</span>
+                    {Icons.Instagram()}
                   </Link>
-                  <Link to="#" target="_blank" aria-label="medium" className="hover:text-primary dark:hover:text-primaryLight">
-                    <span className="sr-only">Medium</span>
-                    {Icons.medium()}
+                  <Link to="https://www.yelp.com/biz/haus-property-services-bozeman" target="_blank" aria-label="yelp">
+                    <span className="sr-only">Yelp</span>
+                    {Icons.Yelp()}
                   </Link>
                 </div>
               </div>
