@@ -61,7 +61,7 @@ const Footer: React.FC<{ sections: Section[] }> = ({ sections }) => {
                 ))}
               </div>
               <div className="flex justify-between text-sm md:pl-16">
-                <span>&copy; tailus 2003 - Present</span>
+                <span>&copy; HAUS Property Services {(new Date()).getFullYear()}</span>
                 <span>All right reserved</span>
               </div>
             </div>
