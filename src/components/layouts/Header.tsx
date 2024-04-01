@@ -1,5 +1,7 @@
 // import React, { useState } from 'react'
 import { useState } from 'react';
+import tailwindConfig from '../../../tailwind.config';
+import resolveConfig from 'tailwindcss/resolveConfig'
 
 import { Link } from 'react-router-dom'
 import Icons from '../../assets/images/icons/Icon'
@@ -8,11 +10,12 @@ import Icons from '../../assets/images/icons/Icon'
 import Sun from '../../assets/images/Sun';
 import Moon from '../../assets/images/Moon';
 
-
 interface NavLink {
   path: string;
   label: string;
 }
+
+const fullConfig = resolveConfig(tailwindConfig)
 
 const Header = () => {
 
@@ -43,7 +46,8 @@ const Header = () => {
           <div className="relative flex flex-wrap items-center justify-between gap-6 lg:gap-0 lg:py-4">
             <div className="relative z-20 flex w-full justify-between md:px-0 lg:w-max">
               <Link to="/#home" aria-label="HAUS Property Services Logo" className="nav-link flex items-center space-x-2">
-                {Icons.Logo("black")}
+                {/* {Icons.Logo(document.body.classList.contains('dark') ? "white" : "black")} */}
+                {Icons.Logo(document.body.classList.contains('dark') ? fullConfig.theme.colors.white : fullConfig.theme.colors.black)}
               </Link>
 
               <button aria-label="hamburger" id="hamburger" className="relative -mr-6 p-6 lg:hidden" onClick={toggleNavbar}>
