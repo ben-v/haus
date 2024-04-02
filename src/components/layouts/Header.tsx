@@ -1,10 +1,12 @@
 // import React, { useState } from 'react'
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import tailwindConfig from '../../../tailwind.config';
 import resolveConfig from 'tailwindcss/resolveConfig'
 
 import { Link } from 'react-router-dom'
 import Icons from '../../assets/images/icons/Icon'
+
+import { ThemeContext } from "../../contexts/ThemeContext";
 
 // import Logo from '../../assets/images/Logo';
 import Sun from '../../assets/images/Sun';
@@ -18,7 +20,8 @@ interface NavLink {
 const fullConfig = resolveConfig(tailwindConfig)
 
 const Header = () => {
-
+  const { toggleTheme, theme } = useContext(ThemeContext);
+  
   const navLinks: NavLink[] = [
     { path: '/#solutions', label: 'Solutions' },
     { path: '/#company', label: 'Company' },
@@ -27,13 +30,13 @@ const Header = () => {
     { path: '/#pricing', label: 'Pricing' },
   ];
 
-  const [, setIsDarkMode] = useState(false);
+  // const [, setIsDarkMode] = useState(false);
   const [isNavbarActive, setIsNavbarActive] = useState(false);
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(prevMode => !prevMode);
-    document.documentElement.classList.toggle('dark');
-  };
+  // const toggleDarkMode = () => {
+  //   setIsDarkMode(prevMode => !prevMode);
+  //   document.documentElement.classList.toggle('dark');
+  // };
 
   const toggleNavbar = () => {
     setIsNavbarActive(prevState => !prevState);
@@ -52,7 +55,7 @@ const Header = () => {
           <div className="relative flex flex-wrap items-center justify-between gap-6 lg:gap-0 lg:py-4">
             <div className="relative z-20 flex w-full justify-between md:px-0 lg:w-max">
               <Link to="/#home" aria-label="HAUS Property Services Logo" className="nav-link flex items-center space-x-2" onClick={closeNavbar}>
-                {Icons.Logo(document.documentElement.classList.contains('dark') ? fullConfig.theme.colors.white : fullConfig.theme.colors.black)}
+                {Icons.Logo(theme === "dark" ? fullConfig.theme.colors.white : fullConfig.theme.colors.black)}
               </Link>
 
               <button aria-label="hamburger" id="hamburger" className="relative -mr-6 p-6 lg:hidden" onClick={toggleNavbar}>
@@ -79,13 +82,13 @@ const Header = () => {
                   <span className="relative text-sm font-semibold text-white dark:text-gray-900 lg:text-primary lg:dark:text-white">Get started</span>
                 </Link>
               </div>
-              <button onClick={toggleDarkMode} className="switcher group relative hidden h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex">
+              <button onClick={toggleTheme} className="switcher group relative hidden h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex">
                 <Sun />
                 <Moon />
               </button>
             </div>
             <div className="fixed top-3 right-14 z-20 sm:right-24 lg:hidden">
-              <button onClick={toggleDarkMode} className="switcher group relative flex h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800">
+              <button onClick={toggleTheme} className="switcher group relative flex h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800">
                 <Sun />
                 <Moon />
               </button>
