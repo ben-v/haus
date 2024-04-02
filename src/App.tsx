@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 
 import { Route, Routes } from "react-router-dom"
 
@@ -12,8 +11,6 @@ import Footer from "./components/layouts/Footer"
 import Error_404 from "./errors/404";
 import Error_500 from "./errors/500";
 
-import { ThemeContext } from "./contexts/ThemeContext";
-
 interface Link {
   label: string;
   url: string;
@@ -25,8 +22,6 @@ interface Section {
 }
 
 function App() {
-  const { initTheme } = useContext(ThemeContext);
-
   const sections: Section[] = [
     {
       title: 'Company',
@@ -59,8 +54,6 @@ function App() {
       ]
     }
   ];
-
-  initTheme();
 
   return (
     <>

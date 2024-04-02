@@ -8,12 +8,10 @@ export enum THEMES {
 
 type ContextType = {
   theme: THEMES;
-  initTheme: () => void;
   toggleTheme: () => void;
 };
 
 export const ThemeContext = React.createContext<ContextType>({
   theme: THEMES.DEFAULT,
-  initTheme: () => {},
   toggleTheme: () => {},
 });
