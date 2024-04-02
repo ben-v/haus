@@ -11,9 +11,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <ThemeProvider>
-        <div className='overflow-y- min-h-screen scroll-smooth bg-white selection:bg-primary/10 selection:text-primary dark:bg-gray-900'>
           <App />
-        </div>
       </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,
