@@ -1,29 +1,39 @@
 import { useState } from "react";
-import { ThemeContext } from "../contexts/ThemeContext";
+import { ThemeContext, THEMES } from "../contexts/ThemeContext";
 
 export interface Props {
     children: JSX.Element;
 }
+
 export const ThemeProvider: React.FC<Props> = (props): JSX.Element => {
-  const [theme, setTheme] = useState<"light" | "dark">(
-    (localStorage.getItem("ui.theme") as "light" | "dark") || "dark"
+  const STORAGE_KEY: string = "ui.theme";
+
+  const [theme, setTheme] = useState<THEMES>(
+    (((localStorage.getItem(STORAGE_KEY) as THEMES) === THEMES.DARK) || (!(STORAGE_KEY in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) ? THEMES.DARK : THEMES.DEFAULT
   );
 
-  const toggleTheme = (): void => {
-    const val = theme === "light" ? "dark" : "light";
-    setTheme(val);
-
-    if (val === "dark") {
-        document.documentElement.classList.add("dark");
+  const initTheme = (): void => {
+    if (localStorage.getItem(STORAGE_KEY) === THEMES.DARK || (!(STORAGE_KEY in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add(THEMES.DARK);
     } else {
-        document.documentElement.classList.remove("dark");
+        document.documentElement.classList.remove(THEMES.DARK);
+    }        
+  }
+
+  const toggleTheme = (): void => {
+    const val = theme === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT;
+    setTheme(val);
+    localStorage.setItem(STORAGE_KEY, val);
+
+    if (val === THEMES.DARK) {
+        document.documentElement.classList.add(THEMES.DARK);
+    } else {
+        document.documentElement.classList.remove(THEMES.DARK);
     }
-    
-    localStorage.setItem("ui.theme", val);
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme, initTheme }}>
       {props.children}
     </ThemeContext.Provider>
   );

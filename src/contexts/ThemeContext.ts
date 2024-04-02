@@ -1,11 +1,19 @@
 import React from "react";
 
+export enum THEMES {
+  DARK = "dark",
+  LIGHT = "light",
+  DEFAULT = LIGHT
+}
+
 type ContextType = {
-  theme: "light" | "dark";
+  theme: THEMES;
+  initTheme: () => void;
   toggleTheme: () => void;
 };
 
 export const ThemeContext = React.createContext<ContextType>({
-  theme: "dark",
+  theme: THEMES.DEFAULT,
+  initTheme: () => {},
   toggleTheme: () => {},
 });
