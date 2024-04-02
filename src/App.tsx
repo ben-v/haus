@@ -7,9 +7,7 @@ import Contact from "./pages/contact";
 import ScrollToHashElementBehavior from "./components/behaviors/ScrollToHashElementBehavior"
 import Header from "./components/layouts/Header"
 import Footer from "./components/layouts/Footer"
-
-import Error_404 from "./errors/404";
-import Error_500 from "./errors/500";
+import GenericHttpError from "./components/errors/GenericHttpError";
 
 interface Link {
   label: string;
@@ -63,8 +61,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/server-error" element={<Error_500 />} />
-        <Route path="*" element={<Error_404 />} />
+        <Route path="/server-error" element={<GenericHttpError title="500" description="Well, this is embarassing, we encountered an unexpected error." />} />
+        <Route path="*" element={<GenericHttpError title="404" description="Hmm, we did not find the page you requested."/>} />
       </Routes>
       <Footer sections={sections} />
     </>
