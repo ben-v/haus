@@ -12,7 +12,7 @@ const Hero = () => {
     './images/avatars/avatar-4.webp',
   ];
   return (
-    <section id="home" className="pt-32 sm:pt-40 md:pt-48">
+    <section id="home" className="pt-32 sm:pt-32 md:pt-32">
       <div className="mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
         <div className="relative">
           <h1 className="text-center text-5xl font-bold text-blue-900 dark:text-white sm:text-6xl lg:text-left lg:text-7xl">
