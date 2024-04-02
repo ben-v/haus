@@ -47,7 +47,7 @@ const Header = () => {
         <div className="mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
           <div className="relative flex flex-wrap items-center justify-between gap-6 lg:gap-0 lg:py-4">
             <div className="relative z-20 flex w-full justify-between md:px-0 lg:w-max">
-              <Link to="/#home" aria-label="HAUS Property Services Logo" className="nav-link flex items-center space-x-2" onClick={closeNavbar}>
+              <Link to="/" aria-label="HAUS Property Services Logo" className="nav-link flex items-center space-x-2" onClick={closeNavbar}>
                 {Icons.Logo(theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.black)}
               </Link>
 
