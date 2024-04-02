@@ -32,7 +32,7 @@ const Header = () => {
 
   const toggleDarkMode = () => {
     setIsDarkMode(prevMode => !prevMode);
-    document.body.classList.toggle('dark');
+    document.documentElement.classList.toggle('dark');
   };
 
   const toggleNavbar = () => {
@@ -52,7 +52,7 @@ const Header = () => {
           <div className="relative flex flex-wrap items-center justify-between gap-6 lg:gap-0 lg:py-4">
             <div className="relative z-20 flex w-full justify-between md:px-0 lg:w-max">
               <Link to="/#home" aria-label="HAUS Property Services Logo" className="nav-link flex items-center space-x-2" onClick={closeNavbar}>
-                {Icons.Logo(document.body.classList.contains('dark') ? fullConfig.theme.colors.white : fullConfig.theme.colors.black)}
+                {Icons.Logo(document.documentElement.classList.contains('dark') ? fullConfig.theme.colors.white : fullConfig.theme.colors.black)}
               </Link>
 
               <button aria-label="hamburger" id="hamburger" className="relative -mr-6 p-6 lg:hidden" onClick={toggleNavbar}>
