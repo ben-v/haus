@@ -1,5 +1,4 @@
-// import React from 'react'
-import Icons from '../../assets/images/icons/Icon';
+import DynamicImageManager from '../../managers/DynamicImageManager';
 
 interface FeatureCardProps {
   title: string;
@@ -16,7 +15,7 @@ const FeatureCard = (props: FeatureCardProps) => {
           <h3 className="text-2xl font-semibold text-gray-800 transition dark:text-white">{title}</h3>
           <p className="text-gray-600 dark:text-gray-300">{description}</p>
           <a aria-label="read more" href="#" className="group relative mx-auto flex h-12 w-12 items-center justify-center before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800">
-            {Icons.arrowIcons()}
+            {DynamicImageManager.RightArrow()}
           </a>
         </div>
       </div>

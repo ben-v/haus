@@ -1,14 +1,32 @@
 // import React, { useState } from 'react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 const Solution = () => {
+  const activeTabRef = useRef(null);
+
   // State to track the active tab
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTabIndex, setActiveTabIndex] = useState(0);
 
   // Function to handle tab click
   const handleTabClick = (index: any) => {
-    setActiveTab(index);
+    setActiveTabIndex(index);
   };
+
+  const activeTabStyle = {
+    left: "4px"
+  }
+
+
+  let tabs = document.getElementsByClassName("tab");
+  console.log(activeTabRef.current)
+  console.log(tabs)
+
+  if (activeTabRef.current !== null) {
+    // const parentOffset = tabs[0].parentElement ? tabs[0].parentElement.getBoundingClientRect().left : 0;
+
+    // activeTab.style.width = tabs[0].getBoundingClientRect().width + "px";
+    // activeTab.style.left = tabs[0].getBoundingClientRect().left - parentOffset + "px";
+  }
 
   return (
     <section id="solutions" className="pt-32">
@@ -18,33 +36,35 @@ const Solution = () => {
           <p className="mx-auto mt-6 text-gray-700 dark:text-gray-300 md:w-3/4 lg:w-3/5">A growing team doesn't need to mean growing pains. Privacy, and the right tool for every step of your journey - Jira Software friction - company size.</p>
         </div>
 
-        {/* Your existing JSX code */}
+        {/* Tabs */}
         <div role="tablist" aria-label="tabs" className="relative mx-auto mt-12 grid h-12 w-auto grid-cols-3 items-center gap-x-1 overflow-hidden rounded-full border border-gray-200 bg-gray-100 px-[3px] text-gray-600 dark:border-gray-700 dark:border-opacity-60 dark:bg-darker dark:text-gray-300 dark:shadow-none sm:w-max">
-          <div className="tab-indicator absolute h-10 rounded-full bg-white shadow-md transition-[left] duration-500 dark:bg-gray-800" style={{ left: `${4 + activeTab * 33.3333}%` }}></div>
+          <div className="tab-indicator absolute h-10 rounded-full bg-white shadow-md transition-[left] duration-500 dark:bg-gray-800" style={activeTabStyle}></div>
           {/* Mapping over tabs */}
           {['First Tab', 'Second Tab', 'Third Tab'].map((tab, index) => (
             <button
               key={index}
               role="tab"
-              aria-selected={activeTab === index}
+              aria-selected={activeTabIndex === index}
               aria-controls={`panel-${index}`}
+              tabIndex={index}
               title="tab item"
-              className={`tab relative block rounded-full py-2.5 px-4 hover:text-primary dark:hover:text-primaryLight ${activeTab === index ? 'active bg-white' : ''}`}
-              onClick={() => handleTabClick(index)}
+              className="tab relative block rounded-full py-2.5 px-4 hover:text-primary dark:hover:text-primaryLight"
+              onClick={() => {handleTabClick(index);}}
             >
               <span className="m-auto block w-max text-sm font-medium tracking-wider">{tab}</span>
             </button>
           ))}
         </div>
+        {/* Tab panels */}
         <div className="mt-20">
 
           {[0, 1, 2].map((index) => (
             <div
               key={index}
-              className={`panel ${activeTab === index ? 'visible' : 'invisible'} inset-0 flex scale-100 flex-col justify-center opacity-100 transition duration-500`}
+              className={`panel ${activeTabIndex === index ? 'visible' : 'invisible'} inset-0 flex scale-100 flex-col justify-center opacity-100 transition duration-500`}
               id={`panel-${index}`}
             >
-              {activeTab === index && (
+              {activeTabIndex === index && (
                 <>
                   {index === 0 &&
                     <div className="gap-6 space-y-12 md:flex md:space-y-0">

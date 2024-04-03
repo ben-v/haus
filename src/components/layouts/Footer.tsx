@@ -1,8 +1,5 @@
-// import React from 'react'
-// import Logo from '../../assets/images/Logo'
 import { Link } from 'react-router-dom'
-
-import Icons from '../../assets/images/icons/Icon'
+import DynamicImageManager from '../../managers/DynamicImageManager';
 
 interface Link {
   label: string;
@@ -25,8 +22,7 @@ const Footer: React.FC<{ sections: Section[] }> = ({ sections }) => {
               <div className="flex h-full items-start justify-between gap-6 border-b border-white py-6 dark:border-gray-800 md:flex-col md:items-start md:justify-between md:space-y-6 md:border-none md:py-0">
                 <div className='text-sm'>
                   <Link to="/" aria-label="HAUS Property Services Logo" className="flex items-center">
-                    {/* <img className="h-7 w-auto " src="/logos/logo_medium_gray.svg" /> */}
-                    {Icons.Logo(undefined, "h-8")}
+                    {DynamicImageManager.Logo(undefined, "h-8")}
                   </Link>
                   <p className='pt-5'>HAUS Property Services</p>
                   <p>A Bozeman, Montana Company.</p>
@@ -35,15 +31,15 @@ const Footer: React.FC<{ sections: Section[] }> = ({ sections }) => {
                 <div className="flex gap-6">
                   <Link to="https://www.facebook.com/haus.property.svcs" target="_blank" aria-label="facebook">
                     <span className="sr-only">Facebook</span>
-                    {Icons.Facebook()}
+                    {DynamicImageManager.Facebook()}
                   </Link>
                   <Link to="https://www.instagram.com/haus.property.svcs" target="_blank" aria-label="instagram">
                     <span className="sr-only">Instagram</span>
-                    {Icons.Instagram()}
+                    {DynamicImageManager.Instagram()}
                   </Link>
                   <Link to="https://www.yelp.com/biz/haus-property-services-bozeman" target="_blank" aria-label="yelp">
                     <span className="sr-only">Yelp</span>
-                    {Icons.Yelp()}
+                    {DynamicImageManager.Yelp()}
                   </Link>
                 </div>
               </div>

@@ -1,7 +1,6 @@
 // import React from 'react';
 import { Link } from 'react-router-dom';
-import Icons from '../../assets/images/icons/Icon';
-
+import DynamicImageManager from '../../managers/DynamicImageManager';
 
 interface PricingCardProps {
   title: string;
@@ -12,11 +11,9 @@ interface PricingCardProps {
   phoneNumber: string;
 }
 
-
 const PricingCard = (props: PricingCardProps) => {
 
   const { title, description, imageUrl, discount, advantages, phoneNumber } = props;
-
 
   return (
     <div className="relative z-10 -mx-2 rounded-3xl border border-gray-100 bg-white shadow-2xl shadow-gray-600/10 dark:border-gray-700/60 dark:bg-gray-800 dark:shadow-none md:mx-0 md:w-6/12 lg:w-5/12">
@@ -52,7 +49,7 @@ const PricingCard = (props: PricingCardProps) => {
         <p className="mt-6 flex items-center justify-center space-x-4 text-center text-lg text-gray-600 dark:text-gray-300">
           <span>Call us at</span>
           <Link to={`tel:${phoneNumber}`} className="flex items-center space-x-2 text-blue-600 dark:text-blue-400">
-            {Icons.phone()}
+            {DynamicImageManager.Phone()}
             <span className="font-semibold">{phoneNumber}</span>
           </Link>
           <span>or</span>

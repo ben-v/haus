@@ -3,11 +3,10 @@ import tailwindConfig from '../../../tailwind.config';
 import resolveConfig from 'tailwindcss/resolveConfig'
 
 import { Link } from 'react-router-dom'
-import Icons from '../../assets/images/icons/Icon'
 
 import { ThemeContext, THEMES } from "../../contexts/ThemeContext";
 
-// import Logo from '../../assets/images/Logo';
+import DynamicImageManager from '../../managers/DynamicImageManager';
 import Sun from '../../assets/images/Sun';
 import Moon from '../../assets/images/Moon';
 
@@ -48,7 +47,7 @@ const Header = () => {
           <div className="relative flex flex-wrap items-center justify-between gap-6 lg:gap-0 lg:py-4">
             <div className="relative z-20 flex w-full justify-between md:px-0 lg:w-max">
               <Link to="/" aria-label="HAUS Property Services Logo" className="nav-link flex items-center space-x-2" onClick={closeNavbar}>
-                {Icons.Logo(theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.black)}
+                {DynamicImageManager.Logo(theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.black)}
               </Link>
 
               <button aria-label="hamburger" id="hamburger" className="relative -mr-6 p-6 lg:hidden" onClick={toggleNavbar}>

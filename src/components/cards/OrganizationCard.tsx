@@ -1,6 +1,5 @@
-// import React from 'react'
 import { Link } from 'react-router-dom'
-import Icons from '../../assets/images/icons/Icon'
+import DynamicImageManager from '../../managers/DynamicImageManager'
 
 const OrganizationCard = () => {
   return (
@@ -22,15 +21,15 @@ const OrganizationCard = () => {
 
         <div className="mb-8 grid grid-cols-2 rounded-3xl border border-gray-700 text-white dark:border-gray-200 dark:text-gray-600 [&>*]:border-gray-700 [&>*]:p-4 [&>*]:dark:border-gray-200">
           <div className="flex justify-center gap-2 border-b">
-            {Icons.shine()}
+            {DynamicImageManager.Shine()}
             Shine
           </div>
           <div className="flex justify-center gap-2 border-b border-l">
-            {Icons.Feature()}
+            {DynamicImageManager.Feature()}
             Feature
           </div>
           <div className="flex justify-center gap-2">
-            {Icons.Boost()}
+            {DynamicImageManager.Boost()}
             Boost
           </div>
           <div className="flex justify-center gap-2 border-l">
