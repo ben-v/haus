@@ -2,8 +2,7 @@ import React from "react";
 
 export enum THEMES {
   DARK = "dark",
-  LIGHT = "light",
-  DEFAULT = LIGHT
+  LIGHT = "light"
 }
 
 type ContextType = {
@@ -12,6 +11,6 @@ type ContextType = {
 };
 
 export const ThemeContext = React.createContext<ContextType>({
-  theme: THEMES.DEFAULT,
+  theme: THEMES.LIGHT,
   toggleTheme: () => {},
 });

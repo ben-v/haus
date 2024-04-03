@@ -9,7 +9,7 @@ export default {
   ],
   safelist: ["rotate-180", "translate-y-0", "translate-y-[100%]", "z-10", "scale-75", "navbar-active"],
   presets: [],
-  darkMode: "class", // or 'media' or 'class'
+  darkMode: ['selector', '[data-theme="dark"]'],
   theme: {
     screens: {
       sm: "640px",
