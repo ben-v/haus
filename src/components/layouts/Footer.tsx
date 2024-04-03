@@ -23,7 +23,7 @@ const Footer: React.FC<{ sections: Section[] }> = ({ sections }) => {
           <div className="grid grid-cols-8 gap-6 md:gap-0">
             <div className="col-span-8 md:col-span-2 lg:col-span-3">
               <div className="flex h-full items-start justify-between gap-6 border-b border-white py-6 dark:border-gray-800 md:flex-col md:items-start md:justify-between md:space-y-6 md:border-none md:py-0">
-                <div>
+                <div className='text-sm'>
                   <Link to="/" aria-label="HAUS Property Services Logo" className="flex items-center">
                     {/* <img className="h-7 w-auto " src="/logos/logo_medium_gray.svg" /> */}
                     {Icons.Logo(undefined, "h-8")}
