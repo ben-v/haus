@@ -11,6 +11,7 @@ export interface Props {
 
 const updateCurrentTheme = (theme: THEMES): void => {   
   document.documentElement.setAttribute(ATTRIBUTE_DATA_THEME, theme);
+  localStorage.setItem(STORAGE_KEY, theme);
 };
 
 const getCurrentTheme = (): boolean => {
@@ -31,8 +32,7 @@ export const ThemeProvider: React.FC<Props> = (props): JSX.Element => {
     const val = theme === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT;
 
     setTheme(val);
-    localStorage.setItem(STORAGE_KEY, val);
-
+    
     updateCurrentTheme(val);
   };
 
