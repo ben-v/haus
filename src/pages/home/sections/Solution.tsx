@@ -1,8 +1,10 @@
 // import React, { useState } from 'react';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const Solution = () => {
-  const activeTabRef = useRef(null);
+  // Ref to the section to be able to get from the React virtual dom in order to access elements such as the tabs
+  // to update the tabs and other elements as desired.
+  const sectionRef = useRef<any>();
 
   // State to track the active tab
   const [activeTabIndex, setActiveTabIndex] = useState(0);
@@ -10,26 +12,34 @@ const Solution = () => {
   // Function to handle tab click
   const handleTabClick = (index: any) => {
     setActiveTabIndex(index);
+    updateActiveTabIndicator(index);
   };
 
   const activeTabStyle = {
     left: "4px"
   }
 
+  useEffect(() => {
+    // use this hook and ensure the reference exists in order to call the handleTabClick to
+    // update the initial state of the active tab indicator
+    if (sectionRef.current) {
+      handleTabClick(0);
+    }
+  }, []);
+  
+  const updateActiveTabIndicator = (index: number) => { 
+    // There are 1+ tabs
+    const tabs: HTMLCollection = sectionRef.current.getElementsByClassName("tab");
 
-  let tabs = document.getElementsByClassName("tab");
-  console.log(activeTabRef.current)
-  console.log(tabs)
-
-  if (activeTabRef.current !== null) {
-    // const parentOffset = tabs[0].parentElement ? tabs[0].parentElement.getBoundingClientRect().left : 0;
-
-    // activeTab.style.width = tabs[0].getBoundingClientRect().width + "px";
-    // activeTab.style.left = tabs[0].getBoundingClientRect().left - parentOffset + "px";
+    // There should be only 1 tab indicator
+    let activeTabIndicator: HTMLElement = sectionRef.current.querySelector(".tab-indicator");
+    
+    activeTabIndicator.style.width = tabs[index].getBoundingClientRect().width + "px";
+    activeTabIndicator.style.left = tabs[index].getBoundingClientRect().left - (tabs[index].parentElement!.getBoundingClientRect().left + 1) + "px";
   }
 
   return (
-    <section id="solutions" className="pt-32">
+    <section ref={sectionRef} id="solutions" className="pt-32">
       <div className="mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
         <div className="text-center">
           <h2 className="text-3xl font-bold text-gray-800 dark:text-white md:text-4xl xl:text-5xl">For growing teams and organizations</h2>
