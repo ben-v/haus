@@ -2,7 +2,8 @@ import { useState, useContext } from 'react';
 import tailwindConfig from '../../../tailwind.config';
 import resolveConfig from 'tailwindcss/resolveConfig'
 
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+import { Link } from "react-scroll";
 
 import { ThemeContext, THEMES } from "../../contexts/ThemeContext";
 
@@ -21,11 +22,11 @@ const Header = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
   
   const navLinks: NavLink[] = [
-    { path: '/#solutions', label: 'Solutions' },
-    { path: '/#company', label: 'Company' },
-    { path: '/#features', label: 'Features' },
-    { path: '/#testimonials', label: 'Testimonials' },
-    { path: '/#pricing', label: 'Pricing' },
+    { path: 'solutions', label: 'Solutions' },
+    { path: 'company', label: 'Company' },
+    { path: 'features', label: 'Features' },
+    { path: 'testimonials', label: 'Testimonials' },
+    { path: 'pricing', label: 'Pricing' },
   ];
 
   const [isNavbarActive, setIsNavbarActive] = useState(false);
@@ -46,7 +47,7 @@ const Header = () => {
         <div className="mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
           <div className="relative flex flex-wrap items-center justify-between gap-6 lg:gap-0 lg:py-4">
             <div className="relative z-20 flex w-full justify-between md:px-0 lg:w-max">
-              <Link to="/" aria-label="HAUS Property Services Logo" className="nav-link flex items-center space-x-2" onClick={closeNavbar}>
+              <Link to="/" smooth={true} duration={10} delay={0} aria-label="HAUS Property Services Logo" className="nav-link flex items-center space-x-2" onClick={closeNavbar}>
                 {DynamicImageManager.Logo(theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.black)}
               </Link>
 
@@ -61,7 +62,7 @@ const Header = () => {
                 <ul className="space-y-6 text-base font-medium tracking-wide lg:flex lg:space-y-0 lg:text-sm">
                   {navLinks.map((link, index) => (
                     <li key={index}>
-                      <Link to={link.path} onClick={closeNavbar} className="nav-link block transition hover:text-primary dark:hover:text-primaryLight lg:px-4">
+                      <Link to={link.path} smooth={true} duration={10} delay={0} onClick={closeNavbar} className="nav-link block transition hover:text-primary dark:hover:text-primaryLight lg:px-4">
                         <span>{link.label}</span>
                       </Link>
                     </li>

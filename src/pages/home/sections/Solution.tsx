@@ -39,6 +39,7 @@ const Solution = () => {
   }
 
   return (
+    
     <section ref={sectionRef} id="solutions" className="pt-32">
       <div className="mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
         <div className="text-center">

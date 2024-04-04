@@ -6,7 +6,7 @@ import Contact from "./pages/contact";
 import Privacy from "./pages/legal/privacy";
 import Terms from "./pages/legal/terms";
 
-import ScrollToHashElementBehavior from "./components/behaviors/ScrollToHashElementBehavior"
+// import ScrollToHashElementBehavior from "./components/behaviors/ScrollToHashElementBehavior"
 import Header from "./components/layouts/Header"
 import Footer from "./components/layouts/Footer"
 import GenericHttpError from "./components/errors/GenericHttpError";
@@ -56,7 +56,7 @@ function App() {
 
   return (
     <>
-      <ScrollToHashElementBehavior />
+      {/* <ScrollToHashElementBehavior /> */}
       
       <Header />
       <Routes>

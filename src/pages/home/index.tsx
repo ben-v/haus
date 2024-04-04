@@ -9,18 +9,19 @@ import PricingNeed from './sections/PricingNeed'
 import TrustedCompanies from './sections/TrustedCompanies'
 import Solution from './sections/Solution'
 import Faqs from './sections/Faqs'
+import { Element } from 'react-scroll'
 
 const Home = () => {
   return (
     <>
       <Hero />
-      <Companies />
-      <Solution />
+      <Element name="company"><Companies /></Element>
+      <Element name="solutions"><Solution /></Element>
       <DreamTeam />
       <TechnologyApproach />
       <WorkFlow />
-      <TrustedLeaders />
-      <PricingNeed />
+      <Element name="testimonials"><TrustedLeaders /></Element>
+      <Element name="pricing"><PricingNeed /></Element>
       <Faqs />
       <TrustedCompanies />
     </>
