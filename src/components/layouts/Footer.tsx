@@ -28,7 +28,7 @@ const Footer: React.FC<{ sections: Section[] }> = ({ sections }) => {
                   <p>A Bozeman, Montana Company.</p>
                 </div>
 
-                <div className="flex gap-6">
+                <div className="flex gap-6 pt-2">
                   <Link to="https://www.facebook.com/haus.property.svcs" target="_blank" aria-label="facebook">
                     <span className="sr-only">Facebook</span>
                     {DynamicImageManager.Facebook()}
