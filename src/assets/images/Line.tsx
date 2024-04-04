@@ -1,5 +1,3 @@
-// import React from 'react'
-
 const Line = () => {
   return (
     <svg className="absolute inset-x-0 -bottom-1 w-full opacity-50" xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 260 15.6">
