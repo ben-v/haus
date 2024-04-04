@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link';
+
 import DynamicImageManager from '../../managers/DynamicImageManager';
 
 interface Link {
@@ -21,9 +23,9 @@ const Footer: React.FC<{ sections: Section[] }> = ({ sections }) => {
             <div className="col-span-8 md:col-span-2 lg:col-span-3">
               <div className="flex h-full items-start justify-between gap-6 border-b border-white py-6 dark:border-gray-800 md:flex-col md:items-start md:justify-between md:space-y-6 md:border-none md:py-0">
                 <div className='text-sm'>
-                  <Link to="/" aria-label="HAUS Property Services Logo" className="flex items-center">
+                  <HashLink to="/#" smooth aria-label="HAUS Property Services Logo" className="flex items-center">
                     {DynamicImageManager.Logo(undefined, "h-8")}
-                  </Link>
+                  </HashLink>
                   <p className='pt-5'>HAUS Property Services</p>
                   <p>A Bozeman, Montana Company.</p>
                 </div>
@@ -52,7 +54,7 @@ const Footer: React.FC<{ sections: Section[] }> = ({ sections }) => {
                     <ul className="mt-4 list-inside space-y-4">
                       {section.links.map((link, linkIndex) => (
                         <li key={linkIndex}>
-                          <Link to={link.url} className="text-sm duration-100 hover:text-primary dark:hover:text-white">{link.label}</Link>
+                          <HashLink to={link.url} smooth className="text-sm duration-100 hover:text-primary dark:hover:text-white">{link.label}</HashLink>
                         </li>
                       ))}
                     </ul>
