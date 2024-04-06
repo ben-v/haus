@@ -5,14 +5,27 @@ const Solution = () => {
   // Ref to the section to be able to get from the React virtual dom in order to access elements such as the tabs
   // to update the tabs and other elements as desired.
   const sectionRef = useRef<any>();
+  let tabRefs: React.MutableRefObject<any>[] = [useRef<any>(), useRef<any>(), useRef<any>()];
+  // const tabRef_0 = useRef<any>();
+  // const tabRef_1 = useRef<any>();
+  // const tabRef_2 = useRef<any>();
 
   // State to track the active tab
   const [activeTabIndex, setActiveTabIndex] = useState(0);
 
   // Function to handle tab click
-  const handleTabClick = (index: any) => {
-    setActiveTabIndex(index);
-    updateActiveTabIndicator(index);
+  const handleTabClick = (event: { target: any; } | undefined) => {
+    // let element = event?.target;
+    console.log(event as unknown as JSX.Element);
+    setActiveTabIndex(0);
+    updateActiveTabIndicator(0);
+
+    // let tabTarget = element.getAttribute("aria-controls");
+    // const panels: HTMLCollection = sectionRef.current.getElementsByClassName("panel");
+    // const previews: HTMLCollection = sectionRef.current.getElementsByClassName("panel-preview");
+
+    // console.log(tabTarget);
+    // console.log(previews);
   };
 
   const activeTabStyle = {
@@ -22,15 +35,16 @@ const Solution = () => {
   useEffect(() => {
     // use this hook and ensure the reference exists in order to call the handleTabClick to
     // update the initial state of the active tab indicator
-    if (sectionRef.current) {
-      handleTabClick(0);
+    if (sectionRef.current && tabRefs[0].current) {
+
+      handleTabClick(tabRefs[0].current);
     }
   }, []);
   
   const updateActiveTabIndicator = (index: number) => { 
     // There are 1+ tabs
     const tabs: HTMLCollection = sectionRef.current.getElementsByClassName("tab");
-
+    
     // There should be only 1 tab indicator
     let activeTabIndicator: HTMLElement = sectionRef.current.querySelector(".tab-indicator");
     
@@ -54,13 +68,14 @@ const Solution = () => {
           {['First Tab', 'Second Tab', 'Third Tab'].map((tab, index) => (
             <button
               key={index}
+              ref={tabRefs[index]}
               role="tab"
               aria-selected={activeTabIndex === index}
               aria-controls={`panel-${index}`}
               tabIndex={index}
               title="tab item"
               className="tab relative block rounded-full py-2.5 px-4 hover:text-primary dark:hover:text-primaryLight"
-              onClick={() => {handleTabClick(index);}}
+              onClick={() => {handleTabClick}}
             >
               <span className="m-auto block w-max text-sm font-medium tracking-wider">{tab}</span>
             </button>
