@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import tailwindConfig from '../../../tailwind.config';
 import resolveConfig from 'tailwindcss/resolveConfig'
 
 import { HashLink, NavHashLink } from 'react-router-hash-link';
 import DynamicImageManager from '../../managers/DynamicImageManager';
+import { THEMES, ThemeContext } from '../../contexts/ThemeContext';
 
 // 4/4/24, just have a single theme (LIGHT) light apple/nordstrom. Having issues with scroll bar color not changing when theme is intial s
 // switched...on refresh, does get correct colors. But trying to address, is just sucking up time and potentially making things more complicated. 
@@ -24,6 +25,7 @@ const Header = () => {
 // switched...on refresh, does get correct colors. But trying to address, is just sucking up time and potentially making things more complicated. 
 // Just get website up now...this is a nice to have feature.
   // const { theme, toggleTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
   
   const navLinks: NavLink[] = [
     { path: '/#solutions', label: 'Solutions' },
@@ -56,8 +58,8 @@ const Header = () => {
               switched...on refresh, does get correct colors. But trying to address, is just sucking up time and potentially making things more complicated. 
               Just get website up now...this is a nice to have feature. Since theme is white for now, just force logo to black*/
               }
-                {/* {DynamicImageManager.Logo(theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.black)} */}
-                {DynamicImageManager.Logo(fullConfig.theme.colors.black)}
+                {DynamicImageManager.Logo(theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.black)}
+                {/* {DynamicImageManager.Logo(fullConfig.theme.colors.black)} */}
               </HashLink>
 
               <button aria-label="hamburger" id="hamburger" className="relative -mr-6 p-6 lg:hidden" onClick={toggleNavbar}>
