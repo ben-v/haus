@@ -76,7 +76,7 @@ const Footer = () => {
                               <div>
                                 {link.label}
                               </div>
-                              <div className="pl-1">
+                              <div className="pl-2">
                                 {link.target === "_blank" ? DynamicImageManager.ExternalLink() : ""}
                               </div>
                             </div>
