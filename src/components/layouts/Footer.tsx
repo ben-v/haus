@@ -71,7 +71,16 @@ const Footer = () => {
                     <ul className="mt-4 list-inside space-y-4">
                       {section.links.map((link, linkIndex) => (
                         <li key={linkIndex}>
-                          <HashLink to={link.url} target={link.url === undefined ? "_self" : link.target} smooth className="text-sm duration-100 hover:text-primary dark:hover:text-white">{link.label}</HashLink>
+                          <HashLink to={link.url} target={link.target === undefined ? "_self" : link.target} smooth className="text-sm duration-100 hover:text-primary dark:hover:text-white">
+                            <div className="inline-flex items-center justify-left">
+                              <div>
+                                {link.label}
+                              </div>
+                              <div className="pl-1">
+                                {link.target === "_blank" ? DynamicImageManager.ExternalLink() : ""}
+                              </div>
+                            </div>
+                          </HashLink>
                         </li>
                       ))}
                     </ul>
