@@ -5,6 +5,7 @@ import Header from "./components/layouts/Header"
 import Footer from "./components/layouts/Footer"
 import GenericHttpError from "./components/errors/GenericHttpError";
 
+import Landing from "./pages/landing";
 import Home from "./pages/home"
 import Contact from "./pages/contact";
 import Request from "./pages/request";
@@ -17,7 +18,8 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Landing />} />
+        <Route path="/old" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/request" element={<Request />} />
         <Route path="/partners" element={<Partners />} />
