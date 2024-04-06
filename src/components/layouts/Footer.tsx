@@ -1,32 +1,32 @@
-import { Link } from 'react-router-dom'
-import { HashLink } from 'react-router-hash-link';
+import { Link } from "react-router-dom"
+import { HashLink } from "react-router-hash-link";
 
-import DynamicImageManager from '../../managers/DynamicImageManager';
+import DynamicImageManager from "../../managers/DynamicImageManager";
 
 const sectionLinkGroups: NavLinkGroup[] = [
   {
-    title: 'Company',
+    title: "Company",
     links: [
-      { label: 'Clients', url: '#' },
-      { label: 'Services', url: '#' },
-      { label: 'Service Area', url: '#' },
-      { label: 'FAQs', url: '#' },
-      { label: 'Contact', url: '/contact/#' }
+      { label: "Clients", url: "#" },
+      { label: "Services", url: "#" },
+      { label: "Service Area", url: "#" },
+      { label: "FAQs", url: "#" },
+      { label: "Contact", url: "/contact/#" }
     ]
   },
   {
-    title: 'Clients',
+    title: "Client Tools",
     links: [
-      { label: 'New Client Work Request', url: '/request/#' },
-      { label: 'Existing Client Hub', url: 'https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login', target: "_blank" }
+      { label: "New Client Work Request", url: "/request/#" },
+      { label: "Existing Client Hub", url: "https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login", target: "_blank" }
     ]
   },
   {
-    title: 'Resources',
+    title: "Resources",
     links: [
-      { label: 'Privacy Policy', url: '/privacy/#' },
-      { label: 'Terms & Conditions', url: '/terms/#' },
-      { label: 'Partners', url: '/partners/#' },
+      { label: "Privacy Policy", url: "/privacy/#" },
+      { label: "Terms & Conditions", url: "/terms/#" },
+      { label: "Partners", url: "/partners/#" },
     ]
   }
 ];
