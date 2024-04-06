@@ -4,14 +4,10 @@ import resolveConfig from 'tailwindcss/resolveConfig'
 
 import { HashLink, NavHashLink } from 'react-router-hash-link';
 import DynamicImageManager from '../../managers/DynamicImageManager';
-import { THEMES, ThemeContext } from '../../contexts/ThemeContext';
 
-// 4/4/24, just have a single theme (LIGHT) light apple/nordstrom. Having issues with scroll bar color not changing when theme is intial s
-// switched...on refresh, does get correct colors. But trying to address, is just sucking up time and potentially making things more complicated. 
-// Just get website up now...this is a nice to have feature.
-// import { ThemeContext, THEMES } from "../../contexts/ThemeContext";
-// import Sun from '../../assets/images/Sun';
-// import Moon from '../../assets/images/Moon';
+import { ThemeContext, THEMES } from "../../contexts/ThemeContext";
+import Sun from '../../assets/images/Sun';
+import Moon from '../../assets/images/Moon';
 
 interface NavLink {
   path: string;
@@ -21,11 +17,7 @@ interface NavLink {
 const fullConfig = resolveConfig(tailwindConfig)
 
 const Header = () => {
-// 4/4/24, just have a single theme (LIGHT) light apple/nordstrom. Having issues with scroll bar color not changing when theme is intial s
-// switched...on refresh, does get correct colors. But trying to address, is just sucking up time and potentially making things more complicated. 
-// Just get website up now...this is a nice to have feature.
-  // const { theme, toggleTheme } = useContext(ThemeContext);
-  const { theme } = useContext(ThemeContext);
+  const { theme, toggleTheme } = useContext(ThemeContext);
   
   const navLinks: NavLink[] = [
     { path: '/#solutions', label: 'Solutions' },
@@ -54,14 +46,8 @@ const Header = () => {
           <div className="relative flex flex-wrap items-center justify-between gap-6 lg:gap-0 lg:py-4">
             <div className="relative z-20 flex w-full justify-between md:px-0 lg:w-max">
               <HashLink to="/#" smooth aria-label="HAUS Property Services Logo" className="nav-link flex items-center space-x-2" onClick={closeNavbar}>
-              {/* 4/4/24, just have a single theme (LIGHT) light apple/nordstrom. Having issues with scroll bar color not changing when theme is intial s
-              switched...on refresh, does get correct colors. But trying to address, is just sucking up time and potentially making things more complicated. 
-              Just get website up now...this is a nice to have feature. Since theme is white for now, just force logo to black*/
-              }
                 {DynamicImageManager.Logo(theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.black)}
-                {/* {DynamicImageManager.Logo(fullConfig.theme.colors.black)} */}
               </HashLink>
-
               <button aria-label="hamburger" id="hamburger" className="relative -mr-6 p-6 lg:hidden" onClick={toggleNavbar}>
                 <div aria-hidden="true" id="line" className="m-auto h-0.5 w-5 rounded bg-sky-900 transition duration-300 dark:bg-gray-300"></div>
                 <div aria-hidden="true" id="line2" className="m-auto mt-2 h-0.5 w-5 rounded bg-sky-900 transition duration-300 dark:bg-gray-300"></div>
@@ -86,25 +72,17 @@ const Header = () => {
                   <span className="relative text-sm font-semibold text-white dark:text-gray-900 lg:text-primary lg:dark:text-white">Get started</span>
                 </HashLink>
               </div>
-              {/* 4/4/24, just have a single theme (LIGHT) light apple/nordstrom. Having issues with scroll bar color not changing when theme is intial s
-              switched...on refresh, does get correct colors. But trying to address, is just sucking up time and potentially making things more complicated. 
-              Just get website up now...this is a nice to have feature. */
-              }
-              {/* <button onClick={toggleTheme} className="switcher group relative hidden h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex">
+              <button onClick={toggleTheme} className="switcher group relative hidden h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex">
                 <Sun />
                 <Moon />
-              </button> */}
+              </button>
             </div>
-            {/* 4/4/24, just have a single theme (LIGHT) light apple/nordstrom. Having issues with scroll bar color not changing when theme is intial s
-              switched...on refresh, does get correct colors. But trying to address, is just sucking up time and potentially making things more complicated. 
-              Just get website up now...this is a nice to have feature. */
-            }
-            {/* <div className="fixed top-3 right-14 z-20 sm:right-24 lg:hidden">
+            <div className="fixed top-3 right-14 z-20 sm:right-24 lg:hidden">
               <button onClick={toggleTheme} className="switcher group relative flex h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800">
                 <Sun />
                 <Moon />
               </button>
-            </div> */}
+            </div>
           </div>
         </div>
       </nav>

@@ -11,23 +11,23 @@ export interface Props {
     children: JSX.Element;
 };
 
+const useDarkTheme = (): boolean => {
+  return (
+    // If theme is save in local storage, get it and if currently is set to dark theme, return true, otherwise return false.
+    ((localStorage.getItem(STORAGE_KEY) as THEMES) === THEMES.DARK)
+    || 
+    // If theme is not stored in local storage and the system theme is set to dark as determined by the media query, return true, otherwise, return false.
+    (!(STORAGE_KEY in localStorage) && matchMediaQuery.matches)
+  );
+}
+
 // Need to be able to init them on an element wihting the HTML header before rendering occurs to prevent light > dark flickering.
 export const initTheming = () => {
-  const theme: THEMES = matchMediaQuery.matches ? THEMES.DARK : THEMES.LIGHT;
+  const theme: THEMES = useDarkTheme() ? THEMES.DARK : THEMES.LIGHT;
   document.documentElement.setAttribute(ATTRIBUTE_DATA_THEME, theme);
 };
 
 export const ThemeProvider: React.FC<Props> = (props): JSX.Element => {
-  const useDarkTheme = (): boolean => {
-    return (
-      // If theme is save in local storage, get it and if currently is set to dark theme, return true, otherwise return false.
-      ((localStorage.getItem(STORAGE_KEY) as THEMES) === THEMES.DARK)
-      || 
-      // If theme is not stored in local storage and the system theme is set to dark as determined by the media query, return true, otherwise, return false.
-      (!(STORAGE_KEY in localStorage) && matchMediaQuery.matches)
-    );
-  }
-
   const [themeState, setThemeState] = useState<THEMES>(
     useDarkTheme() ? THEMES.DARK : THEMES.LIGHT
   );
@@ -50,7 +50,6 @@ export const ThemeProvider: React.FC<Props> = (props): JSX.Element => {
     const theme: THEMES = isDarkTheme ? THEMES.DARK : THEMES.LIGHT;
   
     saveCurrentTheme(theme);
-
   };
 
   // System initiated theme change
