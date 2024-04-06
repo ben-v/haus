@@ -12,48 +12,7 @@ import Privacy from "./pages/privacy";
 import Terms from "./pages/terms";
 import Partners from "./pages/partners";
 
-interface Link {
-  label: string;
-  url: string;
-}
-
-interface Section {
-  title: string;
-  links: Link[];
-}
-
 function App() {
-  const sections: Section[] = [
-    {
-      title: 'Company',
-      links: [
-        { label: 'About', url: '#' },
-        { label: 'Customers', url: '#' },
-        { label: 'Enterprise', url: '#' },
-        { label: 'Partners', url: '#' },
-        { label: 'Jobs', url: '#' }
-      ]
-    },
-    {
-      title: 'Products',
-      links: [
-        { label: 'About', url: '#' },
-        { label: 'Customers', url: '#' },
-        { label: 'Enterprise', url: '#' },
-        { label: 'Partners', url: '#' },
-        { label: 'Jobs', url: '#' }
-      ]
-    },
-    {
-      title: 'Resources',
-      links: [
-        { label: 'Privacy Policy', url: '/privacy/#' },
-        { label: 'Terms & Conditions', url: '/terms/#' },
-        { label: 'Partners', url: '/partners/#' },
-      ]
-    }
-  ];
-
   return (
     <>
       <Header />
@@ -67,7 +26,7 @@ function App() {
         <Route path="/server-error" element={<GenericHttpError title="500" description="Well, this is embarassing, we encountered an unexpected error." />} />
         <Route path="*" element={<GenericHttpError title="404" description="Hmm, we did not find the page you requested."/>} />
       </Routes>
-      <Footer sections={sections} />
+      <Footer />
     </>
   )
 }

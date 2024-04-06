@@ -3,19 +3,47 @@ import { HashLink } from 'react-router-hash-link';
 
 import DynamicImageManager from '../../managers/DynamicImageManager';
 
-interface Link {
+interface SectionLink {
   label: string;
   url: string;
+  target?: "_blank" | "_parent" | "_self" | "_top";
 }
 
-interface Section {
+interface SectionLinkGroup {
   title: string;
-  links: Link[];
+  links: SectionLink[];
 }
 
-const Footer: React.FC<{ sections: Section[] }> = ({ sections }) => {
-  return (
+const sectionLinkGroups: SectionLinkGroup[] = [
+  {
+    title: 'Company',
+    links: [
+      { label: 'Clients', url: '#' },
+      { label: 'Services', url: '#' },
+      { label: 'Service Area', url: '#' },
+      { label: 'FAQs', url: '#' },
+      { label: 'Contact', url: '/contact/#' }
+    ]
+  },
+  {
+    title: 'Clients',
+    links: [
+      { label: 'New Client Work Request', url: '/request/#' },
+      { label: 'Existing Client Hub', url: 'https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login', target: "_blank" }
+    ]
+  },
+  {
+    title: 'Resources',
+    links: [
+      { label: 'Privacy Policy', url: '/privacy/#' },
+      { label: 'Terms & Conditions', url: '/terms/#' },
+      { label: 'Partners', url: '/partners/#' },
+    ]
+  }
+];
 
+const Footer = () => {
+  return (
     <footer className="border-t border-gray-100 pt-10 pb-8 dark:border-gray-800">
       <div>
         <div className="m-auto space-y-8 px-4 text-gray-600 dark:text-gray-400 sm:px-12 xl:max-w-6xl xl:px-0">
@@ -48,13 +76,13 @@ const Footer: React.FC<{ sections: Section[] }> = ({ sections }) => {
             </div>
             <div className="col-span-8 md:col-span-6 lg:col-span-5">
               <div className="grid grid-cols-2 gap-6 pb-16 sm:grid-cols-3 md:pl-16">
-                {sections.map((section, index) => (
+                {sectionLinkGroups.map((section, index) => (
                   <div key={index}>
                     <h2 className="text-base font-medium text-gray-800 dark:text-gray-200">{section.title}</h2>
                     <ul className="mt-4 list-inside space-y-4">
                       {section.links.map((link, linkIndex) => (
                         <li key={linkIndex}>
-                          <HashLink to={link.url} smooth className="text-sm duration-100 hover:text-primary dark:hover:text-white">{link.label}</HashLink>
+                          <HashLink to={link.url} target={link.url === undefined ? "_self" : link.target} smooth className="text-sm duration-100 hover:text-primary dark:hover:text-white">{link.label}</HashLink>
                         </li>
                       ))}
                     </ul>
@@ -62,8 +90,8 @@ const Footer: React.FC<{ sections: Section[] }> = ({ sections }) => {
                 ))}
               </div>
               <div className="flex justify-between text-sm md:pl-16">
-                <span>&copy; HAUS Property Services {(new Date()).getFullYear()}</span>
-                <span>All right reserved</span>
+                <span>Copyright &copy; HAUS Property Services {(new Date()).getFullYear()}.</span>
+                <span>All rights reserved.</span>
               </div>
             </div>
           </div>
