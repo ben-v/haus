@@ -9,24 +9,20 @@ import { ThemeContext, THEMES } from "../../contexts/ThemeContext";
 import Sun from '../../assets/images/Sun';
 import Moon from '../../assets/images/Moon';
 
-interface NavLink {
-  path: string;
-  label: string;
-}
-
 const fullConfig = resolveConfig(tailwindConfig)
 
 const Header = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
   
-  const navLinks: NavLink[] = [
-    { path: '/#solutions', label: 'Solutions' },
-    { path: '/#company', label: 'Company' },
-    // { path: '/#features', label: 'Features' },
-    { path: '/#testimonials', label: 'Testimonials' },
-    { path: '/#pricing', label: 'Pricing' },
-    { path: '/contact/#', label: 'Contact' },
-  ];
+  const navLinkGroup: NavLinkGroup = {
+    links: [
+      { url: '/#clients', label: 'Clients' },
+      { url: '/#services', label: 'Services' },
+      { url: '/#service-area', label: 'Service Area' },
+      { url: '/#faqs', label: 'FAQs' },
+      { url: '/contact/#', label: 'Contact' },      
+    ]
+  }
 
   const [isNavbarActive, setIsNavbarActive] = useState(false);
 
@@ -58,9 +54,9 @@ const Header = () => {
             <div id="navlinks" className="invisible absolute top-full left-0 z-20 w-full origin-top-right translate-y-1 scale-90 flex-col flex-wrap justify-end gap-6 rounded-3xl border border-gray-100 bg-white p-8 opacity-0 shadow-2xl shadow-gray-600/10 transition-all duration-300 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none lg:visible lg:relative lg:flex lg:w-auto lg:translate-y-0 lg:scale-100 lg:flex-row lg:items-center lg:gap-0 lg:border-none lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none dark:lg:bg-transparent">
               <div className="text-gray-600 dark:text-gray-300 lg:pr-1">
                 <ul className="space-y-6 text-base font-medium tracking-wide lg:flex lg:space-y-0 lg:text-sm">
-                  {navLinks.map((link, index) => (
+                  {navLinkGroup.links.map((link, index) => (
                     <li key={index}>
-                      <NavHashLink to={link.path} smooth onClick={closeNavbar} className="nav-link block transition hover:text-primary dark:hover:text-primaryLight lg:px-3">
+                      <NavHashLink to={link.url} smooth onClick={closeNavbar} className="nav-link block transition hover:text-primary dark:hover:text-primaryLight lg:px-3">
                         <span>{link.label}</span>
                       </NavHashLink>
                     </li>

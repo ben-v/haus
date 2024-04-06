@@ -3,18 +3,7 @@ import { HashLink } from 'react-router-hash-link';
 
 import DynamicImageManager from '../../managers/DynamicImageManager';
 
-interface SectionLink {
-  label: string;
-  url: string;
-  target?: "_blank" | "_parent" | "_self" | "_top";
-}
-
-interface SectionLinkGroup {
-  title: string;
-  links: SectionLink[];
-}
-
-const sectionLinkGroups: SectionLinkGroup[] = [
+const sectionLinkGroups: NavLinkGroup[] = [
   {
     title: 'Company',
     links: [
