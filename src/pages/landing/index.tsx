@@ -1,7 +1,6 @@
 import Clients from './sections/Clients'
 import Services from './sections/Services'
 import ServiceArea from './sections/ServiceArea'
-import Faqs from './sections/Faqs'
 
 const Landing = () => {
   return (
@@ -9,7 +8,6 @@ const Landing = () => {
       <Clients />
       <Services />
       <ServiceArea />
-      <Faqs />
     </>
   )
 }
