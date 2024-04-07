@@ -88,8 +88,7 @@ const Footer = () => {
                 ))}
               </div>
               <div className="flex justify-between text-sm md:pl-16">
-                <span>Copyright &copy; HAUS Property Services {(new Date()).getFullYear()}.</span>
-                <span>All rights reserved.</span>
+                <span>Copyright &copy; {(new Date()).getFullYear()} HAUS Property Services</span>
               </div>
             </div>
           </div>
