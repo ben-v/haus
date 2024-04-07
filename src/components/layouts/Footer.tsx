@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import { HashLink } from "react-router-hash-link";
 
 import DynamicImageManager from "../../managers/DynamicImageManager";
+import SvgArrowUpRightFromSquareSolid from "../images/SvgArrowUpRightFromSquareSolid";
 
 const sectionLinkGroups: NavLinkGroup[] = [
   {
@@ -77,7 +78,7 @@ const Footer = () => {
                                 {link.label}
                               </div>
                               <div className="pl-2">
-                                {link.target === "_blank" ? DynamicImageManager.ExternalLink() : ""}
+                                {link.target === "_blank" ? <SvgArrowUpRightFromSquareSolid width={10} height={10} fill="currentColor" /> : ""}
                               </div>
                             </div>
                           </HashLink>

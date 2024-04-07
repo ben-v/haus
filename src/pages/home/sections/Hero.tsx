@@ -1,7 +1,7 @@
 // import React from 'react'
 import FormEmail from './FormEmail'
 import { Link } from 'react-router-dom';
-import Line from '../../../assets/images/Line';
+import Line from '../../../components/images/Line';
 
 const Hero = () => {
   const avatars = [
