@@ -1,12 +1,14 @@
 // import React from 'react'
 
+import { Link } from "react-router-dom"
+
 const Contact = () => {
   return (
     <section className="py-32 sm:pt-32 md:pt-32 lg:pt-32">
       <div className="mx-auto px-4 sm:px-12 xl:max-w-5xl xl:px-0">
         <div className="relative z-10 text-center md:mx-auto md:w-5/6 lg:w-4/6">
-          <h1 className="relative text-center text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">Start building <span className="opacity-80">here.</span></h1>
-          <p className="mt-6 text-gray-700 dark:text-gray-300">We'll help you find the right plan and pricing for your business.</p>
+          <h1 className="relative text-center text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">Let's <span className="opacity-80">Connect</span></h1>
+          <p className="mt-6 text-gray-700 dark:text-gray-300">If you have project ideas or general questions you'd like to talk about, please fill out the form below to send us a message; we are happy to discuss with you and will reply shortly.</p>
         </div>
 
         <div className="mt-12 grid gap-12 sm:mx-auto sm:max-w-lg lg:max-w-max lg:grid-cols-2">
@@ -17,12 +19,12 @@ const Contact = () => {
                 <h2 className="text-2xl font-bold text-gray-800 dark:text-white">What should we know ?</h2>
                 <div className="mt-8 mb-6 space-y-4">
                   <div>
-                    <label htmlFor="name" className="mb-2 block text-gray-600 dark:text-gray-300">Your name <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
+                    <label htmlFor="name" className="mb-2 block text-gray-600 dark:text-gray-300">Name <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
                     <input type="text" name="name" id="name" className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
                     <span className="mt-1 hidden text-sm text-red-500 peer-invalid:block">Helper</span>
                   </div>
                   <div>
-                    <label htmlFor="email" className="mb-2 block text-gray-600 dark:text-gray-300">Work email <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
+                    <label htmlFor="email" className="mb-2 block text-gray-600 dark:text-gray-300">Email <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
                     <input type="email" name="email" id="email" className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
                     <span className="mt-1 hidden text-sm text-red-500 peer-invalid:block">Helper</span>
                   </div>
@@ -32,19 +34,14 @@ const Contact = () => {
                     <span className="mt-1 hidden text-sm text-red-500 peer-invalid:block">Helper</span>
                   </div>
                   <div>
-                    <label htmlFor="company" className="mb-2 block text-gray-600 dark:text-gray-300">Company name <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
-                    <input type="text" name="company" id="company" className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
-                    <span className="mt-1 hidden text-sm text-red-500 peer-invalid:block">Helper</span>
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="mb-2 block text-gray-600 dark:text-gray-300">Message</label>
+                    <label htmlFor="company" className="mb-2 block text-gray-600 dark:text-gray-300">Message <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
                     <textarea name="message" id="message" className="peer block h-28 w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700"></textarea>
 
                     <span className="mt-1 hidden text-sm text-red-500 peer-invalid:block">Helper</span>
                   </div>
                 </div>
 
-                <p className="mb-8 text-sm text-gray-600 dark:text-gray-300">By clicking submit below, you agree to the processing of your personal information by PlanetScale as described in the Privacy Policy.</p>
+                <p className="mb-8 text-sm text-gray-600 dark:text-gray-300">By clicking submit below, you agree to the processing of your personal information by HAUS Property Services as described in our <Link to="/privacy/#">Privacy Policy</Link>.</p>
 
                 <button type="submit" className="relative ml-auto flex h-11 w-max items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 active:duration-75 active:before:scale-95 dark:before:bg-primaryLight">
                   <span className="relative text-base font-semibold text-white dark:text-gray-900">Get started</span>
