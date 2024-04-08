@@ -1,19 +1,21 @@
 import { useContext, useState } from 'react';
-import tailwindConfig from '../../../tailwind.config';
-import resolveConfig from 'tailwindcss/resolveConfig'
-
+import { Link } from 'react-router-dom';
 import { HashLink, NavHashLink } from 'react-router-hash-link';
+
+import resolveConfig from 'tailwindcss/resolveConfig'
+import tailwindConfig from '../../../tailwind.config';
+
 import DynamicImageManager from '../../managers/DynamicImageManager';
 
 import { ThemeContext, THEMES } from "../../contexts/ThemeContext";
-import Sun from '../images/Sun';
-import Moon from '../images/Moon';
 import { Tooltip } from "react-tooltip";
+
 import SvgPhoneSolid from '../images/SvgPhoneSolid';
 import SvgArrowUpRightFromSquareSolid from '../images/SvgArrowUpRightFromSquareSolid';
-import { Link } from 'react-router-dom';
 import SvgRectangleListSolid from '../images/SvgRectangleListSolid';
 import SvgAddressBookSolid from '../images/SvgAddressBookSolid';
+import SvgMoon from '../images/SvgMoon';
+import SvgSun from '../images/SvgSun';
 
 const fullConfig = resolveConfig(tailwindConfig)
 
@@ -112,15 +114,15 @@ const Header = () => {
               </div>
               <div className="mt-12 flex w-full flex-col space-y-2 border-primary/10 dark:border-gray-700 sm:flex-row md:w-max lg:mt-0 lg:mr-4 lg:space-y-0 lg:border-l lg:pl-4">
                 <button onClick={toggleTheme} className="switcher group relative hidden h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex">
-                  <Sun />
-                  <Moon />
+                  <SvgSun fill="currentColor" className="transistion relative m-auto hidden h-5 w-5 fill-gray-500 duration-300 group-hover:rotate-180 group-hover:fill-yellow-400 dark:block dark:fill-gray-300" />
+                  <SvgMoon fill="currentColor" className="transistion relative m-auto h-5 w-5 fill-gray-500 duration-300 group-hover:-rotate-90 group-hover:fill-blue-900 dark:hidden" />
                 </button>
               </div>
             </div>
             <div className="fixed top-3 right-14 z-20 sm:right-24 lg:hidden">
               <button onClick={toggleTheme} className="switcher group relative flex h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800">
-                <Sun />
-                <Moon />
+                <SvgSun fill="currentColor" className="transistion relative m-auto hidden h-5 w-5 fill-gray-500 duration-300 group-hover:rotate-180 group-hover:fill-yellow-400 dark:block dark:fill-gray-300" />
+                <SvgMoon fill="currentColor" className="transistion relative m-auto h-5 w-5 fill-gray-500 duration-300 group-hover:-rotate-90 group-hover:fill-blue-900 dark:hidden" />
               </button>
             </div>
           </div>
