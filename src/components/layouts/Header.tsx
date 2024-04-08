@@ -17,6 +17,9 @@ import SvgLogo from '../images/SvgLogo';
 
 import { Tooltip } from 'react-tooltip';
 
+import Toggle from 'react-toggle';
+import "react-toggle/style.css" // for ES6 modules
+
 const fullConfig = resolveConfig(tailwindConfig)
 
 const Header = () => {
@@ -121,16 +124,14 @@ const Header = () => {
                     <SvgMoon fill="currentColor" className="transistion relative m-auto h-5 w-5 fill-gray-500 duration-300 group-hover:-rotate-90 group-hover:fill-blue-900 dark:hidden" />
                   </button>
               </div>
-              <div className="mt-6 w-full space-y-2 border-primary/10 dark:border-gray-700 sm:flex-row lg:hidden inline-flex items-center justify-left">         
-                <HashLink to="/request/#" smooth onClick={toggleThemeCloseMenu} data-tooltip-id="new-client-tooltip" className="relative ml-auto flex h-9 w-full items-center justify-center before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-primaryLight sm:px-4 lg:before:border lg:before:border-gray-200 lg:before:bg-gray-100 lg:dark:before:bg-gray-800">
-                  <div className="pr-2">
-                      <SvgSun fill="currentColor" className="transistion relative m-auto hidden h-5 w-5 fill-gray-500 duration-300 group-hover:rotate-180 group-hover:fill-yellow-400 dark:block dark:fill-gray-300" />
-                      <SvgMoon fill="currentColor" className="transistion relative m-auto h-5 w-5 fill-gray-500 duration-300 group-hover:-rotate-90 group-hover:fill-blue-900 dark:hidden" />
-                    </div>
-                    <div>
-                      <span className="relative text-sm font-semibold text-white dark:text-gray-900 lg:text-primary lg:dark:text-white whitespace-nowrap">{theme === THEMES.DARK ? "Light" : "Dark"} Mode</span>
-                    </div>
-                  </HashLink>                
+              <div className="mt-6 w-full border-primary/10 dark:border-gray-700 sm:flex-row lg:hidden inline-flex items-center justify-left">
+              <Toggle
+                id='theme-switcher-small-displays'
+                defaultChecked={theme === THEMES.DARK}
+                checked={theme === THEMES.DARK}
+                icons={false}
+                onChange={toggleThemeCloseMenu} />
+                <div className="text-gray-600 dark:text-gray-300 ml-3 w-full" onClick={toggleThemeCloseMenu}>Dark Mode Is <span className="font-semibold">{theme === THEMES.DARK ? "On" : "Off" }</span></div>
               </div>
             </div>
 
