@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom"
 import { HashLink } from "react-router-hash-link";
 
-import DynamicImageManager from "../../managers/DynamicImageManager";
 import SvgArrowUpRightFromSquareSolid from "../images/SvgArrowUpRightFromSquareSolid";
+import SvgLogo from "../images/SvgLogo";
+import SvgFacebook from "../images/SvgFacebook";
+import SvgInstagram from "../images/SvgInstagram";
+import SvgYelp from "../images/SvgYelp";
 
 const sectionLinkGroups: NavLinkGroup[] = [
   {
@@ -42,24 +45,24 @@ const Footer = () => {
               <div className="flex h-full items-start justify-between gap-6 border-b border-white py-6 dark:border-gray-800 md:flex-col md:items-start md:justify-between md:space-y-6 md:border-none md:py-0">
                 <div className='text-sm'>
                   <HashLink to="/#" smooth aria-label="HAUS Property Services Logo" className="flex items-center">
-                    {DynamicImageManager.Logo(undefined, "h-8")}
+                    <SvgLogo fill="currentColor" className="bi bi-logo h-8 w-auto" />
                   </HashLink>
                   <p className='pt-5'>HAUS Property Services</p>
                   <p>A Bozeman, Montana Company.</p>
                 </div>
 
-                <div className="flex gap-6 pt-2">
+                <div className="flex gap-3 pt-2">
                   <Link to="https://www.facebook.com/haus.property.svcs" target="_blank" aria-label="facebook">
                     <span className="sr-only">Facebook</span>
-                    {DynamicImageManager.Facebook()}
+                    <SvgFacebook fill="currentColor" width={20} height={20} />
                   </Link>
                   <Link to="https://www.instagram.com/haus.property.svcs" target="_blank" aria-label="instagram">
                     <span className="sr-only">Instagram</span>
-                    {DynamicImageManager.Instagram()}
+                    <SvgInstagram fill="currentColor" width={20} height={20} />
                   </Link>
                   <Link to="https://www.yelp.com/biz/haus-property-services-bozeman" target="_blank" aria-label="yelp">
                     <span className="sr-only">Yelp</span>
-                    {DynamicImageManager.Yelp()}
+                    <SvgYelp fill="currentColor" width={20} height={20} />
                   </Link>
                 </div>
               </div>
