@@ -16,8 +16,15 @@ import SvgSun from '../images/SvgSun';
 import SvgLogo from '../images/SvgLogo';
 
 import { Tooltip } from 'react-tooltip';
+import parse from 'html-react-parser';
 
 const fullConfig = resolveConfig(tailwindConfig)
+
+interface TooltipContent {
+  Selector: string;
+  Header: string;
+  Body: string;
+}
 
 const Header = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -31,6 +38,19 @@ const Header = () => {
       { url: '/contact/#', label: 'Contact' },      
     ]
   }
+  
+  const tooltips: TooltipContent[] = [
+    {
+      Selector: 'new-client-tooltip-selector',
+      Header: '<p className="font-bold pb-2">New client?</p>',
+      Body: '<p>The best way to get started with us is to fill out a <span className="font-semibold">New Client Work Request</span> for us to review.</p>'
+    },
+    {
+      Selector: 'existing-client-tooltip-selector',
+      Header: '<p className="font-bold pb-2">Are you already working with us?</p>',
+      Body: '<p>Visit the <span className="font-semibold">Existing Client Hub</span> to approve quotes, check appointment details, pay invoices, print receipts, or request more work—all in one place.</p>'
+    }
+  ];
 
   const [isNavbarActive, setIsNavbarActive] = useState(false);
 
@@ -82,7 +102,7 @@ const Header = () => {
               <div className="hidden lg:flex">
                 <div className="mt-12 flex w-full flex-col gap-3 space-y-2 border-primary/10 dark:border-gray-700 sm:flex-row md:w-max lg:mt-0 lg:mr-4 lg:space-y-0 lg:border-l lg:pl-4">
                   <div>
-                    <HashLink to="/request/#" smooth onClick={closeNavbar} className="new-client-tooltip-selector relative ml-auto flex h-9 w-full items-center justify-center before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-primaryLight sm:px-4 lg:before:border lg:before:border-gray-200 lg:before:bg-gray-100 lg:dark:before:bg-gray-800">
+                    <HashLink to="/request/#" smooth onClick={closeNavbar} data-tooltip-id="new-client-tooltip-selector-large" className="relative ml-auto flex h-9 w-full items-center justify-center before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-primaryLight sm:px-4 lg:before:border lg:before:border-gray-200 lg:before:bg-gray-100 lg:dark:before:bg-gray-800">
                       <div className="pr-2">
                         <SvgRectangleListSolid width={16} height={16} className='relative m-auto' fill={theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.primary} />
                       </div>
@@ -92,7 +112,7 @@ const Header = () => {
                     </HashLink>
                   </div>
                   <div>
-                    <HashLink to="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" target="_blank" onClick={closeNavbar} className="existing-client-tooltip-selector relative flex h-9 w-full items-center justify-center before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-primaryLight sm:px-4 lg:before:border lg:before:border-gray-200 lg:before:bg-gray-100 lg:dark:before:bg-gray-800">
+                    <HashLink to="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" target="_blank" onClick={closeNavbar} data-tooltip-id="existing-client-tooltip-selector-large" className=" relative flex h-9 w-full items-center justify-center before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-primaryLight sm:px-4 lg:before:border lg:before:border-gray-200 lg:before:bg-gray-100 lg:dark:before:bg-gray-800">
                       <div className="inline-flex items-center justify-left">
                         <div className="pr-2">
                           <SvgAddressBookSolid width={16} height={16} className='relative m-auto' fill={theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.primary} />
@@ -122,13 +142,6 @@ const Header = () => {
                   </button>
               </div>
               <div className="mt-6 w-full space-y-2 border-primary/10 dark:border-gray-700 sm:flex-row lg:hidden inline-flex items-center justify-left">         
-                {/* <button onClick={toggleThemeCloseMenu} className="switcher group relative h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex">
-                  <SvgSun fill="currentColor" className="transistion relative m-auto hidden h-5 w-5 fill-gray-500 duration-300 group-hover:rotate-180 group-hover:fill-yellow-400 dark:block dark:fill-gray-300" />
-                  <SvgMoon fill="currentColor" className="transistion relative m-auto h-5 w-5 fill-gray-500 duration-300 group-hover:-rotate-90 group-hover:fill-blue-900 dark:hidden" />
-                </button>
-                <span className="pl-2 nav-link block transition hover:text-primary dark:hover:text-primaryLight">Dark Mode</span>
-*/}
-
                 <HashLink to="/request/#" smooth onClick={toggleThemeCloseMenu} data-tooltip-id="new-client-tooltip" className="relative ml-auto flex h-9 w-full items-center justify-center before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-primaryLight sm:px-4 lg:before:border lg:before:border-gray-200 lg:before:bg-gray-100 lg:dark:before:bg-gray-800">
                   <div className="pr-2">
                       <SvgSun fill="currentColor" className="transistion relative m-auto hidden h-5 w-5 fill-gray-500 duration-300 group-hover:rotate-180 group-hover:fill-yellow-400 dark:block dark:fill-gray-300" />
@@ -143,12 +156,12 @@ const Header = () => {
 
             {/* Quick access menu items for smaller displays */}
             <div className="fixed top-3 right-14 z-20 sm:right-24 lg:hidden">
-              <Link to="/request/#" onClick={closeNavbar}>
+              <Link to="/request/#" onClick={closeNavbar} data-tooltip-id="new-client-tooltip-selector-small">
                 <button className="ml-2 switcher group relative h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex">
                   <SvgRectangleListSolid width={16} height={16} className='relative m-auto' fill={theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.primary} />
                 </button>
               </Link>
-              <Link to="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" target="_blank" onClick={closeNavbar}>
+              <Link to="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" target="_blank" onClick={closeNavbar} data-tooltip-id="existing-client-tooltip-selector-small">
                 <button className="ml-2 switcher group relative h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex">
                   <SvgAddressBookSolid width={16} height={16} className='relative m-auto' fill={theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.primary} />
                 </button>
@@ -160,17 +173,20 @@ const Header = () => {
               </Link>
             </div>    
 
-            {/* 4/8/2024 Do not have tooltips for smaller display menu items; when rotate a smaller device like an iPad or phone, if a tooltip is displayed 
-            going from portrait to landscape, it's displayed which is ideal, but the position is completely wrong. For now, only show nav tooltips
-            for larger displays. */}
-            <Tooltip className="app-tooltip" anchorSelect=".new-client-tooltip-selector" opacity={1}>
-              <p className="font-bold pb-2">New client?</p>
-              <p>The best way to get started with us is to fill out a <span className="font-semibold">New Client Work Request</span> for us to review.</p>
-            </Tooltip>
-            <Tooltip className="app-tooltip" anchorSelect=".existing-client-tooltip-selector" opacity={1}>
-              <p className="font-bold pb-2">Are you already working with us?</p>
-              <p>Visit the <span className="font-semibold">Existing Client Hub</span> to approve quotes, check appointment details, pay invoices, print receipts, or request more work—all in one place.</p>
-            </Tooltip>
+            {/* 4/8/2024 Using the same tooltip for different size buttons which themselves are displayed based on different display sizes; trying to use a single tooltip for both
+            buttons (small display, large display menu items) causes misplacment of a displayed tooltip when orientation fo the device is changed for say a tablet or phone. To get around
+            have tooltips for smaller displays and larger displays but with same content...that's why using an array for the content here. Use parse tool here to convert HTML string to one or more
+            React elements as that's safer;  Setting HTML from code is risky because it’s easy to inadvertently expose your users to a cross-site scripting (XSS) attack. */}
+            {tooltips.map((tooltip) => (
+              <>
+                <Tooltip id={`${tooltip.Selector}-small`} className="app-tooltip lg:hidden" opacity={1}>
+                  {parse(`${tooltip.Header}${tooltip.Body}`)}
+                </Tooltip>
+                <Tooltip id={`${tooltip.Selector}-large`} className="app-tooltip" opacity={1}>
+                  {parse(`${tooltip.Header}${tooltip.Body}`)}
+                </Tooltip>
+              </>
+            ))}           
           </div>
         </div>
       </nav>
