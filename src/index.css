@@ -37,6 +37,12 @@ body {
     @apply fill-secondaryLight;
   }
 
+  .app-tooltip-container .app-tooltip {
+    @apply bg-gray-200;
+    @apply text-gray-600;
+    @apply dark:bg-gray-600;
+    @apply dark:text-gray-200;
+  }
 }
 
 .st0 {
