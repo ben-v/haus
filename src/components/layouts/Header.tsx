@@ -16,15 +16,8 @@ import SvgSun from '../images/SvgSun';
 import SvgLogo from '../images/SvgLogo';
 
 import { Tooltip } from 'react-tooltip';
-import parse from 'html-react-parser';
 
 const fullConfig = resolveConfig(tailwindConfig)
-
-interface TooltipContent {
-  Selector: string;
-  Header: string;
-  Body: string;
-}
 
 const Header = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -38,19 +31,6 @@ const Header = () => {
       { url: '/contact/#', label: 'Contact' },      
     ]
   }
-  
-  const tooltips: TooltipContent[] = [
-    {
-      Selector: 'new-client-tooltip-selector',
-      Header: '<p className="font-bold pb-2">New client?</p>',
-      Body: '<p>The best way to get started with us is to fill out a <span className="font-semibold">New Client Work Request</span> for us to review.</p>'
-    },
-    {
-      Selector: 'existing-client-tooltip-selector',
-      Header: '<p className="font-bold pb-2">Are you already working with us?</p>',
-      Body: '<p>Visit the <span className="font-semibold">Existing Client Hub</span> to approve quotes, check appointment details, pay invoices, print receipts, or request more work—all in one place.</p>'
-    }
-  ];
 
   const [isNavbarActive, setIsNavbarActive] = useState(false);
 
@@ -156,12 +136,12 @@ const Header = () => {
 
             {/* Quick access menu items for smaller displays */}
             <div className="fixed top-3 right-14 z-20 sm:right-24 lg:hidden">
-              <Link to="/request/#" onClick={closeNavbar} data-tooltip-id="new-client-tooltip-selector-small">
+              <Link to="/request/#" onClick={closeNavbar}>
                 <button className="ml-2 switcher group relative h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex">
                   <SvgRectangleListSolid width={16} height={16} className='relative m-auto' fill={theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.primary} />
                 </button>
               </Link>
-              <Link to="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" target="_blank" onClick={closeNavbar} data-tooltip-id="existing-client-tooltip-selector-small">
+              <Link to="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" target="_blank" onClick={closeNavbar}>
                 <button className="ml-2 switcher group relative h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex">
                   <SvgAddressBookSolid width={16} height={16} className='relative m-auto' fill={theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.primary} />
                 </button>
@@ -173,20 +153,20 @@ const Header = () => {
               </Link>
             </div>    
 
-            {/* 4/8/2024 Using the same tooltip for different size buttons which themselves are displayed based on different display sizes; trying to use a single tooltip for both
-            buttons (small display, large display menu items) causes misplacment of a displayed tooltip when orientation fo the device is changed for say a tablet or phone. To get around
-            have tooltips for smaller displays and larger displays but with same content...that's why using an array for the content here. Use parse tool here to convert HTML string to one or more
-            React elements as that's safer;  Setting HTML from code is risky because it’s easy to inadvertently expose your users to a cross-site scripting (XSS) attack. */}
-            {tooltips.map((tooltip) => (
-              <>
-                <Tooltip id={`${tooltip.Selector}-small`} className="app-tooltip lg:hidden" opacity={1}>
-                  {parse(`${tooltip.Header}${tooltip.Body}`)}
-                </Tooltip>
-                <Tooltip id={`${tooltip.Selector}-large`} className="app-tooltip" opacity={1}>
-                  {parse(`${tooltip.Header}${tooltip.Body}`)}
-                </Tooltip>
-              </>
-            ))}           
+            {/*
+            4/8/24 - Do not display tooltips for menu items on mobile/smaller displays; user has to press on the link to activate and does not provide the user with 
+            much additional guidance by that point. By removing, this improves the user experience by not having to coordinate the display of tooltips between small/large displays and
+            orientation dchanges.
+            */}        
+            <Tooltip id="new-client-tooltip-selector-large" className="app-tooltip" opacity={1}>
+              <p className="font-bold pb-2">New client?</p>
+              <p>The best way to get started with us is to fill out a <span className="font-semibold">New Client Work Request</span> for us to review.</p>
+            </Tooltip>
+
+            <Tooltip id="existing-client-tooltip-selector-large" className="app-tooltip" opacity={1}>
+              <p className="font-bold pb-2">Are you already working with us?</p>
+              <p>Visit the <span className="font-semibold">Existing Client Hub</span> to approve quotes, check appointment details, pay invoices, print receipts, or request more work—all in one place.</p>
+            </Tooltip>      
           </div>
         </div>
       </nav>
