@@ -1,6 +1,6 @@
 // import React from 'react';
 import { Link } from 'react-router-dom';
-import DynamicImageManager from '../../managers/DynamicImageManager';
+import SvgPhoneSolid from '../images/SvgPhoneSolid';
 
 interface PricingCardProps {
   title: string;
@@ -49,7 +49,7 @@ const PricingCard = (props: PricingCardProps) => {
         <p className="mt-6 flex items-center justify-center space-x-4 text-center text-lg text-gray-600 dark:text-gray-300">
           <span>Call us at</span>
           <Link to={`tel:${phoneNumber}`} className="flex items-center space-x-2 text-blue-600 dark:text-blue-400">
-            {DynamicImageManager.Phone()}
+            <SvgPhoneSolid fill="currentColor" width={24} height={24} />
             <span className="font-semibold">{phoneNumber}</span>
           </Link>
           <span>or</span>
