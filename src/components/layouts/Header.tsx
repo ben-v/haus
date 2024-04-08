@@ -71,7 +71,7 @@ const Header = () => {
                 <ul className="space-y-6 text-base font-medium tracking-wide lg:flex lg:space-y-0 lg:text-sm">
                   {navLinkGroup.links.map((link, index) => (
                     <li key={index}>
-                      <NavHashLink to={link.url} smooth onClick={closeNavbar} className="nav-link block transition hover:text-primary dark:hover:text-primaryLight lg:px-2">
+                      <NavHashLink to={link.url} smooth onClick={closeNavbar} className="nav-link block transition hover:text-primary dark:hover:text-primaryLight lg:px-3">
                         <span>{link.label}</span>
                       </NavHashLink>
                     </li>
@@ -92,7 +92,7 @@ const Header = () => {
                     New client? Best way to get things started is to fill<br />out a new work request for us to review.
                   </Tooltip>
 
-                  <HashLink to="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" target="_blank" onClick={closeNavbar} data-tooltip-id="existing-client-tooltip" className="relative ml-4 flex h-9 w-full items-center justify-center before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-primaryLight sm:px-4 lg:before:border lg:before:border-gray-200 lg:before:bg-gray-100 lg:dark:before:bg-gray-800">
+                  <HashLink to="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" target="_blank" onClick={closeNavbar} data-tooltip-id="existing-client-tooltip" className="relative ml-3 flex h-9 w-full items-center justify-center before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-primaryLight sm:px-4 lg:before:border lg:before:border-gray-200 lg:before:bg-gray-100 lg:dark:before:bg-gray-800">
                     
                     <div className="inline-flex items-center justify-left">
                       <div className="pr-2">
@@ -112,14 +112,14 @@ const Header = () => {
                     Are you already working with us? If so, visit the Client Hub<br />to approve quotes, check appointment details, pay invoices,<br />print receipts, or request more work—all in one place. 
                   </Tooltip>
 
-                  <div className='ml-4'>
+                  <div className='ml-3'>
                     <Link to="tel:4063129989" onClick={closeNavbar} className="relative hidden h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex">
                       <SvgPhoneSolid width={16} height={16} className='relative m-auto' fill={theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.primary} />
                     </Link>
                   </div>
                 </div>
               </div>
-              <div className="mt-12 hidden flex-col space-y-2 border-primary/10 dark:border-gray-700 lg:mt-0 lg:mr-4 lg:space-y-0 lg:border-l lg:pl-4 lg:flex">
+              <div className="mt-12 hidden flex-col space-y-2 border-primary/10 dark:border-gray-700 lg:mt-0 lg:space-y-0 lg:border-l lg:pl-4 lg:flex">
                   <button onClick={toggleTheme} className="switcher group relative h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex">
                     <SvgSun fill="currentColor" className="transistion relative m-auto hidden h-5 w-5 fill-gray-500 duration-300 group-hover:rotate-180 group-hover:fill-yellow-400 dark:block dark:fill-gray-300" />
                     <SvgMoon fill="currentColor" className="transistion relative m-auto h-5 w-5 fill-gray-500 duration-300 group-hover:-rotate-90 group-hover:fill-blue-900 dark:hidden" />
