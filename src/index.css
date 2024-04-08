@@ -42,6 +42,8 @@ body {
     @apply text-gray-600;
     @apply dark:bg-gray-600;
     @apply dark:text-gray-200;
+    max-width: 400px;
+    width: 90%;
   }
 }
 
