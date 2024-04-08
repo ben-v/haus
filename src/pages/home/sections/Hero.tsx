@@ -1,7 +1,7 @@
 // import React from 'react'
 import FormEmail from './FormEmail'
 import { Link } from 'react-router-dom';
-import Line from '../../../components/images/Line';
+import SvgAccentLine from '../../../components/images/SvgAccentLine';
 
 const Hero = () => {
   const avatars = [
@@ -18,7 +18,7 @@ const Hero = () => {
           <h1 className="text-center text-5xl font-bold text-blue-900 dark:text-white sm:text-6xl lg:text-left lg:text-7xl">
             Design, Build,
             <span className="relative">
-              <Line />
+              <SvgAccentLine className="absolute inset-x-0 -bottom-1 w-full opacity-50" />
               <span className="relative bg-gradient-to-r from-primary to-secondaryLight bg-clip-text text-transparent dark:from-primaryLight dark:to-secondaryLight md:px-2">Scale</span>
             </span>
           </h1>
