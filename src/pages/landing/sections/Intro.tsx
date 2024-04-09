@@ -10,7 +10,7 @@ const Intro = () => {
       <div className="mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
         <div className="relative">
           <h1 className="text-center text-5xl font-bold text-blue-900 dark:text-white sm:text-6xl lg:text-left lg:text-7xl">
-            A Comfortable, Functional,
+            A Comfortable, Functional,&nbsp;
             <span className="relative">
               <SvgAccentLine className="absolute inset-x-0 -bottom-1 w-full opacity-50" />
               <span className="relative bg-gradient-to-r from-primary to-secondaryLight bg-clip-text text-transparent dark:from-primaryLight dark:to-secondaryLight md:px-2">Happy Home</span>
