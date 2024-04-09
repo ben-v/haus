@@ -3,9 +3,9 @@ import { HashLink } from "react-router-hash-link";
 
 import SvgArrowUpRightFromSquareSolid from "../images/SvgArrowUpRightFromSquareSolid";
 import SvgLogo from "../images/SvgLogo";
-import SvgFacebook from "../images/SvgFacebook";
-import SvgInstagram from "../images/SvgInstagram";
-import SvgYelp from "../images/SvgYelp";
+import SvgFacebookGeneric from "../images/SvgFacebookGeneric";
+import SvgInstagramGeneric from "../images/SvgInstagramGeneric";
+import SvgYelpGeneric from "../images/SvgYelpGneric";
 
 const sectionLinkGroups: NavLinkGroup[] = [
   {
@@ -54,15 +54,15 @@ const Footer = () => {
                 <div className="flex gap-3 pt-2">
                   <Link to="https://www.facebook.com/haus.property.svcs" target="_blank" aria-label="facebook">
                     <span className="sr-only">Facebook</span>
-                    <SvgFacebook fill="currentColor" width={20} height={20} />
+                    <SvgFacebookGeneric fill="currentColor" width={20} height={20} />
                   </Link>
                   <Link to="https://www.instagram.com/haus.property.svcs" target="_blank" aria-label="instagram">
                     <span className="sr-only">Instagram</span>
-                    <SvgInstagram fill="currentColor" width={20} height={20} />
+                    <SvgInstagramGeneric fill="currentColor" width={20} height={20} />
                   </Link>
                   <Link to="https://www.yelp.com/biz/haus-property-services-bozeman" target="_blank" aria-label="yelp">
                     <span className="sr-only">Yelp</span>
-                    <SvgYelp fill="currentColor" width={20} height={20} />
+                    <SvgYelpGeneric fill="currentColor" width={20} height={20} />
                   </Link>
                 </div>
               </div>
