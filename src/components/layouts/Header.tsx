@@ -124,15 +124,15 @@ const Header = () => {
                     <SvgMoon fill="currentColor" className="transistion relative m-auto h-5 w-5 fill-gray-500 duration-300 group-hover:-rotate-90 group-hover:fill-blue-900 dark:hidden" />
                   </button>
               </div>
-              <div className="mt-6 w-full border-primary/10 dark:border-gray-700 sm:flex-row lg:hidden inline-flex items-center justify-left">
-              <Toggle
-                id='theme-switcher-small-displays'
-                defaultChecked={theme === THEMES.DARK}
-                checked={theme === THEMES.DARK}
-                icons={false}
-                onChange={toggleThemeCloseMenu} />
-                <div className="text-gray-600 dark:text-gray-300 ml-3 w-full" onClick={toggleThemeCloseMenu}>Dark Mode Is <span className="font-semibold">{theme === THEMES.DARK ? "On" : "Off" }</span></div>
-              </div>
+              <div className="mt-6 w-full border-primary/10 dark:border-gray-700 sm:flex-row lg:hidden inline-flex items-center justify-start" onClick={toggleThemeCloseMenu}>
+                <div className="text-gray-600 dark:text-gray-300 md:mr-3 md:w-4/12 w-full">Dark Mode Is <span className="font-semibold">{theme === THEMES.DARK ? "On" : "Off" }</span></div>
+                <Toggle
+                  id='theme-switcher-small-displays'
+                  defaultChecked={theme === THEMES.DARK}
+                  checked={theme === THEMES.DARK}
+                  icons={false}
+                  onChange={toggleThemeCloseMenu} />                
+                </div>
             </div>
 
             {/* Quick access menu items for smaller displays */}
