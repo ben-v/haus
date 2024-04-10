@@ -13,20 +13,20 @@ const Intro = () => {
   const { theme, } = useContext(ThemeContext);
 
     return (
-      <section id="home" className="pt-32 sm:pt-40 md:pt-32">
+      <section id="home" className="pt-32 sm:pt-40 md:pt-44">
       <div className="mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
         <div className="relative">
-          <h1 className="text-center text-4xl font-bold text-blue-900 dark:text-white sm:text-5xl lg:text-left lg:text-4xl">
-            Our Focus Is Your Comfortable, Functional,&nbsp;
+          <h1 className="text-center text-4xl font-bold text-blue-900 dark:text-white sm:text-5xl lg:text-left lg:text-5xl">
+            Comfortable, Functional,&nbsp;
             <span className="relative">
               <SvgAccentLine className="absolute inset-x-0 -bottom-1 w-full opacity-50" />
-              <span className="relative bg-gradient-to-r from-primary to-secondaryLight bg-clip-text text-transparent dark:from-primaryLight dark:to-secondaryLight md:px-2">Happy Home</span>
+              <span className="relative bg-gradient-to-r from-primary to-secondaryLight bg-clip-text text-transparent dark:from-primaryLight dark:to-secondaryLight md:px-2">Happy Homes</span>
             </span>
           </h1>
 
           <div className="relative items-start gap-12 lg:flex">
             <div className="text-center sm:mx-auto sm:w-11/12 md:mt-12 md:w-4/5 lg:mt-0 lg:mr-auto lg:w-6/12 lg:text-left">
-              <p className="mt-16 text-lg text-gray-600 dark:text-gray-300 sm:text-xl"><span className="font-semibold">HAUS Property Services</span> provides property maintenance, repair, and technical services for the connected home, catering to the evolving needs of homeowners in the greater Bozeman area. Our focus is to help each client create a more comfortable, functional, and happy home.</p>
+              <p className="mt-16 text-lg text-gray-600 dark:text-gray-300 sm:text-xl"><span className="font-semibold">HAUS Property Services</span> provides property maintenance, repair, and technical services for the connected home, catering to the evolving needs of homeowners in the greater Bozeman area. Our focus is to help create a more comfortable, functional, and happy home for each client.</p>
               <div className="mt-16 text-lg text-gray-600 dark:text-gray-300 sm:text-xl hidden lg:block">
                 Also find us on:
               <div className="flex gap-4 pt-3">
