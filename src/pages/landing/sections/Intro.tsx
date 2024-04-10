@@ -7,6 +7,8 @@ import { ThemeContext, THEMES } from "../../../contexts/ThemeContext";
 import { useContext } from "react";
 import SvgIntroDark from "../../../components/images/sections/SvgIntroDark";
 import SvgIntroLight from "../../../components/images/sections/SvgIntroLight";
+import SvgIntroSuccessDark from "../../../components/images/sections/SvgIntroSuccessDark";
+import SvgIntroSuccessLight from "../../../components/images/sections/SvgIntroSuccessLight";
 
 const Intro = () => {
   
@@ -52,6 +54,18 @@ const Intro = () => {
             </div>
           </div>
         </div>
+
+        <div className="relative mt-12 h-auto">
+          <div className="relative items-start gap-12 lg:flex">
+            <div className="mt-12 w-full overflow-hidden sm:mt-20 lg:w-3/12 align-top">
+            {(theme === THEMES.DARK) ? <SvgIntroSuccessDark className="w-full" /> : <SvgIntroSuccessLight className="w-full" />}
+            </div>
+            <div className="text-center sm:mx-auto sm:w-11/12 md:mt-12 md:w-4/5 lg:mt-0 lg:mr-auto lg:w-6/12 lg:text-left">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-white lg:text-4xl">Where old school meets new school</h2>
+              <p className="mt-16 text-lg text-gray-600 dark:text-gray-300 sm:text-xl">At <span className="font-semibold">HAUS</span> our approach with our clients is first and foremost is to help each and every one of them with their list of projects, big or small. With over over 30 years in high tech, at some of the largest companies in the United States, listening, communication & collaboration were the foundations of success then and are the foundation of success today on any project...in corporate America or in the home.</p>
+            </div>
+          </div>
+        </div>               
       </div>
     </section>
     )

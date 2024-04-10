@@ -58,8 +58,8 @@ const Clients = () => {
     <section ref={sectionRef} id="clients" className="pt-32">
       <div className="mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-800 dark:text-white md:text-4xl xl:text-5xl">Helping our clients is job #1</h2>
-          <p className="mx-auto mt-6 text-gray-700 dark:text-gray-300 md:w-3/4 lg:w-3/5">Projects around the house, big and small, can pile up fast and the next thing you know, you have a nagging "to do" list a mile long. We want to help both our new and existing clients get their projects done and off their plate. We leverage technology facilitate our work, stay in touch and keep you up to date.</p>
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white lg:text-5xl">Helping our clients is <span className="bg-gradient-to-r from-primaryLight to-secondaryLight bg-clip-text text-transparent">job #1</span></h2>
+          <p className="mx-auto mt-6 text-gray-700 dark:text-gray-300 md:w-3/4 lg:w-3/5">Projects around the house, big and small, can pile up fast and the next thing you know, there's a nagging "to do" list a mile long. We want to help both our new and existing clients get their projects done and off their plate, to enjoy their homes and our Montana community. We leverage technology to facilitate our work, stay in touch and keep you up to date.</p>
         </div>
 
         {/* Tabs */}
