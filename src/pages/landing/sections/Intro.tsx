@@ -3,8 +3,15 @@ import SvgAccentLine from "../../../components/images/SvgAccentLine"
 import SvgFacebookGeneric from "../../../components/images/SvgFacebookGeneric"
 import PngInstagramColor from "../../../../public/images/instagram-color.png";
 import SvgYelpGeneric from "../../../components/images/SvgYelpGneric";
+import { ThemeContext, THEMES } from "../../../contexts/ThemeContext";
+import { useContext } from "react";
+import SvgIntroDark from "../../../components/images/sections/SvgIntroDark";
+import SvgIntroLight from "../../../components/images/sections/SvgIntroLight";
 
 const Intro = () => {
+  
+  const { theme, } = useContext(ThemeContext);
+
     return (
       <section id="home" className="pt-24 sm:pt-24 md:pt-32">
       <div className="mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
@@ -19,7 +26,7 @@ const Intro = () => {
 
           <div className="relative items-start gap-12 lg:flex">
             <div className="text-center sm:mx-auto sm:w-11/12 md:mt-12 md:w-4/5 lg:mt-0 lg:mr-auto lg:w-6/12 lg:text-left">
-              <p className="mt-12 text-lg text-gray-600 dark:text-gray-300 sm:text-xl">HAUS Property Services provides property maintenance, repair, and technical services for the connected home, catering to the evolving needs of homeowners in the greater Bozeman area. Our focus is to help each client create a more comfortable, functional, and happy home.</p>
+              <p className="mt-12 text-lg text-gray-600 dark:text-gray-300 sm:text-xl"><span className="font-semibold">HAUS Property Services</span> provides property maintenance, repair, and technical services for the connected home, catering to the evolving needs of homeowners in the greater Bozeman area. Our focus is to help each client create a more comfortable, functional, and happy home.</p>
               <div className="mt-12 text-lg text-gray-600 dark:text-gray-300 sm:text-xl hidden lg:block">
                 Also find us on:
               <div className="flex gap-4 pt-3">
@@ -41,13 +48,13 @@ const Intro = () => {
               </div>
             </div>
             <div className="mt-12 w-full overflow-hidden sm:mt-20 lg:-mt-8 lg:w-6/12">
-              <img className="w-full" src="./images/team.svg" alt="project illustration" height="600" width="800" />
+              {(theme === THEMES.DARK) ? <SvgIntroDark className="w-full" /> : <SvgIntroLight className="w-full" />}
             </div>
           </div>
-
         </div>
       </div>
-    </section>    )
+    </section>
+    )
   }
   
   export default Intro
