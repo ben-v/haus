@@ -13,10 +13,10 @@ const Intro = () => {
   const { theme, } = useContext(ThemeContext);
 
     return (
-      <section id="home" className="pt-24 sm:pt-24 md:pt-32">
+      <section id="home" className="pt-32 sm:pt-24 md:pt-24">
       <div className="mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
         <div className="relative">
-          <h1 className="text-center text-5xl font-bold text-blue-900 dark:text-white sm:text-6xl lg:text-left lg:text-7xl">
+          <h1 className="text-center text-5xl font-bold text-blue-900 dark:text-white sm:text-6xl lg:text-left lg:text-5xl">
             A Comfortable, Functional,&nbsp;
             <span className="relative">
               <SvgAccentLine className="absolute inset-x-0 -bottom-1 w-full opacity-50" />
@@ -47,8 +47,8 @@ const Intro = () => {
                 </div>
               </div>
             </div>
-            <div className="mt-12 w-full overflow-hidden sm:mt-20 lg:-mt-8 lg:w-6/12">
-              {(theme === THEMES.DARK) ? <SvgIntroDark className="w-full" /> : <SvgIntroLight className="w-full" />}
+            <div className="mt-12 w-full overflow-hidden sm:mt-20 lg:w-6/12">
+              {(theme === THEMES.DARK) ? <SvgIntroDark className="w-full" /> : <SvgIntroLight fill="red" className="w-full" />}
             </div>
           </div>
         </div>
