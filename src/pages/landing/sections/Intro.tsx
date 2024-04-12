@@ -13,10 +13,10 @@ const Intro1 = () => {
 
   return (
     <section id="home" className="pt-24 lg:pt-32">
-      <div className="mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
+      <div className="mx-auto px-4 md:px-6 xl:max-w-6xl xl:px-0">
         <div className="relative w-auto flex flex-col">
           <div className="p-2 w-auto">
-            <h1 className="text-center text-4xl font-bold text-blue-900 dark:text-white sm:text-5xl lg:text-left lg:text-5xl">
+            <h1 className="text-center lg:text-left font-bold text-blue-900 dark:text-white text-3xl md:text-4xl lg:text-5xl">
               Comfortable, Functional,&nbsp;
               <span className="relative">
                 <SvgAccentLine className="absolute inset-x-0 -bottom-1 w-full opacity-50" />
@@ -25,8 +25,8 @@ const Intro1 = () => {
             </h1>
           </div>
           <div className="flex flex-col lg:flex-row">
-            <div className="lg:w-7/12 w-auto p-2">
-              <p className="mt-4 lg:mt-16 text-lg text-gray-600 dark:text-gray-300 sm:text-xl text-center lg:text-left"><span className="font-semibold">HAUS Property Services</span> provides property maintenance, repair, and technical services for the connected home, catering to the evolving needs of homeowners in the greater Bozeman area. Our focus is to help create a more comfortable, functional, and happy home for each client.</p>
+            <div className="lg:w-7/12 w-auto">
+              <p className="m-2 md:m-6 lg:mt-12 lg:ml-3 text-gray-600 dark:text-gray-300 text-lg md:text-lg text-center md:text-left"><span className="font-semibold">HAUS Property Services</span> provides property maintenance, repair, and technical services for the connected home, catering to the evolving needs of homeowners in the greater Bozeman area. Our focus is to help create a more comfortable, functional, and happy home for each client.</p>
               {/* <div className="mt-16 text-lg text-gray-600 dark:text-gray-300 sm:text-xl hidden lg:block">
                 Also find us on:
                 <div className="flex gap-4 pt-3">
@@ -47,7 +47,7 @@ const Intro1 = () => {
                 </div>
               </div> */}
             </div>
-            <div className="lg:w-5/12 w-auto p-4 sm:pt-0 sm:pb-0 lg:mt-4">
+            <div className="lg:w-5/12 w-auto px-4 mt-2 lg:mt-6">
               {(theme === THEMES.DARK) ? <SvgIntroDark className="w-full" /> : <SvgIntroLight className="w-full" />}
             </div>
           </div>
