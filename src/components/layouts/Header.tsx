@@ -27,7 +27,7 @@ const Header = () => {
   
   const navLinkGroup: NavLinkGroup = {
     links: [
-      { url: '/#clients', label: 'Clients' },
+      { url: '/clients/#', label: 'Clients' },
       { url: '/#services', label: 'Services' },
       { url: '/service-area/#', label: 'Service Area' },
       { url: '/faqs/#', label: 'FAQs' },

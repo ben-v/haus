@@ -14,6 +14,7 @@ import Terms from "./pages/terms";
 import Partners from "./pages/partners";
 import Faqs from "./pages/faqs";
 import ServiceArea from "./pages/service-area";
+import ClientsPage from "./pages/clients";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/clients" element={<ClientsPage />} />
         <Route path="/old" element={<Home />} />
         <Route path="/service-area" element={<ServiceArea />} />
         <Route path="/faqs" element={<Faqs />} />

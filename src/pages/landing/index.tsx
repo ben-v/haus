@@ -1,6 +1,6 @@
 import Intro1 from './sections/Intro'
 import Intro2 from './sections/Intro-2'
-import NewClients from './sections/NewClients'
+// import NewClients from '../clients/sections/NewClients'
 // import Clients from './sections/Clients'
 // import Services from './sections/Services'
 // import ServiceArea from './sections/ServiceArea'
@@ -15,7 +15,7 @@ const Landing = () => {
       <LayoutTestingReverseRowFlow /> */}
       <Intro1 />
       <Intro2 />
-      <NewClients />
+      {/* <NewClients /> */}
       {/* 
       <Intro2 />
       <Clients />
