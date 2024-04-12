@@ -3,12 +3,12 @@ import { useContext } from "react";
 import SvgIntroSuccessDark from "../../../components/images/sections/SvgIntroSuccessDark";
 import SvgIntroSuccessLight from "../../../components/images/sections/SvgIntroSuccessLight";
 
-const Intro2 = () => {
+const IntroSuccessFoundationPitch = () => {
 
     const { theme, } = useContext(ThemeContext);
 
     return (
-        <section id="intro-2" className="pt-0 md:pt-16 lg:pt-8">
+        <section id="intro-success-foundation-pitch" className="pt-0 md:pt-16 lg:pt-8 pb-10">
             <div className="mx-auto px-4 md:px-6 xl:max-w-6xl xl:px-0">
                 <div className="relative w-auto flex flex-col">
                     <div className="flex flex-col lg:flex-row-reverse">
@@ -28,4 +28,4 @@ const Intro2 = () => {
     )
 }
 
-export default Intro2
+export default IntroSuccessFoundationPitch

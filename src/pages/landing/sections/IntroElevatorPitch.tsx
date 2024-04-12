@@ -8,11 +8,11 @@ import { useContext } from "react";
 import SvgIntroDark from "../../../components/images/sections/SvgIntroDark";
 import SvgIntroLight from "../../../components/images/sections/SvgIntroLight";
 
-const Intro1 = () => {
+const IntroElevatorPitch = () => {
   const { theme, } = useContext(ThemeContext);
 
   return (
-    <section id="home" className="pt-24 lg:pt-32">
+    <section id="intro-elevator-pitch" className="pt-24 lg:pt-32">
       <div className="mx-auto px-4 md:px-6 xl:max-w-6xl xl:px-0">
         <div className="relative w-auto flex flex-col">
           <div className="p-2 w-auto">
@@ -57,4 +57,4 @@ const Intro1 = () => {
   )
 }
 
-export default Intro1
+export default IntroElevatorPitch

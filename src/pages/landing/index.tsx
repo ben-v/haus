@@ -1,26 +1,19 @@
-import Intro1 from './sections/Intro'
-import Intro2 from './sections/Intro-2'
-// import NewClients from '../clients/sections/NewClients'
-// import Clients from './sections/Clients'
-// import Services from './sections/Services'
-// import ServiceArea from './sections/ServiceArea'
-
-// import LayoutTestingRegularRowFlow from "./sections/LayoutTestingRegularRowFlow"
-// import LayoutTestingReverseRowFlow from "./sections/LayoutTestingReverseRowFlow"
+import IntroElevatorPitch from './sections/IntroElevatorPitch'
+import IntroSuccessFoundationPitch from './sections/IntroSuccessFoundationPitch'
 
 const Landing = () => {
   return (
     <>
-      {/* <LayoutTestingRegularRowFlow />
-      <LayoutTestingReverseRowFlow /> */}
-      <Intro1 />
-      <Intro2 />
-      {/* <NewClients /> */}
-      {/* 
-      <Intro2 />
-      <Clients />
+      <IntroElevatorPitch />
+      <IntroSuccessFoundationPitch />
+      {/*
+      
+      Might leave services section on the landing page because want that to be readily avaible to user; the menu option, although the hamburger menu is normal on mobile, is not super obvious. 
+      By keeping this secton on landing page, I'm betting this is information the user wants right away.
+      
       <Services />
-      <ServiceArea /> */}
+      
+      */}
     </>
   )
 }

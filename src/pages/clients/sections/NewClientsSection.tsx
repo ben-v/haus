@@ -4,7 +4,7 @@ import PngNewRequest from "../../../../public/images/screenshots/new-request.png
 
 const NewClientsSection = () => {
     return (
-        <section id="new-clients" className="pt-16">
+        <section id="new-clients" className="pt-0 md:pt-16 lg:pt-8">
             <div className="mx-auto px-4 md:px-6 xl:max-w-6xl xl:px-0">
                 <div className="relative w-auto flex flex-col">
                     <div className="md:flex md:flex-col md:gap-24">
