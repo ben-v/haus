@@ -29,7 +29,7 @@ const Header = () => {
     links: [
       { url: '/#clients', label: 'Clients' },
       { url: '/#services', label: 'Services' },
-      { url: '/#service-area', label: 'Service Area' },
+      { url: '/service-area/#', label: 'Service Area' },
       { url: '/faqs/#', label: 'FAQs' },
       { url: '/contact/#', label: 'Contact' },      
     ]

@@ -13,6 +13,7 @@ import Privacy from "./pages/privacy";
 import Terms from "./pages/terms";
 import Partners from "./pages/partners";
 import Faqs from "./pages/faqs";
+import ServiceArea from "./pages/service-area";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/old" element={<Home />} />
+        <Route path="/service-area" element={<ServiceArea />} />
         <Route path="/faqs" element={<Faqs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/request" element={<Request />} />
