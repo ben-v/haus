@@ -1,101 +1,60 @@
-// import React from 'react'
-// import { Link } from 'react-router-dom'
-// import Icons from '../../assets/images/icons/Icon'
-import PricingCard from "../../components/cards/PricingCard"
-import OrganizationCard from '../../components/cards/OrganizationCard'
-import IntroServiceAreaSection from './sections/IntroServiceAreaSection'
+import { HashLink } from "react-router-hash-link"
+
+import DetailCardWithImageCard from "../../components/cards/DetailCardWithImageCard"
+import PageHeader from "../../components/layouts/PageHeader"
+import SvgMapLocation from "../../components/images/icons/SvgMapLocation"
+import SvgServiceAreaMap from "../../components/images/sections/SvgServiceAreaMap"
 
 const ServiceAreaPage = () => {
   return (
     <section id="intro-service-area" className="overflow-x-clip pt-24 lg:pt-32 pb-10">
       <div className="mx-auto px-4 sm:px-12 xl:max-w-5xl xl:px-0">
-        {/* <div className="relative z-10 text-center md:mx-auto md:w-5/6 lg:w-4/6">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white md:text-4xl xl:text-5xl">A pricing for every need</h2>
-          <p className="mt-6 text-gray-700 dark:text-gray-300">Saepe nulla ab nobis itaque corporis fuga illo doloribus sequi esse aspernatur impedit nihil quisquam, voluptates placeat architecto adipisci id cum enim.</p>
-        </div> */}
-        <IntroServiceAreaSection />
-        <div className="relative mt-20">
-          <div className="absolute inset-0 -bottom-20 mx-auto mt-auto h-[50rem] w-[68rem] rounded-full bg-secondaryLight/50 blur-3xl dark:bg-secondary/40 md:m-auto"></div>
-          <div className="m-auto items-center justify-center -space-y-4 md:flex md:space-y-0 md:-space-x-1">
-            <OrganizationCard />
-            <PricingCard/>
-          </div>
+        <PageHeader 
+          titlePartA="Service" 
+          titlePartB=" Area" 
+          Description="Our primary service area encompasses the greater Bozeman area community and Gallatin County. Check out the list below for communities we commonly serve." />
+        <DetailCardWithImageCard
+          detailCard={
+            <>
+              <div className="flex items-center gap-4">
+                <div className="rounded-full bg-gradient-to-br from-primaryLight to-yellow-500 dark:from-primary dark:to-yellow-400">
+                  <div className="flex h-16 w-16 scale-[0.96] rounded-full bg-gray-900 dark:bg-white">
+                    <SvgMapLocation className="m-auto h-8 w-auto" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-white dark:text-gray-800">Communities We Serve</h3>
+                </div>
+              </div>
+              <div className="my-8 mb-8 grid grid-cols-2 rounded-3xl border border-gray-700 text-white dark:border-gray-200 dark:text-gray-600 [&>*]:border-gray-700 [&>*]:p-4 [&>*]:dark:border-gray-200">
+                <div className="flex justify-center gap-2 border-b">
+                  Bozeman
+                </div>
+                <div className="flex justify-center gap-2 border-b border-l">
+                  Belgrade
+                </div>
+                <div className="flex justify-center gap-2">
+                  Gallatin Gateway
+                </div>
+                <div className="flex justify-center gap-2 border-l">
+                  Big Sky
+                </div>
+              </div>
 
-        </div>
+              <p className="my-8 text-white dark:text-gray-700">Communities outside the Bozeman, Belgrade, Gallatin Gateway city/community limits have a scaling trip fee.</p>
+
+              <p className="my-8 text-white dark:text-gray-700">Don't see your community listed or have other questions about our service area? Please contact us to confirm if you're located within our broader service area.</p>
+
+              <HashLink to="/contact/#" className="block rounded-2xl border border-gray-700 bg-gray-700/50 p-6 text-center dark:border-primary/20 dark:bg-primary/5 md:-mx-6 md:-mb-6 lg:-mx-12 lg:-mb-12">
+                <span className="text-xl font-semibold text-primaryLight dark:text-primary">Contact Us</span>
+              </HashLink>
+            </>
+          }
+          imageCard={<SvgServiceAreaMap className="mx-auto rounded-3xl border border-gray-300 object-cover object-top shadow-2xl" />}
+        />
       </div>
     </section>
   )
 }
 
 export default ServiceAreaPage
-
-
-// import SvgServiceAreaMap from "../../components/images/sections/SvgServiceAreaMap"
-
-// const ServiceArea = () => {
-//     return (
-//         <section className="py-32 sm:pt-32 md:pt-32 lg:pt-32">
-//             <div className="mx-auto px-4 sm:px-12 xl:max-w-5xl xl:px-0">
-//                 <div className="relative z-10 text-start">
-//                     <h1 className="relative text-start text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">Service Area</h1>
-//                 </div>
-//                 <div className="mt-12">
-//                     <div className="relative">
-//                         <div className="relative">
-//                             <h2 className="text-2xl font-bold text-gray-800 dark:text-white">To do</h2>
-//                         </div>
-//                         <div className="md:flex md:flex-col md:gap-24">
-//                             <div className="w-auto">
-//                                 <div className="space-y-12 md:flex md:space-y-0 gap-4">
-//                                     <div className="relative w-full">
-//                                         <div>
-//                                             <h3 className="text-xl font-bold text-gray-900 dark:text-white md:text-2xl">Are you a new client?</h3>
-//                                             {/* <p className="mt-8 text-gray-600 dark:text-gray-300">An easy way to get started, is to send us a new work request. Once received, we will review and follow up with you regarding next steps.</p>
-//                                             <div className="mt-12 space-y-6">
-//                                                 <div className="flex items-center gap-6">
-//                                                     <div className="flex h-20 w-20 rounded-3xl border border-gray-200 bg-white p-1 align-middle dark:border-gray-600/60 dark:bg-gray-900/40">
-//                                                         <SvgTodo className="m-auto w-auto" width={64} height={64} />
-//                                                     </div>
-//                                                     <div className="w-[calc(100%-7.5rem)]">
-//                                                         <h4 className="text-lg font-semibold text-gray-800 dark:text-white">To do list...</h4>
-//                                                         <p className="mt-1 text-gray-600 dark:text-gray-400">Have a to do list that keeps growing?</p>
-//                                                     </div>
-//                                                 </div>
-
-//                                                 <div className="flex items-center gap-6">
-//                                                     <div className="flex h-20 w-20 rounded-3xl border border-gray-200 bg-white p-1 align-middle dark:border-gray-600/60 dark:bg-gray-900/40">
-//                                                         <SvgQuestion className="m-auto w-auto" width={64} height={64} />
-//                                                     </div>
-//                                                     <div className="w-[calc(100%-7.5rem)]">
-//                                                         <h4 className="text-lg font-semibold text-gray-800 dark:text-white">Questions?</h4>
-//                                                         <p className="mt-1 text-gray-600 dark:text-gray-400">Have some questions you'd like addressed before moving forward?</p>
-//                                                     </div>
-//                                                 </div>
-//                                                 <a href="/request/#" className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 active:duration-75 active:before:scale-95 dark:before:bg-primaryLight">
-//                                                     <span className="relative text-base font-semibold text-white dark:text-dark">New Client Work Request</span>
-//                                                 </a>
-//                                             </div> */}
-//                                         </div>
-//                                     </div>
-//                                     <div className="-m-4 overflow-hidden p-4 sm:-mx-12 sm:px-12 md:mx-0 md:w-1/2 md:overflow-visible md:px-0">
-//                                         <div className="relative bg-gray-100 before:absolute before:inset-0 before:scale-x-110 before:border-y before:border-gray-200 after:absolute after:inset-0 after:scale-y-110 after:border-x after:border-gray-200 dark:bg-gray-800 dark:before:border-gray-700 dark:after:border-gray-700">
-//                                             <div className="relative h-96 overflow-clip py-10 sm:h-[32rem] lg:p-20">
-//                                                 <div data-target="panel-0" className="panel-preview absolute inset-0 z-0 flex items-center px-6 sm:px-10">
-//                                                     {/* <img src="./images/screenshots/new-request.png" className="mx-auto h-80 w-96 rounded-t-3xl border object-cover object-top shadow-2xl dark:border-transparent sm:h-[28rem]" alt="new client work request screenshot" width="850" height="1780" /> */}
-//                                                     <SvgServiceAreaMap />
-//                                                 </div>
-//                                             </div>
-//                                         </div>
-//                                     </div>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//         </section>
-
-//     )
-// }
-
-// export default ServiceArea

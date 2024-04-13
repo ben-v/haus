@@ -1,8 +1,8 @@
 // import React from 'react'
 // import { Link } from 'react-router-dom'
 // import Icons from '../../assets/images/icons/Icon'
-import PricingCard from '../../../components/cards/PricingCard'
-import OrganizationCard from '../../../components/cards/OrganizationCard'
+// import PricingCard from '../../../components/cards/DetailCardWithImageCard'
+// import OrganizationCard from '../../../components/cards/OrganizationCard'
 
 const ServiceAreaDetailSection = () => {
   return (
@@ -15,8 +15,8 @@ const ServiceAreaDetailSection = () => {
         <div className="relative mt-20">
           <div className="absolute inset-0 -bottom-20 mx-auto mt-auto h-[50rem] w-[68rem] rounded-full bg-secondaryLight/50 blur-3xl dark:bg-secondary/40 md:m-auto"></div>
           <div className="m-auto items-center justify-center -space-y-4 md:flex md:space-y-0 md:-space-x-1">
-            <PricingCard />
-            <OrganizationCard />
+            {/* <PricingCard /> */}
+            {/* <OrganizationCard /> */}
           </div>
 
         </div>
