@@ -1,5 +1,5 @@
 // import { Link } from "react-router-dom"
-import SvgAccentLine from "../../../components/images/SvgAccentLine"
+// import SvgAccentLine from "../../../components/images/SvgAccentLine"
 // import SvgFacebookGeneric from "../../../components/images/SvgFacebookGeneric"
 // import PngInstagramColor from "../../../../public/images/instagram-color.png";
 // import SvgYelpGeneric from "../../../components/images/SvgYelpGneric";
@@ -7,15 +7,16 @@ import { ThemeContext, THEMES } from "../../../contexts/ThemeContext";
 import { useContext } from "react";
 import SvgIntroDark from "../../../components/images/sections/SvgIntroDark";
 import SvgIntroLight from "../../../components/images/sections/SvgIntroLight";
+import PageHeader from "../../../components/layouts/PageHeader";
 
 const IntroElevatorPitch = () => {
   const { theme, } = useContext(ThemeContext);
 
   return (
-    <section id="intro-elevator-pitch" className="pt-24 lg:pt-32">
+    <section id="home" className="pt-24 lg:pt-32">
       <div className="mx-auto px-4 md:px-6 xl:max-w-6xl xl:px-0">
         <div className="relative w-auto flex flex-col">
-          <div className="p-2 w-auto">
+          {/* <div className="p-2 w-auto">
             <h1 className="text-center lg:text-left font-bold text-blue-900 dark:text-white text-3xl md:text-4xl lg:text-5xl">
               Comfortable, Functional,&nbsp;
               <span className="relative">
@@ -23,7 +24,8 @@ const IntroElevatorPitch = () => {
                 <span className="relative bg-gradient-to-r from-primary to-secondaryLight bg-clip-text text-transparent dark:from-primaryLight dark:to-secondaryLight md:px-2">Happy Homes</span>
               </span>
             </h1>
-          </div>
+          </div> */}
+          <PageHeader titlePartA="Comfortable, Functional,&nbsp;" titlePartB="Happy Homes" highlightType="Vibrant" align="Left" />
           <div className="flex flex-col lg:flex-row">
             <div className="lg:w-7/12 w-auto">
               <p className="m-2 md:m-6 lg:mt-12 lg:ml-3 text-gray-600 dark:text-gray-300 text-lg text-center md:text-left"><span className="font-semibold">HAUS Property Services</span> provides property maintenance, repair, and technical services for the connected home, catering to the evolving needs of homeowners in the greater Bozeman area. Our focus is to help create a more comfortable, functional, and happy home for each client.</p>
