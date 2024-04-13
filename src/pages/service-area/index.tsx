@@ -7,7 +7,7 @@ import IntroServiceAreaSection from './sections/IntroServiceAreaSection'
 
 const ServiceAreaPage = () => {
   return (
-    <section id="intro-service-area" className="overflow-x-clip pt-24 lg:pt-32">
+    <section id="intro-service-area" className="overflow-x-clip pt-24 lg:pt-32 pb-10">
       <div className="mx-auto px-4 sm:px-12 xl:max-w-5xl xl:px-0">
         {/* <div className="relative z-10 text-center md:mx-auto md:w-5/6 lg:w-4/6">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white md:text-4xl xl:text-5xl">A pricing for every need</h2>

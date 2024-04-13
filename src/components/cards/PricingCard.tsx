@@ -19,7 +19,7 @@ const PricingCard = () => {
   return (
     <div className="relative z-10 -mx-2 rounded-3xl border border-gray-100 bg-white shadow-2xl shadow-gray-600/10 dark:border-gray-700/60 dark:bg-gray-800 dark:shadow-none md:mx-0 md:w-6/12 lg:w-5/12">
       <div className="space-y-6 p-8 sm:p-12">
-        <SvgServiceAreaMap className="mx-auto rounded-3xl border object-cover object-top shadow-2xl dark:border-transparent" />
+        <SvgServiceAreaMap className="mx-auto rounded-3xl border border-gray-300 object-cover object-top shadow-2xl" />
         {/* <div className="flex items-center justify-center gap-4">
           <div className="flex h-16 w-16 rounded-full border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800">
             <img src={imageUrl} className="m-auto h-8 w-auto" alt="organization icon" width="512" height="512" />
