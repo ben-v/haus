@@ -14,7 +14,7 @@ const OrganizationCard = () => {
             </div>
           </div>
           <div>
-            <h3 className="text-xl font-semibold text-white dark:text-gray-800">Communities We Service</h3>
+            <h3 className="text-xl font-semibold text-white dark:text-gray-800">Communities We Serve</h3>
           </div>
         </div>
 
