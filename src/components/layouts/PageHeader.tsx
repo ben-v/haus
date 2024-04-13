@@ -8,13 +8,15 @@ export interface PageHeaderProps {
     Description?: string,
     highlightType?: "None" | "Vibrant" | "Standard",
     highlightPart?: "A" | "B"
-    align?: "Left" | "Center" | "Right";
+    titleAlignment?: "Left" | "Center" | "Right";
+    descriptionAlignment?: "Left" | "Center" | "Right";
 }
 
 const defaultProps = {
     highlightType: "Standard",
     highlightPart: "B",
-    align: "Center"
+    titleAlignment: "Center",
+    descriptionAlignment: "Center"
 } satisfies Partial<PageHeaderProps>
 
 /**
@@ -32,22 +34,41 @@ const PageHeader = (props: PageHeaderProps) => {
     
     let title: string = "";
     const description: string = props.Description ? props.Description : "";
-    let alignment: string = "";
+    let titleAlignment: string = "";
+    let descriptionAlignment: string = "";
     let textColor: string = "text-gray-900";
 
-    if (props.align) {
-        switch (props.align) {
+    if (props.titleAlignment) {
+        switch (props.titleAlignment) {
             case "Left": {
-                alignment = "lg:text-left";
+                titleAlignment = "lg:text-left";
                 break;
             }
             case "Right": {
-                alignment = "lg:text-right";
+                titleAlignment = "lg:text-right";
                 break;
             }
             case "Center":
             default: {
-                alignment = "";
+                titleAlignment = "";
+                break;
+            }
+        }
+    }
+
+    if (props.descriptionAlignment) {
+        switch (props.descriptionAlignment) {
+            case "Left": {
+                descriptionAlignment = "lg:text-left";
+                break;
+            }
+            case "Right": {
+                descriptionAlignment = "lg:text-right";
+                break;
+            }
+            case "Center":
+            default: {
+                descriptionAlignment = "";
                 break;
             }
         }
@@ -88,8 +109,8 @@ const PageHeader = (props: PageHeaderProps) => {
 
     return (
         <div className="py-2 px-0 md:p-2 w-auto text-center">
-            <h1 className={`relative text-center ${alignment} font-bold ${textColor} dark:text-white text-4xl sm:text-5xl md:text-6xl`}>{parse(title)}</h1>
-            <p className="m-8 md:m-12 text-gray-600 dark:text-gray-300 text-lg md:text-lg w-auto">{description}</p>
+            <h1 className={`relative text-center ${titleAlignment} font-bold ${textColor} dark:text-white text-4xl sm:text-5xl md:text-6xl`}>{parse(title)}</h1>
+            <p className={`m-8 md:m-12 text-gray-600 ${descriptionAlignment} dark:text-gray-300 text-lg md:text-lg w-auto`}>{description}</p>
         </div>
     )
 }

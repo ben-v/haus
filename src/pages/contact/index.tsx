@@ -1,22 +1,15 @@
-// import React from 'react'
 
-import { Link } from "react-router-dom"
+import PageSection from "../../components/layouts/PageSection"
 import PageHeader from "../../components/layouts/PageHeader"
+import { HashLink } from "react-router-hash-link"
 
-const Contact = () => {
-  return (
-    <section className="py-32 sm:pt-32 md:pt-32 lg:pt-32">
-      <div className="mx-auto px-4 sm:px-12 xl:max-w-5xl xl:px-0">
+const ContactPage = () => {
+    return (
+      <PageSection id="contact">
         <PageHeader
           titlePartA="Let's"
           titlePartB=" Connect"
           Description="If you have project ideas or general questions you'd like to talk about, please fill out the form below to send us a message; we are happy to discuss with you and will reply shortly." />
-{/*           
-        <div className="relative z-10 text-center md:mx-auto md:w-5/6 lg:w-4/6">
-          <h1 className="relative text-center text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">Let's <span className="opacity-80">Connect</span></h1>
-          <p className="mt-6 text-gray-700 dark:text-gray-300">If you have project ideas or general questions you'd like to talk about, please fill out the form below to send us a message; we are happy to discuss with you and will reply shortly.</p>
-        </div> */}
-
         <div className="mt-12 grid gap-12 sm:mx-auto sm:max-w-lg lg:max-w-max lg:grid-cols-2">
           <div className="relative">
             <form action="" className="relative rounded-3xl border border-gray-100 bg-white p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none sm:p-12">
@@ -47,7 +40,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <p className="mb-8 text-sm text-gray-600 dark:text-gray-300">By clicking submit below, you agree to the processing of your personal information by HAUS Property Services as described in our <Link to="/privacy/#">Privacy Policy</Link>.</p>
+                <p className="mb-8 text-sm text-gray-600 dark:text-gray-300">By clicking submit below, you agree to the processing of your personal information by HAUS Property Services as described in our <HashLink to="/privacy/#">Privacy Policy</HashLink>.</p>
 
                 <button type="submit" className="relative ml-auto flex h-11 w-max items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 active:duration-75 active:before:scale-95 dark:before:bg-primaryLight">
                   <span className="relative text-base font-semibold text-white dark:text-gray-900">Get started</span>
@@ -84,10 +77,8 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-  )
-}
-
-export default Contact
+      </PageSection>
+    )
+  }
+  
+  export default ContactPage

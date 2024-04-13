@@ -4,11 +4,11 @@ import DetailCardWithImageCard from "../../components/cards/DetailCardWithImageC
 import PageHeader from "../../components/layouts/PageHeader"
 import SvgMapLocation from "../../components/images/icons/SvgMapLocation"
 import SvgServiceAreaMap from "../../components/images/sections/SvgServiceAreaMap"
+import PageSection from "../../components/layouts/PageSection"
 
 const ServiceAreaPage = () => {
   return (
-    <section id="intro-service-area" className="overflow-x-clip pt-24 lg:pt-32 pb-10">
-      <div className="mx-auto px-4 sm:px-12 xl:max-w-5xl xl:px-0">
+    <PageSection id="intro-service-area">
         <PageHeader 
           titlePartA="Service" 
           titlePartB=" Area" 
@@ -52,8 +52,7 @@ const ServiceAreaPage = () => {
           }
           imageCard={<SvgServiceAreaMap className="mx-auto rounded-3xl border border-gray-300 object-cover object-top shadow-2xl" />}
         />
-      </div>
-    </section>
+    </PageSection>
   )
 }
 

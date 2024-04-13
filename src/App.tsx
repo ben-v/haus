@@ -5,14 +5,14 @@ import Header from "./components/layouts/Header"
 import Footer from "./components/layouts/Footer"
 import GenericHttpError from "./components/errors/GenericHttpError";
 
-import Landing from "./pages/landing";
+import LandingPage from "./pages/landing";
 import Home from "./pages/home"
-import Contact from "./pages/contact";
+import ContactPage from "./pages/contact";
 import Request from "./pages/request";
-import Privacy from "./pages/privacy";
-import Terms from "./pages/terms";
-import Partners from "./pages/partners";
-import Faqs from "./pages/faqs";
+import PrivacyPage from "./pages/privacy";
+import TermsPage from "./pages/terms";
+import PartnersPage from "./pages/partners";
+import FaqsPage from "./pages/faqs";
 import ServiceAreaPage from "./pages/service-area";
 import ClientsPage from "./pages/clients";
 
@@ -21,16 +21,16 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Landing />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/clients" element={<ClientsPage />} />
         <Route path="/old" element={<Home />} />
         <Route path="/service-area" element={<ServiceAreaPage />} />
-        <Route path="/faqs" element={<Faqs />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/faqs" element={<FaqsPage />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route path="/request" element={<Request />} />
-        <Route path="/partners" element={<Partners />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/terms" element={<Terms />} />
+        <Route path="/partners" element={<PartnersPage />} />
+        <Route path="/privacy" element={<PrivacyPage />} />
+        <Route path="/terms" element={<TermsPage />} />
         <Route path="/server-error" element={<GenericHttpError title="500" description="Well, this is embarassing, we encountered an unexpected error." />} />
         <Route path="*" element={<GenericHttpError title="404" description="Hmm, we did not find the page you requested."/>} />
       </Routes>

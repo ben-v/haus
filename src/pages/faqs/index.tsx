@@ -1,14 +1,12 @@
+import PageSection from "../../components/layouts/PageSection"
 import PageHeader from "../../components/layouts/PageHeader"
 
-const Faqs = () => {
+const FaqsPage = () => {
     return (
-      <section className="py-32 sm:pt-32 md:pt-32 lg:pt-32">
-        <div className="mx-auto px-4 sm:px-12 xl:max-w-5xl xl:px-0">
+      <PageSection id="faqs">
         <PageHeader titlePartA="FAQs" />
-        </div>
-      </section>
-  
+      </PageSection>
     )
   }
   
-  export default Faqs
+  export default FaqsPage
