@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
-// import DynamicImageManager from '../../managers/DynamicImageManager'
+import { HashLink } from 'react-router-hash-link'
+
 import SvgMapLocation from '../images/icons/SvgMapLocation'
 
 const OrganizationCard = () => {
@@ -37,9 +37,9 @@ const OrganizationCard = () => {
 
         <p className="my-8 text-white dark:text-gray-700">Don't see your community listed? Please contact us to confirm if you're located within our broader service area.</p>
 
-        <Link to="/contact/#" className="block rounded-2xl border border-gray-700 bg-gray-700/50 p-6 text-center dark:border-primary/20 dark:bg-primary/5 md:-mx-6 md:-mb-6 lg:-mx-12 lg:-mb-12">
+        <HashLink to="/contact/#" className="block rounded-2xl border border-gray-700 bg-gray-700/50 p-6 text-center dark:border-primary/20 dark:bg-primary/5 md:-mx-6 md:-mb-6 lg:-mx-12 lg:-mb-12">
           <span className="text-xl font-semibold text-primaryLight dark:text-primary">Contact Us</span>
-        </Link>
+        </HashLink>
       </div>
     </div>
   )
