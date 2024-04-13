@@ -1,15 +1,21 @@
 // import React from 'react'
 
 import { Link } from "react-router-dom"
+import PageHeader from "../../components/layouts/PageHeader"
 
 const Contact = () => {
   return (
     <section className="py-32 sm:pt-32 md:pt-32 lg:pt-32">
       <div className="mx-auto px-4 sm:px-12 xl:max-w-5xl xl:px-0">
+        <PageHeader
+          titlePartA="Let's"
+          titlePartB=" Connect"
+          Description="If you have project ideas or general questions you'd like to talk about, please fill out the form below to send us a message; we are happy to discuss with you and will reply shortly." />
+{/*           
         <div className="relative z-10 text-center md:mx-auto md:w-5/6 lg:w-4/6">
           <h1 className="relative text-center text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">Let's <span className="opacity-80">Connect</span></h1>
           <p className="mt-6 text-gray-700 dark:text-gray-300">If you have project ideas or general questions you'd like to talk about, please fill out the form below to send us a message; we are happy to discuss with you and will reply shortly.</p>
-        </div>
+        </div> */}
 
         <div className="mt-12 grid gap-12 sm:mx-auto sm:max-w-lg lg:max-w-max lg:grid-cols-2">
           <div className="relative">
