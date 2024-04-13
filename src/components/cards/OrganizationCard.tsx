@@ -14,7 +14,7 @@ const OrganizationCard = () => {
             </div>
           </div>
           <div>
-            <h3 className="text-2xl font-semibold text-white dark:text-gray-800">Primary Communites We Serve</h3>
+            <h3 className="text-xl font-semibold text-white dark:text-gray-800">Communities We Service</h3>
           </div>
         </div>
 
@@ -35,7 +35,9 @@ const OrganizationCard = () => {
           </div>
         </div>
 
-        <p className="my-8 text-white dark:text-gray-700">Don't see your community listed? Please contact us to confirm if you're located within our broader service area.</p>
+        <p className="my-8 text-white dark:text-gray-700">Communities outside the Bozeman, Belgrade, Gallatin Gateway city/community limits have a scaling trip fee.</p>
+
+        <p className="my-8 text-white dark:text-gray-700">Don't see your community listed or have other questions about our service area? Please contact us to confirm if you're located within our broader service area.</p>
 
         <HashLink to="/contact/#" className="block rounded-2xl border border-gray-700 bg-gray-700/50 p-6 text-center dark:border-primary/20 dark:bg-primary/5 md:-mx-6 md:-mb-6 lg:-mx-12 lg:-mb-12">
           <span className="text-xl font-semibold text-primaryLight dark:text-primary">Contact Us</span>
