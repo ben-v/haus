@@ -15,16 +15,7 @@ const PricingNeed = () => {
         <div className="relative mt-20">
           <div className="absolute inset-0 -bottom-20 mx-auto mt-auto h-[50rem] w-[68rem] rounded-full bg-secondaryLight/50 blur-3xl dark:bg-secondary/40 md:m-auto"></div>
           <div className="m-auto items-center justify-center -space-y-4 md:flex md:space-y-0 md:-space-x-1">
-            <PricingCard
-              title="Teams"
-              description="For product teams"
-              discount={35}
-              advantages={[
-                "First premium advantage",
-                "Second advantage weekly",
-                "Third advantage donate to project"
-              ]}
-              phoneNumber="+1 000 000" imageUrl={'https://tailus.io/sources/blocks/comparator/preview/images/team.webp'} />
+            <PricingCard />
 
             <OrganizationCard />
           </div>

@@ -13,7 +13,7 @@ import Privacy from "./pages/privacy";
 import Terms from "./pages/terms";
 import Partners from "./pages/partners";
 import Faqs from "./pages/faqs";
-import ServiceArea from "./pages/service-area";
+import ServiceAreaPage from "./pages/service-area";
 import ClientsPage from "./pages/clients";
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/clients" element={<ClientsPage />} />
         <Route path="/old" element={<Home />} />
-        <Route path="/service-area" element={<ServiceArea />} />
+        <Route path="/service-area" element={<ServiceAreaPage />} />
         <Route path="/faqs" element={<Faqs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/request" element={<Request />} />

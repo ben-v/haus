@@ -1,24 +1,26 @@
 // import React from 'react';
-import { Link } from 'react-router-dom';
-import SvgPhoneSolid from '../images/SvgPhoneSolid';
+// import { Link } from 'react-router-dom';
+// import SvgPhoneSolid from '../images/SvgPhoneSolid';
+import SvgServiceAreaMap from '../images/sections/SvgServiceAreaMap';
 
-interface PricingCardProps {
-  title: string;
-  description: string;
-  imageUrl: string;
-  discount: number;
-  advantages: string[]; // Assuming advantages is an array of strings
-  phoneNumber: string;
-}
+// interface PricingCardProps {
+//   title: string;
+//   description: string;
+//   imageUrl: string;
+//   discount: number;
+//   advantages: string[]; // Assuming advantages is an array of strings
+//   phoneNumber: string;
+// }
 
-const PricingCard = (props: PricingCardProps) => {
+const PricingCard = () => {
 
-  const { title, description, imageUrl, discount, advantages, phoneNumber } = props;
+  // const { title, description, imageUrl, discount, advantages, phoneNumber } = props;
 
   return (
     <div className="relative z-10 -mx-2 rounded-3xl border border-gray-100 bg-white shadow-2xl shadow-gray-600/10 dark:border-gray-700/60 dark:bg-gray-800 dark:shadow-none md:mx-0 md:w-6/12 lg:w-5/12">
       <div className="space-y-6 p-8 sm:p-12">
-        <div className="flex items-center justify-center gap-4">
+        <SvgServiceAreaMap className="mx-auto rounded-3xl border object-cover object-top shadow-2xl dark:border-transparent" />
+        {/* <div className="flex items-center justify-center gap-4">
           <div className="flex h-16 w-16 rounded-full border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800">
             <img src={imageUrl} className="m-auto h-8 w-auto" alt="organization icon" width="512" height="512" />
           </div>
@@ -56,7 +58,7 @@ const PricingCard = (props: PricingCardProps) => {
         </p>
         <Link to="#" className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 active:duration-75 active:before:scale-95 dark:before:bg-primaryLight">
           <span className="relative text-base font-semibold text-white dark:text-dark">Send us an Email</span>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
