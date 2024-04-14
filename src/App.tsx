@@ -8,7 +8,7 @@ import GenericHttpError from "./components/errors/GenericHttpError";
 import LandingPage from "./pages/landing";
 import Home from "./pages/home"
 import ContactPage from "./pages/contact";
-import Request from "./pages/request";
+import WorkRequestPage from "./pages/work-request";
 import PrivacyPage from "./pages/privacy";
 import TermsPage from "./pages/terms";
 import PartnersPage from "./pages/partners";
@@ -27,7 +27,7 @@ function App() {
         <Route path="/service-area" element={<ServiceAreaPage />} />
         <Route path="/faqs" element={<FaqsPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/request" element={<Request />} />
+        <Route path="/work-request" element={<WorkRequestPage />} />
         <Route path="/partners" element={<PartnersPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/terms" element={<TermsPage />} />
