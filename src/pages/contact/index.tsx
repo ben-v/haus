@@ -1,5 +1,10 @@
+import { useContext } from "react";
+
 import { Link } from "react-router-dom"
 import { HashLink } from "react-router-hash-link"
+import resolveConfig from 'tailwindcss/resolveConfig'
+import tailwindConfig from '../../../tailwind.config';
+import { THEMES, ThemeContext } from "../../contexts/ThemeContext";
 
 import PageSection from "../../components/layouts/PageSection"
 import PageHeader from "../../components/layouts/PageHeader"
@@ -9,8 +14,13 @@ import SvgYelpGeneric from "../../components/images/SvgYelpGneric"
 import SvgFacebookGeneric from "../../components/images/SvgFacebookGeneric"
 import PngInstagramColor from "../../../public/images/instagram-color.png";
 import ContentBackground from "../../components/effects/ContentBackground"
+import SvgPaperPlaneSolid from "../../components/images/icons/SvgPaperPlaneSolid"
+
+const fullConfig = resolveConfig(tailwindConfig)
 
 const ContactPage = () => {
+  const { theme, } = useContext(ThemeContext);
+
   return (
     <PageSection id="contact">
       <PageHeader
@@ -49,8 +59,12 @@ const ContactPage = () => {
 
               <p className="mb-8 text-sm text-gray-600 dark:text-gray-300">By clicking submit below, you agree to the processing of your personal information by HAUS Property Services as described in our <HashLink to="/privacy/#">Privacy Policy</HashLink>.</p>
 
-              <button type="submit" className="relative ml-auto flex h-11 w-max items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 active:duration-75 active:before:scale-95 dark:before:bg-primaryLight">
-                <span className="relative text-base font-semibold text-white dark:text-gray-900">Get started</span>
+              <button type="submit" className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 active:duration-75 active:before:scale-95 dark:before:bg-primaryLight">
+                <div className="pr-2">
+                  <SvgPaperPlaneSolid width={16} height={16} className='relative m-auto' fill={theme === THEMES.DARK ? fullConfig.theme.colors.dark : fullConfig.theme.colors.white} />
+                </div>
+
+                <span className="relative text-base font-semibold text-white dark:text-dark">Send Message</span>
               </button>
             </div>
           </form>

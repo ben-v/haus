@@ -9,6 +9,7 @@ import SvgArrowUpRightFromSquareSolid from "../../../components/images/SvgArrowU
 import PngExistingClientHub from "../../../../public/images/screenshots/client-hub.png"
 import SharpCornerClipContainer from "../../../components/containers/SharpCornerClipContainer";
 import ContentBackground from "../../../components/effects/ContentBackground";
+import SvgAddressBookSolid from "../../../components/images/SvgAddressBookSolid";
 
 const fullConfig = resolveConfig(tailwindConfig)
 
@@ -49,6 +50,10 @@ const ExistingClients = () => {
 
                                     <div>
                                         <Link to="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" target="_blank" className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 active:duration-75 active:before:scale-95 dark:before:bg-primaryLight">
+                                            <div className="pr-2">
+                                                <SvgAddressBookSolid width={16} height={16} className='relative m-auto' fill={theme === THEMES.DARK ? fullConfig.theme.colors.dark : fullConfig.theme.colors.white} />
+                                            </div>
+
                                             <div>
                                                 <span className="relative text-base font-semibold text-white dark:text-dark">
                                                     Existing Client Hub

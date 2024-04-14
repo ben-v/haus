@@ -1,10 +1,20 @@
+import { useContext } from "react";
+import SharpCornerClipContainer from "../../../components/containers/SharpCornerClipContainer";
+import ContentBackground from "../../../components/effects/ContentBackground";
+import resolveConfig from 'tailwindcss/resolveConfig'
+import tailwindConfig from '../../../../tailwind.config';
+import { THEMES, ThemeContext } from "../../../contexts/ThemeContext";
+
 import SvgQuestion from "../../../components/images/icons/SvgQuestion";
 import SvgTodo from "../../../components/images/icons/SvgTodo";
 import PngNewRequest from "../../../../public/images/screenshots/new-request.png";
-import SharpCornerClipContainer from "../../../components/containers/SharpCornerClipContainer";
-import ContentBackground from "../../../components/effects/ContentBackground";
+import SvgRectangleListSolid from "../../../components/images/SvgRectangleListSolid";
+
+const fullConfig = resolveConfig(tailwindConfig)
 
 const NewClients = () => {
+    const { theme, } = useContext(ThemeContext);
+
     return (
         <div className="relative w-auto flex flex-col">
             <ContentBackground />
@@ -36,6 +46,10 @@ const NewClients = () => {
                                         </div>
                                     </div>
                                     <a href="/request/#" className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 active:duration-75 active:before:scale-95 dark:before:bg-primaryLight">
+                                        <div className="pr-2">
+                                            <SvgRectangleListSolid width={16} height={16} className='relative m-auto' fill={theme === THEMES.DARK ? fullConfig.theme.colors.dark : fullConfig.theme.colors.white} />
+                                        </div>
+
                                         <span className="relative text-base font-semibold text-white dark:text-dark">New Client Work Request</span>
                                     </a>
                                 </div>
