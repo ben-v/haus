@@ -92,7 +92,7 @@ const ContactPage = () => {
                     value={name}
                     type="text"
                     autoComplete="given-name"
-                    className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
+                    className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 dark:text-gray-300 transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
                   <span className="mt-1 hidden text-sm text-red-500 peer-invalid:block">Helper</span>
                 </div>
                 <div>
@@ -104,7 +104,7 @@ const ContactPage = () => {
                     value={email}
                     type="email"
                     autoComplete="email"
-                    className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
+                    className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 dark:text-gray-300 transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
                   <span className="mt-1 hidden text-sm text-red-500 peer-invalid:block">Helper</span>
                 </div>
                 <div>
@@ -115,7 +115,7 @@ const ContactPage = () => {
                     onChange={(e) => onChangeHandler(e)}
                     value={message}
                     defaultValue={""}
-                    className="peer block h-28 w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700"></textarea>
+                    className="peer block h-28 w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 dark:text-gray-300 transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700"></textarea>
                   <span className="mt-1 hidden text-sm text-red-500 peer-invalid:block">Helper</span>
                 </div>
               </div>
