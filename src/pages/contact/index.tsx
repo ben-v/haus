@@ -72,17 +72,17 @@ const ContactPage = () => {
         <RounderCornerContainer>
           <CardHeader title="Also, find us on:" />
           <div className="relative flex gap-4 pt-3">
-              <Link to="https:www.facebook.com/haus.property.svcs" target="_blank" aria-label="facebook">
+              <Link to="https://www.facebook.com/haus.property.svcs" target="_blank" aria-label="facebook">
                 {/* No need for a separate color image file for Yelp. Use generic and apply color. Got the Facebook "blue" color by color sampling in another app and applyling here via fill property. */}
                 <SvgFacebookGeneric fill="#0866FF" width={48} height={48} />
               </Link>
-              <Link to="https:www.instagram.com/haus.property.svcs" target="_blank" aria-label="instagram">
+              <Link to="https://www.instagram.com/haus.property.svcs" target="_blank" aria-label="instagram">
                 {/* The media kit SVG file for Instagram is massive, 11+ MB, and too big for website usage. Tried to make smaller SVG file but could not get it below the original file size. Went with their provided
                 PNG file and reduced the size to 512x512 which got the file down to 168k. Wanted to use their official gradient colored image, so needed to use fully colorized image instead
                 of overriding the fill color on the generic instagram component, SvgInstagramGeneric. */}
                 <img src={PngInstagramColor} width={48} height={48} />
               </Link>
-              <Link to="https:www.yelp.com/biz/haus-property-services-bozeman" target="_blank" aria-label="yelp">
+              <Link to="https://www.yelp.com/biz/haus-property-services-bozeman" target="_blank" aria-label="yelp">
                 {/* No need for a separate color image file for Yelp. Use generic and apply color. Got the Yelp "red" color by color sampling in another app and applyling here via fill property. */}
                 <SvgYelpGeneric fill="#FF1A1A" width={48} height={48} />
               </Link>
