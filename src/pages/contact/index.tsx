@@ -46,7 +46,7 @@ const ContactPage = () => {
         emailjs
           .send(
             "service_0dzhd2z",  // service id
-            "template_3t0snwh", // template id
+            "template_x639n8l", // template id
             mailData,
             "cGpfsTEjddquOdhTO" // public api key
           ), {
