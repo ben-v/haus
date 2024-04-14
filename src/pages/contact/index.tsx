@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import { Link } from "react-router-dom"
 import { HashLink } from "react-router-hash-link"
@@ -16,43 +16,106 @@ import PngInstagramColor from "../../../public/images/instagram-color.png";
 import ContentBackground from "../../components/effects/ContentBackground"
 import SvgPaperPlaneSolid from "../../components/images/icons/SvgPaperPlaneSolid"
 
+import emailjs from "@emailjs/browser";
+import toast, { Toaster } from 'react-hot-toast';
+
 const fullConfig = resolveConfig(tailwindConfig)
 
 const ContactPage = () => {
   const { theme, } = useContext(ThemeContext);
 
+  const [mailData, setMailData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const { name, email, message } = mailData;
+  const onChangeHandler = (e: any) => setMailData({ ...mailData, [e.currentTarget.name]: e.currentTarget.value });
+  const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    // Dismiss any lingering toast message.
+    toast.dismiss();
+
+    if (name.length === 0 || email.length === 0 || message.length === 0) {
+      toast.dismiss();
+      toast.error("All fields are required. Please try again.")
+    } else {
+      toast.promise(
+        emailjs
+          .send(
+            "service_0dzhd2z",  // service id
+            "template_3t0snwh", // template id
+            mailData,
+            "cGpfsTEjddquOdhTO" // public api key
+          ), {
+            loading: "Sending message...",
+            success: (data) => {
+              setMailData({ name: "", email: "", message: "" });
+              console.log('SEND MESSAGE SUCCESS!', data.status, data.text);
+              return "Message sent!";
+            },
+            error: (err) => {
+              console.log('SEND MESSAGE FAILED...', err);
+              return "Send message failed! Please check fields and try again."
+            }
+        },
+        {
+          style: {
+            minWidth: '390px',
+          }
+        }
+      );
+    }
+  };
+  
   return (
     <PageSection id="contact">
       <PageHeader
         titlePartA="Let's"
         titlePartB=" Connect"
-        Description="If you have project ideas or general questions you'd like to talk about, please fill out the form below to send us a message; we are happy to discuss with you and will reply shortly." />
+        Description="If you have project ideas or questions you'd like to discuss, please fill out the form below to send us a message." />
       <div className="relative grid gap-12 sm:mx-auto sm:max-w-lg lg:max-w-max lg:grid-cols-2">
         <ContentBackground />
         <RounderCornerContainer>
-          <CardHeader title="What should we know?" />
-          <form action="" className="w-auto">
+          <CardHeader title="Message Form" />
+          <form onSubmit={onSubmitHandler} className="w-auto">
             <div className="relative">
               <div className="mt-8 mb-6 space-y-4">
                 <div>
                   <label htmlFor="name" className="mb-2 block text-gray-600 dark:text-gray-300 text-lg">Name <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
-                  <input type="text" name="name" id="name" className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
+                  <input 
+                    id="name" 
+                    name="name"
+                    onChange={(e) => onChangeHandler(e)}
+                    value={name}
+                    type="text"
+                    autoComplete="given-name"
+                    className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
                   <span className="mt-1 hidden text-sm text-red-500 peer-invalid:block">Helper</span>
                 </div>
                 <div>
                   <label htmlFor="email" className="mb-2 block text-gray-600 dark:text-gray-300 text-lg">Email <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
-                  <input type="email" name="email" id="email" className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
+                  <input
+                    id="email" 
+                    name="email"
+                    onChange={(e) => onChangeHandler(e)}
+                    value={email}
+                    type="email"
+                    autoComplete="email"
+                    className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
                   <span className="mt-1 hidden text-sm text-red-500 peer-invalid:block">Helper</span>
                 </div>
                 <div>
-                  <label htmlFor="phone" className="mb-2 block text-gray-600 dark:text-gray-300 text-lg">Phone <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
-                  <input type="tel" name="phone" id="phone" className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
-                  <span className="mt-1 hidden text-sm text-red-500 peer-invalid:block">Helper</span>
-                </div>
-                <div>
-                  <label htmlFor="company" className="mb-2 block text-gray-600 dark:text-gray-300 text-lg">Message <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
-                  <textarea name="message" id="message" className="peer block h-28 w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700"></textarea>
-
+                  <label htmlFor="message" className="mb-2 block text-gray-600 dark:text-gray-300 text-lg">Message <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
+                  <textarea 
+                    id="message"
+                    name="message"
+                    onChange={(e) => onChangeHandler(e)}
+                    value={message}
+                    defaultValue={""}
+                    className="peer block h-28 w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700"></textarea>
                   <span className="mt-1 hidden text-sm text-red-500 peer-invalid:block">Helper</span>
                 </div>
               </div>
@@ -70,25 +133,56 @@ const ContactPage = () => {
           </form>
         </RounderCornerContainer>
         <RounderCornerContainer>
-          <CardHeader title="Also, find us on:" />
+          <CardHeader title="Also connect with HAUS on:" />
           <div className="relative flex gap-4 pt-3">
-              <Link to="https://www.facebook.com/haus.property.svcs" target="_blank" aria-label="facebook">
-                {/* No need for a separate color image file for Yelp. Use generic and apply color. Got the Facebook "blue" color by color sampling in another app and applyling here via fill property. */}
-                <SvgFacebookGeneric fill="#0866FF" width={48} height={48} />
-              </Link>
-              <Link to="https://www.instagram.com/haus.property.svcs" target="_blank" aria-label="instagram">
-                {/* The media kit SVG file for Instagram is massive, 11+ MB, and too big for website usage. Tried to make smaller SVG file but could not get it below the original file size. Went with their provided
+            <Link to="https://www.facebook.com/haus.property.svcs" target="_blank" aria-label="facebook">
+              {/* No need for a separate color image file for Yelp. Use generic and apply color. Got the Facebook "blue" color by color sampling in another app and applyling here via fill property. */}
+              <SvgFacebookGeneric fill="#0866FF" width={48} height={48} />
+            </Link>
+            <Link to="https://www.instagram.com/haus.property.svcs" target="_blank" aria-label="instagram">
+              {/* The media kit SVG file for Instagram is massive, 11+ MB, and too big for website usage. Tried to make smaller SVG file but could not get it below the original file size. Went with their provided
                 PNG file and reduced the size to 512x512 which got the file down to 168k. Wanted to use their official gradient colored image, so needed to use fully colorized image instead
                 of overriding the fill color on the generic instagram component, SvgInstagramGeneric. */}
-                <img src={PngInstagramColor} width={48} height={48} />
-              </Link>
-              <Link to="https://www.yelp.com/biz/haus-property-services-bozeman" target="_blank" aria-label="yelp">
-                {/* No need for a separate color image file for Yelp. Use generic and apply color. Got the Yelp "red" color by color sampling in another app and applyling here via fill property. */}
-                <SvgYelpGeneric fill="#FF1A1A" width={48} height={48} />
-              </Link>
-            </div>
+              <img src={PngInstagramColor} width={48} height={48} />
+            </Link>
+            <Link to="https://www.yelp.com/biz/haus-property-services-bozeman" target="_blank" aria-label="yelp">
+              {/* No need for a separate color image file for Yelp. Use generic and apply color. Got the Yelp "red" color by color sampling in another app and applyling here via fill property. */}
+              <SvgYelpGeneric fill="#FF1A1A" width={48} height={48} />
+            </Link>
+          </div>
         </RounderCornerContainer>
+        <Toaster
+          position="top-center"
+          toastOptions={{
+            // default options
+            duration: 120000,
 
+            // success toast options
+            success: {
+              iconTheme: {
+                primary: 'white',
+                secondary: 'green',
+              },
+              style: {
+                color: 'white',
+                background: 'green'
+              },
+              duration: 5000
+            },
+
+            // error toast options
+            error: {
+              iconTheme: {
+                primary: 'white',
+                secondary: 'red',
+              },
+              style: {
+                color: 'white',
+                background: 'red'
+              },
+              duration: 5000
+            },
+          }} />
       </div>
     </PageSection>
   )
