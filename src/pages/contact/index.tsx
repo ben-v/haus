@@ -93,7 +93,6 @@ const ContactPage = () => {
                     type="text"
                     autoComplete="given-name"
                     className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 dark:text-gray-300 transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
-                  <span className="mt-1 hidden text-sm text-red-500 peer-invalid:block">Helper</span>
                 </div>
                 <div>
                   <label htmlFor="email" className="mb-2 block text-gray-600 dark:text-gray-300 text-lg">Email <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
@@ -105,7 +104,6 @@ const ContactPage = () => {
                     type="email"
                     autoComplete="email"
                     className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 dark:text-gray-300 transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
-                  <span className="mt-1 hidden text-sm text-red-500 peer-invalid:block">Helper</span>
                 </div>
                 <div>
                   <label htmlFor="message" className="mb-2 block text-gray-600 dark:text-gray-300 text-lg">Message <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
@@ -115,8 +113,8 @@ const ContactPage = () => {
                     onChange={(e) => onChangeHandler(e)}
                     value={message}
                     defaultValue={""}
+                    maxLength={4000}
                     className="peer block h-28 w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 dark:text-gray-300 transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700"></textarea>
-                  <span className="mt-1 hidden text-sm text-red-500 peer-invalid:block">Helper</span>
                 </div>
               </div>
 
