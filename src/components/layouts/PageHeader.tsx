@@ -110,7 +110,7 @@ const PageHeader = (props: PageHeaderProps) => {
     return (
         <div className="py-2 px-0 md:p-2 w-auto text-center">
             <h1 className={`relative text-center ${titleAlignment} font-bold ${textColor} dark:text-white text-4xl sm:text-5xl md:text-6xl`}>{parse(title)}</h1>
-            <p className={`m-8 md:m-12 text-gray-600 ${descriptionAlignment} dark:text-gray-300 text-lg md:text-lg w-auto`}>{description}</p>
+            <p className={`m-4 mx-2 md:m-12 ${descriptionAlignment} text-gray-600 dark:text-gray-300 text-lg w-auto`}>{description}</p>
         </div>
     )
 }

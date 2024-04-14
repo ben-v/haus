@@ -50,7 +50,7 @@ const ServiceAreaPage = () => {
               </HashLink>
             </>
           }
-          imageCard={<SvgServiceAreaMap className="mx-auto rounded-3xl border border-gray-300 object-cover object-top shadow-2xl" />}
+          imageCard={<SvgServiceAreaMap className="mx-auto rounded-3xl border border-gray-300/100 object-cover object-top shadow-2xl" />}
         />
     </PageSection>
   )

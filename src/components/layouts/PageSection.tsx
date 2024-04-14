@@ -18,7 +18,7 @@ const PageSection = (props: PageSectionProps) => {
   if (props.width && (props.width === "Wide")) {
     widthClasses = "px-4 md:px-6 xl:max-w-6xl";
   } else {
-    widthClasses = "px-12 md:px-4 xl:max-w-5xl";
+    widthClasses = "px-6 md:px-4 xl:max-w-5xl";
   }
 
   return (

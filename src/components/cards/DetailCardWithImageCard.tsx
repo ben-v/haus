@@ -1,9 +1,9 @@
 import { ReactNode } from 'react';
+import RounderCornerContainer from '../containers/RounderCornerContainer';
 
 export interface DetailCardWithImageCardProps {
   detailCard: ReactNode;
   imageCard: ReactNode;
-  // leftToRight: boolean;
 }
 
 const DetailCardWithImageCard = (props: DetailCardWithImageCardProps) => {
@@ -17,11 +17,9 @@ const DetailCardWithImageCard = (props: DetailCardWithImageCardProps) => {
               {props.detailCard}
             </div>
           </div>
-        <div className="relative z-10 -mx-2 rounded-3xl border border-gray-100 bg-white shadow-2xl shadow-gray-600/10 dark:border-gray-700/60 dark:bg-gray-800 dark:shadow-none md:mx-0 md:w-6/12 lg:w-5/12">
-          <div className="space-y-6 p-8 sm:p-12">
-            {props.imageCard}
-          </div>
-        </div>
+        <RounderCornerContainer width="Fixed" useGradientBackground={false}>
+          {props.imageCard}
+        </RounderCornerContainer>
       </div>
     </div>
   );
