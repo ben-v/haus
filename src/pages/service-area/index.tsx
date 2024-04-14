@@ -26,26 +26,26 @@ const ServiceAreaPage = () => {
                 <h3 className="text-xl font-semibold text-white dark:text-gray-800">Communities We Serve</h3>
               </div>
             </div>
-            <div className="my-8 mb-8 grid grid-cols-2 rounded-3xl border border-gray-700 text-white dark:border-gray-200 dark:text-gray-600 [&>*]:border-gray-700 [&>*]:p-4 [&>*]:dark:border-gray-200">
-              <div className="flex justify-center gap-2 border-b">
+            <div className="my-8 mb-8 grid grid-cols-2  rounded-3xl border border-gray-700 text-white dark:border-gray-200 dark:text-gray-600 [&>*]:border-gray-700 [&>*]:p-4 [&>*]:text-xs md:[&>*]:text-sm lg:[&>*]:text-lg [&>*]:dark:border-gray-200">
+              <div className="flex justify-center items-center gap-2 border-b">
                 Bozeman
               </div>
-              <div className="flex justify-center gap-2 border-b border-l">
+              <div className="flex justify-center items-center gap-2 border-b border-l">
                 Belgrade
               </div>
-              <div className="flex justify-center gap-2">
+              <div className="flex justify-center items-center gap-2">
                 Gallatin Gateway
               </div>
-              <div className="flex justify-center gap-2 border-l">
+              <div className="flex justify-center items-center gap-2 border-l">
                 Big Sky
               </div>
             </div>
 
             <p className="my-8 text-white dark:text-gray-700">Communities outside the Bozeman, Belgrade, Gallatin Gateway city/community limits have a scaling trip fee.</p>
 
-            <p className="my-8 text-white dark:text-gray-700">Don't see your community listed or have other questions about our service area? Please contact us to confirm if you're located within our broader service area.</p>
+            <p className="my-8 text-white dark:text-gray-700">Don't see your community listed or have questions about our service area? Feel free to reach out to us for more information. We're here to help!</p>
 
-            <HashLink to="/contact/#" className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 active:duration-75 active:before:scale-95 dark:before:bg-primaryLight">
+            <HashLink to="/contact/#" className="relative flex h-11 w-full items-center justify-center px-6 mb-4 md:mb-auto before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 active:duration-75 active:before:scale-95 dark:before:bg-primaryLight">
               <span className="relative text-base font-semibold text-white dark:text-dark">Contact Us</span>
             </HashLink>
           </>
