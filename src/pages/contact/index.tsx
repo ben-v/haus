@@ -8,6 +8,7 @@ import RounderCornerContainer from "../../components/containers/RounderCornerCon
 import SvgYelpGeneric from "../../components/images/SvgYelpGneric"
 import SvgFacebookGeneric from "../../components/images/SvgFacebookGeneric"
 import PngInstagramColor from "../../../public/images/instagram-color.png";
+import ContentBackground from "../../components/effects/ContentBackground"
 
 const ContactPage = () => {
   return (
@@ -16,7 +17,8 @@ const ContactPage = () => {
         titlePartA="Let's"
         titlePartB=" Connect"
         Description="If you have project ideas or general questions you'd like to talk about, please fill out the form below to send us a message; we are happy to discuss with you and will reply shortly." />
-      <div className="grid gap-12 sm:mx-auto sm:max-w-lg lg:max-w-max lg:grid-cols-2">
+      <div className="relative grid gap-12 sm:mx-auto sm:max-w-lg lg:max-w-max lg:grid-cols-2">
+        <ContentBackground />
         <RounderCornerContainer>
           <CardHeader title="What should we know?" />
           <form action="" className="w-auto">

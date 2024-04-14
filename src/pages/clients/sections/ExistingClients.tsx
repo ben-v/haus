@@ -8,6 +8,7 @@ import tailwindConfig from '../../../../tailwind.config';
 import SvgArrowUpRightFromSquareSolid from "../../../components/images/SvgArrowUpRightFromSquareSolid"
 import PngExistingClientHub from "../../../../public/images/screenshots/client-hub.png"
 import SharpCornerClipContainer from "../../../components/containers/SharpCornerClipContainer";
+import ContentBackground from "../../../components/effects/ContentBackground";
 
 const fullConfig = resolveConfig(tailwindConfig)
 
@@ -17,6 +18,7 @@ const ExistingClients = () => {
 
     return (
         <div className="relative w-auto flex flex-col">
+            <ContentBackground />
             <div className="md:flex md:flex-col md:gap-24">
                 <div className="w-auto">
                     <div className="space-y-12 md:flex md:flex-row-reverse md:space-y-0">

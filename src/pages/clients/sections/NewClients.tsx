@@ -2,10 +2,12 @@ import SvgQuestion from "../../../components/images/icons/SvgQuestion";
 import SvgTodo from "../../../components/images/icons/SvgTodo";
 import PngNewRequest from "../../../../public/images/screenshots/new-request.png";
 import SharpCornerClipContainer from "../../../components/containers/SharpCornerClipContainer";
+import ContentBackground from "../../../components/effects/ContentBackground";
 
 const NewClients = () => {
     return (
         <div className="relative w-auto flex flex-col">
+            <ContentBackground />
             <div className="md:flex md:flex-col md:gap-24">
                 <div className="w-auto">
                     <div className="space-y-12 md:flex md:space-y-0 gap-4">

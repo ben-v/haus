@@ -10,7 +10,7 @@ const ClientsPage = () => {
           titlePartA="Job #1 &rsaquo; "
           titlePartB="Helping Clients"
           Description="Projects around the house, big and small, can pile up fast and the next thing you know, there's a nagging &ldquoto do&rdquo list a mile long. We want to help both our new and existing clients get their projects done and off their plate, to enjoy their homes and our Montana community. We leverage technology to facilitate our work, stay in touch and keep you up to date." />
-      <div className="flex flex-col gap-16">
+      <div className="relative flex flex-col gap-16">
         <NewClients />
         <ExistingClients />
       </div>
