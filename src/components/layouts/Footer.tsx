@@ -30,7 +30,7 @@ const sectionLinkGroups: NavLinkGroup[] = [
     links: [
       { label: "Privacy Policy", url: "/privacy/#" },
       { label: "Terms & Conditions", url: "/terms/#" },
-      { label: "Partners", url: "/partners/#" },
+      // { label: "Partners", url: "/partners/#" },
     ]
   }
 ];

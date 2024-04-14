@@ -11,7 +11,7 @@ import ContactPage from "./pages/contact";
 import WorkRequestPage from "./pages/work-request";
 import PrivacyPage from "./pages/privacy";
 import TermsPage from "./pages/terms";
-import PartnersPage from "./pages/partners";
+// import PartnersPage from "./pages/partners";
 import FaqsPage from "./pages/faqs";
 import ServiceAreaPage from "./pages/service-area";
 import ClientsPage from "./pages/clients";
@@ -28,7 +28,7 @@ function App() {
         <Route path="/faqs" element={<FaqsPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/work-request" element={<WorkRequestPage />} />
-        <Route path="/partners" element={<PartnersPage />} />
+        {/* <Route path="/partners" element={<PartnersPage />} /> */}
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/server-error" element={<GenericHttpError title="500" description="Well, this is embarassing, we encountered an unexpected error." />} />
