@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom"
+import { HashLink } from "react-router-hash-link"
 
 import PageSection from "../../components/layouts/PageSection"
 import PageHeader from "../../components/layouts/PageHeader"
-import { HashLink } from "react-router-hash-link"
+import CardHeader from "../../components/layouts/CardHeader"
 import RounderCornerContainer from "../../components/containers/RounderCornerContainer"
 import SvgYelpGeneric from "../../components/images/SvgYelpGneric"
-import { Link } from "react-router-dom"
 import SvgFacebookGeneric from "../../components/images/SvgFacebookGeneric"
 import PngInstagramColor from "../../../public/images/instagram-color.png";
 
@@ -17,9 +18,9 @@ const ContactPage = () => {
         Description="If you have project ideas or general questions you'd like to talk about, please fill out the form below to send us a message; we are happy to discuss with you and will reply shortly." />
       <div className="grid gap-12 sm:mx-auto sm:max-w-lg lg:max-w-max lg:grid-cols-2">
         <RounderCornerContainer>
+          <CardHeader title="What should we know?" />
           <form action="" className="w-auto">
             <div className="relative">
-              <h2 className="text-2xl font-bold text-gray-800 dark:text-white">What should we know ?</h2>
               <div className="mt-8 mb-6 space-y-4">
                 <div>
                   <label htmlFor="name" className="mb-2 block text-gray-600 dark:text-gray-300 text-lg">Name <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
@@ -53,9 +54,8 @@ const ContactPage = () => {
           </form>
         </RounderCornerContainer>
         <RounderCornerContainer>
-          <div className="w-auto text-gray-600 dark:text-gray-300 sm:text-xl">
-            Also find us on:
-            <div className="relative flex gap-4 pt-3">
+          <CardHeader title="Also, find us on:" />
+          <div className="relative flex gap-4 pt-3">
               <Link to="https:www.facebook.com/haus.property.svcs" target="_blank" aria-label="facebook">
                 {/* No need for a separate color image file for Yelp. Use generic and apply color. Got the Facebook "blue" color by color sampling in another app and applyling here via fill property. */}
                 <SvgFacebookGeneric fill="#0866FF" width={48} height={48} />
@@ -71,7 +71,6 @@ const ContactPage = () => {
                 <SvgYelpGeneric fill="#FF1A1A" width={48} height={48} />
               </Link>
             </div>
-          </div>
         </RounderCornerContainer>
 
       </div>
