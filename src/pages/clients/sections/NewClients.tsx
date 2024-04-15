@@ -28,7 +28,7 @@ const NewClients = () => {
                                 <div className="mt-12 space-y-6">
                                     <div className="flex items-center gap-6">
                                         <div className="flex h-20 w-20 rounded-3xl border border-gray-200 bg-white p-1 align-middle dark:border-gray-600/60 dark:bg-gray-900/40">
-                                            <SvgTodo className="m-auto w-auto" width={48} height={48} />
+                                            <SvgTodo className="m-auto w-auto" width={40} height={48} />
                                         </div>
                                         <div className="w-[calc(100%-7.5rem)]">
                                             <h4 className="text-lg font-semibold text-gray-800 dark:text-white">To do list...</h4>
