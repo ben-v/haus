@@ -29,8 +29,8 @@ const ServiceAreaPage = () => {
         detailCard={
           <>
             <div className="flex items-center gap-4">
-                  <ContentIconContainer reverseBackgroundColors={true} >
-                    <SvgMapLocationDotSolid fill={theme === THEMES.DARK ? fullConfig.theme.colors.dark : fullConfig.theme.colors.white} className="m-auto h-12 w-auto" />
+                  <ContentIconContainer invertContainerColors={true} >
+                    <SvgMapLocationDotSolid fill={theme === THEMES.DARK ? fullConfig.theme.colors.dark : fullConfig.theme.colors.white} className="m-auto w-auto" width={40} height={48} />
                   </ContentIconContainer>
               <div>
                 <h3 className="text-xl font-semibold text-white dark:text-gray-800">Communities We Serve</h3>

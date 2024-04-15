@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-export interface RounderCornerContainerProps {
+export interface RoundCornerContainerProps {
   width?: "Auto" | "Fixed";
   useGradientBackground?: boolean;
   children: ReactNode;
@@ -9,9 +9,9 @@ export interface RounderCornerContainerProps {
 const defaultProps = {
   width: "Auto",
   useGradientBackground: true
-} satisfies Partial<RounderCornerContainerProps>
+} satisfies Partial<RoundCornerContainerProps>
 
-const RounderCornerContainer = (props: RounderCornerContainerProps) => {
+const RoundCornerContainer = (props: RoundCornerContainerProps) => {
   const propsWithDefaults = {
     ...defaultProps,
     ...props
@@ -35,4 +35,4 @@ const RounderCornerContainer = (props: RounderCornerContainerProps) => {
   );
 };
 
-export default RounderCornerContainer;
+export default RoundCornerContainer;

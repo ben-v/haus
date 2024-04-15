@@ -30,8 +30,7 @@ const NewClients = () => {
                                 <div className="mt-12 space-y-6">
                                     <div className="flex items-center gap-6">
                                         <ContentIconContainer>
-                                            {/* <SvgTodo className="m-auto w-auto" width={40} height={48} /> */}
-                                            <SvgRectangleListSolid fill={theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.dark} className="m-auto w-auto" width={40} height={48} />
+                                            <SvgRectangleListSolid fill={theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.dark} className="m-auto w-auto" width={40} height={48} />                                           
                                         </ContentIconContainer>
                                         <div className="w-[calc(100%-7.5rem)]">
                                             <h4 className="text-lg font-semibold text-gray-800 dark:text-white">To do list...</h4>
