@@ -10,6 +10,7 @@ import PngExistingClientHub from "../../../../public/images/screenshots/client-h
 import SharpCornerClipContainer from "../../../components/containers/SharpCornerClipContainer";
 import ContentBackground from "../../../components/effects/ContentBackground";
 import SvgAddressBookSolid from "../../../components/images/SvgAddressBookSolid";
+import SvgDashboard from "../../../components/images/icons/SvgDashboard";
 
 const fullConfig = resolveConfig(tailwindConfig)
 
@@ -25,26 +26,18 @@ const ExistingClients = () => {
                     <div className="space-y-12 md:flex md:flex-row-reverse md:space-y-0">
                         <div className="relative md:w-1/2 md:ml-16">
                             <div>
-                                <h3 className="text-xl font-bold text-gray-900 dark:text-white md:text-2xl">Existing clients, the Client Hub is for you!</h3>
+                                <h3 className="text-xl font-bold text-gray-900 dark:text-white md:text-2xl">Existing clients, the client hub is for you!</h3>
                                 <p className="mt-8 text-gray-600 dark:text-gray-300">The client hub is a self-serve, online experience that allows HAUS clients to approve quotes, check appointment details, pay invoices, print receipts, or request more work—all in one place.</p>
                                 <div className="mt-12 space-y-6">
-                                    <div className="flex items-center gap-6">
-                                        <div className="flex h-20 w-20 rounded-3xl border border-gray-200 bg-white p-4 dark:border-gray-600/60 dark:bg-gray-900/40">
-                                            <img className="m-auto h-8 w-auto" src="https://cdn-icons-png.flaticon.com/512/6106/6106288.png" alt="icon illustration" loading="lazy" width="512" height="512" />
-                                        </div>
-                                        <div className="w-[calc(100%-7.5rem)]">
-                                            <h4 className="text-lg font-semibold text-gray-800 dark:text-white">Together as one</h4>
-                                            <p className="mt-1 text-gray-600 dark:text-gray-400">Accusantium nemo perspiciatis delectus atque autem!</p>
-                                        </div>
-                                    </div>
 
                                     <div className="flex items-center gap-6">
-                                        <div className="flex h-20 w-20 rounded-3xl border border-gray-200 bg-white p-4 dark:border-gray-600/60 dark:bg-gray-900/40">
-                                            <img className="m-auto h-8 w-auto" src="https://cdn-icons-png.flaticon.com/512/2313/2313906.png" alt="icon illustration" loading="lazy" width="512" height="512" />
+                                        <div className="flex h-20 w-20 rounded-3xl border border-gray-200 bg-white p-1 align-middle dark:border-gray-600/60 dark:bg-gray-900/40">
+                                            <SvgDashboard className="m-auto w-auto" width={48} height={48} />
                                         </div>
+
                                         <div className="w-[calc(100%-7.5rem)]">
-                                            <h4 className="text-lg font-semibold text-gray-800 dark:text-white">New ideas</h4>
-                                            <p className="mt-1 text-gray-600 dark:text-gray-400">Accusalectus atque autem accusantium nemo perspiciatis delectus atque autem!</p>
+                                            <h4 className="text-lg font-semibold text-gray-800 dark:text-white">Convenient tools...</h4>
+                                            <p className="mt-1 text-gray-600 dark:text-gray-400">The self serve client hub is available from your phone, tablet or desktop PC.</p>
                                         </div>
                                     </div>
 
