@@ -9,7 +9,7 @@ import { THEMES, ThemeContext } from "../../contexts/ThemeContext";
 import PageSection from "../../components/layouts/PageSection"
 import PageHeader from "../../components/layouts/PageHeader"
 import CardHeader from "../../components/layouts/CardHeader"
-import RounderCornerContainer from "../../components/containers/RounderCornerContainer"
+import RoundCornerContainer from "../../components/containers/RoundCornerContainer"
 import SvgYelpGeneric from "../../components/images/SvgYelpGneric"
 import SvgFacebookGeneric from "../../components/images/SvgFacebookGeneric"
 import PngInstagramColor from "../../../public/images/instagram-color.png";
@@ -78,7 +78,7 @@ const ContactPage = () => {
         Description="If you have project ideas or questions you'd like to discuss, please fill out the form below to send us a message." />
       <div className="relative grid gap-12 sm:mx-auto sm:max-w-lg lg:max-w-max lg:grid-cols-2">
         <ContentBackground />
-        <RounderCornerContainer>
+        <RoundCornerContainer>
           <CardHeader title="Message Form" />
           <form onSubmit={onSubmitHandler} className="w-auto">
             <div className="relative">
@@ -129,8 +129,8 @@ const ContactPage = () => {
               </button>
             </div>
           </form>
-        </RounderCornerContainer>
-        <RounderCornerContainer>
+        </RoundCornerContainer>
+        <RoundCornerContainer>
           <CardHeader title="Also connect with HAUS on:" />
           <div className="relative flex gap-4 pt-3">
             <Link to="https://www.facebook.com/haus.property.svcs" target="_blank" aria-label="facebook">
@@ -148,7 +148,7 @@ const ContactPage = () => {
               <SvgYelpGeneric fill="#FF1A1A" width={48} height={48} />
             </Link>
           </div>
-        </RounderCornerContainer>
+        </RoundCornerContainer>
         <Toaster
           position="top-center"
           toastOptions={{

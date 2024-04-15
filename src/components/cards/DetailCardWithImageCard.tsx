@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import RounderCornerContainer from '../containers/RounderCornerContainer';
+import RoundCornerContainer from '../containers/RoundCornerContainer';
 import ContentBackground from '../effects/ContentBackground';
 
 export interface DetailCardWithImageCardProps {
@@ -18,9 +18,9 @@ const DetailCardWithImageCard = (props: DetailCardWithImageCardProps) => {
               {props.detailCard}
             </div>
           </div>
-        <RounderCornerContainer width="Fixed" useGradientBackground={false}>
+        <RoundCornerContainer width="Fixed" useGradientBackground={false}>
           {props.imageCard}
-        </RounderCornerContainer>
+        </RoundCornerContainer>
       </div>
     </div>
   );
