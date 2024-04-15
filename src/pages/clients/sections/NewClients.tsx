@@ -9,6 +9,7 @@ import SvgQuestion from "../../../components/images/icons/SvgQuestion";
 import SvgTodo from "../../../components/images/icons/SvgTodo";
 import PngNewRequest from "../../../../public/images/screenshots/new-request.png";
 import SvgRectangleListSolid from "../../../components/images/SvgRectangleListSolid";
+import ContentIconContainer from "../../../components/containers/ContentIconContainer";
 
 const fullConfig = resolveConfig(tailwindConfig)
 
@@ -27,9 +28,9 @@ const NewClients = () => {
                                 <p className="mt-8 text-gray-600 dark:text-gray-300">An easy way to get started, is to send us a new work request. Once received, we will review and follow up with you regarding next steps.</p>
                                 <div className="mt-12 space-y-6">
                                     <div className="flex items-center gap-6">
-                                        <div className="flex h-20 w-20 rounded-3xl border border-gray-200 bg-white p-1 align-middle dark:border-gray-600/60 dark:bg-gray-900/40">
-                                            <SvgTodo className="m-auto w-auto" width={64} height={64} />
-                                        </div>
+                                        <ContentIconContainer>
+                                            <SvgTodo className="m-auto w-auto" width={40} height={48} />
+                                        </ContentIconContainer>
                                         <div className="w-[calc(100%-7.5rem)]">
                                             <h4 className="text-lg font-semibold text-gray-800 dark:text-white">To do list...</h4>
                                             <p className="mt-1 text-gray-600 dark:text-gray-400">Have a to do list that keeps growing?</p>
@@ -37,9 +38,9 @@ const NewClients = () => {
                                     </div>
 
                                     <div className="flex items-center gap-6">
-                                        <div className="flex h-20 w-20 rounded-3xl border border-gray-200 bg-white p-1 align-middle dark:border-gray-600/60 dark:bg-gray-900/40">
-                                            <SvgQuestion className="m-auto w-auto" width={64} height={64} />
-                                        </div>
+                                        <ContentIconContainer>
+                                            <SvgQuestion className="m-auto w-auto" width={48} height={48} />
+                                        </ContentIconContainer>
                                         <div className="w-[calc(100%-7.5rem)]">
                                             <h4 className="text-lg font-semibold text-gray-800 dark:text-white">Questions?</h4>
                                             <p className="mt-1 text-gray-600 dark:text-gray-400">Have some questions you'd like addressed before moving forward?</p>
