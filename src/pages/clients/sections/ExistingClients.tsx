@@ -11,6 +11,7 @@ import SharpCornerClipContainer from "../../../components/containers/SharpCorner
 import ContentBackground from "../../../components/effects/ContentBackground";
 import SvgAddressBookSolid from "../../../components/images/SvgAddressBookSolid";
 import SvgDashboard from "../../../components/images/icons/SvgDashboard";
+import ContentIconContainer from "../../../components/containers/ContentIconContainer";
 
 const fullConfig = resolveConfig(tailwindConfig)
 
@@ -31,10 +32,9 @@ const ExistingClients = () => {
                                 <div className="mt-12 space-y-6">
 
                                     <div className="flex items-center gap-6">
-                                        <div className="flex h-20 w-20 rounded-3xl border border-gray-200 bg-white p-1 align-middle dark:border-gray-600/60 dark:bg-gray-900/40">
+                                        <ContentIconContainer>
                                             <SvgDashboard className="m-auto w-auto" width={48} height={48} />
-                                        </div>
-
+                                        </ContentIconContainer>
                                         <div className="w-[calc(100%-7.5rem)]">
                                             <h4 className="text-lg font-semibold text-gray-800 dark:text-white">Convenient tools...</h4>
                                             <p className="mt-1 text-gray-600 dark:text-gray-400">The self serve client hub is available from your phone, tablet or desktop PC.</p>
