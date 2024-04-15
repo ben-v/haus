@@ -6,13 +6,13 @@ import Footer from "./components/layouts/Footer"
 import GenericHttpError from "./components/errors/GenericHttpError";
 
 import LandingPage from "./pages/landing";
-import Home from "./pages/home"
+// import Home from "./pages/home"
 import ContactPage from "./pages/contact";
 import WorkRequestPage from "./pages/work-request";
 import PrivacyPage from "./pages/privacy";
 import TermsPage from "./pages/terms";
 // import PartnersPage from "./pages/partners";
-import FaqsPage from "./pages/faqs";
+// import FaqsPage from "./pages/faqs";
 import ServiceAreaPage from "./pages/service-area";
 import ClientsPage from "./pages/clients";
 
@@ -23,9 +23,9 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/clients" element={<ClientsPage />} />
-        <Route path="/old" element={<Home />} />
+        {/* <Route path="/old" element={<Home />} /> */}
         <Route path="/service-area" element={<ServiceAreaPage />} />
-        <Route path="/faqs" element={<FaqsPage />} />
+        {/* <Route path="/faqs" element={<FaqsPage />} /> */}
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/work-request" element={<WorkRequestPage />} />
         {/* <Route path="/partners" element={<PartnersPage />} /> */}
