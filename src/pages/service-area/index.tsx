@@ -1,12 +1,24 @@
 import { HashLink } from "react-router-hash-link"
 
+import resolveConfig from 'tailwindcss/resolveConfig'
+import tailwindConfig from '../../../tailwind.config';
+
+import { ThemeContext, THEMES } from "../../contexts/ThemeContext";
+
 import DetailCardWithImageCard from "../../components/cards/DetailCardWithImageCard"
 import PageHeader from "../../components/layouts/PageHeader"
-import SvgMapLocation from "../../components/images/icons/SvgMapLocation"
+// import SvgMapLocation from "../../components/images/icons/SvgMapLocation"
 import SvgServiceAreaMap from "../../components/images/sections/SvgServiceAreaMap"
 import PageSection from "../../components/layouts/PageSection"
+import SvgMapLocationDotSolid from "../../components/images/icons/SvgMapLocationDotSolid"
+import { useContext } from "react";
+import ContentIconContainer from "../../components/containers/ContentIconContainer";
+
+const fullConfig = resolveConfig(tailwindConfig)
 
 const ServiceAreaPage = () => {
+  const { theme,  } = useContext(ThemeContext);
+  
   return (
     <PageSection id="intro-service-area">
       <PageHeader
@@ -17,11 +29,9 @@ const ServiceAreaPage = () => {
         detailCard={
           <>
             <div className="flex items-center gap-4">
-              <div className="rounded-full bg-gradient-to-br from-primaryLight to-yellow-500 dark:from-primary dark:to-yellow-400">
-                <div className="flex h-16 w-16 scale-[0.96] rounded-full bg-gray-900 dark:bg-white">
-                  <SvgMapLocation className="m-auto h-8 w-auto" />
-                </div>
-              </div>
+                  <ContentIconContainer reverseBackgroundColors={true} >
+                    <SvgMapLocationDotSolid fill={theme === THEMES.DARK ? fullConfig.theme.colors.dark : fullConfig.theme.colors.white} className="m-auto h-12 w-auto" />
+                  </ContentIconContainer>
               <div>
                 <h3 className="text-xl font-semibold text-white dark:text-gray-800">Communities We Serve</h3>
               </div>

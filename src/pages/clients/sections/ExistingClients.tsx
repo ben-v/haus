@@ -10,8 +10,9 @@ import PngExistingClientHub from "../../../../public/images/screenshots/client-h
 import SharpCornerClipContainer from "../../../components/containers/SharpCornerClipContainer";
 import ContentBackground from "../../../components/effects/ContentBackground";
 import SvgAddressBookSolid from "../../../components/images/SvgAddressBookSolid";
-import SvgDashboard from "../../../components/images/icons/SvgDashboard";
+// import SvgDashboard from "../../../components/images/icons/SvgDashboard";
 import ContentIconContainer from "../../../components/containers/ContentIconContainer";
+import SvgMobileScreenButtonSolid from "../../../components/images/icons/SvgMobileScreenButtonSolid";
 
 const fullConfig = resolveConfig(tailwindConfig)
 
@@ -33,7 +34,8 @@ const ExistingClients = () => {
 
                                     <div className="flex items-center gap-6">
                                         <ContentIconContainer>
-                                            <SvgDashboard className="m-auto w-auto" width={48} height={48} />
+                                            {/* <SvgDashboard className="m-auto w-auto" width={48} height={48} /> */}
+                                            <SvgMobileScreenButtonSolid fill={theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.dark} className="m-auto w-auto" width={40} height={48} />
                                         </ContentIconContainer>
                                         <div className="w-[calc(100%-7.5rem)]">
                                             <h4 className="text-lg font-semibold text-gray-800 dark:text-white">Convenient tools...</h4>

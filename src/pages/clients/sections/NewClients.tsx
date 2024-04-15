@@ -5,11 +5,12 @@ import resolveConfig from 'tailwindcss/resolveConfig'
 import tailwindConfig from '../../../../tailwind.config';
 import { THEMES, ThemeContext } from "../../../contexts/ThemeContext";
 
-import SvgQuestion from "../../../components/images/icons/SvgQuestion";
-import SvgTodo from "../../../components/images/icons/SvgTodo";
+// import SvgQuestion from "../../../components/images/icons/SvgQuestion";
+// import SvgTodo from "../../../components/images/icons/SvgTodo";
 import PngNewRequest from "../../../../public/images/screenshots/new-request.png";
 import SvgRectangleListSolid from "../../../components/images/SvgRectangleListSolid";
 import ContentIconContainer from "../../../components/containers/ContentIconContainer";
+import SvgClipboardQuestionSolid from "../../../components/images/icons/SvgClipboardQuestionSolid";
 
 const fullConfig = resolveConfig(tailwindConfig)
 
@@ -29,7 +30,8 @@ const NewClients = () => {
                                 <div className="mt-12 space-y-6">
                                     <div className="flex items-center gap-6">
                                         <ContentIconContainer>
-                                            <SvgTodo className="m-auto w-auto" width={40} height={48} />
+                                            {/* <SvgTodo className="m-auto w-auto" width={40} height={48} /> */}
+                                            <SvgRectangleListSolid fill={theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.dark} className="m-auto w-auto" width={40} height={48} />
                                         </ContentIconContainer>
                                         <div className="w-[calc(100%-7.5rem)]">
                                             <h4 className="text-lg font-semibold text-gray-800 dark:text-white">To do list...</h4>
@@ -39,7 +41,8 @@ const NewClients = () => {
 
                                     <div className="flex items-center gap-6">
                                         <ContentIconContainer>
-                                            <SvgQuestion className="m-auto w-auto" width={48} height={48} />
+                                            {/* <SvgQuestion className="m-auto w-auto" width={48} height={48} /> */}
+                                            <SvgClipboardQuestionSolid fill={theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.dark} className="m-auto w-auto" width={40} height={48} />
                                         </ContentIconContainer>
                                         <div className="w-[calc(100%-7.5rem)]">
                                             <h4 className="text-lg font-semibold text-gray-800 dark:text-white">Questions?</h4>
