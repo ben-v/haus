@@ -12,7 +12,7 @@ import CardHeader from "../../components/layouts/CardHeader"
 import RoundCornerContainer from "../../components/containers/RoundCornerContainer"
 import SvgYelpGeneric from "../../components/images/SvgYelpGneric"
 import SvgFacebookGeneric from "../../components/images/SvgFacebookGeneric"
-import PngInstagramColor from "../../../public/images/instagram-color.png";
+import PngInstagramColor from "../../../public/icons/instagram-color.png";
 import ContentBackground from "../../components/effects/ContentBackground"
 import SvgPaperPlaneSolid from "../../components/images/icons/SvgPaperPlaneSolid"
 
