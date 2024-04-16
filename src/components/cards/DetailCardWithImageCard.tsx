@@ -11,15 +11,17 @@ const DetailCardWithImageCard = (props: DetailCardWithImageCardProps) => {
   
   return (
     <div className="relative">
-      <ContentBackground />
+    <ContentBackground />
       <div className="m-auto items-center justify-center -space-y-4 md:flex md:space-y-0 md:-space-x-1">
         <div className="relative mx-4 rounded-3xl rounded-b-none border border-gray-700 bg-gray-800 shadow-2xl shadow-gray-600/10 dark:border-gray-100 dark:bg-white dark:shadow-none md:mx-0 md:w-6/12 md:rounded-r-none md:rounded-l-3xl lg:w-7/12">
-            <div className="relative p-4 md:p-6 pt-16 md:rounded-r-2xl lg:p-16 lg:pl-[4.375rem]">
+            <div className="relative z-10 p-4 md:p-6 pt-16 md:rounded-r-2xl lg:p-16 lg:pl-[4.375rem]">
               {props.detailCard}
             </div>
           </div>
-        <RoundCornerContainer width="Fixed" useGradientBackground={false}>
-          {props.imageCard}
+        <RoundCornerContainer width="Fixed" useGradientBackground={true}>
+          <div className='relative z-10'>
+            {props.imageCard}
+          </div>
         </RoundCornerContainer>
       </div>
     </div>

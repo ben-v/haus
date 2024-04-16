@@ -22,11 +22,11 @@ const ExistingClients = () => {
 
     return (
         <div className="relative w-auto flex flex-col">
-            <ContentBackground />
             <div className="md:flex md:flex-col md:gap-24">
                 <div className="w-auto">
                     <div className="space-y-12 md:flex md:flex-row-reverse md:space-y-0">
                         <div className="relative md:w-1/2 md:ml-16">
+                        <ContentBackground />
                             <div>
                                 <h3 className="text-xl font-bold text-gray-900 dark:text-white md:text-2xl">Existing clients, the client hub is for you!</h3>
                                 <p className="mt-8 text-gray-600 dark:text-gray-300">The client hub is a self-serve, online experience that allows HAUS clients to approve quotes, check appointment details, pay invoices, print receipts, or request more work—all in one place.</p>
