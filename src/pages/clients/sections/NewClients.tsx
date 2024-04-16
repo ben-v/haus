@@ -19,11 +19,11 @@ const NewClients = () => {
 
     return (
         <div className="relative w-auto flex flex-col">
-            <ContentBackground />
             <div className="md:flex md:flex-col md:gap-24">
                 <div className="w-auto">
                     <div className="space-y-12 md:flex md:space-y-0 gap-4">
                         <div className="relative md:w-1/2 md:mr-16">
+                        <ContentBackground />
                             <div>
                                 <h3 className="text-xl font-bold text-gray-900 dark:text-white md:text-2xl">Are you a new client?</h3>
                                 <p className="mt-8 text-gray-600 dark:text-gray-300">An easy way to get started, is to send us a new work request. Once received, we will review and follow up with you regarding next steps.</p>
