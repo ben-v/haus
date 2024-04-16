@@ -26,7 +26,7 @@ const RoundCornerContainer = (props: RoundCornerContainerProps) => {
   }
 
   return (
-    <div className={`relative z-10 -mx-2 rounded-3xl border border-gray-100 bg-white shadow-2xl shadow-gray-600/10 dark:border-gray-700/60 dark:bg-gray-800 dark:shadow-none ${widthClassNames}`}>
+    <div className={`relative z-10 -mx-2 rounded-3xl border border-gray-200 bg-gray-50 shadow-2xl shadow-gray-600/10 dark:border-gray-700/60 dark:bg-gray-800 dark:shadow-none ${widthClassNames}`}>
       {propsWithDefaults.useGradientBackground ? <div className="absolute inset-0 hidden scale-100 rounded-3xl bg-gradient-to-b from-transparent dark:block dark:to-gray-900/70"></div> : ""}
       <div className="space-y-6 p-8 sm:p-12">
         {props.children}

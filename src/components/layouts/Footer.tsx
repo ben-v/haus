@@ -3,9 +3,10 @@ import { HashLink } from "react-router-hash-link";
 
 import SvgArrowUpRightFromSquareSolid from "../images/SvgArrowUpRightFromSquareSolid";
 import SvgLogo from "../images/SvgLogo";
-import SvgFacebookGeneric from "../images/SvgFacebookGeneric";
-import SvgInstagramGeneric from "../images/SvgInstagramGeneric";
-import SvgYelpGeneric from "../images/SvgYelpGneric";
+import SvgFacebookGeneric from "../images/icons/SvgFacebookGeneric";
+import SvgInstagramGeneric from "../images/icons/SvgInstagramGeneric";
+import SvgYelpGeneric from "../images/icons/SvgYelpGneric";
+import SvgGoogleFontAwesomeGeneric from "../images/icons/SvgGoogleFontAwesomeGeneric";
 
 const sectionLinkGroups: NavLinkGroup[] = [
   {
@@ -52,6 +53,10 @@ const Footer = () => {
                 </div>
 
                 <div className="flex gap-3 pt-2">
+                  <Link to="https://g.co/kgs/9RGsPhA" target="_blank" aria-label="google">
+                    <span className="sr-only">Google</span>
+                    <SvgGoogleFontAwesomeGeneric fill="currentColor" width={20} height={20} />
+                  </Link>
                   <Link to="https://www.facebook.com/haus.property.svcs" target="_blank" aria-label="facebook">
                     <span className="sr-only">Facebook</span>
                     <SvgFacebookGeneric fill="currentColor" width={20} height={20} />

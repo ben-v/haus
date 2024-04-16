@@ -8,7 +8,7 @@ export interface TestamonialCardProps {
     maxStars: 3 | 5 | 10;
     source: "Google" | "Facebook" | "Yelp";
     sourceUrl: string;
-    date: string;
+    // date: string;
 }
 
 const TestamonialCard = (props: TestamonialCardProps) => {

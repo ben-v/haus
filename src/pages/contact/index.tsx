@@ -10,14 +10,15 @@ import PageSection from "../../components/layouts/PageSection"
 import PageHeader from "../../components/layouts/PageHeader"
 import CardHeader from "../../components/layouts/CardHeader"
 import RoundCornerContainer from "../../components/containers/RoundCornerContainer"
-import SvgYelpGeneric from "../../components/images/SvgYelpGneric"
-import SvgFacebookGeneric from "../../components/images/SvgFacebookGeneric"
+import SvgYelpGeneric from "../../components/images/icons/SvgYelpGneric"
+import SvgFacebookGeneric from "../../components/images/icons/SvgFacebookGeneric"
 import PngInstagramColor from "../../../public/icons/instagram-color.png";
 import ContentBackground from "../../components/effects/ContentBackground"
 import SvgPaperPlaneSolid from "../../components/images/icons/SvgPaperPlaneSolid"
 
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from 'react-hot-toast';
+import SvgGoogleGLogo from "../../components/images/icons/SvgGoogleGLogo";
 
 const fullConfig = resolveConfig(tailwindConfig)
 
@@ -133,6 +134,10 @@ const ContactPage = () => {
         <RoundCornerContainer>
           <CardHeader title="Also connect with HAUS on:" />
           <div className="relative flex gap-4 pt-3">
+          <Link to="https://g.co/kgs/9RGsPhA" target="_blank" aria-label="google">
+              {/* No need for a separate color image file for Yelp. Use generic and apply color. Got the Facebook "blue" color by color sampling in another app and applyling here via fill property. */}
+              <SvgGoogleGLogo width={48} height={48} />
+            </Link>
             <Link to="https://www.facebook.com/haus.property.svcs" target="_blank" aria-label="facebook">
               {/* No need for a separate color image file for Yelp. Use generic and apply color. Got the Facebook "blue" color by color sampling in another app and applyling here via fill property. */}
               <SvgFacebookGeneric fill="#0866FF" width={48} height={48} />
