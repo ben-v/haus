@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* App Styles */
+.body-container {
+    @apply min-h-screen;
+    @apply scroll-smooth;
+    @apply bg-white;
+    @apply selection:bg-primary/10;
+    @apply selection:text-primary;
+    @apply dark:bg-gray-900;
+}
+
+/* Page Styles */
+.page-container {
+    @apply flex;
+    @apply flex-col;
+    @apply overflow-x-clip;
+    @apply pt-24;
+    @apply lg:pt-32;
+    @apply pb-10;
+}
+
+.page-container .page-standard-width, .page-wide-width {
+    @apply xl:px-0;
+    @apply mx-auto;
+}
+
+.page-container .page-standard-width {
+    @apply px-6;
+    @apply md:px-4;
+    @apply xl:max-w-5xl;
+}
+
+.page-container .page-wide-width {
+    @apply px-4;
+    @apply md:px-2;
+    @apply xl:max-w-6xl;
+}
+
+.page-container .page-header-container {
+    @apply py-2; 
+    @apply px-0;
+    @apply md:p-2;
+    @apply w-auto;
+    @apply text-center;
+}
+
+/* .page-header-container .page-header-heading, .page-header-description {
+
+} */
+
+.page-header-container .page-header-heading-standard, .page-header-heading-vibrant {
+    @apply relative;
+    @apply text-center;
+    @apply font-bold;
+    @apply text-4xl;
+    @apply sm:text-5xl;
+    @apply md:text-6xl;
+}
+
+.page-header-container .page-header-heading-standard {
+    @apply text-gray-900;
+    @apply dark:text-white;
+}
+
+.page-header-container .page-header-heading-vibrant {
+    @apply text-blue-900;
+    @apply dark:text-white;
+}
+
+.page-header-container .page-header-description {
+    @apply m-4;
+    /* @apply mx-2; */
+    @apply md:m-12;
+    @apply text-gray-600;
+    @apply dark:text-gray-300;
+    @apply text-lg;
+    @apply w-auto;
+}
+
+/* Content Styles */
+.content-section-header-container {
+    @apply w-auto;
+}
+
+.content-section-header-title {
+    @apply text-2xl;
+    @apply md:text-3xl;
+    @apply font-bold;
+    @apply text-gray-900;
+    @apply dark:text-white;
+}
+
+.content-section-header-description {
+    @apply my-2;
+    @apply md:my-6;
+    @apply w-auto;
+    @apply text-gray-600;
+    @apply dark:text-gray-300;
+}
+
+/* Card Styles */
+.card-header-container {
+    @apply w-auto;
+}
+
+.card-header-title {
+    @apply text-2xl;
+    @apply md:text-3xl;
+    @apply font-bold;
+    @apply text-gray-900;
+    @apply dark:text-white;
+}
+
+.card-header-description {
+    @apply my-2;
+    @apply md:my-6;
+    @apply w-auto;
+    @apply text-gray-600;
+    @apply dark:text-gray-300;
+}
+
+/* Navigation/Link/Button Styles */

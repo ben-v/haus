@@ -2,11 +2,11 @@ import parse from "html-react-parser";
 import { ContentElementProps } from "./LayoutTypes";
 
 const defaultProps = {
-    titleAlignment: "Left",
-    descriptionAlignment: "Left"
+    titleAlignment: "Center",
+    descriptionAlignment: "Center"
 } satisfies Partial<ContentElementProps>
 
-const CardHeader = (props: ContentElementProps) => {
+const ContenSectiontHeader = (props: ContentElementProps) => {
     const propsWithDefaults = {
         ...defaultProps,
         ...props
@@ -52,11 +52,11 @@ const CardHeader = (props: ContentElementProps) => {
     }
 
     return (
-        <div className="card-header-container">
-            <h2 className={`card-header-title ${titleAlignment}`}>{parse(propsWithDefaults.title.trim())}</h2>
-            {propsWithDefaults.description ? <p className={`card-header-description ${descriptionAlignment}`}>{parse(propsWithDefaults.description.trim())}</p> : ""}
+        <div className="content-section-header-container">
+            <h2 className={`content-section-header-title ${titleAlignment}`}>{parse(propsWithDefaults.title.trim())}</h2>
+            {propsWithDefaults.description ? <p className={`content-section-header-description ${descriptionAlignment}`}>{parse(propsWithDefaults.description.trim())}</p> : ""}
         </div>
     )
   }
   
-  export default CardHeader
+  export default ContenSectiontHeader

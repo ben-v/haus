@@ -33,7 +33,7 @@ const Testamonials = () => {
         titleAlignment="Center" 
         description="We pride ourselves on forging lasting relationships based on communication, collaberation and trust with each of our clients. See what they have to say about working with us!"
         descriptionAlignment="Center" />
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-2 lg:mt-3">
         {testamonials.map((testamonial,) => (
           <div className="flex">
             <TestamonialCard

@@ -11,7 +11,7 @@ const Philosophy = () => {
         <div className="flex flex-col lg:flex-row-reverse">
             <div className="lg:w-8/12 w-auto p-2">
                 <CardHeader 
-                    title="Where old school meets new" 
+                    title="Old School Meets New" 
                     titleAlignment="Left"
                     description={`At <span className="font-semibold">HAUS</span> our approach with our clients is first and foremost is to help each and every one of them with their list of projects, big or small. With over over 30 years in high tech, at some of the largest companies in the United States, respectful and considerate communication & collaboration were the foundations of success then and are the foundation of success today on any project.`}
                     descriptionAlignment="Left"

@@ -36,7 +36,40 @@ const PageHeader = (props: PageHeaderProps) => {
     const description: string = propsWithDefaults.Description ? propsWithDefaults.Description.trim() : "";
     let titleAlignment: string = "";
     let descriptionAlignment: string = "";
-    let textColor: string = "text-gray-900";
+    let headingClassNames: string = "page-header-heading-standard";
+
+    switch (propsWithDefaults.highlightType)
+    {
+        case "Vibrant": {
+            headingClassNames = "page-header-heading-vibrant";
+
+            if (propsWithDefaults.highlightPart === "A") {
+                title = `<span className="relative">${<SvgAccentLine className="absolute inset-x-0 -bottom-1 w-full opacity-50" />}<span className="relative bg-gradient-to-r from-primary to-secondaryLight bg-clip-text text-transparent dark:from-primaryLight dark:to-secondaryLight md:px-2">${propsWithDefaults.titlePartA}</span></span>${propsWithDefaults.titlePartB ? propsWithDefaults.titlePartB : ""}`
+            } else {
+                const titlePartB: string = propsWithDefaults.titlePartB ? `<span className="relative">${renderToString(<SvgAccentLine className="absolute inset-x-0 -bottom-1 w-full opacity-50" />)}<span className="relative bg-gradient-to-r from-primary to-secondaryLight bg-clip-text text-transparent dark:from-primaryLight dark:to-secondaryLight md:px-2">${propsWithDefaults.titlePartB}</span></span>` : "";
+                
+                title = `${propsWithDefaults.titlePartA}${propsWithDefaults.titlePartB ? titlePartB : ""}`
+            }
+
+            break;
+        }
+        case "Standard": {
+            if (propsWithDefaults.highlightPart === "A") {
+                title = `<span className="opacity-80">${propsWithDefaults.titlePartA}</span>${propsWithDefaults.titlePartB ? propsWithDefaults.titlePartB : ""}`
+            } else {
+                const titlePartB: string = propsWithDefaults.titlePartB ? `<span className="opacity-80">${propsWithDefaults.titlePartB}</span>` : "";
+                
+                title = `${propsWithDefaults.titlePartA}${propsWithDefaults.titlePartB ? titlePartB : ""}`
+            }
+
+            break;
+        }
+        case "None":
+        default: {
+            title = `${propsWithDefaults.titlePartA}${propsWithDefaults.titlePartB ? propsWithDefaults.titlePartB : ""}`
+            break;
+        }
+    }
 
     if (propsWithDefaults.titleAlignment) {
         switch (propsWithDefaults.titleAlignment) {
@@ -74,43 +107,10 @@ const PageHeader = (props: PageHeaderProps) => {
         }
     }
 
-    switch (propsWithDefaults.highlightType)
-    {
-        case "Vibrant": {
-            textColor = "text-blue-900";
-
-            if (propsWithDefaults.highlightPart === "A") {
-                title = `<span className="relative">${<SvgAccentLine className="absolute inset-x-0 -bottom-1 w-full opacity-50" />}<span className="relative bg-gradient-to-r from-primary to-secondaryLight bg-clip-text text-transparent dark:from-primaryLight dark:to-secondaryLight md:px-2">${propsWithDefaults.titlePartA}</span></span>${propsWithDefaults.titlePartB ? propsWithDefaults.titlePartB : ""}`
-            } else {
-                const titlePartB: string = propsWithDefaults.titlePartB ? `<span className="relative">${renderToString(<SvgAccentLine className="absolute inset-x-0 -bottom-1 w-full opacity-50" />)}<span className="relative bg-gradient-to-r from-primary to-secondaryLight bg-clip-text text-transparent dark:from-primaryLight dark:to-secondaryLight md:px-2">${propsWithDefaults.titlePartB}</span></span>` : "";
-                
-                title = `${propsWithDefaults.titlePartA}${propsWithDefaults.titlePartB ? titlePartB : ""}`
-            }
-
-            break;
-        }
-        case "Standard": {
-            if (propsWithDefaults.highlightPart === "A") {
-                title = `<span className="opacity-80">${propsWithDefaults.titlePartA}</span>${propsWithDefaults.titlePartB ? propsWithDefaults.titlePartB : ""}`
-            } else {
-                const titlePartB: string = propsWithDefaults.titlePartB ? `<span className="opacity-80">${propsWithDefaults.titlePartB}</span>` : "";
-                
-                title = `${propsWithDefaults.titlePartA}${propsWithDefaults.titlePartB ? titlePartB : ""}`
-            }
-
-            break;
-        }
-        case "None":
-        default: {
-            title = `${propsWithDefaults.titlePartA}${propsWithDefaults.titlePartB ? propsWithDefaults.titlePartB : ""}`
-            break;
-        }
-    }
-
     return (
-        <div className="py-2 px-0 md:p-2 w-auto text-center">
-            <h1 className={`relative text-center ${titleAlignment} font-bold ${textColor} dark:text-white text-4xl sm:text-5xl md:text-6xl`}>{parse(title)}</h1>
-            <p className={`m-4 mx-2 md:m-12 ${descriptionAlignment} text-gray-600 dark:text-gray-300 text-lg w-auto`}>{parse(description)}</p>
+        <div className="page-header-container">
+            <h1 className={`${headingClassNames} ${titleAlignment}`}>{parse(title)}</h1>
+            <p className={`page-header-description ${descriptionAlignment}`}>{parse(description)}</p>
         </div>
     )
 }

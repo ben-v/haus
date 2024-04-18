@@ -1,11 +1,11 @@
 import NewClients from './sections/NewClients'
 import ExistingClients from './sections/ExistingClients'
-import PageSection from '../../components/layouts/PageSection'
+import PageContainer from '../../components/layouts/PageContainer'
 import PageHeader from '../../components/layouts/PageHeader'
 
 const ClientsPage = () => {
   return (
-    <PageSection id='clients'>
+    <PageContainer id='clients'>
       <PageHeader 
           titlePartA="Job #1 &rsaquo; "
           titlePartB="Helping Clients"
@@ -14,7 +14,7 @@ const ClientsPage = () => {
         <NewClients />
         <ExistingClients />
       </div>
-    </PageSection>
+    </PageContainer>
   )
 }
 

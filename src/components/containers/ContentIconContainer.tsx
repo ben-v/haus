@@ -20,13 +20,22 @@ const ContentIconContainer = (props: ContentIconContainerProps) => {
         ...props
     };
 
-    const standardPrefix: string = propsWithDefaults.invertContainerColors ? "dark:" : "";
-    const invertedPrefix: string = propsWithDefaults.invertContainerColors ? "" : "dark:";
-
-    const containerColors: string = `${standardPrefix}border-gray-300/60 ${standardPrefix}bg-white ${invertedPrefix}border-gray-700/60 ${invertedPrefix}bg-gray-800`;
-    const titleColors: string = `${standardPrefix}text-gray-900 ${invertedPrefix}text-white`;
-    const descriptionColors: string = `${standardPrefix}text-gray-600 ${invertedPrefix}text-gray-300`;
+    let containerColors: string;
+    let titleColors: string;
+    let descriptionColors: string;
     const titleSizeClassNames: string = propsWithDefaults.titleSize === "Standard" ? "text-lg" : "text-xl md:text-2xl lg:text-3xl";
+
+    if (propsWithDefaults.invertContainerColors) {
+        // For some reason, the border color is not being applied as expected when using string interpolation and dark theme ONLY
+        // when inverting colors though. For now, just use in-effecient approach as of 4/18/24. Might be my eyes playing tricks on me.
+        containerColors = `dark:border-gray-300/60 dark:bg-white border-gray-700/60 bg-gray-800`;
+        titleColors = "dark:text-gray-900 text-white";
+        descriptionColors = "dark:text-gray-600 text-gray-300";
+    } else {
+        containerColors = "border-gray-300/60 bg-white dark:border-gray-700/60 dark:bg-gray-800";
+        titleColors = "text-gray-900 dark:text-white";
+        descriptionColors = "text-gray-600 dark:text-gray-300";
+    }
 
     return (
         <div className="flex items-center gap-4">

@@ -6,7 +6,7 @@ import resolveConfig from 'tailwindcss/resolveConfig'
 import tailwindConfig from '../../../tailwind.config';
 import { THEMES, ThemeContext } from "../../contexts/ThemeContext";
 
-import PageSection from "../../components/layouts/PageSection"
+import PageContainer from "../../components/layouts/PageContainer"
 import PageHeader from "../../components/layouts/PageHeader"
 import CardHeader from "../../components/layouts/CardHeader"
 import RoundCornerContainer from "../../components/containers/RoundCornerContainer"
@@ -74,7 +74,7 @@ const ContactPage = () => {
   };
 
   return (
-    <PageSection id="contact">
+    <PageContainer id="contact">
       <PageHeader
         titlePartA="Let's"
         titlePartB=" Connect"
@@ -82,7 +82,7 @@ const ContactPage = () => {
       <div className="relative grid gap-12 sm:mx-auto sm:max-w-lg lg:max-w-max lg:grid-cols-2">
         <ContentBackground />
         <RoundCornerContainer>
-          <CardHeader title="Message Form" titleAlignment="Left" />
+          <CardHeader title="What's on your mind?" titleAlignment="Left" />
           <form onSubmit={onSubmitHandler} className="w-auto">
             <div className="relative">
               <div className="mt-8 mb-6 space-y-4">
@@ -198,7 +198,7 @@ const ContactPage = () => {
             },
           }} />
       </div>
-    </PageSection>
+    </PageContainer>
   )
 }
 

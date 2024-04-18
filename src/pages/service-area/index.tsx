@@ -9,7 +9,7 @@ import DetailCardWithImageCard from "../../components/cards/DetailCardWithImageC
 import PageHeader from "../../components/layouts/PageHeader"
 // import SvgMapLocation from "../../components/images/icons/SvgMapLocation"
 import SvgServiceAreaMap from "../../components/images/sections/SvgServiceAreaMap"
-import PageSection from "../../components/layouts/PageSection"
+import PageContainer from "../../components/layouts/PageContainer"
 import SvgMapLocationDotSolid from "../../components/images/icons/SvgMapLocationDotSolid"
 import { useContext } from "react";
 import ContentIconContainer from "../../components/containers/ContentIconContainer";
@@ -21,7 +21,7 @@ const ServiceAreaPage = () => {
   const { theme,  } = useContext(ThemeContext);
   
   return (
-    <PageSection id="intro-service-area">
+    <PageContainer id="intro-service-area">
       <PageHeader
         titlePartA="Service"
         titlePartB=" Area"
@@ -58,7 +58,7 @@ const ServiceAreaPage = () => {
         }
         imageCard={<SvgServiceAreaMap className="mx-auto rounded-3xl border border-gray-300/100 object-cover object-top shadow-2xl" />}
       />
-    </PageSection>
+    </PageContainer>
   )
 }
 
