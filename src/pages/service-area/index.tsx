@@ -13,6 +13,7 @@ import PageSection from "../../components/layouts/PageSection"
 import SvgMapLocationDotSolid from "../../components/images/icons/SvgMapLocationDotSolid"
 import { useContext } from "react";
 import ContentIconContainer from "../../components/containers/ContentIconContainer";
+// import CardHeader from "../../components/layouts/CardHeader";
 
 const fullConfig = resolveConfig(tailwindConfig)
 
@@ -28,14 +29,9 @@ const ServiceAreaPage = () => {
       <DetailCardWithImageCard
         detailCard={
           <>
-            <div className="flex items-center gap-4">
-                  <ContentIconContainer invertContainerColors={true} >
-                    <SvgMapLocationDotSolid fill={theme === THEMES.DARK ? fullConfig.theme.colors.dark : fullConfig.theme.colors.white} className="m-auto w-auto" width={40} height={48} />
-                  </ContentIconContainer>
-              <div>
-                <h3 className="text-xl font-semibold text-white dark:text-gray-800">Communities We Serve</h3>
-              </div>
-            </div>
+            <ContentIconContainer title="Communities We Serve" invertContainerColors={true} titleSize="Large">
+              <SvgMapLocationDotSolid fill={theme === THEMES.DARK ? fullConfig.theme.colors.dark : fullConfig.theme.colors.white} className="m-auto w-auto" width={40} height={48} />
+            </ContentIconContainer>          
             <div className="my-8 mb-8 grid grid-cols-2  rounded-3xl border border-gray-700 text-white dark:border-gray-200 dark:text-gray-600 [&>*]:border-gray-700 [&>*]:p-4 [&>*]:text-xs md:[&>*]:text-sm lg:[&>*]:text-lg [&>*]:dark:border-gray-200">
               <div className="flex justify-center items-center gap-2 border-b">
                 Bozeman

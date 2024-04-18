@@ -1,57 +1,53 @@
-import TestamonialCard from "../../../components/cards/TestamonialCard"
+import TestamonialCard, { TestamonialCardProps } from "../../../components/cards/TestamonialCard"
+import CardHeader from "../../../components/layouts/CardHeader"
+
+const testamonials: TestamonialCardProps[] = [
+  {
+    reviewerName: "Pam D.",
+    date: "4/14/24",
+    stars: 5,
+    source: "Google",
+    reviewText: "Ben is a hard worker who also has good suggestions and ideas. He's versatile, thorough and makes things better than new!"
+  },
+  {
+    reviewerName: "Liz A.",
+    date: "4/14/24",
+    stars: 5,
+    source: "Google",
+    reviewText: "Ben is creative and came up with a beautiful and practical piece of furniture to support my handcycle! I cant wait to see what he does with some other projects.",
+  },
+  {
+    reviewerName: "Suzi B.",
+    date: "4/14/24",
+    stars: 5,
+    source: "Google",
+    reviewText: "HAUS Property Services is very professional and easy to work with. They come by and give you an estimate and everything is done electronically fast and efficiently. Our project was done on time and in budget. The finished product was completed beyond my expectations!"
+  }
+];
 
 const Testamonials = () => {
-
-    return (
-        <div className="flex flex-col md:flex-row">
-        <div className="lg:w-8/12 w-auto p-2">
-          <div className="py-2 px-0 md:p-2 w-auto text-center">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white lg:text-4xl">Client testamonials</h2>
+  return (
+    <div className="flex flex-col p-2">
+      <CardHeader 
+        title="Building Lasting Relationships" 
+        titleAlignment="Center" 
+        description="We pride ourselves on forging lasting relationships based on communication, collaberation and trust with each of our clients. See what they have to say about working with us!"
+        descriptionAlignment="Center" />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+        {testamonials.map((testamonial,) => (
+          <div className="flex">
+            <TestamonialCard
+              reviewerName={testamonial.reviewerName}
+              date={testamonial.date}
+              stars={testamonial.stars}
+              source={testamonial.source}
+              reviewText={testamonial.reviewText}
+              grow="Fill" />
           </div>
-          {/* <p className="m-2 md:m-6 lg:mt-12 lg:ml-3 text-gray-600 dark:text-gray-300 text-lg text-center md:text-left">At <span className="font-semibold">HAUS</span> our approach with our clients is first and foremost is to help each and every one of them with their list of projects, big or small. With over over 30 years in high tech, at some of the largest companies in the United States, respectful and considerate communication & collaboration were the foundations of success then and are the foundation of success today on any project...in corporate America or in the home.</p> */}
-        </div>
-        <TestamonialCard 
-          reviewerName="Pam D." 
-          avatarType="female1"
-          stars={5}
-          maxStars={5}
-          source="Google"
-          sourceUrl="https://g.co/kgs/Ko99H7k"
-          reviewText="Ben is a hard worker who also has good suggestions and ideas. He's versatile, thorough and makes things better than new!" />
-        <TestamonialCard 
-          reviewerName="Liz A." 
-          avatarType="female2"
-          stars={5}
-          maxStars={5}
-          source="Google"
-          sourceUrl="https://g.co/kgs/7JckZSa"
-          reviewText="Ben is creative and came up with a beautiful and practical piece of furniture to support my handcycle! I cant wait to see what he does with some other projects." />
-        <TestamonialCard 
-          reviewerName="Suzi B." 
-          avatarType="female3"
-          stars={5}
-          maxStars={5}
-          source="Google"
-          sourceUrl="https://g.co/kgs/RpVU5U3"
-          reviewText="HAUS Property Services is very professional and easy to work with. They come by and give you an estimate and everything is done electronically fast and efficiently. Our project was done on time and in budget. The finished product was completed beyond my expectations!" />
-        <TestamonialCard 
-          reviewerName="Carolyn B." 
-          avatarType="female1"
-          stars={5}
-          maxStars={5}
-          source="Google"
-          sourceUrl=""
-          reviewText="TBD" />
-        <TestamonialCard 
-          reviewerName="Bryce C." 
-          avatarType="male1"
-          stars={5}
-          maxStars={5}
-          source="Google"
-          sourceUrl=""
-          reviewText="TBD" />
-        </div>
-    )
+        ))}
+      </div>
+    </div>
+  )
 }
 
 export default Testamonials

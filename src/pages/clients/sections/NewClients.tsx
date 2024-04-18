@@ -11,6 +11,7 @@ import PngNewRequest from "../../../../public/images/screenshots/new-request.png
 import SvgRectangleListSolid from "../../../components/images/SvgRectangleListSolid";
 import ContentIconContainer from "../../../components/containers/ContentIconContainer";
 import SvgClipboardQuestionSolid from "../../../components/images/icons/SvgClipboardQuestionSolid";
+import CardHeader from "../../../components/layouts/CardHeader";
 
 const fullConfig = resolveConfig(tailwindConfig)
 
@@ -23,31 +24,26 @@ const NewClients = () => {
                 <div className="w-auto">
                     <div className="space-y-12 md:flex md:space-y-0 gap-4">
                         <div className="relative md:w-1/2 md:mr-16">
-                        <ContentBackground />
+                            <ContentBackground />
                             <div>
-                                <h3 className="text-xl font-bold text-gray-900 dark:text-white md:text-2xl">Are you a new client?</h3>
-                                <p className="mt-8 text-gray-600 dark:text-gray-300">An easy way to get started, is to send us a new work request. Once received, we will review and follow up with you regarding next steps.</p>
-                                <div className="mt-12 space-y-6">
-                                    <div className="flex items-center gap-6">
-                                        <ContentIconContainer>
-                                            <SvgRectangleListSolid fill={theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.dark} className="m-auto w-auto" width={40} height={48} />                                           
-                                        </ContentIconContainer>
-                                        <div className="w-[calc(100%-7.5rem)]">
-                                            <h4 className="text-lg font-semibold text-gray-800 dark:text-white">To do list...</h4>
-                                            <p className="mt-1 text-gray-600 dark:text-gray-400">Have a to do list that keeps growing?</p>
-                                        </div>
-                                    </div>
+                                <CardHeader 
+                                    title="Are you a new client?"
+                                    description="An easy way to get started, is to send us a new work request. Once received, we will review and follow up with you regarding next steps."
+                                    titleAlignment="Left"
+                                    descriptionAlignment="Left" />
+                                <div className="mt-8 space-y-6">
+                                    <ContentIconContainer
+                                        title="To do list..."
+                                        description="Have a to do list that keeps growing?">
+                                        <SvgRectangleListSolid fill={theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.dark} className="m-auto w-auto" width={40} height={48} />
+                                    </ContentIconContainer>
 
-                                    <div className="flex items-center gap-6">
-                                        <ContentIconContainer>
-                                            {/* <SvgQuestion className="m-auto w-auto" width={48} height={48} /> */}
-                                            <SvgClipboardQuestionSolid fill={theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.dark} className="m-auto w-auto" width={40} height={48} />
-                                        </ContentIconContainer>
-                                        <div className="w-[calc(100%-7.5rem)]">
-                                            <h4 className="text-lg font-semibold text-gray-800 dark:text-white">Questions?</h4>
-                                            <p className="mt-1 text-gray-600 dark:text-gray-400">Have some questions you'd like addressed before moving forward?</p>
-                                        </div>
-                                    </div>
+                                    <ContentIconContainer
+                                        title="Questions?"
+                                        description="Have some questions you'd like addressed before moving forward?">
+                                        <SvgClipboardQuestionSolid fill={theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.dark} className="m-auto w-auto" width={40} height={48} />
+                                    </ContentIconContainer>
+
                                     <a href="/work-request/#" className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 active:duration-75 active:before:scale-95 dark:before:bg-primaryLight">
                                         <div className="pr-2">
                                             <SvgRectangleListSolid width={16} height={16} className='relative m-auto' fill={theme === THEMES.DARK ? fullConfig.theme.colors.dark : fullConfig.theme.colors.white} />

@@ -22,7 +22,7 @@ const PageSection = (props: PageSectionProps) => {
   }
 
   return (
-    <section id={propsWithDefaults.id} className="overflow-x-clip pt-24 lg:pt-32 pb-10">
+    <section id={propsWithDefaults.id} className="overflow-x-clip pt-24 lg:pt-32 pb-10 flex flex-col">
       <div className={`mx-auto ${widthClasses} xl:px-0`}>
         {props.children}
       </div>

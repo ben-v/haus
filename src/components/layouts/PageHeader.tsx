@@ -33,13 +33,13 @@ const PageHeader = (props: PageHeaderProps) => {
     }
     
     let title: string = "";
-    const description: string = props.Description ? props.Description : "";
+    const description: string = propsWithDefaults.Description ? propsWithDefaults.Description.trim() : "";
     let titleAlignment: string = "";
     let descriptionAlignment: string = "";
     let textColor: string = "text-gray-900";
 
-    if (props.titleAlignment) {
-        switch (props.titleAlignment) {
+    if (propsWithDefaults.titleAlignment) {
+        switch (propsWithDefaults.titleAlignment) {
             case "Left": {
                 titleAlignment = "lg:text-left";
                 break;
@@ -56,8 +56,8 @@ const PageHeader = (props: PageHeaderProps) => {
         }
     }
 
-    if (props.descriptionAlignment) {
-        switch (props.descriptionAlignment) {
+    if (propsWithDefaults.descriptionAlignment) {
+        switch (propsWithDefaults.descriptionAlignment) {
             case "Left": {
                 descriptionAlignment = "lg:text-left";
                 break;
