@@ -78,7 +78,7 @@ const ContactPage = () => {
       <PageHeader
         titlePartA="Let's"
         titlePartB=" Connect"
-        Description="If you have project ideas or questions you'd like to discuss, please fill out the form below to send us a message." />
+        description="If you have project ideas or questions you'd like to discuss, please fill out the form below to send us a message." />
       <div className="relative grid gap-12 sm:mx-auto sm:max-w-lg lg:max-w-max lg:grid-cols-2">
         <ContentBackground />
         <RoundCornerContainer>

@@ -4,7 +4,7 @@ import PageHeader from "../../components/layouts/PageHeader"
 const PrivacyPage = () => {
     return (
       <PageContainer id="privacy-policy">
-        <PageHeader titlePartA="Privacy Policy" Description="Last Updated On: April 2, 2024" />
+        <PageHeader titlePartA="Privacy Policy" description="Last Updated On: April 2, 2024" />
       </PageContainer>
     )
   }

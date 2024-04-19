@@ -25,7 +25,7 @@ const ServiceAreaPage = () => {
       <PageHeader
         titlePartA="Service"
         titlePartB=" Area"
-        Description="Our primary service area encompasses the greater Bozeman area community and Gallatin County. Check out the list below for communities we commonly serve." />
+        description="Our primary service area encompasses the greater Bozeman area community and Gallatin County. Check out the list below for communities we commonly serve." />
       <DetailCardWithImageCard
         detailCard={
           <>

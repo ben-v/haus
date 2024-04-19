@@ -5,7 +5,7 @@ import { renderToString } from "react-dom/server";
 export interface PageHeaderProps {
     titlePartA: string,
     titlePartB?: string,
-    Description?: string,
+    description?: string,
     highlightType?: "None" | "Vibrant" | "Standard",
     highlightPart?: "A" | "B"
     titleAlignment?: "Left" | "Center" | "Right";
@@ -33,7 +33,7 @@ const PageHeader = (props: PageHeaderProps) => {
     }
     
     let title: string = "";
-    const description: string = propsWithDefaults.Description ? propsWithDefaults.Description.trim() : "";
+    const description: string = propsWithDefaults.description ? propsWithDefaults.description.trim() : "";
     let titleAlignment: string = "";
     let descriptionAlignment: string = "";
     let headingClassNames: string = "page-header-heading-standard";
@@ -109,8 +109,8 @@ const PageHeader = (props: PageHeaderProps) => {
 
     return (
         <div className="page-header-container">
-            <h1 className={`${headingClassNames} ${titleAlignment}`}>{parse(title)}</h1>
-            <p className={`page-header-description ${descriptionAlignment}`}>{parse(description)}</p>
+            <div className={`${headingClassNames} ${titleAlignment}`}>{parse(title)}</div>
+            {props.description ? <div className={`page-header-description ${descriptionAlignment}`}>{parse(description)}</div> : ""}
         </div>
     )
 }

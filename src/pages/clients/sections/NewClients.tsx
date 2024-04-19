@@ -12,6 +12,7 @@ import SvgRectangleListSolid from "../../../components/images/SvgRectangleListSo
 import ContentIconContainer from "../../../components/containers/ContentIconContainer";
 import SvgClipboardQuestionSolid from "../../../components/images/icons/SvgClipboardQuestionSolid";
 import CardHeader from "../../../components/layouts/CardHeader";
+import ContentSection from "../../../components/layouts/ContentSection";
 
 const fullConfig = resolveConfig(tailwindConfig)
 
@@ -19,9 +20,10 @@ const NewClients = () => {
     const { theme, } = useContext(ThemeContext);
 
     return (
-        <div className="relative w-auto flex flex-col">
-            <div className="md:flex md:flex-col md:gap-24">
-                <div className="w-auto">
+        // <div className="relative w-auto flex flex-col">
+        //     <div className="md:flex md:flex-col md:gap-24">
+        //         <div className="w-auto">
+        <ContentSection>
                     <div className="space-y-12 md:flex md:space-y-0 gap-4">
                         <div className="relative md:w-1/2 md:mr-16">
                             <ContentBackground />
@@ -58,9 +60,10 @@ const NewClients = () => {
                             <img src={PngNewRequest} className="mx-auto h-80 w-96 rounded-t-3xl border border-gray-300/100 object-cover object-top shadow-2xl dark:border-transparent sm:h-[28rem]" alt="new client work request screenshot" width="850" height="1780" />
                         </SharpCornerClipContainer>
                     </div>
-                </div>
-            </div>
-        </div>
+        </ContentSection>
+        //         </div>
+        //     </div>
+        // </div>
     )
 }
 

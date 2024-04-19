@@ -3,16 +3,14 @@ import PageHeader from "../../components/layouts/PageHeader"
 import Testamonials from "./sections/Testamonials";
 import ElevatorPitch from "./sections/ElevatorPitch";
 import Philosophy from "./sections/Philosophy";
-// import ContentBackground from "../../components/effects/ContentBackground";
+import ContentBackground from "../../components/effects/ContentBackground";
 
 const LandingPage = () => {
   return (
     <PageContainer id="landing" width="Wide">
       <PageHeader titlePartA="Comfortable, Functional,&nbsp;" titlePartB="Happy Homes" highlightType="Vibrant" titleAlignment="Left" />
       <ElevatorPitch />
-      {/* <div>
-        <ContentBackground />
-      </div> */}
+      <ContentBackground />
       <Philosophy />
       <Testamonials />
     </PageContainer>

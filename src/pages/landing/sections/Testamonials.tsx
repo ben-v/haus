@@ -1,5 +1,6 @@
 import TestamonialCard, { TestamonialCardProps } from "../../../components/cards/TestamonialCard"
-import CardHeader from "../../../components/layouts/CardHeader"
+import ContentSection from "../../../components/layouts/ContentSection";
+import ContenSectiontHeader from "../../../components/layouts/ContentSectionHeader";
 
 const testamonials: TestamonialCardProps[] = [
   {
@@ -27,12 +28,14 @@ const testamonials: TestamonialCardProps[] = [
 
 const Testamonials = () => {
   return (
-    <div className="flex flex-col p-2">
-      <CardHeader 
-        title="Building Lasting Relationships" 
-        titleAlignment="Center" 
-        description="We pride ourselves on forging lasting relationships based on communication, collaberation and trust with each of our clients. See what they have to say about working with us!"
-        descriptionAlignment="Center" />
+    <ContentSection flexDirection="Center">
+      <div className="w-auto p-2 md:px-12">
+        <ContenSectiontHeader
+          title="Building Lasting Relationships"
+          titleAlignment="Center"
+          description="We pride ourselves on forging lasting relationships based on communication, collaberation and trust with each of our clients. See what they have to say about working with us!"
+          descriptionAlignment="Center" />
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-2 lg:mt-3">
         {testamonials.map((testamonial,) => (
           <div className="flex">
@@ -46,7 +49,7 @@ const Testamonials = () => {
           </div>
         ))}
       </div>
-    </div>
+    </ContentSection>
   )
 }
 
