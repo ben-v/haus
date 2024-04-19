@@ -84,7 +84,7 @@
 /* Content Styles */
 .content-section-container {
     @apply flex;
-    @apply md:my-6
+    @apply md:m-6
 }
 
 .content-section-container.content-section-ltr {
