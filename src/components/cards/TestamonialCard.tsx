@@ -66,7 +66,7 @@ const TestamonialCard = (props: TestamonialCardProps) => {
 
   return (
       <RoundCornerContainer useGradientBackground={false} padding={propsWithDefaults.padding}>
-        <div className="relative text-gray-600 dark:text-gray-300 text-sm flex flex-col gap-3 w-auto h-auto" >
+        <div className="relative text-gray-600 dark:text-gray-300 text-sm flex flex-col gap-3 w-auto h-full" >
           <div className="relative flex flex-row gap-2 items-center">
             <SvgReviewAvatarTemplate 
               values={`${propsWithDefaults.reviewerName.charAt(0).toUpperCase()}`} 
