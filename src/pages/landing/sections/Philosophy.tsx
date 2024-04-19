@@ -11,7 +11,7 @@ const Philosophy = () => {
 
     return (
         <ContentSection flexDirection="RTL">
-            <div className="lg:w-8/12 w-auto p-2">
+            <div className="lg:w-8/12 w-auto p-2 md:pt-6">
                 <ContenSectiontHeader
                     title="Old School Meets New" 
                     titleAlignment="Left"

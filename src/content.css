@@ -84,7 +84,8 @@
 /* Content Styles */
 .content-section-container {
     @apply flex;
-    @apply md:m-6
+    @apply md:mx-6;
+    @apply md:my-1;
 }
 
 .content-section-container.content-section-ltr {

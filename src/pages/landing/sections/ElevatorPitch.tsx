@@ -10,12 +10,12 @@ const ElevatorPitch = () => {
 
   return (
     <ContentSection>
-      <div className="lg:w-7/12 w-auto p-2 md:pt-8">
+      <div className="lg:w-7/12 w-auto p-2 md:pt-8 flex items-center">
         <ContenSectiontHeader
           description={`<span className="font-semibold">HAUS Property Services</span> provides property maintenance, repair, and technical services for the connected home in the Bozeman area.`}
           descriptionAlignment="Left" />
       </div>
-      <div className="lg:w-5/12 w-auto px-4 md:mt-6">
+      <div className="lg:w-5/12 w-auto px-4 md:mt-3">
         {(theme === THEMES.DARK) ? <SvgIntroDark className="w-full" /> : <SvgIntroLight className="w-full" />}
       </div>
     </ContentSection>
