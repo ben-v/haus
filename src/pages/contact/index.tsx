@@ -6,18 +6,21 @@ import resolveConfig from 'tailwindcss/resolveConfig'
 import tailwindConfig from '../../../tailwind.config';
 import { THEMES, ThemeContext } from "../../contexts/ThemeContext";
 
-import PageSection from "../../components/layouts/PageSection"
+import PageContainer from "../../components/layouts/PageContainer"
 import PageHeader from "../../components/layouts/PageHeader"
 import CardHeader from "../../components/layouts/CardHeader"
 import RoundCornerContainer from "../../components/containers/RoundCornerContainer"
-import SvgYelpGeneric from "../../components/images/SvgYelpGneric"
-import SvgFacebookGeneric from "../../components/images/SvgFacebookGeneric"
-import PngInstagramColor from "../../../public/images/instagram-color.png";
+import SvgYelpGeneric from "../../components/images/icons/SvgYelpGneric"
+import SvgFacebookGeneric from "../../components/images/icons/SvgFacebookGeneric"
+import PngInstagramColor from "../../../public/icons/instagram-color.png";
 import ContentBackground from "../../components/effects/ContentBackground"
 import SvgPaperPlaneSolid from "../../components/images/icons/SvgPaperPlaneSolid"
 
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from 'react-hot-toast';
+import SvgGoogleGLogo from "../../components/images/icons/SvgGoogleGLogo";
+import SocialProfileUrls from "../../navigation/SocialProfileUrls";
+import TestamonialCard from "../../components/cards/TestamonialCard";
 
 const fullConfig = resolveConfig(tailwindConfig)
 
@@ -34,7 +37,7 @@ const ContactPage = () => {
   const onChangeHandler = (e: any) => setMailData({ ...mailData, [e.currentTarget.name]: e.currentTarget.value });
   const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     // Dismiss any lingering toast message.
     toast.dismiss();
 
@@ -50,17 +53,17 @@ const ContactPage = () => {
             mailData,
             "cGpfsTEjddquOdhTO" // public api key
           ), {
-            loading: "Sending message...",
-            success: (data) => {
-              setMailData({ name: "", email: "", message: "" });
-              console.log('SEND MESSAGE SUCCESS!', data.status, data.text);
-              return "Message sent!";
-            },
-            error: (err) => {
-              console.log('SEND MESSAGE FAILED...', err);
-              return "Send message failed! Please check fields and try again."
-            }
+        loading: "Sending message...",
+        success: (data) => {
+          setMailData({ name: "", email: "", message: "" });
+          console.log('SEND MESSAGE SUCCESS!', data.status, data.text);
+          return "Message sent!";
         },
+        error: (err) => {
+          console.log('SEND MESSAGE FAILED...', err);
+          return "Send message failed! Please check fields and try again."
+        }
+      },
         {
           style: {
             minWidth: '390px',
@@ -69,24 +72,24 @@ const ContactPage = () => {
       );
     }
   };
-  
+
   return (
-    <PageSection id="contact">
+    <PageContainer id="contact">
       <PageHeader
         titlePartA="Let's"
         titlePartB=" Connect"
-        Description="If you have project ideas or questions you'd like to discuss, please fill out the form below to send us a message." />
+        description="If you have project ideas or questions you'd like to discuss, please fill out the form below to send us a message." />
       <div className="relative grid gap-12 sm:mx-auto sm:max-w-lg lg:max-w-max lg:grid-cols-2">
         <ContentBackground />
         <RoundCornerContainer>
-          <CardHeader title="Message Form" />
+          <CardHeader title="What's on your mind?" titleAlignment="Left" />
           <form onSubmit={onSubmitHandler} className="w-auto">
             <div className="relative">
               <div className="mt-8 mb-6 space-y-4">
                 <div>
                   <label htmlFor="name" className="mb-2 block text-gray-600 dark:text-gray-300 text-lg">Name <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
-                  <input 
-                    id="name" 
+                  <input
+                    id="name"
                     name="name"
                     onChange={(e) => onChangeHandler(e)}
                     value={name}
@@ -97,7 +100,7 @@ const ContactPage = () => {
                 <div>
                   <label htmlFor="email" className="mb-2 block text-gray-600 dark:text-gray-300 text-lg">Email <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
                   <input
-                    id="email" 
+                    id="email"
                     name="email"
                     onChange={(e) => onChangeHandler(e)}
                     value={email}
@@ -107,7 +110,7 @@ const ContactPage = () => {
                 </div>
                 <div>
                   <label htmlFor="message" className="mb-2 block text-gray-600 dark:text-gray-300 text-lg">Message <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
-                  <textarea 
+                  <textarea
                     id="message"
                     name="message"
                     onChange={(e) => onChangeHandler(e)}
@@ -130,25 +133,38 @@ const ContactPage = () => {
             </div>
           </form>
         </RoundCornerContainer>
-        <RoundCornerContainer>
-          <CardHeader title="Also connect with HAUS on:" />
-          <div className="relative flex gap-4 pt-3">
-            <Link to="https://www.facebook.com/haus.property.svcs" target="_blank" aria-label="facebook">
-              {/* No need for a separate color image file for Yelp. Use generic and apply color. Got the Facebook "blue" color by color sampling in another app and applyling here via fill property. */}
-              <SvgFacebookGeneric fill="#0866FF" width={48} height={48} />
-            </Link>
-            <Link to="https://www.instagram.com/haus.property.svcs" target="_blank" aria-label="instagram">
-              {/* The media kit SVG file for Instagram is massive, 11+ MB, and too big for website usage. Tried to make smaller SVG file but could not get it below the original file size. Went with their provided
-                PNG file and reduced the size to 512x512 which got the file down to 168k. Wanted to use their official gradient colored image, so needed to use fully colorized image instead
-                of overriding the fill color on the generic instagram component, SvgInstagramGeneric. */}
-              <img src={PngInstagramColor} width={48} height={48} />
-            </Link>
-            <Link to="https://www.yelp.com/biz/haus-property-services-bozeman" target="_blank" aria-label="yelp">
-              {/* No need for a separate color image file for Yelp. Use generic and apply color. Got the Yelp "red" color by color sampling in another app and applyling here via fill property. */}
-              <SvgYelpGeneric fill="#FF1A1A" width={48} height={48} />
-            </Link>
-          </div>
-        </RoundCornerContainer>
+        <div className="flex flex-col gap-12">
+          <TestamonialCard
+            padding="Large"
+            reviewerName="Kayla C."
+            date="4/17/24"
+            stars={5}
+            source="Google"
+            reviewText="HAUS did a fantastic job.  Ben was very professional, arrived on time and was always easy to communicate with.  The new shelving looks great!  I highly recommend them. " />
+          <RoundCornerContainer>
+            <CardHeader title="Also connect with HAUS on:" titleAlignment="Left" />
+            <div className="relative flex gap-4 pt-3 mb-auto">
+              <Link to={SocialProfileUrls.GOOGLE} target="_blank" aria-label="google">
+                {/* No need for a separate color image file for Yelp. Use generic and apply color. Got the Facebook "blue" color by color sampling in another app and applyling here via fill property. */}
+                <SvgGoogleGLogo width={48} height={48} />
+              </Link>
+              <Link to={SocialProfileUrls.FACEBOOK} target="_blank" aria-label="facebook">
+                {/* No need for a separate color image file for Yelp. Use generic and apply color. Got the Facebook "blue" color by color sampling in another app and applyling here via fill property. */}
+                <SvgFacebookGeneric fill="#0866FF" width={48} height={48} />
+              </Link>
+              <Link to={SocialProfileUrls.INSTAGRAM} target="_blank" aria-label="instagram">
+                {/* The media kit SVG file for Instagram is massive, 11+ MB, and too big for website usage. Tried to make smaller SVG file but could not get it below the original file size. Went with their provided
+                  PNG file and reduced the size to 512x512 which got the file down to 168k. Wanted to use their official gradient colored image, so needed to use fully colorized image instead
+                  of overriding the fill color on the generic instagram component, SvgInstagramGeneric. */}
+                <img src={PngInstagramColor} width={48} height={48} />
+              </Link>
+              <Link to={SocialProfileUrls.YELP} target="_blank" aria-label="yelp">
+                {/* No need for a separate color image file for Yelp. Use generic and apply color. Got the Yelp "red" color by color sampling in another app and applyling here via fill property. */}
+                <SvgYelpGeneric fill="#FF1A1A" width={48} height={48} />
+              </Link>
+            </div>
+          </RoundCornerContainer>
+        </div>
         <Toaster
           position="top-center"
           toastOptions={{
@@ -182,7 +198,7 @@ const ContactPage = () => {
             },
           }} />
       </div>
-    </PageSection>
+    </PageContainer>
   )
 }
 

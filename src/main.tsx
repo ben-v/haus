@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import ThemeProvider from './providers/ThemeProvider.tsx'
 import './index.css'
+import './content.css'
 import { BrowserRouter } from 'react-router-dom'
 import { initTheming } from './providers/ThemeProvider.tsx'
 

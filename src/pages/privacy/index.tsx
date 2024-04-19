@@ -1,11 +1,11 @@
-import PageSection from "../../components/layouts/PageSection"
+import PageContainer from "../../components/layouts/PageContainer"
 import PageHeader from "../../components/layouts/PageHeader"
 
 const PrivacyPage = () => {
     return (
-      <PageSection id="privacy-policy">
-        <PageHeader titlePartA="Privacy Policy" Description="Last Updated On: April 2, 2024" />
-      </PageSection>
+      <PageContainer id="privacy-policy">
+        <PageHeader titlePartA="Privacy Policy" description="Last Updated On: April 2, 2024" />
+      </PageContainer>
     )
   }
   

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import PageSection from "../../components/layouts/PageSection"
+import PageContainer from "../../components/layouts/PageContainer"
 import PageHeader from "../../components/layouts/PageHeader"
 import ContentBackground from "../../components/effects/ContentBackground";
 
@@ -14,7 +14,7 @@ const WorkRequestPage = () => {
   }, []);
 
   return (
-    <PageSection id="work-request">
+    <PageContainer id="work-request">
       <PageHeader titlePartA="New" titlePartB=" Work Request" />
       <div className="relative">
         <ContentBackground />
@@ -22,7 +22,7 @@ const WorkRequestPage = () => {
 
         <link rel="stylesheet" href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css" media="screen" />
       </div>
-    </PageSection>
+    </PageContainer>
   )
 }
 

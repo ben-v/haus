@@ -5,7 +5,7 @@ import { renderToString } from "react-dom/server";
 export interface PageHeaderProps {
     titlePartA: string,
     titlePartB?: string,
-    Description?: string,
+    description?: string,
     highlightType?: "None" | "Vibrant" | "Standard",
     highlightPart?: "A" | "B"
     titleAlignment?: "Left" | "Center" | "Right";
@@ -33,51 +33,15 @@ const PageHeader = (props: PageHeaderProps) => {
     }
     
     let title: string = "";
-    const description: string = props.Description ? props.Description : "";
+    const description: string = propsWithDefaults.description ? propsWithDefaults.description.trim() : "";
     let titleAlignment: string = "";
     let descriptionAlignment: string = "";
-    let textColor: string = "text-gray-900";
-
-    if (props.titleAlignment) {
-        switch (props.titleAlignment) {
-            case "Left": {
-                titleAlignment = "lg:text-left";
-                break;
-            }
-            case "Right": {
-                titleAlignment = "lg:text-right";
-                break;
-            }
-            case "Center":
-            default: {
-                titleAlignment = "";
-                break;
-            }
-        }
-    }
-
-    if (props.descriptionAlignment) {
-        switch (props.descriptionAlignment) {
-            case "Left": {
-                descriptionAlignment = "lg:text-left";
-                break;
-            }
-            case "Right": {
-                descriptionAlignment = "lg:text-right";
-                break;
-            }
-            case "Center":
-            default: {
-                descriptionAlignment = "";
-                break;
-            }
-        }
-    }
+    let headingClassNames: string = "page-header-heading-standard";
 
     switch (propsWithDefaults.highlightType)
     {
         case "Vibrant": {
-            textColor = "text-blue-900";
+            headingClassNames = "page-header-heading-vibrant";
 
             if (propsWithDefaults.highlightPart === "A") {
                 title = `<span className="relative">${<SvgAccentLine className="absolute inset-x-0 -bottom-1 w-full opacity-50" />}<span className="relative bg-gradient-to-r from-primary to-secondaryLight bg-clip-text text-transparent dark:from-primaryLight dark:to-secondaryLight md:px-2">${propsWithDefaults.titlePartA}</span></span>${propsWithDefaults.titlePartB ? propsWithDefaults.titlePartB : ""}`
@@ -107,10 +71,46 @@ const PageHeader = (props: PageHeaderProps) => {
         }
     }
 
+    if (propsWithDefaults.titleAlignment) {
+        switch (propsWithDefaults.titleAlignment) {
+            case "Left": {
+                titleAlignment = "lg:text-left";
+                break;
+            }
+            case "Right": {
+                titleAlignment = "lg:text-right";
+                break;
+            }
+            case "Center":
+            default: {
+                titleAlignment = "";
+                break;
+            }
+        }
+    }
+
+    if (propsWithDefaults.descriptionAlignment) {
+        switch (propsWithDefaults.descriptionAlignment) {
+            case "Left": {
+                descriptionAlignment = "lg:text-left";
+                break;
+            }
+            case "Right": {
+                descriptionAlignment = "lg:text-right";
+                break;
+            }
+            case "Center":
+            default: {
+                descriptionAlignment = "";
+                break;
+            }
+        }
+    }
+
     return (
-        <div className="py-2 px-0 md:p-2 w-auto text-center">
-            <h1 className={`relative text-center ${titleAlignment} font-bold ${textColor} dark:text-white text-4xl sm:text-5xl md:text-6xl`}>{parse(title)}</h1>
-            <p className={`m-4 mx-2 md:m-12 ${descriptionAlignment} text-gray-600 dark:text-gray-300 text-lg w-auto`}>{parse(description)}</p>
+        <div className="page-header-container">
+            <div className={`${headingClassNames} ${titleAlignment}`}>{parse(title)}</div>
+            {props.description ? <div className={`page-header-description ${descriptionAlignment}`}>{parse(description)}</div> : ""}
         </div>
     )
 }

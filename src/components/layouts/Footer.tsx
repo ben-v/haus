@@ -3,9 +3,12 @@ import { HashLink } from "react-router-hash-link";
 
 import SvgArrowUpRightFromSquareSolid from "../images/SvgArrowUpRightFromSquareSolid";
 import SvgLogo from "../images/SvgLogo";
-import SvgFacebookGeneric from "../images/SvgFacebookGeneric";
-import SvgInstagramGeneric from "../images/SvgInstagramGeneric";
-import SvgYelpGeneric from "../images/SvgYelpGneric";
+import SvgFacebookGeneric from "../images/icons/SvgFacebookGeneric";
+import SvgInstagramGeneric from "../images/icons/SvgInstagramGeneric";
+import SvgYelpGeneric from "../images/icons/SvgYelpGneric";
+import SvgGoogleFontAwesomeGeneric from "../images/icons/SvgGoogleFontAwesomeGeneric";
+
+import SocialProfileUrls from "../../navigation/SocialProfileUrls";
 
 const sectionLinkGroups: NavLinkGroup[] = [
   {
@@ -52,15 +55,19 @@ const Footer = () => {
                 </div>
 
                 <div className="flex gap-3 pt-2">
-                  <Link to="https://www.facebook.com/haus.property.svcs" target="_blank" aria-label="facebook">
+                  <Link to={SocialProfileUrls.GOOGLE} target="_blank" aria-label="google">
+                    <span className="sr-only">Google</span>
+                    <SvgGoogleFontAwesomeGeneric fill="currentColor" width={20} height={20} />
+                  </Link>
+                  <Link to={SocialProfileUrls.FACEBOOK} target="_blank" aria-label="facebook">
                     <span className="sr-only">Facebook</span>
                     <SvgFacebookGeneric fill="currentColor" width={20} height={20} />
                   </Link>
-                  <Link to="https://www.instagram.com/haus.property.svcs" target="_blank" aria-label="instagram">
+                  <Link to={SocialProfileUrls.INSTAGRAM} target="_blank" aria-label="instagram">
                     <span className="sr-only">Instagram</span>
                     <SvgInstagramGeneric fill="currentColor" width={20} height={20} />
                   </Link>
-                  <Link to="https://www.yelp.com/biz/haus-property-services-bozeman" target="_blank" aria-label="yelp">
+                  <Link to={SocialProfileUrls.YELP} target="_blank" aria-label="yelp">
                     <span className="sr-only">Yelp</span>
                     <SvgYelpGeneric fill="currentColor" width={20} height={20} />
                   </Link>

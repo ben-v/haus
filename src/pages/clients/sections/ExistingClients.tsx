@@ -13,6 +13,7 @@ import SvgAddressBookSolid from "../../../components/images/SvgAddressBookSolid"
 // import SvgDashboard from "../../../components/images/icons/SvgDashboard";
 import ContentIconContainer from "../../../components/containers/ContentIconContainer";
 import SvgMobileScreenButtonSolid from "../../../components/images/icons/SvgMobileScreenButtonSolid";
+import CardHeader from "../../../components/layouts/CardHeader";
 
 const fullConfig = resolveConfig(tailwindConfig)
 
@@ -22,26 +23,24 @@ const ExistingClients = () => {
 
     return (
         <div className="relative w-auto flex flex-col">
-            <ContentBackground />
             <div className="md:flex md:flex-col md:gap-24">
                 <div className="w-auto">
                     <div className="space-y-12 md:flex md:flex-row-reverse md:space-y-0">
                         <div className="relative md:w-1/2 md:ml-16">
+                        <ContentBackground />
                             <div>
-                                <h3 className="text-xl font-bold text-gray-900 dark:text-white md:text-2xl">Existing clients, the client hub is for you!</h3>
-                                <p className="mt-8 text-gray-600 dark:text-gray-300">The client hub is a self-serve, online experience that allows HAUS clients to approve quotes, check appointment details, pay invoices, print receipts, or request more work—all in one place.</p>
-                                <div className="mt-12 space-y-6">
+                                <CardHeader
+                                    title="Existing clients, the client hub is for you!"
+                                    description="The client hub is a self-serve, online experience that allows HAUS clients to approve quotes, check appointment details, pay invoices, print receipts, or request more work—all in one place."
+                                    titleAlignment="Left"
+                                    descriptionAlignment="Left" />
+                                <div className="mt-8 space-y-6">
 
-                                    <div className="flex items-center gap-6">
-                                        <ContentIconContainer>
-                                            {/* <SvgDashboard className="m-auto w-auto" width={48} height={48} /> */}
-                                            <SvgMobileScreenButtonSolid fill={theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.dark} className="m-auto w-auto" width={40} height={48} />
-                                        </ContentIconContainer>
-                                        <div className="w-[calc(100%-7.5rem)]">
-                                            <h4 className="text-lg font-semibold text-gray-800 dark:text-white">Convenient tools...</h4>
-                                            <p className="mt-1 text-gray-600 dark:text-gray-400">The self serve client hub is available from your phone, tablet or desktop PC.</p>
-                                        </div>
-                                    </div>
+                                    <ContentIconContainer
+                                        title="Convenient Tools..."
+                                        description="The self serve client hub is available from your phone, tablet or desktop PC.">
+                                        <SvgMobileScreenButtonSolid fill={theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.dark} className="m-auto w-auto" width={40} height={48} />
+                                    </ContentIconContainer>
 
                                     <div>
                                         <Link to="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" target="_blank" className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 active:duration-75 active:before:scale-95 dark:before:bg-primaryLight">

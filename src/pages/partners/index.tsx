@@ -1,11 +1,11 @@
-import PageSection from "../../components/layouts/PageSection"
+import PageContainer from "../../components/layouts/PageContainer"
 import PageHeader from "../../components/layouts/PageHeader"
 
 const PartnersPage = () => {
     return (
-      <PageSection id="partners">
+      <PageContainer id="partners">
         <PageHeader titlePartA="Our Partners" titleAlignment="Left" />
-      </PageSection>
+      </PageContainer>
     )
   }
   
