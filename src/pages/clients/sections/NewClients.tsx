@@ -19,7 +19,7 @@ const NewClients = () => {
 
     return (
         <ContentSection>
-            <div className="space-y-12 md:flex md:space-y-0 gap-4">
+            <div className="flex flex-col gap-4 md:flex-row">
                 <div className="relative md:w-1/2 md:mr-16">
                     <ContentBackground />
                     <div>

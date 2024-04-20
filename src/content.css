@@ -24,8 +24,14 @@
 }
 
 .page-container .page-standard-width, .page-wide-width {
+    @apply relative;
+    @apply relative;
+    @apply flex;
+    @apply flex-col;
+
     @apply xl:px-0;
     @apply mx-auto;
+    @apply gap-6
 }
 
 .page-container .page-standard-width {
@@ -40,16 +46,11 @@
 }
 
 .page-container .page-header-container {
-    /* @apply py-2;  */
     @apply px-0;
     @apply md:px-2;
     @apply w-auto;
     @apply text-center;
 }
-
-/* .page-header-container .page-header-heading, .page-header-description {
-
-} */
 
 .page-header-container .page-header-heading-standard, .page-header-heading-vibrant {
     @apply relative;
