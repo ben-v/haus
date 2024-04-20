@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom"
 
-import CardHeader from "../../components/layouts/CardHeader"
-import RoundCornerContainer from "../../components/containers/RoundCornerContainer"
-import SvgYelpGeneric from "../../components/images/icons/SvgYelpGneric"
-import SvgFacebookGeneric from "../../components/images/icons/SvgFacebookGeneric"
+import CardHeader from "../layouts/CardHeader"
+import RoundCornerContainer from "../containers/RoundCornerContainer"
+import SvgYelpGeneric from "../images/icons/SvgYelpGneric"
+import SvgFacebookGeneric from "../images/icons/SvgFacebookGeneric"
 import PngInstagramColor from "../../../public/icons/instagram-color.png";
 
-import SvgGoogleGLogo from "../../components/images/icons/SvgGoogleGLogo";
+import SvgGoogleGLogo from "../images/icons/SvgGoogleGLogo";
 import SocialProfileUrls from "../../navigation/SocialProfileUrls";
 
 const SocialLinksCard = () => {

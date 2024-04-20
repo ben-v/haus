@@ -24,10 +24,10 @@ const FormPageWithMarketing = (props: FormPageWithMarketing) => {
         titlePartB={props.titlePartB}
         description={props.description} />
       <ContentSection>
-        <div className={`relative grid gap-3 md:gap-12 sm:mx-auto sm:max-w-lg lg:max-w-max ${colsClassNames}`}>
+        <div className={`relative grid gap-4 md:gap-12 sm:mx-auto sm:max-w-lg lg:max-w-max ${colsClassNames}`}>
           <ContentBackground />
           {props.formCard}
-          {props.marketingCards ? <div className="flex flex-col gap-3 md:gap-12">{props.marketingCards}</div> : "" }
+          {props.marketingCards ? <div className="flex flex-col gap-4 md:gap-12">{props.marketingCards}</div> : "" }
         </div>
       </ContentSection>
     </PageContainer>

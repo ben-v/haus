@@ -12,44 +12,8 @@ const CardHeader = (props: ContentElementProps) => {
         ...props
     }
 
-    let titleAlignment: string = "";
-    let descriptionAlignment: string = "";
-
-    if (propsWithDefaults.titleAlignment) {
-        switch (propsWithDefaults.titleAlignment) {
-            case "Left": {
-                titleAlignment = "text-left";
-                break;
-            }
-            case "Right": {
-                titleAlignment = "text-right";
-                break;
-            }
-            case "Center":
-            default: {
-                titleAlignment = "text-center";
-                break;
-            }
-        }
-    }
-
-    if (props.descriptionAlignment) {
-        switch (props.descriptionAlignment) {
-            case "Left": {
-                descriptionAlignment = "text-center lg:text-left";
-                break;
-            }
-            case "Right": {
-                descriptionAlignment = "text-center lg:text-right";
-                break;
-            }
-            case "Center":
-            default: {
-                descriptionAlignment = "text-center";
-                break;
-            }
-        }
-    }
+    const titleAlignment: string = `card-header-header-align-${propsWithDefaults.titleAlignment.toLowerCase()}`;
+    const descriptionAlignment: string = `card-header-description-align-${propsWithDefaults.descriptionAlignment.toLowerCase()}`;
 
     return (
         <div className="card-header-container">

@@ -2,7 +2,7 @@ import FormPageWithMarketing from "../../components/layouts/FormPageWithMarketin
 
 import ContactForm from "./sections/ContactForm";
 import TestamonialCard from "../../components/cards/TestamonialCard";
-import SocialLinksCard from "../common/SocalLinksCard";
+import SocialLinksCard from "../../components/common/SocalLinksCard";
 
 const marketingCards = () => {
   return (

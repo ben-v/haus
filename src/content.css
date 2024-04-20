@@ -29,14 +29,12 @@
 }
 
 .page-container .page-standard-width {
-    @apply px-2;
-    @apply md:px-4;
+    @apply px-4;
     @apply xl:max-w-5xl;
 }
 
 .page-container .page-wide-width {
-    @apply px-2;
-    @apply md:px-2;
+    @apply px-4;
     @apply w-full;
     @apply xl:max-w-6xl;
 }
@@ -175,6 +173,30 @@
     @apply w-auto;
     @apply text-gray-600;
     @apply dark:text-gray-300;
+}
+
+.card-header-header.card-header-header-align-left {
+    @apply text-left;
+}
+
+.card-header-header.card-header-header-align-right {
+    @apply text-right;
+}
+
+.card-header-header.card-header-header-align-center {
+    @apply text-center;
+}
+
+.card-header-description.card-header-description-align-left {
+    @apply text-left;
+}
+
+.card-header-description.card-header-description-align-right {
+    @apply text-right;
+}
+
+.card-header-description.card-header-description-align-center {
+    @apply text-center;
 }
 
 /* Navigation/Link/Button Styles */
