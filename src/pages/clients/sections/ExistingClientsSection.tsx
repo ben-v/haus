@@ -8,7 +8,6 @@ import tailwindConfig from '../../../../tailwind.config';
 import SvgArrowUpRightFromSquareSolid from "../../../components/images/SvgArrowUpRightFromSquareSolid"
 import PngExistingClientHub from "../../../../public/images/screenshots/client-hub.png"
 import SharpCornerClipContainer from "../../../components/containers/SharpCornerClipContainer";
-import ContentBackground from "../../../components/effects/ContentBackground";
 import SvgAddressBookSolid from "../../../components/images/SvgAddressBookSolid";
 import ContentIconContainer from "../../../components/containers/ContentIconContainer";
 import SvgMobileScreenButtonSolid from "../../../components/images/icons/SvgMobileScreenButtonSolid";
@@ -17,7 +16,7 @@ import ContentSection from "../../../components/layouts/ContentSection";
 
 const fullConfig = resolveConfig(tailwindConfig)
 
-const ExistingClients = () => {
+const ExistingClientsSection = () => {
 
     const { theme, } = useContext(ThemeContext);
 
@@ -25,7 +24,6 @@ const ExistingClients = () => {
         <ContentSection flexDirection="RTL">
             <div className="flex flex-col gap-4 md:flex-row-reverse">
                 <div className="relative md:w-1/2 md:ml-16">
-                    <ContentBackground />
                     <div>
                         <CardHeader
                             title="Existing clients, the client hub is for you!"
@@ -67,4 +65,4 @@ const ExistingClients = () => {
     )
 }
 
-export default ExistingClients
+export default ExistingClientsSection

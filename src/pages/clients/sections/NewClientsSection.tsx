@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import SharpCornerClipContainer from "../../../components/containers/SharpCornerClipContainer";
-import ContentBackground from "../../../components/effects/ContentBackground";
 import resolveConfig from 'tailwindcss/resolveConfig'
 import tailwindConfig from '../../../../tailwind.config';
 import { THEMES, ThemeContext } from "../../../contexts/ThemeContext";
@@ -14,14 +13,13 @@ import ContentSection from "../../../components/layouts/ContentSection";
 
 const fullConfig = resolveConfig(tailwindConfig)
 
-const NewClients = () => {
+const NewClientsSection = () => {
     const { theme, } = useContext(ThemeContext);
 
     return (
         <ContentSection>
             <div className="flex flex-col gap-4 md:flex-row">
                 <div className="relative md:w-1/2 md:mr-16">
-                    <ContentBackground />
                     <div>
                         <CardHeader
                             title="Are you a new client?"
@@ -59,4 +57,4 @@ const NewClients = () => {
     )
 }
 
-export default NewClients
+export default NewClientsSection

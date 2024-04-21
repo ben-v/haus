@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 export interface RoundCornerContainerProps {
-  width?: "Auto" | "Fixed";
+  width?: "Auto" | "Fixed" | "Full" | "25%" | "50%" | "75%" | "100%";
   padding?: "Large" | "Small";
   grow?: "Fill" | "Shrink";
   useGradientBackground?: boolean;
@@ -25,10 +25,33 @@ const RoundCornerContainer = (props: RoundCornerContainerProps) => {
   let paddingClassNames: string = "";
   let growClassNames: string = "";
 
-  if (propsWithDefaults.width && (propsWithDefaults.width === "Auto")) {
-    widthClassNames = "w-auto";
-  } else {
-    widthClassNames = "md:mx-0 md:w-6/12 lg:w-5/12";
+  switch (propsWithDefaults.width) {
+    case "Fixed": {
+      widthClassNames = "md:mx-0 md:w-6/12 lg:w-5/12";
+      break;
+    }
+    case "25%": {
+      widthClassNames = "w-1/4";
+      break;
+    }
+    case "50%": {
+      widthClassNames = "w-2/4";
+      break;
+    }
+    case "75%": {
+      widthClassNames = "w-3/4";
+      break;
+    }
+    case "Full":
+    case "100%": {
+      widthClassNames = "w-full";
+      break;
+    }
+    case "Auto":
+    default: {
+      widthClassNames = "w-auto";
+      break;
+    }
   }
 
   if (propsWithDefaults.padding && (propsWithDefaults.padding === "Large")) {

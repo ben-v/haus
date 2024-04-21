@@ -1,33 +1,17 @@
-import FormPageWithMarketing from "../../components/layouts/FormPageWithMarketing";
+import PageContainer2 from "../../components/layouts/PageContainer2";
 
-import ContactForm from "./sections/ContactForm";
-import TestamonialCard from "../../components/cards/TestamonialCard";
-import SocialLinksCard from "../../components/common/SocalLinksCard";
-
-const marketingCards = () => {
-  return (
-    <>
-      <TestamonialCard
-        padding="Large"
-        reviewerName="Kayla C."
-        date="4/17/24"
-        stars={5}
-        source="Google"
-        reviewText="HAUS did a fantastic job.  Ben was very professional, arrived on time and was always easy to communicate with.  The new shelving looks great!  I highly recommend them." />
-      <SocialLinksCard />
-    </>
-  )
-};
+import ContactFormSection from "./sections/ContactFormSection";
+import ContactMarketingSection from "./sections/ContactMarketingSection";
 
 const ContactPage = () => {
   return (
-    <FormPageWithMarketing
+    <PageContainer2
       id="contact"
       titlePartA="Let's"
       titlePartB=" Connect"
       description="If you have project ideas or questions you'd like to discuss, please fill out the form below to send us a message."
-      formCard={<ContactForm />}
-      marketingCards={marketingCards()} />
+      columnA={<ContactFormSection />}
+      columnB={<ContactMarketingSection />} />
   )
 }
 

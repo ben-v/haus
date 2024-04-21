@@ -12,7 +12,7 @@ import CommonToastNotificationConfig from "../../../components/notifications/com
 
 const fullConfig = resolveConfig(tailwindConfig)
 
-const ContactForm = () => {
+const ContactFormSection = () => {
     const { theme, } = useContext(ThemeContext);
 
     const [mailData, setMailData] = useState({
@@ -122,4 +122,4 @@ const ContactForm = () => {
     )
 }
 
-export default ContactForm
+export default ContactFormSection
