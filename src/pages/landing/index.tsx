@@ -1,7 +1,7 @@
 import Testamonials from "./sections/Testamonials";
 import ElevatorPitch from "./sections/ElevatorPitch";
 import Philosophy from "./sections/Philosophy";
-import PageContainer2 from "../../components/layouts/PageContainer2";
+import PageContainer from "../../components/layouts/PageContainer";
 
 // Want the landing cards to be stacked in a single column, so need to wrap in a div with flex CSS classes applied.
 const landingCards = () => {
@@ -16,7 +16,7 @@ const landingCards = () => {
 
 const LandingPage = () => {
   return (
-    <PageContainer2
+    <PageContainer
       id="landing"
       titlePartA="Comfortable, Functional,&nbsp;"
       titlePartB="Happy Homes"

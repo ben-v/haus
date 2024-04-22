@@ -1,9 +1,9 @@
-import PageContainer2 from "../../components/layouts/PageContainer2";
+import PageContainer from "../../components/layouts/PageContainer";
 import ServiceAreaDetailSection from "./sections/ServiceAreaDetailSection";
 
 const ServiceAreaPage = () => {
   return (
-    <PageContainer2
+    <PageContainer
       id="service-area"
       titlePartA="Service"
       titlePartB=" Area"

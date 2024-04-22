@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import PageContainer2 from "../../components/layouts/PageContainer2";
+import PageContainer from "../../components/layouts/PageContainer";
 
 const workRequestForm = () => {
   useEffect(() => {
@@ -22,7 +22,7 @@ const workRequestForm = () => {
   
 const WorkRequestPage = () => {
   return (
-    <PageContainer2 
+    <PageContainer 
       id="work-request" 
       titlePartA="New" 
       titlePartB=" Work Request"

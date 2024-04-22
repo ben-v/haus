@@ -1,9 +1,9 @@
-import PageContainer2 from "../../components/layouts/PageContainer2";
+import PageContainer from "../../components/layouts/PageContainer";
 import PartnersDetailSection from "./sections/PartnersDetailSection"
 
 const PartnersPage = () => {
   return (
-    <PageContainer2
+    <PageContainer
       id="partners"
       titlePartA="Our"
       titlePartB=" Partners"

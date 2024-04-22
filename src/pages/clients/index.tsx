@@ -1,6 +1,6 @@
 import NewClientsSection from './sections/NewClientsSection'
 import ExistingClientsSection from './sections/ExistingClientsSection'
-import PageContainer2 from '../../components/layouts/PageContainer2'
+import PageContainer from '../../components/layouts/PageContainer'
 
 // Want the client cards to be stacked in a single column, so need to wrap in a div with flex CSS classes applied.
 const clientCards = () => {
@@ -14,7 +14,7 @@ const clientCards = () => {
 
 const ClientsPage = () => {
   return (
-    <PageContainer2
+    <PageContainer
       id="clients"
       titlePartA="Job #1 &rsaquo; "
       titlePartB="Helping Clients"

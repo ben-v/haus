@@ -1,9 +1,9 @@
-import PageContainer2 from "../../components/layouts/PageContainer2";
+import PageContainer from "../../components/layouts/PageContainer";
 import ServicesDetailSection from "./sections/ServicesDetailSection"
 
 const ServicesPage = () => {
   return (
-    <PageContainer2
+    <PageContainer
       id="services"
       titlePartA="Services"
       columnA={<ServicesDetailSection />} />

@@ -1,11 +1,11 @@
-import PageContainer2 from "../../components/layouts/PageContainer2";
+import PageContainer from "../../components/layouts/PageContainer";
 
 import ContactFormSection from "./sections/ContactFormSection";
 import ContactMarketingSection from "./sections/ContactMarketingSection";
 
 const ContactPage = () => {
   return (
-    <PageContainer2
+    <PageContainer
       id="contact"
       titlePartA="Let's"
       titlePartB=" Connect"

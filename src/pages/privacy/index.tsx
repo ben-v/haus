@@ -1,9 +1,9 @@
-import PageContainer2 from "../../components/layouts/PageContainer2";
+import PageContainer from "../../components/layouts/PageContainer";
 import PrivacyDetailSection from "./sections/PrivacyDetailSection";
 
 const PrivacyPage = () => {
   return (
-    <PageContainer2
+    <PageContainer
       id="privacy-policy"
       titlePartA="Privacy Policy"
       description="Last Updated On: April 2, 2024"

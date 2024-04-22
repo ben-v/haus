@@ -1,9 +1,9 @@
-import PageContainer2 from "../../components/layouts/PageContainer2";
+import PageContainer from "../../components/layouts/PageContainer";
 import FaqsDetailSection from "./sections/FaqsDetailSection";
 
 const FaqsPage = () => {
   return (
-    <PageContainer2
+    <PageContainer
       id="faqs"
       titlePartA="FAQs"
       showContentBackground={false}

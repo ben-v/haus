@@ -1,9 +1,9 @@
-import PageContainer2 from "../../components/layouts/PageContainer2";
+import PageContainer from "../../components/layouts/PageContainer";
 import WorkRequestFormSection from "./sections/WorkRequestFormSection";
 
 const WorkRequestPage2 = () => {
   return (
-    <PageContainer2
+    <PageContainer
       id="work-request-2"
       titlePartA="New"
       titlePartB=" Work Request"

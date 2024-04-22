@@ -1,9 +1,9 @@
-import PageContainer2 from "../../components/layouts/PageContainer2";
+import PageContainer from "../../components/layouts/PageContainer";
 import TermsDetailSection from "./sections/TermsDetailSection"
 
 const TermsPage = () => {
   return (
-    <PageContainer2
+    <PageContainer
       id="terms"
       titlePartA="Terms &amp; Conditions"
       description="Last Updated On: April 13, 2024"
