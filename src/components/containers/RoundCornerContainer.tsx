@@ -9,7 +9,7 @@ export interface RoundCornerContainerProps {
 }
 
 const defaultProps = {
-  width: "Auto",
+  width: "Full",
   padding: "Large",
   grow: "Shrink",
   useGradientBackground: true
@@ -42,14 +42,14 @@ const RoundCornerContainer = (props: RoundCornerContainerProps) => {
       widthClassNames = "w-3/4";
       break;
     }
-    case "Full":
-    case "100%": {
-      widthClassNames = "w-full";
+    case "Auto": {
+      widthClassNames = "w-auto";
       break;
     }
-    case "Auto":
+    case "Full":
+    case "100%":
     default: {
-      widthClassNames = "w-auto";
+      widthClassNames = "w-full";
       break;
     }
   }

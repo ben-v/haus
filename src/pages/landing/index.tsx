@@ -2,15 +2,16 @@ import Testamonials from "./sections/Testamonials";
 import ElevatorPitch from "./sections/ElevatorPitch";
 import Philosophy from "./sections/Philosophy";
 import PageContainer from "../../components/layouts/PageContainer";
+import ContentSection from "../../components/layouts/ContentSection";
 
 // Want the landing cards to be stacked in a single column, so need to wrap in a div with flex CSS classes applied.
 const landingCards = () => {
   return (
-    <div className="relative flex flex-col gap-4">
+    <ContentSection flexDirection="Center">
       <ElevatorPitch />
       <Philosophy />
       <Testamonials />
-    </div>
+    </ContentSection>
   )
 };
 

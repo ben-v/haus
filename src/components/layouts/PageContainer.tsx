@@ -1,6 +1,5 @@
 import { ReactElement } from "react";
 
-// import PageContainer from "../../components/layouts/PageContainer"
 import PageHeader, { PageHeaderProps, defaultPageHeaderProps } from "./PageHeader"
 import ContentBackground from "../effects/ContentBackground"
 import ContentSection from "./ContentSection";
@@ -26,7 +25,7 @@ const PageContainer = (props: PageContainerProps) => {
 }
 
   const widthClassName: string = (props.width && (props.width === "Wide")) ? "page-wide-width" : "page-standard-width";
-  const colsClassNames: string = propsWithDefaults.columnB ? "lg:grid-cols-2" : "lg:grid-cols-1";
+  // const colsClassNames: string = propsWithDefaults.columnB ? "lg:grid-cols-2 lg:grid-template-columns: 1fr 1fr lg:column-gap:w-4" : "lg:grid-cols-1 lg:grid-template-columns: 1fr 1fr";
 
   return (
     <section id={propsWithDefaults.id} className="page-container">
@@ -41,11 +40,9 @@ const PageContainer = (props: PageContainerProps) => {
         descriptionAlignment={propsWithDefaults.descriptionAlignment}
         />
       <ContentSection>
-        <div className={`relative grid gap-4 md:gap-6 sm:mx-auto sm:max-w-lg md:max-w-max ${colsClassNames}`}>
-          {propsWithDefaults.showContentBackground ? <ContentBackground /> : ""}
           {propsWithDefaults.columnA}
+          {propsWithDefaults.showContentBackground ? <ContentBackground /> : ""}
           {propsWithDefaults.columnB ? <div className="flex flex-col gap-4 md:gap-6">{propsWithDefaults.columnB}</div> : "" }
-        </div>
       </ContentSection>
       </div>
     </section>

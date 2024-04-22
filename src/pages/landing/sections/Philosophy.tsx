@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { ThemeContext, THEMES } from "../../../contexts/ThemeContext";
 import SvgIntroSuccessLight from "../../../components/images/sections/SvgIntroSuccessLight";
 import SvgIntroSuccessDark from "../../../components/images/sections/SvgIntroSuccessDark";
-// import CardHeader from "../../../components/layouts/CardHeader";
 import ContenSectiontHeader from "../../../components/layouts/ContentSectionHeader";
 import ContentSection from "../../../components/layouts/ContentSection";
 
@@ -21,7 +20,6 @@ const Philosophy = () => {
             <div className="lg:w-4/12 w-auto p-4 mt-4 md:mt-3">
                 {(theme === THEMES.DARK) ? <SvgIntroSuccessDark className="w-full" /> : <SvgIntroSuccessLight className="w-full" />}
             </div>
-        {/* </div> */}
         </ContentSection>
     )
 }

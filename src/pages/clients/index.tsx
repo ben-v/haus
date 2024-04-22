@@ -1,14 +1,15 @@
 import NewClientsSection from './sections/NewClientsSection'
 import ExistingClientsSection from './sections/ExistingClientsSection'
 import PageContainer from '../../components/layouts/PageContainer'
+import ContentSection from '../../components/layouts/ContentSection';
 
 // Want the client cards to be stacked in a single column, so need to wrap in a div with flex CSS classes applied.
 const clientCards = () => {
   return (
-      <div className="relative flex flex-col gap-16">
-        <NewClientsSection />
-        <ExistingClientsSection />
-      </div>
+    <ContentSection flexDirection="Center">
+      <NewClientsSection />
+      <ExistingClientsSection />
+    </ContentSection>
   )
 };
 
