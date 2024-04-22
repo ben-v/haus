@@ -13,7 +13,7 @@ const workRequestForm = () => {
 
   return (
     <>
-      <div id="96f9f173-4904-4f62-94b1-2f43695ff40e" className="w-auto md:w-11/12" />
+      <div id="96f9f173-4904-4f62-94b1-2f43695ff40e" />
 
       <link rel="stylesheet" href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css" media="screen" />
     </>
