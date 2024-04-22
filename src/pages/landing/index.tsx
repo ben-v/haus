@@ -18,7 +18,6 @@ const LandingPage = () => {
   return (
     <PageContainer2
       id="landing"
-      width="Wide"
       titlePartA="Comfortable, Functional,&nbsp;"
       titlePartB="Happy Homes"
       highlightType="Vibrant"

@@ -42,10 +42,10 @@ const PageContainer2 = (props: PageContainerProps) => {
         descriptionAlignment={propsWithDefaults.descriptionAlignment}
         />
       <ContentSection>
-        <div className={`relative grid gap-4 md:gap-12 sm:mx-auto sm:max-w-lg lg:max-w-max ${colsClassNames}`}>
+        <div className={`relative grid gap-4 md:gap-6 sm:mx-auto sm:max-w-lg md:max-w-max ${colsClassNames}`}>
           {propsWithDefaults.showContentBackground ? <ContentBackground /> : ""}
           {propsWithDefaults.columnA}
-          {propsWithDefaults.columnB ? <div className="flex flex-col gap-4 md:gap-12">{propsWithDefaults.columnB}</div> : "" }
+          {propsWithDefaults.columnB ? <div className="flex flex-col gap-4 md:gap-6">{propsWithDefaults.columnB}</div> : "" }
         </div>
       </ContentSection>
       </div>
