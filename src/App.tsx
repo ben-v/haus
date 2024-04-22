@@ -14,7 +14,7 @@ import ContactPage from "./pages/contact";
 import WorkRequestPage from "./pages/work-request";
 import PrivacyPage from "./pages/privacy";
 import TermsPage from "./pages/terms";
-import WorkRequestPage2 from "./pages/work-request-2";
+// import WorkRequestPage2 from "./pages/work-request-2";
 // import PartnersPage from "./pages/partners";
 
 
@@ -31,7 +31,7 @@ function App() {
         <Route path="/faqs" element={<FaqsPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/work-request" element={<WorkRequestPage />} />
-        <Route path="/work-request-2" element={<WorkRequestPage2 />} />
+        {/* <Route path="/work-request-2" element={<WorkRequestPage2 />} /> */}
         {/* <Route path="/partners" element={<PartnersPage />} /> */}
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/terms" element={<TermsPage />} />
