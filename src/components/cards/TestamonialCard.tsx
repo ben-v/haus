@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { Rating } from 'react-simple-star-rating'
 
 import resolveConfig from 'tailwindcss/resolveConfig'
-import tailwindConfig from '../../../tailwind.config';
 import { THEMES, ThemeContext } from "../../contexts/ThemeContext";
 
 import SocialProfileUrls from '../../navigation/SocialProfileUrls';
@@ -14,6 +13,8 @@ import SvgFacebookGeneric from '../images/icons/SvgFacebookGeneric';
 import SvgYelpLogo from '../images/icons/SvgYelpLogo';
 import SvgReviewAvatarTemplate from '../images/SvgReviewAvatarTemplate';
 import SvgArrowUpRightFromSquareSolid from '../images/SvgArrowUpRightFromSquareSolid';
+import withMaterialTailwind from '../../../tailwind.config';
+import { Config } from 'tailwindcss';
 
 export interface TestamonialCardProps {
   reviewerName: string;
@@ -36,7 +37,7 @@ const defaultProps = {
   grow: "Shrink"
 } satisfies Partial<TestamonialCardProps>
 
-const fullConfig = resolveConfig(tailwindConfig)
+const fullConfig = resolveConfig(withMaterialTailwind as Config)
 
 const TestamonialCard = (props: TestamonialCardProps) => {
   const { theme, } = useContext(ThemeContext);

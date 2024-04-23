@@ -202,4 +202,15 @@
     @apply text-center;
 }
 
+/* Accordian Styles */
+.accordian-header {
+    @apply font-bold;
+    @apply text-gray-900;
+    @apply dark:text-white;    
+}
+
+.accordian-body {
+    @apply text-gray-600;
+    @apply dark:text-gray-300;
+}
 /* Navigation/Link/Button Styles */

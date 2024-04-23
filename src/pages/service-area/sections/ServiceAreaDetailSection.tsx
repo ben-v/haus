@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { HashLink } from "react-router-hash-link"
-import resolveConfig from 'tailwindcss/resolveConfig'
-import tailwindConfig from '../../../../tailwind.config';
+// import resolveConfig from 'tailwindcss/resolveConfig'
+// import tailwindConfig from '../../../../tailwind.config';
 import { ThemeContext, THEMES } from "../../../contexts/ThemeContext";
 import SvgServiceAreaMap from "../../../components/images/sections/SvgServiceAreaMap"
 import SvgMapLocationDotSolid from "../../../components/images/icons/SvgMapLocationDotSolid"
@@ -9,7 +9,7 @@ import ContentIconContainer from "../../../components/containers/ContentIconCont
 import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
 import ContentSection from "../../../components/layouts/ContentSection";
 
-const fullConfig = resolveConfig(tailwindConfig)
+// const fullConfig = resolveConfig(tailwindConfig)
 
 const ServiceAreaDetail = () => {
   const { theme, } = useContext(ThemeContext);
@@ -20,7 +20,7 @@ const ServiceAreaDetail = () => {
         <div className="relative mx-4 rounded-3xl rounded-b-none border border-gray-700 bg-gray-800 shadow-2xl shadow-gray-600/10 dark:border-gray-100 dark:bg-white dark:shadow-none md:mx-0 md:w-6/12 md:rounded-r-none md:rounded-l-3xl lg:w-7/12">
           <div className="relative z-10 p-4 md:p-6 pt-16 md:rounded-r-2xl lg:p-16 lg:pl-[4.375rem]">
             <ContentIconContainer title="Communities We Serve" invertContainerColors={true} titleSize="Large">
-              <SvgMapLocationDotSolid fill={theme === THEMES.DARK ? fullConfig.theme.colors.dark : fullConfig.theme.colors.white} className="m-auto w-auto" width={40} height={48} />
+              <SvgMapLocationDotSolid fill={theme === THEMES.DARK ? 'dark' : 'white'} className="m-auto w-auto" width={40} height={48} />
             </ContentIconContainer>
             <div className="my-8 mb-8 grid grid-cols-2  rounded-3xl border border-gray-700 text-white dark:border-gray-200 dark:text-gray-600 [&>*]:border-gray-700 [&>*]:p-4 [&>*]:text-xs md:[&>*]:text-sm lg:[&>*]:text-lg [&>*]:dark:border-gray-200">
               <div className="flex justify-center items-center gap-2 border-b">

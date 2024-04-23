@@ -1,11 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
-import ThemeProvider from './providers/ThemeProvider.tsx'
+// import ThemeProvider from './providers/ThemeProvider.tsx'
 import './index.css'
 import './content.css'
 import { BrowserRouter } from 'react-router-dom'
-import { initTheming } from './providers/ThemeProvider.tsx'
+import { initTheming, ThemeSwitchProvider } from './providers/ThemeSwitchProvider.tsx'
+import { ThemeProvider } from "@material-tailwind/react";
 
 const root = ReactDOM.createRoot(document.getElementById('root')!);
 
@@ -17,7 +18,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <ThemeProvider>
+        <ThemeSwitchProvider>
           <App />
+        </ThemeSwitchProvider>
       </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,

@@ -27,7 +27,7 @@ export const initTheming = () => {
   document.documentElement.setAttribute(ATTRIBUTE_DATA_THEME, theme);
 };
 
-export const ThemeProvider: React.FC<Props> = (props): JSX.Element => {
+export const ThemeSwitchProvider: React.FC<Props> = (props): JSX.Element => {
   const [themeState, setThemeState] = useState<THEMES>(
     useDarkTheme() ? THEMES.DARK : THEMES.LIGHT
   );
@@ -72,4 +72,4 @@ export const ThemeProvider: React.FC<Props> = (props): JSX.Element => {
   );
 };
 
-export default ThemeProvider;
+export default ThemeSwitchProvider;
