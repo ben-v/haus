@@ -86,8 +86,6 @@
 .content-section-container {
     @apply relative;
     @apply flex;
-    /* @apply md:mx-6; */
-    /* @apply md:my-1; */
     @apply w-auto;
     @apply gap-4;
     @apply md:gap-6;

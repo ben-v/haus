@@ -5,11 +5,11 @@ import ContentBackground from "../effects/ContentBackground"
 import ContentSection from "./ContentSection";
 
 export interface PageContainerProps extends PageHeaderProps {
-    id: string,
-    width?: "Wide" | "Standard";
-    columnA: ReactElement,
-    columnB?: ReactElement,
-    showContentBackground?: boolean
+  id: string,
+  width?: "Wide" | "Standard";
+  columnA: ReactElement,
+  columnB?: ReactElement,
+  showContentBackground?: boolean
 }
 
 const defaultProps = {
@@ -22,28 +22,27 @@ const PageContainer = (props: PageContainerProps) => {
     ...defaultProps,
     ...defaultPageHeaderProps,
     ...props
-}
+  }
 
   const widthClassName: string = (props.width && (props.width === "Wide")) ? "page-wide-width" : "page-standard-width";
-  // const colsClassNames: string = propsWithDefaults.columnB ? "lg:grid-cols-2 lg:grid-template-columns: 1fr 1fr lg:column-gap:w-4" : "lg:grid-cols-1 lg:grid-template-columns: 1fr 1fr";
 
   return (
     <section id={propsWithDefaults.id} className="page-container">
       <div className={widthClassName}>
-      <PageHeader
-        titlePartA={propsWithDefaults.titlePartA}
-        titlePartB={propsWithDefaults.titlePartB}
-        description={propsWithDefaults.description}
-        highlightType={propsWithDefaults.highlightType}
-        highlightPart={propsWithDefaults.highlightPart}
-        titleAlignment={propsWithDefaults.titleAlignment}
-        descriptionAlignment={propsWithDefaults.descriptionAlignment}
+        <PageHeader
+          titlePartA={propsWithDefaults.titlePartA}
+          titlePartB={propsWithDefaults.titlePartB}
+          description={propsWithDefaults.description}
+          highlightType={propsWithDefaults.highlightType}
+          highlightPart={propsWithDefaults.highlightPart}
+          titleAlignment={propsWithDefaults.titleAlignment}
+          descriptionAlignment={propsWithDefaults.descriptionAlignment}
         />
-      <ContentSection>
+        <ContentSection>
           {propsWithDefaults.columnA}
           {propsWithDefaults.showContentBackground ? <ContentBackground /> : ""}
-          {propsWithDefaults.columnB ? <div className="flex flex-col gap-4 md:gap-6">{propsWithDefaults.columnB}</div> : "" }
-      </ContentSection>
+          {propsWithDefaults.columnB ? <div className="flex flex-col gap-4 md:gap-6">{propsWithDefaults.columnB}</div> : ""}
+        </ContentSection>
       </div>
     </section>
   )

@@ -7,8 +7,11 @@ import ContentSection from '../../components/layouts/ContentSection';
 const clientCards = () => {
   return (
     <ContentSection flexDirection="Center">
+      {/* Use div and flex to provide some addtional, one-off, spacing between the new and existing client sections. */}
+      <div className='relative flex flex-col gap-10 md:gap-20'>
       <NewClientsSection />
       <ExistingClientsSection />
+      </div>
     </ContentSection>
   )
 };
