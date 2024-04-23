@@ -1,12 +1,15 @@
-import PageContainer from "../../components/layouts/PageContainer"
-import PageHeader from "../../components/layouts/PageHeader"
+import PageContainer from "../../components/layouts/PageContainer";
+import TermsDetailSection from "./sections/TermsDetailSection"
 
 const TermsPage = () => {
-    return (
-      <PageContainer id="terms">
-        <PageHeader titlePartA="Terms &amp; Conditions" description="Last Updated On: April 13, 2024"/>
-      </PageContainer>
-    )
-  }
-  
-  export default TermsPage
+  return (
+    <PageContainer
+      id="terms"
+      titlePartA="Terms &amp; Conditions"
+      description="Last Updated On: April 13, 2024"
+      showContentBackground={false}
+      columnA={<TermsDetailSection />} />
+  )
+}
+
+export default TermsPage

@@ -12,7 +12,7 @@ export interface PageHeaderProps {
     descriptionAlignment?: "Left" | "Center" | "Right";
 }
 
-const defaultProps = {
+export const defaultPageHeaderProps = {
     highlightType: "Standard",
     highlightPart: "B",
     titleAlignment: "Center",
@@ -28,7 +28,7 @@ const defaultProps = {
  */
 const PageHeader = (props: PageHeaderProps) => {
     const propsWithDefaults = {
-        ...defaultProps,
+        ...defaultPageHeaderProps,
         ...props
     }
     

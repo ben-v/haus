@@ -1,12 +1,15 @@
-import PageContainer from "../../components/layouts/PageContainer"
-import PageHeader from "../../components/layouts/PageHeader"
+import PageContainer from "../../components/layouts/PageContainer";
+import PartnersDetailSection from "./sections/PartnersDetailSection"
 
 const PartnersPage = () => {
-    return (
-      <PageContainer id="partners">
-        <PageHeader titlePartA="Our Partners" titleAlignment="Left" />
-      </PageContainer>
-    )
-  }
-  
-  export default PartnersPage
+  return (
+    <PageContainer
+      id="partners"
+      titlePartA="Our"
+      titlePartB=" Partners"
+      showContentBackground={false}
+      columnA={<PartnersDetailSection />} />
+  )
+}
+
+export default PartnersPage

@@ -1,10 +1,8 @@
 import { useEffect } from "react";
 
-import PageContainer from "../../components/layouts/PageContainer"
-import PageHeader from "../../components/layouts/PageHeader"
-import ContentBackground from "../../components/effects/ContentBackground";
+import PageContainer from "../../components/layouts/PageContainer";
 
-const WorkRequestPage = () => {
+const workRequestForm = () => {
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js";
@@ -14,17 +12,23 @@ const WorkRequestPage = () => {
   }, []);
 
   return (
-    <PageContainer id="work-request">
-      <PageHeader titlePartA="New" titlePartB=" Work Request"
-      description="An easy way to get started, is to send us a new work request. Once received, we will review and follow up with you regarding next steps." />
+    <>
+      <div id="96f9f173-4904-4f62-94b1-2f43695ff40e" className="w-full lg:w-[100vh]" />
 
-      <div className="relative">
-        <ContentBackground />
-        <div id="96f9f173-4904-4f62-94b1-2f43695ff40e" className="relative" />
+      <link rel="stylesheet" href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css" media="screen" />
+    </>
+  )
+};
 
-        <link rel="stylesheet" href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css" media="screen" />
-      </div>
-    </PageContainer>
+const WorkRequestPage = () => {
+  return (
+    <PageContainer
+      id="work-request"
+      titlePartA="New"
+      titlePartB=" Work Request"
+      showContentBackground={false}
+      description="An easy way to get started, is to send us a new work request. Once received, we will review and follow up with you regarding next steps."
+      columnA={workRequestForm()} />
   )
 }
 

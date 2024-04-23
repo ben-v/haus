@@ -40,9 +40,9 @@ const sectionLinkGroups: NavLinkGroup[] = [
 
 const Footer = () => {
   return (
-    <footer className="border-t border-gray-100 pt-10 pb-8 dark:border-gray-800">
+    <footer className="border-t border-gray-100 pt-10 pb-8 px-4 dark:border-gray-800">
       <div>
-        <div className="m-auto space-y-8 px-4 text-gray-600 dark:text-gray-400 sm:px-12 xl:max-w-6xl xl:px-0">
+        <div className="m-auto text-gray-600 dark:text-gray-400 sm:px-12 xl:max-w-6xl xl:px-0">
           <div className="grid grid-cols-8 gap-6 md:gap-0">
             <div className="col-span-8 md:col-span-2 lg:col-span-3">
               <div className="flex h-full items-start justify-between gap-6 border-b border-white py-6 dark:border-gray-800 md:flex-col md:items-start md:justify-between md:space-y-6 md:border-none md:py-0">

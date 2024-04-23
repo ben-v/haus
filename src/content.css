@@ -36,7 +36,8 @@
 
 .page-container .page-standard-width {
     @apply px-4;
-    @apply xl:max-w-5xl;
+    @apply w-full;
+    @apply xl:max-w-6xl;
 }
 
 .page-container .page-wide-width {
@@ -83,19 +84,21 @@
 
 /* Content Styles */
 .content-section-container {
+    @apply relative;
     @apply flex;
-    @apply md:mx-6;
-    @apply md:my-1;
+    @apply w-auto;
+    @apply gap-4;
+    @apply md:gap-6;
 }
 
 .content-section-container.content-section-ltr {
     @apply flex-col;
-    @apply lg:flex-row;
+    @apply md:flex-row;
 }
 
 .content-section-container.content-section-rtl {
     @apply flex-col;
-    @apply lg:flex-row-reverse;
+    @apply md:flex-row-reverse;
 }
 
 .content-section-container.content-section-center {
@@ -105,7 +108,6 @@
 .content-section-header-container {
     @apply w-auto;
 }
-
 
 .content-section-header-title {
     @apply my-4;
@@ -119,12 +121,12 @@
 
 .content-section-header-title.content-section-header-title-align-left {
     @apply text-center;
-    @apply lg:text-left;
+    @apply md:text-left;
 }
 
 .content-section-header-title.content-section-header-title-align-right {
     @apply text-center;
-    @apply lg:text-right;
+    @apply md:text-right;
 }
 
 .content-section-header-title.content-section-header-title-align-center {
@@ -143,12 +145,12 @@
 
 .content-section-header-description.content-section-header-description-align-left {
     @apply text-center;
-    @apply lg:text-left;
+    @apply md:text-left;
 }
 
 .content-section-header-description.content-section-header-description-align-right {
     @apply text-center;
-    @apply lg:text-right;
+    @apply md:text-right;
 }
 
 .content-section-header-description.content-section-header-description-align-center {

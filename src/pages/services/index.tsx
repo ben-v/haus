@@ -1,12 +1,13 @@
-import PageContainer from "../../components/layouts/PageContainer"
-import PageHeader from "../../components/layouts/PageHeader"
+import PageContainer from "../../components/layouts/PageContainer";
+import ServicesDetailSection from "./sections/ServicesDetailSection"
 
 const ServicesPage = () => {
-    return (
-      <PageContainer id="services">
-        <PageHeader titlePartA="Services" />
-      </PageContainer>
-    )
-  }
-  
-  export default ServicesPage
+  return (
+    <PageContainer
+      id="services"
+      titlePartA="Services"
+      columnA={<ServicesDetailSection />} />
+  )
+}
+
+export default ServicesPage

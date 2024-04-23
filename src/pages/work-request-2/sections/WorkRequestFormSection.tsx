@@ -9,10 +9,11 @@ import emailjs from "@emailjs/browser";
 import toast from 'react-hot-toast';
 import SvgPaperPlaneSolid from "../../../components/images/icons/SvgPaperPlaneSolid";
 import CommonToastNotificationConfig from "../../../components/notifications/common-toast-notification-config";
+import ContentSection from "../../../components/layouts/ContentSection";
 
 const fullConfig = resolveConfig(tailwindConfig)
 
-const ContactForm = () => {
+const WorkRequestFormSection = () => {
     const { theme, } = useContext(ThemeContext);
 
     const [mailData, setMailData] = useState({
@@ -62,7 +63,7 @@ const ContactForm = () => {
     };
 
     return (
-        <>
+        <ContentSection flexDirection="Center">
             <RoundCornerContainer>
                 <CardHeader title="What's on your mind?" titleAlignment="Left" />
                 <form onSubmit={onSubmitHandler} className="w-auto">
@@ -81,6 +82,18 @@ const ContactForm = () => {
                                     className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 dark:text-gray-300 transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
                             </div>
                             <div>
+                                <label htmlFor="company" className="mb-2 block text-gray-600 dark:text-gray-300 text-lg">Company</label>
+                                <input
+                                    id="company"
+                                    name="company"
+                                    maxLength={100}
+                                    onChange={(e) => onChangeHandler(e)}
+                                    value={name}
+                                    type="text"
+                                    autoComplete="organization"
+                                    className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 dark:text-gray-300 transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
+                            </div>                            
+                            <div>
                                 <label htmlFor="email" className="mb-2 block text-gray-600 dark:text-gray-300 text-lg">Email <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
                                 <input
                                     id="email"
@@ -93,7 +106,18 @@ const ContactForm = () => {
                                     className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 dark:text-gray-300 transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
                             </div>
                             <div>
-                                <label htmlFor="message" className="mb-2 block text-gray-600 dark:text-gray-300 text-lg">Message <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
+                                <label htmlFor="phone" className="mb-2 block text-gray-600 dark:text-gray-300 text-lg">Phone <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
+                                <input
+                                    id="phone"
+                                    name="phone"
+                                    onChange={(e) => onChangeHandler(e)}
+                                    value={name}
+                                    type="text"
+                                    autoComplete="tel"
+                                    className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 dark:text-gray-300 transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
+                            </div>  
+                            <div>
+                                <label htmlFor="message" className="mb-2 block text-gray-600 dark:text-gray-300 text-lg">Work Request Detail <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
                                 <textarea
                                     id="message"
                                     name="message"
@@ -118,8 +142,8 @@ const ContactForm = () => {
                 </form>
             </RoundCornerContainer>
             <CommonToastNotificationConfig />
-        </>
+        </ContentSection>
     )
 }
 
-export default ContactForm
+export default WorkRequestFormSection
