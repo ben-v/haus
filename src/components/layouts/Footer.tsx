@@ -15,9 +15,9 @@ const sectionLinkGroups: NavLinkGroup[] = [
     title: "Company",
     links: [
       { label: "Clients", url: "/clients/#" },
-      { label: "Services", url: "/services/#" },
+      // { label: "Services", url: "/services/#" },
       { label: "Service Area", url: "/service-area/#" },
-      { label: "FAQs", url: "/faqs/#" },
+      // { label: "FAQs", url: "/faqs/#" },
       { label: "Contact", url: "/contact/#" }
     ]
   },
