@@ -121,12 +121,12 @@
 
 .content-section-header-title.content-section-header-title-align-left {
     @apply text-center;
-    @apply lg:text-left;
+    @apply md:text-left;
 }
 
 .content-section-header-title.content-section-header-title-align-right {
     @apply text-center;
-    @apply lg:text-right;
+    @apply md:text-right;
 }
 
 .content-section-header-title.content-section-header-title-align-center {
@@ -145,12 +145,12 @@
 
 .content-section-header-description.content-section-header-description-align-left {
     @apply text-center;
-    @apply lg:text-left;
+    @apply md:text-left;
 }
 
 .content-section-header-description.content-section-header-description-align-right {
     @apply text-center;
-    @apply lg:text-right;
+    @apply md:text-right;
 }
 
 .content-section-header-description.content-section-header-description-align-center {
