@@ -86,7 +86,7 @@
 .content-section-container {
     @apply relative;
     @apply flex;
-    @apply w-auto;
+    @apply w-full;
     @apply gap-4;
     @apply md:gap-6;
 }

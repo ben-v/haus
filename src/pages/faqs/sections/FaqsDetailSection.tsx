@@ -30,7 +30,7 @@ const faqs: { question: string, answer: string }[] = [
 const FaqsDetailSection = () => {
 
   return (
-    <ContentSection flexDirection="Center">
+    <ContentSection>
       <div className="divide-y divide-gray-200 border-y border-gray-200 dark:divide-gray-800 dark:border-gray-800 w-full">
         {faqs.map((faq,) => (
           <div>
