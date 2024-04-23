@@ -1,4 +1,4 @@
-import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
+// import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
 import ContentSection from "../../../components/layouts/ContentSection";
 
 // NOTE: In order to get the components to work from Material-Tailwind, had to downgrade to React 18.2.42. 
@@ -32,7 +32,6 @@ const faqs: { question: string, answer: string }[] = [
 const FaqsDetailSection = () => {
   return (
     <ContentSection flexDirection="Center">
-      <RoundCornerContainer>
         <div className="mx-auto grid gap-8 w-full z-50">
           {faqs.map(({ question, answer }) => (
             <div key={question}>
@@ -47,7 +46,6 @@ const FaqsDetailSection = () => {
             </div>
           ))}
         </div>
-      </RoundCornerContainer>
     </ContentSection>
   );
 }
