@@ -53,24 +53,8 @@ const Footer = () => {
                   <p className='pt-5'>HAUS Property Services</p>
                   <p>A Bozeman, Montana Company.</p>
                 </div>
-
-                <div className="flex gap-3 pt-2">
-                  <Link to={SocialProfileUrls.GOOGLE} target="_blank" aria-label="google">
-                    <span className="sr-only">Google</span>
-                    <SvgGoogleFontAwesomeGeneric fill="currentColor" width={20} height={20} />
-                  </Link>
-                  <Link to={SocialProfileUrls.FACEBOOK} target="_blank" aria-label="facebook">
-                    <span className="sr-only">Facebook</span>
-                    <SvgFacebookGeneric fill="currentColor" width={20} height={20} />
-                  </Link>
-                  <Link to={SocialProfileUrls.INSTAGRAM} target="_blank" aria-label="instagram">
-                    <span className="sr-only">Instagram</span>
-                    <SvgInstagramGeneric fill="currentColor" width={20} height={20} />
-                  </Link>
-                  <Link to={SocialProfileUrls.YELP} target="_blank" aria-label="yelp">
-                    <span className="sr-only">Yelp</span>
-                    <SvgYelpGeneric fill="currentColor" width={20} height={20} />
-                  </Link>
+                <div className="text-sm">
+                  <span>Copyright &copy; {(new Date()).getFullYear()} HAUS Property Services</span>
                 </div>
               </div>
             </div>
@@ -98,8 +82,23 @@ const Footer = () => {
                   </div>
                 ))}
               </div>
-              <div className="flex justify-between text-sm md:pl-16">
-                <span>Copyright &copy; {(new Date()).getFullYear()} HAUS Property Services</span>
+              <div className="flex gap-3 pt-2 justify-end">
+                <Link to={SocialProfileUrls.GOOGLE} target="_blank" aria-label="google">
+                  <span className="sr-only">Google</span>
+                  <SvgGoogleFontAwesomeGeneric fill="currentColor" width={20} height={20} />
+                </Link>
+                <Link to={SocialProfileUrls.FACEBOOK} target="_blank" aria-label="facebook">
+                  <span className="sr-only">Facebook</span>
+                  <SvgFacebookGeneric fill="currentColor" width={20} height={20} />
+                </Link>
+                <Link to={SocialProfileUrls.INSTAGRAM} target="_blank" aria-label="instagram">
+                  <span className="sr-only">Instagram</span>
+                  <SvgInstagramGeneric fill="currentColor" width={20} height={20} />
+                </Link>
+                <Link to={SocialProfileUrls.YELP} target="_blank" aria-label="yelp">
+                  <span className="sr-only">Yelp</span>
+                  <SvgYelpGeneric fill="currentColor" width={20} height={20} />
+                </Link>
               </div>
             </div>
           </div>

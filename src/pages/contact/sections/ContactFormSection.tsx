@@ -11,8 +11,6 @@ import SvgPaperPlaneSolid from "../../../components/images/icons/SvgPaperPlaneSo
 import { HashLink } from "react-router-hash-link";
 import CardHeader from "../../../components/layouts/CardHeader";
 
-// const fullConfig = resolveConfig(tailwindConfig)
-
 const ContactFormSection = () => {
     const { theme, } = useContext(ThemeContext);
 
@@ -68,7 +66,7 @@ const ContactFormSection = () => {
                 <CardHeader title="What's on your mind?" titleAlignment="Left" />
                 <form onSubmit={onSubmitHandler} className="w-auto">
                     <div className="relative">
-                        <div className="mt-8 mb-6 space-y-4">
+                        <div className="space-y-4">
                             <div>
                                 <label htmlFor="name" className="mb-2 block text-gray-600 dark:text-gray-300 text-base">Name <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
                                 <input
@@ -86,7 +84,7 @@ const ContactFormSection = () => {
                                 <input
                                     id="email"
                                     name="email"
-                                    maxLength={100}
+                                    maxLength={50}
                                     onChange={(e) => onChangeHandler(e)}
                                     value={email}
                                     type="email"
@@ -106,7 +104,7 @@ const ContactFormSection = () => {
                             </div>
                         </div>
 
-                        <p className="mb-8 text-sm text-gray-600 dark:text-gray-300">By clicking submit below, you agree to the processing of your personal information by HAUS Property Services as described in our <HashLink to="/privacy/#">Privacy Policy</HashLink>.</p>
+                        <p className="my-8 text-sm text-gray-600 dark:text-gray-300">By clicking submit below, you agree to the processing of your personal information by HAUS Property Services as described in our <HashLink to="/privacy/#">Privacy Policy</HashLink>.</p>
 
                         <button type="submit" className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 active:duration-75 active:before:scale-95 dark:before:bg-primaryLight">
                             <div className="pr-2">

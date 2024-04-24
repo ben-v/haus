@@ -1,7 +1,4 @@
 import { useContext } from "react";
-// import { HashLink } from "react-router-hash-link"
-// import resolveConfig from 'tailwindcss/resolveConfig'
-// import tailwindConfig from '../../../../tailwind.config';
 import { THEMES, ThemeContext } from "../../../contexts/ThemeContext";
 
 import { Link } from "react-router-dom";
@@ -9,6 +6,7 @@ import { Typography } from "@material-tailwind/react";
 
 import ContentSection from "../../../components/layouts/ContentSection";
 import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
+import CardHeader from "../../../components/layouts/CardHeader";
 
 import TestamonialCard from "../../../components/cards/TestamonialCard";
 import SocialLinksCard from "../../../components/common/SocalLinksCard";
@@ -22,12 +20,7 @@ const ContactMarketingSection = () => {
     return (
         <ContentSection flexDirection="Center">
             <RoundCornerContainer>
-                <Typography
-                    variant="h4"
-                    className="mb-1 text-xl md:text-3xl font-bold text-dark dark:text-white"
-                >
-                    Contact Information
-                </Typography>
+                <CardHeader title="Contact Information" titleAlignment="Left" />
                 <div className="flex items-center gap-2 md:gap-3">
                     <SvgPhoneSolid width={16} height={16} className='relative mr-1 md:mr-4' fill={theme === THEMES.DARK ? 'white' : 'dark'} />
                     {/* <PhoneIcon className="h-3 w-3 md:h-5 md:w-5 text-white" /> */}
@@ -42,6 +35,7 @@ const ContactMarketingSection = () => {
                         <Link to="mailto:info@hauspropertyservices.com">info@hauspropertyservices.com</Link>
                     </Typography>
                 </div>
+
                 <div className="flex items-center gap-1.5">
                     <SocialLinksCard showHeader={false} size="24x24" />
                 </div>

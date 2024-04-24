@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom"
 
-import CardHeader from "../layouts/CardHeader"
 import SvgYelpGeneric from "../images/icons/SvgYelpGneric"
 import SvgFacebookGeneric from "../images/icons/SvgFacebookGeneric"
 import PngInstagramColor from "../../../public/icons/instagram-color.png";
@@ -54,8 +53,7 @@ const SocialLinksCard = (props: ContentIconContainerProps) => {
 
     return (
         <ContentSection flexDirection="Center">
-             {propsWithDefaults.showHeader ? <CardHeader title="Connect with HAUS on:" titleAlignment="Left" /> : ""}
-            <div className="relative flex gap-4 pt-3 mb-auto">
+            <div className="relative flex gap-4">
                 <Link to={SocialProfileUrls.GOOGLE} target="_blank" aria-label="google">
                     {/* No need for a separate color image file for Yelp. Use generic and apply color. Got the Facebook "blue" color by color sampling in another app and applyling here via fill property. */}
                     <SvgGoogleGLogo width={width} height={height} />
