@@ -1,5 +1,5 @@
 // import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
-import ContentSection from "../../../components/layouts/ContentSection";
+import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
 
 // NOTE: In order to get the components to work from Material-Tailwind, had to downgrade to React 18.2.42. 
 // For more info see https://stackoverflow.com/questions/78296875/typescript-error-using-material-tailwind-react-with-nextjs14
@@ -31,8 +31,8 @@ const faqs: { question: string, answer: string }[] = [
 
 const FaqsDetailSection = () => {
   return (
-    <ContentSection flexDirection="Center">
-        <div className="mx-auto grid gap-8 w-full z-50">
+    <ContentSectionContainer flexDirection="Center">
+        <div className="mx-auto grid gap-8 w-full z-10">
           {faqs.map(({ question, answer }) => (
             <div key={question}>
               <Typography className="pb-3 text-lg font-bold text-gray-900 dark:text-white">
@@ -46,7 +46,7 @@ const FaqsDetailSection = () => {
             </div>
           ))}
         </div>
-    </ContentSection>
+    </ContentSectionContainer>
   );
 }
 

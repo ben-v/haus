@@ -12,7 +12,7 @@ import ContentIconContainer from "../../../components/containers/ContentIconCont
 import PngNewRequest from "../../../../public/images/screenshots/new-request.png";
 import SvgRectangleListSolid from "../../../components/images/SvgRectangleListSolid";
 import SvgClipboardQuestionSolid from "../../../components/images/icons/SvgClipboardQuestionSolid";
-import ContentSection from "../../../components/layouts/ContentSection";
+import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
 
 // const fullConfig = resolveConfig(tailwindConfig)
 
@@ -20,14 +20,15 @@ const NewClientsSection = () => {
     const { theme, } = useContext(ThemeContext);
 
     return (
-        <ContentSection>
+        <ContentSectionContainer>
             <div className="relative md:w-1/2 md:mr-16">
                 <div className="relative flex flex-col gap-6">
                     <CardHeader
                         title="Are you a new client?"
-                        description="An easy way to get started, is to send us a new work request. Once received, we will review and follow up with you regarding next steps."
                         titleAlignment="Left"
-                        descriptionAlignment="Left" />
+                        descriptionAlignment="Left">
+                            An easy way to get started, is to send us a new work request. Once received, we will review and follow up with you regarding next steps.
+                        </CardHeader>
                     <div className="relative flex flex-col gap-6">
                         <ContentIconContainer
                             title="To do list..."
@@ -54,7 +55,7 @@ const NewClientsSection = () => {
             <SharpCornerClipContainer>
                 <img src={PngNewRequest} className="mx-auto h-80 w-96 rounded-t-3xl border border-gray-300/100 object-cover object-top shadow-2xl dark:border-transparent sm:h-[28rem]" alt="new client work request screenshot" width="850" height="1780" />
             </SharpCornerClipContainer>
-        </ContentSection>
+        </ContentSectionContainer>
     )
 }
 

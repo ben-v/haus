@@ -6,7 +6,7 @@ import PngInstagramColor from "../../../public/icons/instagram-color.png";
 
 import SvgGoogleGLogo from "../images/icons/SvgGoogleGLogo";
 import SocialProfileUrls from "../../navigation/SocialProfileUrls";
-import ContentSection from "../layouts/ContentSection";
+import ContentSectionContainer from "../containers/ContentSectionContainer";
 
 export interface ContentIconContainerProps {
     size: "16x16" | "24x24" | "32x32" | "48x48" | "64x64"
@@ -52,7 +52,7 @@ const SocialLinksCard = (props: ContentIconContainerProps) => {
     }
 
     return (
-        <ContentSection flexDirection="Center">
+        <ContentSectionContainer flexDirection="Center">
             <div className="relative flex gap-4">
                 <Link to={SocialProfileUrls.GOOGLE} target="_blank" aria-label="google">
                     {/* No need for a separate color image file for Yelp. Use generic and apply color. Got the Facebook "blue" color by color sampling in another app and applyling here via fill property. */}
@@ -73,7 +73,7 @@ const SocialLinksCard = (props: ContentIconContainerProps) => {
                     <SvgYelpGeneric fill="#FF1A1A" width={width} height={height} />
                 </Link>
             </div>
-        </ContentSection>
+        </ContentSectionContainer>
     )
 }
 

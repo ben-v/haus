@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 
 import PageHeader, { PageHeaderProps, defaultPageHeaderProps } from "./PageHeader"
 import ContentBackground from "../effects/ContentBackground"
-import ContentSection from "./ContentSection";
+import ContentSectionContainer from "../containers/ContentSectionContainer";
 
 export interface PageContainerProps extends PageHeaderProps {
   id: string,
@@ -36,13 +36,12 @@ const PageContainer = (props: PageContainerProps) => {
           highlightType={propsWithDefaults.highlightType}
           highlightPart={propsWithDefaults.highlightPart}
           titleAlignment={propsWithDefaults.titleAlignment}
-          descriptionAlignment={propsWithDefaults.descriptionAlignment}
-        />
-        <ContentSection>
+          descriptionAlignment={propsWithDefaults.descriptionAlignment} />
+        <ContentSectionContainer>
           {propsWithDefaults.columnA}
           {propsWithDefaults.showContentBackground ? <ContentBackground /> : ""}
-          {propsWithDefaults.columnB ? <div className="flex flex-col gap-4 md:gap-6">{propsWithDefaults.columnB}</div> : ""}
-        </ContentSection>
+          {propsWithDefaults.columnB ? propsWithDefaults.columnB : ""}
+        </ContentSectionContainer>
       </div>
     </section>
   )

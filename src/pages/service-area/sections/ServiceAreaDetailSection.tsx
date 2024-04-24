@@ -7,7 +7,7 @@ import SvgServiceAreaMap from "../../../components/images/sections/SvgServiceAre
 import SvgMapLocationDotSolid from "../../../components/images/icons/SvgMapLocationDotSolid"
 import ContentIconContainer from "../../../components/containers/ContentIconContainer";
 import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
-import ContentSection from "../../../components/layouts/ContentSection";
+import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
 
 // const fullConfig = resolveConfig(tailwindConfig)
 
@@ -15,7 +15,7 @@ const ServiceAreaDetail = () => {
   const { theme, } = useContext(ThemeContext);
 
   return (
-    <ContentSection flexDirection="Center">
+    <ContentSectionContainer flexDirection="Center">
       <div className="m-auto items-center justify-center -space-y-4 md:flex md:space-y-0 md:-space-x-1">
         <div className="relative mx-4 rounded-3xl rounded-b-none border border-gray-700 bg-gray-800 shadow-2xl shadow-gray-600/10 dark:border-gray-100 dark:bg-white dark:shadow-none md:mx-0 md:w-6/12 md:rounded-r-none md:rounded-l-3xl lg:w-7/12">
           <div className="relative z-10 p-4 md:p-6 pt-16 md:rounded-r-2xl lg:p-16 lg:pl-[4.375rem]">
@@ -46,13 +46,13 @@ const ServiceAreaDetail = () => {
             </HashLink>
           </div>
         </div>
-        <RoundCornerContainer width="Fixed" useGradientBackground={true}>
-          <div className='relative z-10'>
-            <SvgServiceAreaMap className="mx-auto rounded-3xl border border-gray-300/100 object-cover object-top shadow-2xl" />
-          </div>
+        <div className="md:mx-0 md:w-6/12 lg:w-5/12">
+        <RoundCornerContainer>
+          <SvgServiceAreaMap className="mx-auto rounded-3xl border border-gray-300/100 object-cover object-top shadow-2xl" />
         </RoundCornerContainer>
+        </div>
       </div>
-    </ContentSection>
+    </ContentSectionContainer>
   )
 }
 

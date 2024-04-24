@@ -9,7 +9,7 @@ import emailjs from "@emailjs/browser";
 import toast from 'react-hot-toast';
 import SvgPaperPlaneSolid from "../../../components/images/icons/SvgPaperPlaneSolid";
 import CommonToastNotificationConfig from "../../../components/notifications/common-toast-notification-config";
-import ContentSection from "../../../components/layouts/ContentSection";
+import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
 
 // const fullConfig = resolveConfig(tailwindConfig)
 // impot {  } from "@material-tailwind/react";
@@ -64,7 +64,7 @@ const WorkRequestFormSection = () => {
     };
 
     return (
-        <ContentSection flexDirection="Center">
+        <ContentSectionContainer flexDirection="Center">
             <RoundCornerContainer>
                 <CardHeader title="What's on your mind?" titleAlignment="Left" />
                 <form onSubmit={onSubmitHandler} className="w-auto">
@@ -143,7 +143,7 @@ const WorkRequestFormSection = () => {
                 </form>
             </RoundCornerContainer>
             <CommonToastNotificationConfig />
-        </ContentSection>
+        </ContentSectionContainer>
     )
 }
 

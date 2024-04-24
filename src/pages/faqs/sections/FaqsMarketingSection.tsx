@@ -1,6 +1,6 @@
 import { HashLink } from "react-router-hash-link";
 import { Typography } from "@material-tailwind/react";
-import ContentSection from "../../../components/layouts/ContentSection";
+import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
 import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
 import ContentIconContainer from "../../../components/containers/ContentIconContainer";
 import SvgQuestion from "../../../components/images/icons/SvgQuestion";
@@ -12,7 +12,7 @@ const FaqsMarketingSection = () => {
 
     return (
         <div className="max-w-2xl">
-            <ContentSection flexDirection="Center">
+            <ContentSectionContainer flexDirection="Center">
                 <RoundCornerContainer>
                     <ContentIconContainer title={"Other questions?"} titleSize="Large">
                         <SvgQuestion fill={theme === THEMES.DARK ? 'white' : 'dark'} className="m-auto w-auto" width={64} height={64} />
@@ -24,7 +24,7 @@ const FaqsMarketingSection = () => {
                         <span className="relative text-base font-semibold text-white dark:text-dark">Contact Us</span>
                     </HashLink>
                 </RoundCornerContainer>
-            </ContentSection>
+            </ContentSectionContainer>
         </div>
     )
 }

@@ -3,7 +3,7 @@ import { THEMES, ThemeContext } from "../../../contexts/ThemeContext";
 import emailjs from "@emailjs/browser";
 import toast from 'react-hot-toast';
 import CommonToastNotificationConfig from "../../../components/notifications/common-toast-notification-config";
-import ContentSection from "../../../components/layouts/ContentSection";
+import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
 
 import React from "react";
 import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
@@ -61,7 +61,7 @@ const ContactFormSection = () => {
     };
 
     return (
-        <ContentSection flexDirection="Center">
+        <ContentSectionContainer flexDirection="Center">
             <RoundCornerContainer>
                 <CardHeader title="What's on your mind?" titleAlignment="Left" />
                 <form onSubmit={onSubmitHandler} className="w-auto">
@@ -117,7 +117,7 @@ const ContactFormSection = () => {
                 </form>
             </RoundCornerContainer>
             <CommonToastNotificationConfig />
-        </ContentSection>
+        </ContentSectionContainer>
     )
 }
 

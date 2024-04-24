@@ -1,4 +1,4 @@
-import ContentSection from "../../components/layouts/ContentSection";
+import ContentSectionContainer from "../../components/containers/ContentSectionContainer";
 import PageContainer from "../../components/layouts/PageContainer";
 import FaqsDetailSection from "./sections/FaqsDetailSection";
 import FaqsMarketingSection from "./sections/FaqsMarketingSection";
@@ -6,13 +6,13 @@ import FaqsMarketingSection from "./sections/FaqsMarketingSection";
 // Want the client cards to be stacked in a single column, so need to wrap in a div with flex CSS classes applied.
 const faqBlocks = () => {
   return (
-    <ContentSection flexDirection="Center">
+    <ContentSectionContainer flexDirection="Center">
       {/* Use div and flex to provide some addtional, one-off, spacing between the new and existing client sections. */}
       <div className='relative flex flex-col gap-10 md:gap-20 items-center'>
       <FaqsDetailSection />
       <FaqsMarketingSection />
       </div>
-    </ContentSection>
+    </ContentSectionContainer>
   )
 };
 
