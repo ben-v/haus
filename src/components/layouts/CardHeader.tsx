@@ -17,8 +17,8 @@ const CardHeader = (props: ContentElementProps) => {
 
     return (
         <div className="card-header-container">
-            {propsWithDefaults.title ? <h2 className={`card-header-title ${titleAlignment}`}>{parse(propsWithDefaults.title.trim())}</h2> : ""}
-            {propsWithDefaults.children ? <p className={`card-header-description ${descriptionAlignment}`}>{propsWithDefaults.children}</p> : ""}
+            {propsWithDefaults.title ? <h2 className={`card-header-title container-header-text ${titleAlignment}`}>{parse(propsWithDefaults.title.trim())}</h2> : ""}
+            {propsWithDefaults.children ? <p className={`card-header-description general-body-text ${descriptionAlignment}`}>{propsWithDefaults.children}</p> : ""}
         </div>
     )
   }

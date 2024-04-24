@@ -17,8 +17,8 @@ const ContenSectionHeader = (props: ContentElementProps) => {
 
     return (
         <div className="content-section-header-container">
-            {propsWithDefaults.title ? <div className={`content-section-header-title ${titleAlignment}`}>{parse(propsWithDefaults.title.trim())}</div> : ""}
-            {propsWithDefaults.children ? <div className={`content-section-header-description ${descriptionAlignment}`}>{propsWithDefaults.children}</div> : ""}
+            {propsWithDefaults.title ? <div className={`content-section-header-title container-header-text ${titleAlignment}`}>{parse(propsWithDefaults.title.trim())}</div> : ""}
+            {propsWithDefaults.children ? <div className={`content-section-header-description general-body-text ${descriptionAlignment}`}>{propsWithDefaults.children}</div> : ""}
         </div>
     )
   }

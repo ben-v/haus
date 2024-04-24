@@ -11,10 +11,10 @@ const FaqsMarketingSection = () => {
     const { theme, } = useContext(ThemeContext);
 
     return (
-        <div className="max-w-2xl">
+        <div className="w-auto pt-8 md:w-4/5 md:max-w-2xl md:pt-0">
             <ContentSectionContainer flexDirection="Center">
                 <RoundCornerContainer>
-                    <ContentIconContainer title={"Other questions?"} titleSize="Large">
+                    <ContentIconContainer title={"Other questions?"}>
                         <SvgQuestion fill={theme === THEMES.DARK ? 'white' : 'dark'} className="m-auto w-auto" width={64} height={64} />
                     </ContentIconContainer>
                     <Typography className="my-8 font-normal text-gray-600 dark:text-gray-300">
