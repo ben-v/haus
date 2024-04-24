@@ -57,7 +57,7 @@ const RoundCornerContainer = (props: RoundCornerContainerProps) => {
   if (propsWithDefaults.padding && (propsWithDefaults.padding === "Large")) {
     paddingClassNames = "space-y-6 p-8 sm:p-12";
   } else {
-    paddingClassNames = "space-y-3 p-8 sm:p-6";
+    paddingClassNames = "space-y-3 p-4 sm:p-6";
   }
 
   if (propsWithDefaults.grow && (propsWithDefaults.grow === "Fill")) {

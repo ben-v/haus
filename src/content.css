@@ -88,7 +88,7 @@
     @apply flex;
     @apply w-full;
     @apply gap-4;
-    @apply md:gap-6;
+    @apply md:gap-8;
 }
 
 .content-section-container.content-section-ltr {
