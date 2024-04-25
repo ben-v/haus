@@ -34,7 +34,7 @@ const ServiceAreaDetail = () => {
 
         <p className="general-body-text">Don't see your community listed or have questions about our service area? Feel free to reach out to us for more information. We're here to help!</p>
 
-        <HashLink to="/contact/#" className="relative flex h-11 w-full items-center justify-center px-6 mb-4 md:mb-auto before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 active:duration-75 active:before:scale-95 dark:before:bg-primaryLight">
+        <HashLink to="/contact/#" smooth className="relative flex h-11 w-full items-center justify-center px-6 mb-4 md:mb-auto before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 active:duration-75 active:before:scale-95 dark:before:bg-primaryLight">
           <span className="relative text-base font-semibold text-white dark:text-dark">Contact Us</span>
         </HashLink>
       </GenericContentContainer>

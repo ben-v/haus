@@ -42,7 +42,7 @@ const NewClientsSection = () => {
                             <SvgClipboardQuestionSolid fill={theme === THEMES.DARK ? 'white' : 'dark'} className="m-auto w-auto" width={40} height={48} />
                         </ContentIconContainer>
 
-                        <HashLink to="/work-request/#" className="relative mb-6 flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 active:duration-75 active:before:scale-95 dark:before:bg-primaryLight">
+                        <HashLink to="/work-request/#" smooth className="relative mb-6 flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 active:duration-75 active:before:scale-95 dark:before:bg-primaryLight">
                             <div className="pr-2">
                                 <SvgRectangleListSolid width={16} height={16} className='relative m-auto' fill={theme === THEMES.DARK ? 'dark' : 'white'} />
                             </div>
