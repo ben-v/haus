@@ -22,11 +22,11 @@
     @apply text-white;
 }
 
-.container-header-text {
+.container-header-text, .container-header-text-inverted {
     @apply font-bold;
 }
 
-.container-sub-header-text {
+.container-sub-header-text, .container-sub-header-text-inverted {
     @apply font-semibold;
 }
 
@@ -107,7 +107,8 @@
 
 .page-header-container .page-header-description {
     @apply m-4;
-    @apply md:m-12;
+    @apply md:my-8;
+    @apply md:mx-12;
     @apply w-auto;
 }
 
@@ -184,10 +185,9 @@
     @apply flex;
     @apply flex-row;
     @apply gap-4;
-    @apply z-10;
 }
 
-.content-icon-container .icon {
+.content-icon-container .content-icon-container-icon {
     @apply relative;
     @apply flex;
     /* @apply h-15; */
@@ -195,22 +195,23 @@
     @apply p-1;
 }
 
-.content-icon-container .header {
-    @apply w-[calc(100%-7.5rem)];
+.content-icon-container .content-icon-container-header {
+    /* @apply w-[calc(100%-7.5rem)]; */
+    @apply w-full;
 }
 
-.content-icon-container .header .title {
-    @apply mt-1;
-    @apply text-3xl;
+.content-icon-container .content-icon-container-header .content-icon-container-header-title {
+    @apply text-2xl;
+    @apply sm:text-3xl;
     @apply md:text-2xl;
-    @apply lg:text-3xl;    
+    @apply lg:text-3xl;
+    /* @apply w-full; */
 }
 
-.content-icon-container .header .body {
-    /* @apply mt-1; */
-    @apply my-2;
-    @apply md:my-3;
-    @apply w-auto;    
+.content-icon-container .content-icon-container-header .content-icon-container-header-body {
+    @apply my-1;
+    @apply md:my-2;
+    /* @apply w-full; */
 }
 
 .card-header-container, .content-icon-container {
@@ -218,7 +219,8 @@
 }
 
 .card-header-title {
-    @apply text-3xl;
+    @apply text-2xl;
+    @apply sm:text-3xl;
     @apply md:text-2xl;
     @apply lg:text-3xl;
 }
@@ -254,3 +256,40 @@
 }
 
 /* Navigation/Link/Button Styles */
+
+/* Tab Strip Styles */
+.tab-strip {
+
+}
+
+.tab-strip .tab-strip-header {
+    @apply rounded-lg;
+    @apply border;
+    /* @apply border-spacing-8; */
+    @apply border-gray-200;
+    @apply dark:border-gray-700/60;
+    @apply bg-gray-100;
+    @apply dark:bg-gray-800;
+    @apply p-1;
+}
+
+.tab-strip .tab-strip-header .tab-strip-header-tab, .tab-strip .tab-strip-header .tab-strip-header-tab .tab-strip-header-tab-active {
+    @apply text-base;
+    @apply md:text-lg;
+    @apply font-bold;
+    @apply text-gray-900;
+    @apply dark:text-white;
+}
+
+.tab-strip .tab-strip-header .tab-strip-header-tab .tab-strip-header-tab-active {
+    /* @apply bg-gray-100;
+    @apply dark:bg-red-500; */
+}
+
+.tab-strip .tab-strip-body {
+
+}
+
+.tab-strip .tab-strip-body .tab-strip-body-panel {
+    @apply mt-12
+}

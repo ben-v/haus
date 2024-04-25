@@ -31,12 +31,12 @@ const ContentIconContainer = (props: ContentIconContainerProps) => {
 
     return (
         <div className={`content-icon-container ${propsWithDefaults.description ? "items-start" : "items-center"}`}>
-            <div className={`icon`}>
+            <div className={`content-icon-container-icon`}>
                 {propsWithDefaults.children}
             </div>
-            <div className="header">
-                <h4 className={`title ${titleClassNames}`}>{propsWithDefaults.title}</h4>
-                { propsWithDefaults.description ? parse(`<p className="body ${descriptionClassNames}">${propsWithDefaults.description}</p>`) : ""}                
+            <div className="content-icon-container-header">
+                <h4 className={`content-icon-container-header-title ${titleClassNames}`}>{propsWithDefaults.title}</h4>
+                { propsWithDefaults.description ? parse(`<p className="content-icon-container-header-body ${descriptionClassNames}">${propsWithDefaults.description}</p>`) : ""}                
             </div>
         </div>
     );
