@@ -70,7 +70,6 @@ const ClientsPage = () => {
       id="clients"
       titlePartA="Job #1 &rsaquo; "
       titlePartB="Helping Clients"
-      showContentBackground={false}
       description="Projects around the house can pile up fast and the next thing you know, there's a nagging &ldquo;to do&rdquo; list a mile long. We want to help our clients get their projects done and off their plate, to enjoy their homes and our Montana community.  We do this by leveraging technology to facilitate our work, stay in touch and keep you up to date."
       columnA={getTabStrip()} />
   )
