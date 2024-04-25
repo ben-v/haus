@@ -87,9 +87,7 @@ const Footer = () => {
                               <div>
                                 {link.label}
                               </div>
-                              <div className="pl-2">
-                                {link.target === "_blank" ? <SvgArrowUpRightFromSquareSolid width={10} height={10} fill="currentColor" /> : ""}
-                              </div>
+                              {link.target === "_blank" ? <div className="pl-2"><SvgArrowUpRightFromSquareSolid width={10} height={10} fill="currentColor" /></div> : ""}
                             </div>
                           </HashLink>
                         </li>
