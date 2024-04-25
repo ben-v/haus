@@ -6,10 +6,10 @@ import CommonToastNotificationConfig from "../../../components/notifications/com
 import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
 
 import React from "react";
-import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
 import SvgPaperPlaneSolid from "../../../components/images/icons/SvgPaperPlaneSolid";
 import { HashLink } from "react-router-hash-link";
 import CardHeader from "../../../components/layouts/CardHeader";
+import GenericContentContainer from "../../../components/containers/GenericContentContainer";
 
 const ContactFormSection = () => {
     const { theme, } = useContext(ThemeContext);
@@ -62,7 +62,7 @@ const ContactFormSection = () => {
 
     return (
         <ContentSectionContainer flexDirection="Center">
-            <RoundCornerContainer>
+            <GenericContentContainer padding="None" bodyClassNames="gap-8">
                 <CardHeader title="What's on your mind?" titleAlignment="Left" />
                 <form onSubmit={onSubmitHandler} className="w-auto">
                     <div className="relative">
@@ -115,7 +115,7 @@ const ContactFormSection = () => {
                         </button>
                     </div>
                 </form>
-            </RoundCornerContainer>
+            </GenericContentContainer>
             <CommonToastNotificationConfig />
         </ContentSectionContainer>
     )
