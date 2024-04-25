@@ -21,7 +21,7 @@ const ServiceAreaDetail = () => {
         <ContentIconContainer title="Communities We Serve">
           <SvgMapLocationDotSolid fill={theme === THEMES.DARK ? 'white' : 'dark'} className="m-auto w-auto" width={40} height={48} />
         </ContentIconContainer>
-        <div className="my-4 grid grid-cols-2 rounded-3xl border dark:border-gray-700 general-body-text border-gray-200 [&>*]:dark:border-gray-700 [&>*]:p-4 [&>*]:text-xs md:[&>*]:text-sm lg:[&>*]:text-lg [&>*]:border-gray-200">
+        <div className="grid grid-cols-2 rounded-3xl border dark:border-gray-700 general-body-text border-gray-200 [&>*]:dark:border-gray-700 [&>*]:p-4 [&>*]:text-xs md:[&>*]:text-sm lg:[&>*]:text-lg [&>*]:border-gray-200">
           <div className="flex justify-center items-center gap-2 border-b">
             Bozeman
           </div>
