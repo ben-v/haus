@@ -44,7 +44,9 @@
   @apply overflow-x-clip;
   @apply pt-24;
   @apply lg:pt-32;
-  @apply pb-10;
+
+  @apply pb-4;
+  @apply md:pb-8;
 }
 
 .page-container .page-container-width {
