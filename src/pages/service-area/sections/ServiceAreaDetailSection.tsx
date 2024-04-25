@@ -1,16 +1,10 @@
 import { useContext } from "react";
 import { HashLink } from "react-router-hash-link"
-// import resolveConfig from 'tailwindcss/resolveConfig'
-// import tailwindConfig from '../../../../tailwind.config';
 import { ThemeContext, THEMES } from "../../../contexts/ThemeContext";
-// import SvgServiceAreaMap from "../../../components/images/sections/SvgServiceAreaMap"
 import SvgMapLocationDotSolid from "../../../components/images/icons/SvgMapLocationDotSolid"
 import ContentIconContainer from "../../../components/containers/ContentIconContainer";
-// import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
 import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
 import GenericContentContainer from "../../../components/containers/GenericContentContainer";
-
-// const fullConfig = resolveConfig(tailwindConfig)
 
 const ServiceAreaDetail = () => {
   const { theme, } = useContext(ThemeContext);
