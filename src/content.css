@@ -191,7 +191,7 @@
 }
 
 .content-icon-container .content-icon-container-header .content-icon-container-header-title {
-    @apply text-xl;
+    @apply text-2xl;
     @apply sm:text-3xl;
     @apply md:text-2xl;
     @apply lg:text-3xl;
