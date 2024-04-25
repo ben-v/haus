@@ -30,11 +30,11 @@ const Header = () => {
   
   const navLinkGroup: NavLinkGroup = {
     links: [
-      { url: '/clients/#', label: 'Clients' },
-      // { url: '/services/#', label: 'Services' },
-      { url: '/service-area/#', label: 'Service Area' },
-      // { url: '/faqs/#', label: 'FAQs' },
-      { url: '/contact/#', label: 'Contact' },      
+      { url: '/clients/#top', label: 'Clients' },
+      // { url: '/services/#top', label: 'Services' },
+      { url: '/service-area/#top', label: 'Service Area' },
+      // { url: '/faqs/#top', label: 'FAQs' },
+      { url: '/contact/#top', label: 'Contact' },      
     ]
   }
 
@@ -61,12 +61,12 @@ const Header = () => {
   return (
     
 
-    <header>
+    <header id="#top">
       <nav id="navbar" className={`fixed inset-x-0 z-50 w-full border-b border-gray-100 bg-white/80 backdrop-blur dark:border-gray-700/30 dark:bg-gray-900/80 ${isNavbarActive ? 'navbar-active' : ''}`}>
         <div className="mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
           <div className="relative flex flex-wrap items-center justify-between gap-6 lg:gap-0 lg:py-4 app-tooltip-container">
             <div className="relative z-50 flex w-full justify-between md:px-0 lg:w-max">
-              <HashLink to="/#" smooth aria-label="HAUS Property Services Logo" className="nav-link flex items-center space-x-2" onClick={closeNavbar}>
+              <HashLink to="/#top" smooth aria-label="HAUS Property Services Logo" className="nav-link flex items-center space-x-2" onClick={closeNavbar}>
                 <SvgLogo fill={theme === THEMES.DARK ? 'white' : 'black'} className="bi bi-logo h-9 w-auto" />
               </HashLink>
               <button aria-label="hamburger" id="hamburger" className="relative -mr-6 p-6 lg:hidden" onClick={toggleNavbar}>
@@ -90,7 +90,7 @@ const Header = () => {
               <div className="hidden lg:flex">
                 <div className="mt-12 flex w-full flex-col gap-3 space-y-2 border-primary/10 dark:border-gray-700 sm:flex-row md:w-max lg:mt-0 lg:mr-4 lg:space-y-0 lg:border-l lg:pl-4">
                   <div>
-                    <HashLink to="/work-request/#" smooth onClick={closeNavbar} data-tooltip-id="new-client-tooltip-selector-large" className="relative ml-auto flex h-9 w-full items-center justify-center before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-primaryLight sm:px-4 lg:before:border lg:before:border-gray-200 lg:before:bg-gray-100 lg:dark:before:bg-gray-800 nav-button">
+                    <HashLink to="/work-request/#top" smooth onClick={closeNavbar} data-tooltip-id="new-client-tooltip-selector-large" className="relative ml-auto flex h-9 w-full items-center justify-center before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-primaryLight sm:px-4 lg:before:border lg:before:border-gray-200 lg:before:bg-gray-100 lg:dark:before:bg-gray-800 nav-button">
                       <div className="pr-2">
                         <SvgRectangleListSolid width={16} height={16} className='relative m-auto nav-button-icon' />
                       </div>
@@ -100,7 +100,7 @@ const Header = () => {
                     </HashLink>
                   </div>
                   {/* <div>
-                    <HashLink to="/work-request-2/#" smooth onClick={closeNavbar} data-tooltip-id="new-client-tooltip-selector-large" className="relative ml-auto flex h-9 w-full items-center justify-center before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-primaryLight sm:px-4 lg:before:border lg:before:border-gray-200 lg:before:bg-gray-100 lg:dark:before:bg-gray-800">
+                    <HashLink to="/work-request-2/#top" smooth onClick={closeNavbar} data-tooltip-id="new-client-tooltip-selector-large" className="relative ml-auto flex h-9 w-full items-center justify-center before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-primaryLight sm:px-4 lg:before:border lg:before:border-gray-200 lg:before:bg-gray-100 lg:dark:before:bg-gray-800">
                       <div className="pr-2">
                         <SvgRectangleListSolid width={16} height={16} className='relative m-auto' fill={theme === THEMES.DARK ? 'white' : 'primary'} />
                       </div>
@@ -152,12 +152,12 @@ const Header = () => {
 
             {/* Quick access menu items for smaller displays */}
             <div className="fixed top-3 right-14 z-50 sm:right-24 lg:hidden">
-              <HashLink to="/work-request/#" onClick={closeNavbar}>
+              <HashLink to="/work-request/#top" onClick={closeNavbar}>
                 <button className="ml-2 switcher group relative h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex nav-button">
                   <SvgRectangleListSolid width={16} height={16} className='relative m-auto' fill={theme === THEMES.DARK ? 'white' : 'primary'} />
                 </button>
               </HashLink>
-              {/* <Link to="/work-request-2/#" onClick={closeNavbar}>
+              {/* <Link to="/work-request-2/#top" onClick={closeNavbar}>
                 <button className="ml-2 switcher group relative h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex">
                   <SvgRectangleListSolid width={16} height={16} className='relative m-auto' fill={theme === THEMES.DARK ? 'white' : 'primary'} />
                 </button>

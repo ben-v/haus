@@ -14,26 +14,26 @@ const sectionLinkGroups: NavLinkGroup[] = [
   {
     title: "Company",
     links: [
-      { label: "Clients", url: "/clients/#" },
-      // { label: "Services", url: "/services/#" },
-      { label: "Service Area", url: "/service-area/#" },
-      // { label: "FAQs", url: "/faqs/#" },
-      { label: "Contact", url: "/contact/#" }
+      { label: "Clients", url: "/clients/#top" },
+      // { label: "Services", url: "/services/#top" },
+      { label: "Service Area", url: "/service-area/#top" },
+      // { label: "FAQs", url: "/faqs/#top" },
+      { label: "Contact", url: "/contact/#top" }
     ]
   },
   {
     title: "Client Tools",
     links: [
-      { label: "New Client Work Request", url: "/work-request/#" },
+      { label: "New Client Work Request", url: "/work-request/#top" },
       { label: "Existing Client Hub", url: "https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login", target: "_blank" }
     ]
   },
   {
     title: "Resources",
     links: [
-      { label: "Privacy Policy", url: "/privacy/#" },
-      { label: "Terms & Conditions", url: "/terms/#" },
-      // { label: "Partners", url: "/partners/#" },
+      { label: "Privacy Policy", url: "/privacy/#top" },
+      { label: "Terms & Conditions", url: "/terms/#top" },
+      // { label: "Partners", url: "/partners/#top" },
     ]
   }
 ];
@@ -47,7 +47,7 @@ const Footer = () => {
             <div className="col-span-8 md:col-span-2 lg:col-span-3">
               <div className="flex h-full items-start justify-between gap-6 border-b border-white py-6 dark:border-gray-800 md:flex-col md:items-start md:justify-between md:space-y-6 md:border-none md:py-0">
                 <div className='text-sm'>
-                  <HashLink to="/#" smooth aria-label="HAUS Property Services Logo" className="flex items-center">
+                  <HashLink to="/#top" smooth aria-label="HAUS Property Services Logo" className="flex items-center">
                     <SvgLogo fill="currentColor" className="bi bi-logo h-8 w-auto" />
                   </HashLink>
                   <p className='pt-5'>HAUS Property Services</p>
