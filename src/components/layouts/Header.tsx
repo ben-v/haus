@@ -1,9 +1,7 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { HashLink, NavHashLink } from "react-router-hash-link";
+import { HashLink } from "react-router-hash-link";
 import { } from "@material-tailwind/react/theme/base/colors";
-
-// import resolveConfig from "tailwindcss/resolveConfig"
 
 import { ThemeContext, THEMES } from "../../contexts/ThemeContext";
 
@@ -19,11 +17,6 @@ import { Tooltip } from "react-tooltip";
 
 import Toggle from "react-toggle";
 import "react-toggle/style.css" // for ES6 modules
-
-// import withMaterialTailwind from "../../../tailwind.config";
-// import { Config } from "tailwindcss";
-
-// const fullConfig = resolveConfig(withMaterialTailwind as Config)
 
 const Header = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -78,9 +71,9 @@ const Header = () => {
                 <ul className="space-y-6 text-base font-medium tracking-wide lg:flex lg:space-y-0 lg:text-sm gap-6">
                   {navLinkGroup.links.map((link, index) => (
                     <li key={index}>
-                      <NavHashLink to={link.url} smooth onClick={closeNavbar} className="nav-link block transition nav-button">
+                      <HashLink to={link.url} smooth onClick={closeNavbar} className="nav-link block transition nav-button">
                         <span>{link.label}</span>
-                      </NavHashLink>
+                      </HashLink>
                     </li>
                   ))}
                 </ul>
