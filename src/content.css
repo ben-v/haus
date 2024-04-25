@@ -215,6 +215,13 @@
     @apply lg:text-3xl;
 }
 
+.card-subheader-title {
+    @apply text-xl;
+    @apply sm:text-2xl;
+    @apply md:text-xl;
+    @apply lg:text-2xl;
+}
+
 .card-header-description {
     @apply my-2;
     @apply md:my-6;

@@ -21,20 +21,21 @@ const ContactMarketingSection = () => {
         <div className="w-auto md:w-4/5 md:max-w-2xl md:pt-0">
         <ContentSectionContainer flexDirection="Center">
             <RoundCornerContainer>
-                <CardHeader title="Contact Information" titleAlignment="Left" />
+                <CardHeader title="Our Contact Information" titleAlignment="Left" />
                 <div className="flex items-center gap-2 md:gap-3">
                     <SvgPhoneSolid width={16} height={16} className='relative mr-1 md:mr-2' fill={theme === THEMES.DARK ? 'white' : 'dark'} />
                     <Typography className="text-sm lg:text-base text-dark dark:text-white">
                         <Link to="tel:4063129989">(406) 312-9989</Link>
                     </Typography>
                 </div>
-                <div className="my-4 flex items-center gap-2 md:gap-3">
+                <div className="my-4 pb-6 flex items-center gap-2 md:gap-3">
                     <SvgEmailSolid width={16} height={16} className='relative mr-1 md:mr-2' fill={theme === THEMES.DARK ? 'white' : 'dark'} />
                     <Typography className="text-sm lg:text-base text-dark dark:text-white">
                         <Link to="mailto:hello@hauspropertyservices.com">hello@hauspropertyservices.com</Link>
                     </Typography>
                 </div>
 
+                <CardHeader title="Also, find us on:" titleAlignment="Left" headerType="Subheader" />
                 <div className="flex items-center gap-1.5">
                     <SocialLinksCard showHeader={false} size="24x24" />
                 </div>
