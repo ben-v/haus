@@ -1,22 +1,26 @@
 export interface BaseContainerProps {
+    id?: string;
     containerClassNames?: string;
+    bodyClassNames?: string;
     padding?: "Large" | "Small" | "None";
     grow?: "Fill" | "Shrink";
 }
 
 export interface BaseContainerClassNames {
     containerClassNames: string;
-    paddingClassNames: string;
-    growClassNames: string;
+    bodyClassNames: string;
+    // paddingClassNames: string;
+    // growClassNames: string;
 }
 
 const defaultProps = {
     containerClassNames: "",
-    padding: "Large",
+    bodyClassNames: "",
+    padding: "None",
     grow: "Shrink",
 } satisfies Partial<BaseContainerProps>
 
-const getContainerPaddingClassNames = (props: BaseContainerProps): string => {
+const getContainerBodyPaddingClassNames = (props: BaseContainerProps): string => {
     const propsWithDefaults = {
         ...defaultProps,
         ...props
@@ -66,9 +70,8 @@ export const GetContainerClassNamesFromProps = (props: BaseContainerProps): Base
     };
 
     let classNames: BaseContainerClassNames = {
-        containerClassNames: propsWithDefaults.containerClassNames,
-        paddingClassNames: getContainerPaddingClassNames(propsWithDefaults),
-        growClassNames: getContainerGrowClassNames(propsWithDefaults)
+        containerClassNames: `${propsWithDefaults.containerClassNames} ${getContainerGrowClassNames(propsWithDefaults)}`,
+        bodyClassNames: `${propsWithDefaults.bodyClassNames} ${getContainerBodyPaddingClassNames(propsWithDefaults)}`,
     };
 
     return classNames;

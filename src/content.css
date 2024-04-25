@@ -312,3 +312,9 @@
   max-width: 400px;
   width: 90%;
 }
+
+/* Landing Page  */
+#landing-elevator-pitch svg, #landing-philosophy svg {
+  @apply fill-gray-600;
+  @apply dark:fill-gray-300;
+}
