@@ -293,31 +293,17 @@
   @apply p-1;
 }
 
-.tab-strip .tab-strip-header .tab-strip-header-tab,
-.tab-strip
-  .tab-strip-header
-  .tab-strip-header-tab
-  .tab-strip-header-tab-active {
+.tab-strip .tab-strip-header .tab-strip-header-tab {
   @apply text-base;
   @apply md:text-lg;
   @apply font-bold;
-  @apply text-gray-900;
-  @apply dark:text-white;
-}
-
-.tab-strip
-  .tab-strip-header
-  .tab-strip-header-tab
-  .tab-strip-header-tab-active {
-  /* @apply bg-gray-100;
-    @apply dark:bg-red-500; */
 }
 
 .tab-strip .tab-strip-body {
 }
 
 .tab-strip .tab-strip-body .tab-strip-body-panel {
-  @apply mt-12;
+  @apply mt-4;
 }
 
 /* Tooltip Styes */
