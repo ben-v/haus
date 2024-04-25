@@ -1,5 +1,4 @@
 import PageContainer from "../../components/layouts/PageContainer";
-
 import ContactFormSection from "./sections/ContactFormSection";
 import ContactMarketingSection from "./sections/ContactMarketingSection";
 
@@ -10,7 +9,7 @@ const ContactPage = () => {
       titlePartA="Let's"
       titlePartB=" Connect"
       description="If you have project ideas or questions you'd like to discuss, please fill out the form below to send us a message."
-      columnA={<ContactFormSection />}
+      columnA={<ContactFormSection />} 
       columnB={<ContactMarketingSection />} />
   )
 }

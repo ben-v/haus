@@ -110,7 +110,7 @@ const PageHeader = (props: PageHeaderProps) => {
     return (
         <div className="page-header-container">
             <div className={`${headingClassNames} ${titleAlignment}`}>{parse(title)}</div>
-            {props.description ? <div className={`page-header-description ${descriptionAlignment}`}>{parse(description)}</div> : ""}
+            {props.description ? <div className={`page-header-description general-body-text ${descriptionAlignment}`}>{parse(description)}</div> : ""}
         </div>
     )
 }

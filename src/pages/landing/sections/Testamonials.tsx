@@ -1,6 +1,6 @@
 import TestamonialCard, { TestamonialCardProps } from "../../../components/cards/TestamonialCard"
-import ContentSection from "../../../components/layouts/ContentSection";
-import ContenSectiontHeader from "../../../components/layouts/ContentSectionHeader";
+import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
+import ContenSectionHeader from "../../../components/layouts/ContentSectionHeader";
 
 const testamonials: TestamonialCardProps[] = [
   {
@@ -28,13 +28,14 @@ const testamonials: TestamonialCardProps[] = [
 
 const Testamonials = () => {
   return (
-    <ContentSection flexDirection="Center">
+    <ContentSectionContainer flexDirection="Center">
       <div className="w-auto p-2 md:px-12">
-        <ContenSectiontHeader
+        <ContenSectionHeader
           title="Building Lasting Relationships"
           titleAlignment="Center"
-          description="We pride ourselves on forging lasting relationships based on communication, collaberation and trust with each of our clients. See what they have to say about working with us!"
-          descriptionAlignment="Center" />
+          descriptionAlignment="Center">
+            We pride ourselves on forging lasting relationships based on communication, collaberation and trust with each of our clients. See what they have to say about working with us!
+          </ContenSectionHeader>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2 md:mt-6">
         {testamonials.map((testamonial,) => (
@@ -49,7 +50,7 @@ const Testamonials = () => {
           </div>
         ))}
       </div>
-    </ContentSection>
+    </ContentSectionContainer>
   )
 }
 

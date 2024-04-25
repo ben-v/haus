@@ -9,14 +9,14 @@ const defaultProps = {
   flexDirection: "LTR"
 } satisfies Partial<ContentSectionProps>
 
-const ContentSection = (props: ContentSectionProps) => {
+const ContentSectionContainer = (props: ContentSectionProps) => {
   const propsWithDefaults = {
     ...defaultProps,
     ...props
   }
 
   const containerSectionClassNames: string = `content-section-${propsWithDefaults.flexDirection.toLowerCase()}`;
-
+  
   return (
     <div className={`content-section-container ${containerSectionClassNames}`}>
       {propsWithDefaults.children}
@@ -24,4 +24,4 @@ const ContentSection = (props: ContentSectionProps) => {
   )
 }
 
-export default ContentSection
+export default ContentSectionContainer

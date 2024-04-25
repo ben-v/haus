@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { HashLink } from "react-router-hash-link"
-import resolveConfig from 'tailwindcss/resolveConfig'
-import tailwindConfig from '../../../../tailwind.config';
+// import resolveConfig from 'tailwindcss/resolveConfig'
+// import tailwindConfig from '../../../../tailwind.config';
 import { THEMES, ThemeContext } from "../../../contexts/ThemeContext";
 import CardHeader from "../../../components/layouts/CardHeader"
 import RoundCornerContainer from "../../../components/containers/RoundCornerContainer"
@@ -9,9 +9,10 @@ import emailjs from "@emailjs/browser";
 import toast from 'react-hot-toast';
 import SvgPaperPlaneSolid from "../../../components/images/icons/SvgPaperPlaneSolid";
 import CommonToastNotificationConfig from "../../../components/notifications/common-toast-notification-config";
-import ContentSection from "../../../components/layouts/ContentSection";
+import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
 
-const fullConfig = resolveConfig(tailwindConfig)
+// const fullConfig = resolveConfig(tailwindConfig)
+// impot {  } from "@material-tailwind/react";
 
 const WorkRequestFormSection = () => {
     const { theme, } = useContext(ThemeContext);
@@ -63,7 +64,7 @@ const WorkRequestFormSection = () => {
     };
 
     return (
-        <ContentSection flexDirection="Center">
+        <ContentSectionContainer flexDirection="Center">
             <RoundCornerContainer>
                 <CardHeader title="What's on your mind?" titleAlignment="Left" />
                 <form onSubmit={onSubmitHandler} className="w-auto">
@@ -133,7 +134,7 @@ const WorkRequestFormSection = () => {
 
                         <button type="submit" className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 active:duration-75 active:before:scale-95 dark:before:bg-primaryLight">
                             <div className="pr-2">
-                                <SvgPaperPlaneSolid width={16} height={16} className='relative m-auto' fill={theme === THEMES.DARK ? fullConfig.theme.colors.dark : fullConfig.theme.colors.white} />
+                                <SvgPaperPlaneSolid width={16} height={16} className='relative m-auto' fill={theme === THEMES.DARK ? 'dark' : 'white'} />
                             </div>
 
                             <span className="relative text-base font-semibold text-white dark:text-dark">Send Message</span>
@@ -142,7 +143,7 @@ const WorkRequestFormSection = () => {
                 </form>
             </RoundCornerContainer>
             <CommonToastNotificationConfig />
-        </ContentSection>
+        </ContentSectionContainer>
     )
 }
 
