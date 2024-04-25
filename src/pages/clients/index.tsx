@@ -2,6 +2,7 @@ import NewClientsSection from './sections/NewClientsSection'
 import ExistingClientsSection from './sections/ExistingClientsSection'
 import PageContainer from '../../components/layouts/PageContainer'
 import ContentSectionContainer from '../../components/containers/ContentSectionContainer';
+import { ThemeProvider } from "@material-tailwind/react";
 
 import {
   Tabs,
@@ -10,7 +11,8 @@ import {
   Tab,
   TabPanel,
 } from "@material-tailwind/react";
-import { ReactNode } from 'react';
+import { ReactNode, useContext } from 'react';
+import { THEMES, ThemeContext } from '../../contexts/ThemeContext';
 
 const tabData: { title: string, id: string, children: ReactNode }[] = [
   {
@@ -26,14 +28,30 @@ const tabData: { title: string, id: string, children: ReactNode }[] = [
 ];
 
 const getTabStrip = () => {
+  const { theme, } = useContext(ThemeContext);
+  
+  const tabtheme = {
+    tab: {
+      styles: {
+        base: {
+          indicator: {
+            bg: theme === THEMES.DARK ? "bg-gray-700" : "bg-white"
+          },
+        },
+      },
+    }
+  };
+    
   return (
     <ContentSectionContainer flexDirection="Center">
       <Tabs id="clients-tab-strip" value="new-clients" className="tab-strip">
+        <ThemeProvider value={tabtheme}>
         <TabsHeader className="tab-strip-header">
           {tabData.map(({ title, id }) => (
             <Tab key={id} value={id} className="tab-strip-header-tab" activeClassName="tab-strip-header-tab-active">{title}</Tab>
           ))}
         </TabsHeader>
+        </ThemeProvider>
         <TabsBody animate={{ initial: { y: 250 }, mount: { y: 0 }, unmount: { y: 250 } }} className="tab-strip-body">
           {tabData.map(({ id, children }) => (
             <TabPanel key={id} value={id} className="tab-strip-body-panel">
