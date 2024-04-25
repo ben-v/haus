@@ -24,13 +24,13 @@ const ContactMarketingSection = () => {
                 <CardHeader title="Contact Information" titleAlignment="Left" />
                 <div className="flex items-center gap-2 md:gap-3">
                     <SvgPhoneSolid width={16} height={16} className='relative mr-1 md:mr-2' fill={theme === THEMES.DARK ? 'white' : 'dark'} />
-                    <Typography className="text-sm lg:text-base font-semibold text-dark dark:text-white">
+                    <Typography className="text-sm lg:text-base text-dark dark:text-white">
                         <Link to="tel:4063129989">(406) 312-9989</Link>
                     </Typography>
                 </div>
                 <div className="my-4 flex items-center gap-2 md:gap-3">
                     <SvgEmailSolid width={16} height={16} className='relative mr-1 md:mr-2' fill={theme === THEMES.DARK ? 'white' : 'dark'} />
-                    <Typography className="text-sm lg:text-base font-semibold text-dark dark:text-white">
+                    <Typography className="text-sm lg:text-base text-dark dark:text-white">
                         <Link to="mailto:hello@hauspropertyservices.com">hello@hauspropertyservices.com</Link>
                     </Typography>
                 </div>

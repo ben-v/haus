@@ -17,20 +17,15 @@
     @apply dark:text-white;
 }
 
-.container-header-text-inverted, .container-sub-header-text-inverted {
-    @apply dark:text-gray-900;
-    @apply text-white;
-}
-
-.container-header-text, .container-header-text-inverted {
+.container-header-text {
     @apply font-bold;
 }
 
-.container-sub-header-text, .container-sub-header-text-inverted {
+.container-sub-header-text {
     @apply font-semibold;
 }
 
-.general-body-text, .general-body-text-inverted {
+.general-body-text {
     @apply text-base;
     @apply md:text-lg;
 }
@@ -38,11 +33,6 @@
 .general-body-text {
     @apply text-gray-600;
     @apply dark:text-gray-300;
-}
-
-.general-body-text-inverted {
-    @apply dark:text-gray-600;
-    @apply text-gray-300;
 }
 
 /* Page Styles */
@@ -201,7 +191,7 @@
 }
 
 .content-icon-container .content-icon-container-header .content-icon-container-header-title {
-    @apply text-2xl;
+    @apply text-xl;
     @apply sm:text-3xl;
     @apply md:text-2xl;
     @apply lg:text-3xl;
