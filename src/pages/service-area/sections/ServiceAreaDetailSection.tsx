@@ -1,16 +1,10 @@
 import { useContext } from "react";
 import { HashLink } from "react-router-hash-link"
-// import resolveConfig from 'tailwindcss/resolveConfig'
-// import tailwindConfig from '../../../../tailwind.config';
 import { ThemeContext, THEMES } from "../../../contexts/ThemeContext";
-// import SvgServiceAreaMap from "../../../components/images/sections/SvgServiceAreaMap"
 import SvgMapLocationDotSolid from "../../../components/images/icons/SvgMapLocationDotSolid"
 import ContentIconContainer from "../../../components/containers/ContentIconContainer";
-// import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
 import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
 import GenericContentContainer from "../../../components/containers/GenericContentContainer";
-
-// const fullConfig = resolveConfig(tailwindConfig)
 
 const ServiceAreaDetail = () => {
   const { theme, } = useContext(ThemeContext);
@@ -21,7 +15,7 @@ const ServiceAreaDetail = () => {
         <ContentIconContainer title="Communities We Serve">
           <SvgMapLocationDotSolid fill={theme === THEMES.DARK ? 'white' : 'dark'} className="m-auto w-auto" width={40} height={48} />
         </ContentIconContainer>
-        <div className="my-4 grid grid-cols-2 rounded-3xl border dark:border-gray-700 general-body-text border-gray-200 [&>*]:dark:border-gray-700 [&>*]:p-4 [&>*]:text-xs md:[&>*]:text-sm lg:[&>*]:text-lg [&>*]:border-gray-200">
+        <div className="grid grid-cols-2 rounded-3xl border dark:border-gray-700 general-body-text border-gray-200 [&>*]:dark:border-gray-700 [&>*]:p-4 [&>*]:text-xs md:[&>*]:text-sm lg:[&>*]:text-lg [&>*]:border-gray-200">
           <div className="flex justify-center items-center gap-2 border-b">
             Bozeman
           </div>

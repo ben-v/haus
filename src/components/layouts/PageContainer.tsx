@@ -6,7 +6,7 @@ import ContentSectionContainer from "../containers/ContentSectionContainer";
 
 export interface PageContainerProps extends PageHeaderProps {
   id: string,
-  width?: "Wide" | "Standard";
+  // width?: "Wide" | "Standard";
   columnA: ReactElement,
   columnB?: ReactElement,
   showContentBackground?: boolean
@@ -24,11 +24,11 @@ const PageContainer = (props: PageContainerProps) => {
     ...props
   }
 
-  const widthClassName: string = (props.width && (props.width === "Wide")) ? "page-wide-width" : "page-standard-width";
+  // const widthClassName: string = (props.width && (props.width === "Wide")) ? "page-wide-width" : "page-standard-width";
 
   return (
     <section id={propsWithDefaults.id} className="page-container">
-      <div className={widthClassName}>
+      <div className="page-container-width">
         <PageHeader
           titlePartA={propsWithDefaults.titlePartA}
           titlePartB={propsWithDefaults.titlePartB}

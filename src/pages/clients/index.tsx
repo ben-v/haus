@@ -48,7 +48,7 @@ const getTabStrip = () => {
         <ThemeProvider value={tabtheme}>
         <TabsHeader className="tab-strip-header">
           {tabData.map(({ title, id }) => (
-            <Tab key={id} value={id} className="tab-strip-header-tab" activeClassName="tab-strip-header-tab-active">{title}</Tab>
+            <Tab key={id} value={id} className="tab-strip-header-tab container-header-text">{title}</Tab>
           ))}
         </TabsHeader>
         </ThemeProvider>

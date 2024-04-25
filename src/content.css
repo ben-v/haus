@@ -44,31 +44,27 @@
   @apply overflow-x-clip;
   @apply pt-24;
   @apply lg:pt-32;
-  @apply pb-10;
+
+  @apply pb-4;
+  @apply md:pb-8;
 }
 
-.page-container .page-standard-width,
-.page-wide-width {
+.page-container .page-container-width {
   @apply relative;
   @apply relative;
   @apply flex;
   @apply flex-col;
 
-  @apply xl:px-0;
+  @apply px-4;
+  @apply md:px-8;
+  @apply lg:px-10;
+  @apply xl:px-20;
+
+  @apply w-full;
+  @apply xl:max-w-7xl;  
+  
   @apply mx-auto;
   @apply gap-6;
-}
-
-.page-container .page-standard-width {
-  @apply px-4;
-  @apply w-full;
-  @apply xl:max-w-6xl;
-}
-
-.page-container .page-wide-width {
-  @apply px-4;
-  @apply w-full;
-  @apply xl:max-w-6xl;
 }
 
 .page-container .page-header-container {
@@ -293,31 +289,18 @@
   @apply p-1;
 }
 
-.tab-strip .tab-strip-header .tab-strip-header-tab,
-.tab-strip
-  .tab-strip-header
-  .tab-strip-header-tab
-  .tab-strip-header-tab-active {
+.tab-strip .tab-strip-header .tab-strip-header-tab {
   @apply text-base;
   @apply md:text-lg;
   @apply font-bold;
-  @apply text-gray-900;
-  @apply dark:text-white;
-}
-
-.tab-strip
-  .tab-strip-header
-  .tab-strip-header-tab
-  .tab-strip-header-tab-active {
-  /* @apply bg-gray-100;
-    @apply dark:bg-red-500; */
 }
 
 .tab-strip .tab-strip-body {
 }
 
 .tab-strip .tab-strip-body .tab-strip-body-panel {
-  @apply mt-12;
+  @apply mt-4;
+  @apply md:mt-8;
 }
 
 /* Tooltip Styes */
