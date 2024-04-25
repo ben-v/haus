@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
+import { BaseContainerClassNames, BaseContainerProps, GetContainerClassNamesFromProps } from "./Container";
 
-export interface ContentSectionProps {
+export interface ContentSectionProps extends BaseContainerProps {
   flexDirection?: "LTR" | "RTL" | "Center";
   children: ReactNode;
 }
@@ -15,11 +16,12 @@ const ContentSectionContainer = (props: ContentSectionProps) => {
     ...props
   }
 
+  const classNames: BaseContainerClassNames = GetContainerClassNamesFromProps(props);
   const containerSectionClassNames: string = `content-section-${propsWithDefaults.flexDirection.toLowerCase()}`;
-  
+
   return (
-    <div className={`content-section-container ${containerSectionClassNames}`}>
-      {propsWithDefaults.children}
+    <div id={props.id ? props.id : ""} className={`content-section-container ${classNames.containerClassNames} ${containerSectionClassNames}`}>
+        {propsWithDefaults.children}
     </div>
   )
 }
