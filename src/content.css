@@ -41,7 +41,7 @@
   @apply relative;
   @apply flex;
   @apply flex-col;
-  @apply overflow-visible;
+  @apply overflow-hidden;
   @apply pt-24;
   @apply lg:pt-32;
 
