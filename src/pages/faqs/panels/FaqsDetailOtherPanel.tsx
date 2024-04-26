@@ -13,7 +13,7 @@ const FaqsDetailOtherPanel = () => {
     <ContentSectionContainer id="faqs-detail-container" flexDirection="Center" containerClassNames="items-start">
       <RoundCornerContainer id="faqs-detail" padding="Small" containerClassNames="w-full" bodyClassNames="gap-4">
           <ContentIconContainer 
-            title={"Have other questions?"}
+            title={"Still looking?"}
             description="Have other questions? Feel free to reach out with any you might have!" >
             <SvgQuestion className="m-auto w-auto" width={64} height={64} />
           </ContentIconContainer>
