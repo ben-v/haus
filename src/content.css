@@ -317,8 +317,9 @@
 
 /* Landing Page  */
 #landing-container svg, 
-#contact-marketing-worker svg,
-#faqs-marketing-person svg,
+#service-area-body svg,
+#contact-body svg,
+#faqs-body svg,
 #error-page-container svg {
   @apply fill-gray-600;
   @apply dark:fill-gray-300;

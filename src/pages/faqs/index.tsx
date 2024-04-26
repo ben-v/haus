@@ -1,24 +1,13 @@
-import { ReactNode, useContext } from 'react';
-import { THEMES, ThemeContext } from '../../contexts/ThemeContext';
-
-import ContentSectionContainer from "../../components/containers/ContentSectionContainer";
 import PageContainer from "../../components/layouts/PageContainer";
+import ContentSectionContainer from "../../components/containers/ContentSectionContainer";
+import GenericContentContainer from '../../components/containers/GenericContentContainer';
+import TabStripTemplate, { TabTemplateProps } from '../../components/templates/TabStripTemplate';
 
 import FaqsDetailOtherPanel from "./panels/FaqsDetailOtherPanel";
 import FaqsDetailPanel from "./panels/FaqsDetailPanel";
-import FaqsMarketingSection from "./sections/FaqsMarketingSection";
+import SvgPersonInformation from '../../components/images/stick-figures/SvgPersonInformation';
 
-import { ThemeProvider } from "@material-tailwind/react";
-
-import {
-  Tab,
-  TabPanel,
-  Tabs,
-  TabsBody,
-  TabsHeader,
-} from "@material-tailwind/react";
-
-const tabData: { title: string, id: string, children: ReactNode }[] = [
+const tabData: TabTemplateProps[] = [
   {
     title: "Our FAQs",
     id: "our-faqs",
@@ -31,39 +20,17 @@ const tabData: { title: string, id: string, children: ReactNode }[] = [
   },
 ];
 
-const getTabStrip = () => {
-  const { theme, } = useContext(ThemeContext);
-  
-  const tabtheme = {
-    tab: {
-      styles: {
-        base: {
-          indicator: {
-            bg: theme === THEMES.DARK ? "bg-gray-700" : "bg-white"
-          },
-        },
-      },
-    }
-  };
-    
+const getPageBody = () => {
   return (
-    <ContentSectionContainer flexDirection="Center">
-      <Tabs id="faqs-tab-strip" value="our-faqs" className="tab-strip">
-        <ThemeProvider value={tabtheme}>
-        <TabsHeader className="tab-strip-header">
-          {tabData.map(({ title, id }) => (
-            <Tab key={id} value={id} className="tab-strip-header-tab container-header-text">{title}</Tab>
-          ))}
-        </TabsHeader>
-        </ThemeProvider>
-        <TabsBody animate={{ initial: { y: 250 }, mount: { y: 0 }, unmount: { y: 250 } }} className="tab-strip-body">
-          {tabData.map(({ id, children }) => (
-            <TabPanel key={id} value={id} className="tab-strip-body-panel">
-              {children}
-            </TabPanel>
-          ))}
-        </TabsBody>
-      </Tabs>
+    <ContentSectionContainer id="faqs-body" flexDirection='RTL'>
+      <ContentSectionContainer flexDirection="Center" containerClassNames="w-auto pb-6 md:pt-0 md:w-4/5 md:max-w-2xl">
+        <GenericContentContainer id="faqs-marketing-person" padding="None">
+          <SvgPersonInformation className="w-auto" />
+        </GenericContentContainer>
+      </ContentSectionContainer>
+      <ContentSectionContainer id="faqs-detail" flexDirection="Center">
+        <TabStripTemplate id="faqs-tab-strip" value="our-faqs" tabData={tabData} />
+      </ContentSectionContainer>
     </ContentSectionContainer>
   )
 };
@@ -75,8 +42,7 @@ const FaqsPage = () => {
       titlePartA="Frequently Asked"
       titlePartB=" Questions"
       description="We've pulled together answers to some commonly asked questions about HAUS, what we do and how we do it."
-      columnA={getTabStrip()}
-      columnB={<FaqsMarketingSection />} />
+      columnA={getPageBody()} />
   )
 }
 

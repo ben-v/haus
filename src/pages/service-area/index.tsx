@@ -1,26 +1,17 @@
-import { ReactNode, useContext } from 'react';
-import { THEMES, ThemeContext } from '../../contexts/ThemeContext';
 
 import PageContainer from "../../components/layouts/PageContainer";
-import ServiceAreaMapPanel from "./panels/ServiceAreaMapPanel";
-
-import { ThemeProvider } from "@material-tailwind/react";
-
-import {
-  Tab,
-  TabPanel,
-  Tabs,
-  TabsBody,
-  TabsHeader,
-} from "@material-tailwind/react";
-import ServiceAreaDetailPanel from './panels/ServiceAreaDetailPanel';
 import ContentSectionContainer from '../../components/containers/ContentSectionContainer';
-import ServiceAreaMarketingSection from './sections/ServiceAreaMarketingSection';
+import GenericContentContainer from '../../components/containers/GenericContentContainer';
+import TabStripTemplate, { TabTemplateProps } from '../../components/templates/TabStripTemplate';
 
-const tabData: { title: string, id: string, children: ReactNode }[] = [
+import ServiceAreaDetailPanel from './panels/ServiceAreaDetailPanel';
+import ServiceAreaMapPanel from "./panels/ServiceAreaMapPanel";
+import SvgPersonDriving from '../../components/images/stick-figures/SvgPersonDriving';
+
+const tabData: TabTemplateProps[] = [
   {
     title: "Communities",
-    id: "service-area-details",
+    id: "service-area-communities",
     children: <ServiceAreaDetailPanel />
   },
   {
@@ -30,39 +21,17 @@ const tabData: { title: string, id: string, children: ReactNode }[] = [
   },
 ];
 
-const getTabStrip = () => {
-  const { theme, } = useContext(ThemeContext);
-  
-  const tabtheme = {
-    tab: {
-      styles: {
-        base: {
-          indicator: {
-            bg: theme === THEMES.DARK ? "bg-gray-700" : "bg-white"
-          },
-        },
-      },
-    }
-  };
-    
+const getPageBody = () => {
   return (
-    <ContentSectionContainer flexDirection="Center">
-      <Tabs id="faqs-tab-strip" value="service-area-details" className="tab-strip">
-        <ThemeProvider value={tabtheme}>
-        <TabsHeader className="tab-strip-header">
-          {tabData.map(({ title, id }) => (
-            <Tab key={id} value={id} className="tab-strip-header-tab container-header-text">{title}</Tab>
-          ))}
-        </TabsHeader>
-        </ThemeProvider>
-        <TabsBody animate={{ initial: { y: 250 }, mount: { y: 0 }, unmount: { y: 250 } }} className="tab-strip-body">
-          {tabData.map(({ id, children }) => (
-            <TabPanel key={id} value={id} className="tab-strip-body-panel">
-              {children}
-            </TabPanel>
-          ))}
-        </TabsBody>
-      </Tabs>
+    <ContentSectionContainer id="service-area-body">
+      <ContentSectionContainer flexDirection="Center" containerClassNames="w-auto pb-6 md:pt-0 md:w-4/5 md:max-w-2xl">
+        <GenericContentContainer id="service-area-marketing-person" padding="None">
+          <SvgPersonDriving className="w-auto" />
+        </GenericContentContainer>
+      </ContentSectionContainer>
+      <ContentSectionContainer id="service-area-detail" flexDirection="Center">
+        <TabStripTemplate id="service-area-tab-strip" value="service-area-communities" tabData={tabData} />
+      </ContentSectionContainer>
     </ContentSectionContainer>
   )
 };
@@ -74,8 +43,7 @@ const ServiceAreaPage = () => {
       titlePartA="Service"
       titlePartB=" Area"
       description="Our primary service area encompasses the greater Bozeman area community and Gallatin County. Check out the list below for communities we commonly serve."
-      columnA={<ServiceAreaMarketingSection />}
-      columnB={getTabStrip()} />
+      columnA={getPageBody()} />
   )
 }
 
