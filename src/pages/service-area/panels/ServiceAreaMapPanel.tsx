@@ -6,8 +6,8 @@ const ServiceAreaMapPanel = () => {
     return (
         <div className="w-full md:max-w-2xl md:pt-0">
             <ContentSectionContainer flexDirection="Center">
-                <RoundCornerContainer>
-                <SvgServiceAreaMap className="mx-auto rounded-3xl border border-gray-300/100 object-cover object-top shadow-2xl" />
+                <RoundCornerContainer id="service-area-map" padding="Small">
+                <SvgServiceAreaMap className="mx-auto rounded-3xl border border-gray-400/50 object-cover object-top shadow-lg" />
                 </RoundCornerContainer>
             </ContentSectionContainer>
         </div>

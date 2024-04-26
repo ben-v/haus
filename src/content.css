@@ -41,7 +41,7 @@
   @apply relative;
   @apply flex;
   @apply flex-col;
-  @apply overflow-x-clip;
+  @apply overflow-visible;
   @apply pt-24;
   @apply lg:pt-32;
 
@@ -282,12 +282,13 @@
 .tab-strip .tab-strip-header {
   @apply rounded-lg;
   @apply border;
-  /* @apply border-spacing-8; */
   @apply border-gray-200;
   @apply dark:border-gray-700/60;
   @apply bg-gray-100;
   @apply dark:bg-gray-800;
   @apply p-1;
+  @apply shadow-sm;
+  @apply shadow-gray-600/10;
 }
 
 .tab-strip .tab-strip-header .tab-strip-header-tab {

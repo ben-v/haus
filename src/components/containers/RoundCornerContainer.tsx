@@ -20,7 +20,7 @@ const RoundCornerContainer = (props: RoundCornerContainerProps) => {
   const classNames: BaseContainerClassNames = GetContainerClassNamesFromProps(propsWithDefaults);
 
   return (
-    <div id={props.id ? props.id : ""} className={`relative z-10 rounded-3xl border border-gray-200 bg-gray-50 shadow-2xl shadow-gray-600/10 dark:border-gray-700/60 dark:bg-gray-800 dark:shadow-none w-full ${classNames.containerClassNames}`}>
+    <div id={props.id ? props.id : ""} className={`relative z-10 rounded-3xl border border-gray-200 bg-gray-50 shadow-lg shadow-gray-600/10 dark:border-gray-700/60 dark:bg-gray-800 dark:shadow-none w-full ${classNames.containerClassNames}`}>
       {propsWithDefaults.useGradientBackground ? <div className="absolute inset-0 hidden scale-100 rounded-3xl bg-gradient-to-b from-transparent dark:block dark:to-gray-900/70"></div> : ""}
       <div className={`relative z-20 flex flex-col h-full ${classNames.bodyClassNames}`}>
         {props.children}

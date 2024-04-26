@@ -1,15 +1,15 @@
-import { useContext, useState } from "react";
-import { THEMES, ThemeContext } from "../../../contexts/ThemeContext";
 import emailjs from "@emailjs/browser";
+import { useContext, useState } from "react";
 import toast from 'react-hot-toast';
-import CommonToastNotificationConfig from "../../../components/notifications/common-toast-notification-config";
 import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
+import CommonToastNotificationConfig from "../../../components/notifications/common-toast-notification-config";
+import { THEMES, ThemeContext } from "../../../contexts/ThemeContext";
 
 import React from "react";
-import SvgPaperPlaneSolid from "../../../components/images/icons/SvgPaperPlaneSolid";
 import { HashLink } from "react-router-hash-link";
+import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
+import SvgPaperPlaneSolid from "../../../components/images/icons/SvgPaperPlaneSolid";
 import CardHeader from "../../../components/layouts/CardHeader";
-import GenericContentContainer from "../../../components/containers/GenericContentContainer";
 
 const ContactFormPanel = () => {
     const { theme, } = useContext(ThemeContext);
@@ -62,7 +62,7 @@ const ContactFormPanel = () => {
 
     return (
         <ContentSectionContainer flexDirection="Center">
-            <GenericContentContainer id="contact-panel" padding="None" containerClassNames="w-full" bodyClassNames="gap-4">
+            <RoundCornerContainer id="contact-panel" padding="Small" containerClassNames="w-full" bodyClassNames="gap-4">
                 <CardHeader title="What's on your mind?" titleAlignment="Left" />
                 <form onSubmit={onSubmitHandler} className="w-auto">
                     <div className="relative">
@@ -115,7 +115,7 @@ const ContactFormPanel = () => {
                         </button>
                     </div>
                 </form>              
-            </GenericContentContainer>
+            </RoundCornerContainer>
             <CommonToastNotificationConfig />
         </ContentSectionContainer>
     )
