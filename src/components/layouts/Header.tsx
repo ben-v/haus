@@ -172,12 +172,12 @@ const Header = () => {
             */}        
             <Tooltip id="new-client-tooltip-selector-large" className="app-tooltip" opacity={1}>
               <p className="font-bold pb-2">New client?</p>
-              <p>The best way to get started with us is to fill out a <span className="font-semibold">New Client Work Request</span> for us to review.</p>
+              <p>The best way to get started with us is to fill out a <span className="font-semibold">Work Request</span> for us to review.</p>
             </Tooltip>
 
             <Tooltip id="existing-client-tooltip-selector-large" className="app-tooltip" opacity={1}>
               <p className="font-bold pb-2">Are you already working with us?</p>
-              <p>Visit the <span className="font-semibold">Existing Client Hub</span> to approve quotes, check appointment details, pay invoices, print receipts, or request more work—all in one place.</p>
+              <p>Visit the <span className="font-semibold">Client Hub</span> to approve quotes, check appointment details, pay invoices, print receipts, or request more work—all in one place.</p>
             </Tooltip>      
           </div>
         </div>
