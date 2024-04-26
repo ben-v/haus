@@ -19,7 +19,7 @@ import ServiceAreaMarketingSection from './sections/ServiceAreaMarketingSection'
 
 const tabData: { title: string, id: string, children: ReactNode }[] = [
   {
-    title: "Service Area Details",
+    title: "Communities",
     id: "service-area-details",
     children: <ServiceAreaDetailPanel />
   },
