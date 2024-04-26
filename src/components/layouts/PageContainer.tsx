@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 
 import PageHeader, { PageHeaderProps, defaultPageHeaderProps } from "./PageHeader"
 import ContentBackground from "../effects/ContentBackground"
@@ -7,8 +7,9 @@ import ContentSectionContainer from "../containers/ContentSectionContainer";
 export interface PageContainerProps extends PageHeaderProps {
   id: string,
   // width?: "Wide" | "Standard";
-  columnA: ReactElement,
-  columnB?: ReactElement,
+  children: ReactNode,
+  // columnA: ReactElement,
+  // columnB?: ReactElement,
   showContentBackground?: boolean
 }
 
@@ -37,10 +38,9 @@ const PageContainer = (props: PageContainerProps) => {
           highlightPart={propsWithDefaults.highlightPart}
           titleAlignment={propsWithDefaults.titleAlignment}
           descriptionAlignment={propsWithDefaults.descriptionAlignment} />
+        {propsWithDefaults.showContentBackground ? <ContentBackground /> : ""}
         <ContentSectionContainer>
-          {propsWithDefaults.columnA}
-          {propsWithDefaults.showContentBackground ? <ContentBackground /> : ""}
-          {propsWithDefaults.columnB ? propsWithDefaults.columnB : ""}
+          {propsWithDefaults.children}
         </ContentSectionContainer>
       </div>
     </section>

@@ -21,29 +21,24 @@ const tabData: TabTemplateProps[] = [
   },
 ];
 
-const getPageBody = () => {
-  return (
-    <ContentSectionContainer id="service-area-body">
-      <ContentSectionContainer flexDirection="Center" containerClassNames="w-auto pb-6 md:pt-0 md:w-4/5 md:max-w-2xl">
-        <GenericContentContainer id="service-area-marketing-person" padding="None">
-          <SvgPersonDriving className="w-auto" />
-        </GenericContentContainer>
-      </ContentSectionContainer>
-      <ContentSectionContainer id="service-area-detail" flexDirection="Center">
-        <TabStripTemplate id="service-area-tab-strip" value="service-area-communities" tabData={tabData} />
-      </ContentSectionContainer>
-    </ContentSectionContainer>
-  )
-};
-
 const ServiceAreaPage = () => {
   return (
     <PageContainer
       id="service-area"
       titlePartA="Service"
       titlePartB=" Area"
-      description="Our primary service area encompasses the greater Bozeman area community and Gallatin County. Check out the list below for communities we commonly serve."
-      columnA={getPageBody()} />
+      description="Our primary service area encompasses the greater Bozeman area community and Gallatin County. Check out the list below for communities we commonly serve.">
+      <ContentSectionContainer id="service-area-body">
+        <ContentSectionContainer flexDirection="Center" containerClassNames="w-auto pb-6 md:pt-0 md:w-4/5 md:max-w-2xl">
+          <GenericContentContainer id="service-area-marketing-person" padding="None">
+            <SvgPersonDriving className="w-auto" />
+          </GenericContentContainer>
+        </ContentSectionContainer>
+        <ContentSectionContainer id="service-area-detail" flexDirection="Center">
+          <TabStripTemplate id="service-area-tab-strip" value="service-area-communities" tabData={tabData} />
+        </ContentSectionContainer>
+      </ContentSectionContainer>
+    </PageContainer>
   )
 }
 

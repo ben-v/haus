@@ -7,8 +7,9 @@ const PartnersPage = () => {
       id="partners"
       titlePartA="Our"
       titlePartB=" Partners"
-      showContentBackground={false}
-      columnA={<PartnersDetailSection />} />
+      showContentBackground={false}>
+        <PartnersDetailSection />
+      </PageContainer>
   )
 }
 

@@ -7,8 +7,9 @@ const TermsPage = () => {
       id="terms"
       titlePartA="Terms &amp; Conditions"
       description="Last Updated On: April 13, 2024"
-      showContentBackground={false}
-      columnA={<TermsDetailSection />} />
+      showContentBackground={false}>
+        <TermsDetailSection />
+      </PageContainer>
   )
 }
 
