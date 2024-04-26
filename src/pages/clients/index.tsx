@@ -1,29 +1,31 @@
-import NewClientsSection from './sections/NewClientsSection'
-import ExistingClientsSection from './sections/ExistingClientsSection'
-import PageContainer from '../../components/layouts/PageContainer'
+import { ReactNode, useContext } from 'react';
+import { THEMES, ThemeContext } from '../../contexts/ThemeContext';
+
 import ContentSectionContainer from '../../components/containers/ContentSectionContainer';
+import PageContainer from '../../components/layouts/PageContainer';
+import ExistingClientsPanel from './panels/ExistingClientsPanel';
+import NewClientsPanel from './panels/NewClientsPanel';
+
 import { ThemeProvider } from "@material-tailwind/react";
 
 import {
-  Tabs,
-  TabsHeader,
-  TabsBody,
   Tab,
   TabPanel,
+  Tabs,
+  TabsBody,
+  TabsHeader,
 } from "@material-tailwind/react";
-import { ReactNode, useContext } from 'react';
-import { THEMES, ThemeContext } from '../../contexts/ThemeContext';
 
 const tabData: { title: string, id: string, children: ReactNode }[] = [
   {
     title: "New Clients",
     id: "new-clients",
-    children: <NewClientsSection />
+    children: <NewClientsPanel />
   },
   {
     title: "Existing Clients",
     id: "existing-clients",
-    children: <ExistingClientsSection />
+    children: <ExistingClientsPanel />
   },
 ];
 

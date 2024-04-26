@@ -18,7 +18,7 @@ const GenericContentContainer = (props: GenericContentContainerProps) => {
     const classNames: BaseContainerClassNames = GetContainerClassNamesFromProps(propsWithDefaults);
 
     return (
-        <div id={props.id ? props.id : ""} className={`relative z-10 w-full ${classNames.containerClassNames}`}>
+        <div id={props.id ? props.id : ""} className={`relative z-10 ${classNames.containerClassNames}`}>
             <div className={`relative z-20 flex flex-col h-full ${classNames.bodyClassNames}`}>
                 {props.children}
             </div>

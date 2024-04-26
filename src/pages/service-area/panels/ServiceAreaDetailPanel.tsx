@@ -6,7 +6,7 @@ import ContentIconContainer from "../../../components/containers/ContentIconCont
 import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
 import GenericContentContainer from "../../../components/containers/GenericContentContainer";
 
-const ServiceAreaDetail = () => {
+const ServiceAreaDetailPanel = () => {
   const { theme, } = useContext(ThemeContext);
 
   return (
@@ -42,4 +42,4 @@ const ServiceAreaDetail = () => {
   )
 }
 
-export default ServiceAreaDetail
+export default ServiceAreaDetailPanel

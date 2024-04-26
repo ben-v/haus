@@ -11,7 +11,7 @@ import { HashLink } from "react-router-hash-link";
 import CardHeader from "../../../components/layouts/CardHeader";
 import GenericContentContainer from "../../../components/containers/GenericContentContainer";
 
-const ContactFormSection = () => {
+const ContactFormPanel = () => {
     const { theme, } = useContext(ThemeContext);
 
     const [mailData, setMailData] = useState({
@@ -62,7 +62,7 @@ const ContactFormSection = () => {
 
     return (
         <ContentSectionContainer flexDirection="Center">
-            <GenericContentContainer padding="None" bodyClassNames="gap-8">
+            <GenericContentContainer id="contact-panel" padding="None" containerClassNames="w-full" bodyClassNames="gap-4">
                 <CardHeader title="What's on your mind?" titleAlignment="Left" />
                 <form onSubmit={onSubmitHandler} className="w-auto">
                     <div className="relative">
@@ -114,11 +114,11 @@ const ContactFormSection = () => {
                             <span className="relative text-base font-semibold text-white dark:text-dark">Send Message</span>
                         </button>
                     </div>
-                </form>
+                </form>              
             </GenericContentContainer>
             <CommonToastNotificationConfig />
         </ContentSectionContainer>
     )
 }
 
-export default ContactFormSection
+export default ContactFormPanel

@@ -1,4 +1,3 @@
-// import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
 import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
 
 // NOTE: In order to get the components to work from Material-Tailwind, had to downgrade to React 18.2.42. 
@@ -30,27 +29,25 @@ const faqs: { question: string, answer: string }[] = [
   }
 ];
 
-const FaqsDetailSection = () => {
+const FaqsDetailPanel = () => {
   return (
-    <ContentSectionContainer flexDirection="Center">
-        <GenericContentContainer padding="None" bodyClassNames="gap-8">
-        {/* <div className="mx-auto grid gap-8 w-full z-10"> */}
-          {faqs.map(({ question, answer }) => (
-            <div key={question}>
-              <Typography className="pb-3 text-lg font-bold text-gray-900 dark:text-white">
-                {question}
+    <ContentSectionContainer id="faqs-detail-container" flexDirection="Center" containerClassNames="items-start">
+      <GenericContentContainer id="faqs-detail" padding="None" containerClassNames="w-full" bodyClassNames="gap-8">
+        {faqs.map(({ question, answer }) => (
+          <div key={question}>
+            <Typography className="pb-3 text-lg font-bold text-gray-900 dark:text-white">
+              {question}
+            </Typography>
+            <div className="border-t border-gray-200 pt-3">
+              <Typography className="font-normal text-gray-600 dark:text-gray-300">
+                {answer}
               </Typography>
-              <div className="border-t border-gray-200 pt-3">
-                <Typography className="font-normal text-gray-600 dark:text-gray-300">
-                  {answer}
-                </Typography>
-              </div>
             </div>
-          ))}
-        {/* </div> */}
-        </GenericContentContainer>
+          </div>
+        ))}
+      </GenericContentContainer>
     </ContentSectionContainer>
   );
 }
 
-export default FaqsDetailSection
+export default FaqsDetailPanel
