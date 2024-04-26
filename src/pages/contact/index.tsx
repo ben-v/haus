@@ -25,7 +25,7 @@ const tabData: { title: string, id: string, children: ReactNode }[] = [
     children: <ContactFormPanel />
   },
   {
-    title: "Other Contact Information",
+    title: "Other Contact Info",
     id: "contact-other",
     children: <ContactOtherPanel />
   },
