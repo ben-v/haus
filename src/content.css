@@ -284,7 +284,7 @@
   @apply border;
   @apply border-gray-200;
   @apply dark:border-gray-700/60;
-  @apply bg-gray-100;
+  @apply bg-gray-50;
   @apply dark:bg-gray-800;
   @apply p-1;
   @apply shadow-sm;
