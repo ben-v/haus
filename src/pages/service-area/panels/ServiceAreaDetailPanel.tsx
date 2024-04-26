@@ -1,17 +1,17 @@
 import { useContext } from "react";
-import { HashLink } from "react-router-hash-link"
-import { ThemeContext, THEMES } from "../../../contexts/ThemeContext";
-import SvgMapLocationDotSolid from "../../../components/images/icons/SvgMapLocationDotSolid"
+import { HashLink } from "react-router-hash-link";
 import ContentIconContainer from "../../../components/containers/ContentIconContainer";
 import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
-import GenericContentContainer from "../../../components/containers/GenericContentContainer";
+import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
+import SvgMapLocationDotSolid from "../../../components/images/icons/SvgMapLocationDotSolid";
+import { ThemeContext, THEMES } from "../../../contexts/ThemeContext";
 
 const ServiceAreaDetailPanel = () => {
   const { theme, } = useContext(ThemeContext);
 
   return (
     <ContentSectionContainer flexDirection="Center">
-      <GenericContentContainer padding="None" bodyClassNames="gap-8">
+      <RoundCornerContainer id="service-area-detail" padding="Small" bodyClassNames="gap-8">
         <ContentIconContainer title="Communities We Serve">
           <SvgMapLocationDotSolid fill={theme === THEMES.DARK ? 'white' : 'dark'} className="m-auto w-auto" width={40} height={48} />
         </ContentIconContainer>
@@ -37,7 +37,7 @@ const ServiceAreaDetailPanel = () => {
         <HashLink to="/contact/#" smooth className="relative flex h-11 w-full items-center justify-center px-6 mb-4 md:mb-auto before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 active:duration-75 active:before:scale-95 dark:before:bg-primaryLight">
           <span className="relative text-base font-semibold text-white dark:text-dark">Contact Us</span>
         </HashLink>
-      </GenericContentContainer>
+      </RoundCornerContainer>
     </ContentSectionContainer>
   )
 }

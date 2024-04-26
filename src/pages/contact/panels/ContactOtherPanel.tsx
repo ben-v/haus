@@ -1,22 +1,22 @@
-import { THEMES, ThemeContext } from "../../../contexts/ThemeContext";
-import CommonToastNotificationConfig from "../../../components/notifications/common-toast-notification-config";
 import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
+import CommonToastNotificationConfig from "../../../components/notifications/common-toast-notification-config";
+import { THEMES, ThemeContext } from "../../../contexts/ThemeContext";
 
-import CardHeader from "../../../components/layouts/CardHeader";
-import GenericContentContainer from "../../../components/containers/GenericContentContainer";
-import SvgPhoneSolid from "../../../components/images/SvgPhoneSolid";
 import { Typography } from "@material-tailwind/react";
-import { Link } from "react-router-dom";
-import SvgEmailSolid from "../../../components/images/SvgEmailSolid";
-import SocialLinksCard from "../../../components/common/SocalLinksCard";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
+import SocialLinksCard from "../../../components/common/SocalLinksCard";
+import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
+import SvgEmailSolid from "../../../components/images/SvgEmailSolid";
+import SvgPhoneSolid from "../../../components/images/SvgPhoneSolid";
+import CardHeader from "../../../components/layouts/CardHeader";
 
 const ContactOtherPanel = () => {
     const { theme, } = useContext(ThemeContext);
 
     return (
         <ContentSectionContainer flexDirection="Center">
-            <GenericContentContainer id="contact-other" padding="None" containerClassNames="w-full" bodyClassNames="gap-4">
+            <RoundCornerContainer id="contact-other" padding="Small" containerClassNames="w-full" bodyClassNames="gap-4">
                 {/* <ContentIconContainer 
                 title={"Have other questions?"}
                 description="Have other questions? Feel free to reach out with any you might have!" >
@@ -41,7 +41,7 @@ const ContactOtherPanel = () => {
                 <div className="flex items-center gap-1.5">
                     <SocialLinksCard showHeader={false} size="24x24" />
                 </div>
-            </GenericContentContainer>
+            </RoundCornerContainer>
             <CommonToastNotificationConfig />
         </ContentSectionContainer>
     )
