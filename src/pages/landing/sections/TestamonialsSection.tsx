@@ -26,7 +26,7 @@ const testamonials: TestamonialCardProps[] = [
   }
 ];
 
-const Testamonials = () => {
+const TestamonialsSection = () => {
   return (
     <ContentSectionContainer flexDirection="Center">
       <div className="w-auto p-2 md:px-12">
@@ -54,4 +54,4 @@ const Testamonials = () => {
   )
 }
 
-export default Testamonials
+export default TestamonialsSection

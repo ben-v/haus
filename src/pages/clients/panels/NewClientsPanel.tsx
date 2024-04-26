@@ -1,22 +1,17 @@
 import { useContext } from "react";
 import { HashLink } from "react-router-hash-link";
-
-// import resolveConfig from 'tailwindcss/resolveConfig'
-// import tailwindConfig from '../../../../tailwind.config';
 import { THEMES, ThemeContext } from "../../../contexts/ThemeContext";
 
-import CardHeader from "../../../components/layouts/CardHeader";
-import SharpCornerClipContainer from "../../../components/containers/SharpCornerClipContainer";
 import ContentIconContainer from "../../../components/containers/ContentIconContainer";
+import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
+import SharpCornerClipContainer from "../../../components/containers/SharpCornerClipContainer";
+import CardHeader from "../../../components/layouts/CardHeader";
 
 import PngNewRequest from "../../../../public/images/screenshots/new-request.png";
 import SvgRectangleListSolid from "../../../components/images/SvgRectangleListSolid";
 import SvgClipboardQuestionSolid from "../../../components/images/icons/SvgClipboardQuestionSolid";
-import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
 
-// const fullConfig = resolveConfig(tailwindConfig)
-
-const NewClientsSection = () => {
+const NewClientsPanel = () => {
     const { theme, } = useContext(ThemeContext);
 
     return (
@@ -59,4 +54,4 @@ const NewClientsSection = () => {
     )
 }
 
-export default NewClientsSection
+export default NewClientsPanel

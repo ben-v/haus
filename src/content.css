@@ -69,6 +69,7 @@
 
 .page-container .page-header-container {
   @apply px-0;
+  @apply pb-4;
   @apply md:px-2;
   @apply w-auto;
   @apply text-center;
@@ -314,7 +315,9 @@
 }
 
 /* Landing Page  */
-#landing-elevator-pitch svg, #landing-philosophy svg {
+#landing-container svg, 
+#contact-marketing-worker svg,
+#faqs-marketing-person svg {
   @apply fill-gray-600;
   @apply dark:fill-gray-300;
 }

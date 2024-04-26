@@ -17,7 +17,7 @@ const sectionLinkGroups: NavLinkGroup[] = [
       { label: "Clients", url: "/clients/#" },
       // { label: "Services", url: "/services/#" },
       { label: "Service Area", url: "/service-area/#" },
-      // { label: "FAQs", url: "/faqs/#" },
+      { label: "FAQs", url: "/faqs/#" },
       { label: "Contact", url: "/contact/#" }
     ]
   },
@@ -33,7 +33,7 @@ const sectionLinkGroups: NavLinkGroup[] = [
     links: [
       { label: "Privacy Policy", url: "/privacy/#" },
       { label: "Terms & Conditions", url: "/terms/#" },
-      // { label: "Partners", url: "/partners/#" },
+      { label: "Partners", url: "/partners/#" },
     ]
   }
 ];

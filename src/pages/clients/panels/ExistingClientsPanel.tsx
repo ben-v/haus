@@ -1,23 +1,19 @@
-import { ThemeContext, THEMES } from "../../../contexts/ThemeContext";
 import { useContext } from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
-// import resolveConfig from 'tailwindcss/resolveConfig'
-// import tailwindConfig from '../../../../tailwind.config';
+import { ThemeContext, THEMES } from "../../../contexts/ThemeContext";
 
-import SvgArrowUpRightFromSquareSolid from "../../../components/images/SvgArrowUpRightFromSquareSolid"
-import PngExistingClientHub from "../../../../public/images/screenshots/client-hub.png"
-import SharpCornerClipContainer from "../../../components/containers/SharpCornerClipContainer";
-import SvgAddressBookSolid from "../../../components/images/SvgAddressBookSolid";
 import ContentIconContainer from "../../../components/containers/ContentIconContainer";
-import SvgMobileScreenButtonSolid from "../../../components/images/icons/SvgMobileScreenButtonSolid";
-import CardHeader from "../../../components/layouts/CardHeader";
 import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
+import SharpCornerClipContainer from "../../../components/containers/SharpCornerClipContainer";
+import CardHeader from "../../../components/layouts/CardHeader";
 
-// const fullConfig = resolveConfig(tailwindConfig)
+import PngExistingClientHub from "../../../../public/images/screenshots/client-hub.png";
+import SvgMobileScreenButtonSolid from "../../../components/images/icons/SvgMobileScreenButtonSolid";
+import SvgAddressBookSolid from "../../../components/images/SvgAddressBookSolid";
+import SvgArrowUpRightFromSquareSolid from "../../../components/images/SvgArrowUpRightFromSquareSolid";
 
-const ExistingClientsSection = () => {
-
+const ExistingClientsPanel = () => {
     const { theme, } = useContext(ThemeContext);
 
     return (
@@ -61,4 +57,4 @@ const ExistingClientsSection = () => {
     )
 }
 
-export default ExistingClientsSection
+export default ExistingClientsPanel
