@@ -10,6 +10,9 @@
   @apply selection:bg-primary/10;
   @apply selection:text-primary;
   @apply dark:bg-gray-900;
+  @apply bg-[radial-gradient(circle_at_top_left,_var(--tw-gradient-stops))];
+  @apply from-secondaryLight/10;
+  @apply dark:from-secondary/10;
 }
 
 .container-header-text,

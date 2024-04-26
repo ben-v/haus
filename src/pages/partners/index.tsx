@@ -6,8 +6,7 @@ const PartnersPage = () => {
     <PageContainer
       id="partners"
       titlePartA="Our"
-      titlePartB=" Partners"
-      showContentBackground={false}>
+      titlePartB=" Partners">
         <PartnersDetailSection />
       </PageContainer>
   )

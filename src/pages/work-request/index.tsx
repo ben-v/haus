@@ -26,7 +26,6 @@ const WorkRequestPage = () => {
       id="work-request"
       titlePartA="New"
       titlePartB=" Work Request"
-      showContentBackground={false}
       description="An easy way to get started, is to send us a new work request. Once received, we will review and follow up with you regarding next steps.">
         {workRequestForm()}
       </PageContainer>
