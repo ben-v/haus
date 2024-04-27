@@ -278,6 +278,25 @@
   @apply dark:fill-primaryLight;
 }
 
+.content-button {
+  @apply relative;
+  @apply flex;
+  @apply h-11;
+  @apply w-full;
+  @apply items-center;
+  @apply justify-center;
+  @apply px-6;
+  @apply before:absolute;
+  @apply before:inset-0;
+  @apply before:rounded-full;
+  @apply before:bg-primary;
+  @apply before:transition-transform;
+  @apply before:duration-300;
+  @apply active:duration-75;
+  @apply active:before:scale-95;
+  @apply dark:before:bg-primaryLight;
+}
+
 /* Tab Strip Styles */
 .tab-strip {
 }
