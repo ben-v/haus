@@ -27,7 +27,7 @@ const FaqsPage = () => {
       titlePartA="Frequently Asked"
       titlePartB=" Questions"
       description="We've pulled together answers to some commonly asked questions about HAUS, what we do and how we do it.">
-      <ContentSectionContainer id="faqs-body" flexDirection='RTL'>
+      <ContentSectionContainer id="faqs-bodycontainer" flexDirection='RTL'>
         <ContentSectionContainer flexDirection="Center" containerClassNames="w-auto pb-6 md:pt-0 md:w-4/5 md:max-w-2xl">
           <GenericContentContainer id="faqs-marketing-person" padding="None">
             <SvgPersonInformation className="w-auto" />

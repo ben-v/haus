@@ -27,7 +27,7 @@ const ContactPage = () => {
       titlePartA="Let's"
       titlePartB=" Connect"
       description="If you have project ideas or questions you'd like to discuss, please fill out the form below to send us a message.">
-      <ContentSectionContainer id="contact-body">
+      <ContentSectionContainer id="contact-body-container">
         <ContentSectionContainer flexDirection="Center" containerClassNames="w-auto pb-6 md:pt-0 md:w-4/5 md:max-w-2xl">
           <GenericContentContainer id="contact-marketing-worker" padding="None">
             <SvgWorkerEmailing className="w-auto" />
