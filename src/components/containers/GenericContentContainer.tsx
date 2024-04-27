@@ -1,8 +1,6 @@
-import { ReactNode } from 'react';
 import { BaseContainerProps, BaseContainerClassNames, GetContainerClassNamesFromProps } from './Container';
 
 export interface GenericContentContainerProps extends BaseContainerProps {
-    children: ReactNode;
 }
 
 const defaultProps = {

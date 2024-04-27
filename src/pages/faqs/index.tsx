@@ -10,12 +10,12 @@ import SvgPersonInformation from '../../components/images/stick-figures/SvgPerso
 const tabData: TabTemplateProps[] = [
   {
     title: "Our FAQs",
-    id: "our-faqs",
+    key: "our-faqs",
     children: <FaqsDetailPanel />
   },
   {
     title: "Other Questions?",
-    id: "faqs-other",
+    key: "faqs-other",
     children: <FaqsDetailOtherPanel />
   },
 ];
@@ -34,7 +34,7 @@ const FaqsPage = () => {
           </GenericContentContainer>
         </ContentSectionContainer>
         <ContentSectionContainer id="faqs-detail" flexDirection="Center">
-          <TabStripTemplate id="faqs-tab-strip" value="our-faqs" tabData={tabData} />
+          <TabStripTemplate id="faqs-tab-strip" defaultTabKey="our-faqs" tabData={tabData} />
         </ContentSectionContainer>
       </ContentSectionContainer>
     </PageContainer>

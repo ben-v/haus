@@ -1,5 +1,6 @@
-export interface BaseContainerProps {
-    id?: string;
+import { BaseProps } from "../BaseProps";
+
+export interface BaseContainerProps extends BaseProps {
     containerClassNames?: string;
     bodyClassNames?: string;
     padding?: "Large" | "Small" | "None";
@@ -9,8 +10,6 @@ export interface BaseContainerProps {
 export interface BaseContainerClassNames {
     containerClassNames: string;
     bodyClassNames: string;
-    // paddingClassNames: string;
-    // growClassNames: string;
 }
 
 const defaultProps = {

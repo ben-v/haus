@@ -1,9 +1,7 @@
-import { ReactNode } from "react";
 import { BaseContainerClassNames, BaseContainerProps, GetContainerClassNamesFromProps } from "./Container";
 
 export interface ContentSectionProps extends BaseContainerProps {
   flexDirection?: "LTR" | "RTL" | "Center";
-  children: ReactNode;
 }
 
 const defaultProps = {

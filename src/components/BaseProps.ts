@@ -1,6 +1,6 @@
 import { ReactNode } from "react"
 
 export interface BaseProps {
-    id:string
+    id?:string
     children?: ReactNode
 }

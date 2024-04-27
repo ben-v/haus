@@ -1,12 +1,8 @@
-import { ReactNode } from "react";
-
 import PageHeader, { PageHeaderProps, defaultPageHeaderProps } from "./PageHeader"
 import ContentSectionContainer from "../containers/ContentSectionContainer";
+import { BaseProps } from "../BaseProps";
 
-export interface PageContainerProps extends PageHeaderProps {
-  id: string,
-  children: ReactNode,
-  showContentBackground?: boolean
+export interface PageContainerProps extends BaseProps, PageHeaderProps {
 }
 
 const PageContainer = (props: PageContainerProps) => {

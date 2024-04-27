@@ -11,12 +11,12 @@ import SvgPersonDriving from '../../components/images/stick-figures/SvgPersonDri
 const tabData: TabTemplateProps[] = [
   {
     title: "Communities",
-    id: "service-area-communities",
+    key: "service-area-communities",
     children: <ServiceAreaDetailPanel />
   },
   {
     title: "Map",
-    id: "service-area-map",
+    key: "service-area-map",
     children: <ServiceAreaMapPanel />
   },
 ];
@@ -35,7 +35,7 @@ const ServiceAreaPage = () => {
           </GenericContentContainer>
         </ContentSectionContainer>
         <ContentSectionContainer id="service-area-detail" flexDirection="Center">
-          <TabStripTemplate id="service-area-tab-strip" value="service-area-communities" tabData={tabData} />
+          <TabStripTemplate id="service-area-tab-strip" defaultTabKey="service-area-communities" tabData={tabData} />
         </ContentSectionContainer>
       </ContentSectionContainer>
     </PageContainer>

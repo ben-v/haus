@@ -10,12 +10,12 @@ import SvgWorkerEmailing from '../../components/images/stick-figures/SvgWorkerEm
 const tabData: TabTemplateProps[] = [
   {
     title: "Message Us",
-    id: "contact-form",
+    key: "contact-form",
     children: <ContactFormPanel />
   },
   {
     title: "Other Contact Info",
-    id: "contact-other",
+    key: "contact-other",
     children: <ContactOtherPanel />
   },
 ];
@@ -34,7 +34,7 @@ const ContactPage = () => {
           </GenericContentContainer>
         </ContentSectionContainer>
         <ContentSectionContainer id="contact-detail" flexDirection="Center">
-          <TabStripTemplate id="contact-tab-strip" value="contact-form" tabData={tabData} />
+          <TabStripTemplate id="contact-tab-strip" defaultTabKey="contact-form" tabData={tabData} />
         </ContentSectionContainer>
       </ContentSectionContainer>
     </PageContainer>
