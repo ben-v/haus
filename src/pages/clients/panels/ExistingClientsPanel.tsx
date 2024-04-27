@@ -40,7 +40,7 @@ const ExistingClientsPanel = () => {
 
                             <div>
                                 <span className="relative text-base font-semibold text-white dark:text-dark">
-                                    Existing Client Hub
+                                    Client Hub
                                 </span>
                             </div>
                             <div className="pl-2">
@@ -51,7 +51,7 @@ const ExistingClientsPanel = () => {
                 </div>
             </div>
             <SharpCornerClipContainer>
-                <img src={PngExistingClientHub} className="mx-auto h-80 w-96 rounded-t-3xl border border-gray-300/100 object-cover object-top shadow-2xl dark:border-transparent sm:h-[28rem]" alt="existing client hub screenshot" width="850" height="1780" />
+                <img src={PngExistingClientHub} className="mx-auto h-80 w-96 rounded-t-3xl border border-gray-300/100 object-cover object-top shadow-2xl dark:border-transparent sm:h-[28rem]" alt="client hub screenshot" width="850" height="1780" />
             </SharpCornerClipContainer>
         </ContentSectionContainer>
     )

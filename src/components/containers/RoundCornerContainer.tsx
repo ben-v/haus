@@ -1,9 +1,7 @@
-import { ReactNode } from 'react';
 import { BaseContainerProps, BaseContainerClassNames, GetContainerClassNamesFromProps } from './Container';
 
 export interface RoundCornerContainerProps extends BaseContainerProps {
   useGradientBackground?: boolean;
-  children: ReactNode;
 }
 
 const defaultProps = {

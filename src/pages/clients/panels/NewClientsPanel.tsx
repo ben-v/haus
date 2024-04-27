@@ -42,13 +42,13 @@ const NewClientsPanel = () => {
                                 <SvgRectangleListSolid width={16} height={16} className='relative m-auto' fill={theme === THEMES.DARK ? 'dark' : 'white'} />
                             </div>
 
-                            <span className="relative text-base font-semibold text-white dark:text-dark">New Client Work Request</span>
+                            <span className="relative text-base font-semibold text-white dark:text-dark">Work Request</span>
                         </HashLink>
                     </div>
                 </div>
             </div>
             <SharpCornerClipContainer>
-                <img src={PngNewRequest} className="mx-auto h-80 w-96 rounded-t-3xl border border-gray-300/100 object-cover object-top shadow-2xl dark:border-transparent sm:h-[28rem]" alt="new client work request screenshot" width="850" height="1780" />
+                <img src={PngNewRequest} className="mx-auto h-80 w-96 rounded-t-3xl border border-gray-300/100 object-cover object-top shadow-2xl dark:border-transparent sm:h-[28rem]" alt="work request screenshot" width="850" height="1780" />
             </SharpCornerClipContainer>
         </ContentSectionContainer>
     )

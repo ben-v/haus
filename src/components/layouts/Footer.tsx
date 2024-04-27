@@ -24,8 +24,8 @@ const sectionLinkGroups: NavLinkGroup[] = [
   {
     title: "Client Tools",
     links: [
-      { label: "New Client Work Request", url: "/work-request/#" },
-      { label: "Existing Client Hub", url: "https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login", target: "_blank" }
+      { label: "Work Request", url: "/work-request/#" },
+      { label: "Client Hub", url: "https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login", target: "_blank" }
     ]
   },
   {

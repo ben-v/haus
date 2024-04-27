@@ -6,9 +6,9 @@ const PrivacyPage = () => {
     <PageContainer
       id="privacy-policy"
       titlePartA="Privacy Policy"
-      description="Last Updated On: April 2, 2024"
-      showContentBackground={false}
-      columnA={<PrivacyDetailSection />} />
+      description="Last Updated On: April 2, 2024">
+        <PrivacyDetailSection />
+      </PageContainer>
   )
 }
 

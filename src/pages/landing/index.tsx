@@ -1,18 +1,8 @@
-import TestamonialsSection from "./sections/TestamonialsSection";
-import IntroSection from "./sections/IntroSection";
-// import Philosophy from "./sections/Philosophy";
 import PageContainer from "../../components/layouts/PageContainer";
 import ContentSectionContainer from "../../components/containers/ContentSectionContainer";
 
-// Want the landing cards to be stacked in a single column, so need to wrap in a div with flex CSS classes applied.
-const getLandingColumnASections = () => {
-  return (
-    <ContentSectionContainer flexDirection="Center">
-      <IntroSection />
-      <TestamonialsSection />
-    </ContentSectionContainer>
-  )
-};
+import IntroSection from "./sections/IntroSection";
+import TestamonialsSection from "./sections/TestamonialsSection";
 
 const LandingPage = () => {
   return (
@@ -21,8 +11,12 @@ const LandingPage = () => {
       titlePartA="Comfortable, Functional,&nbsp;"
       titlePartB="Happy Homes"
       highlightType="Vibrant"
-      titleAlignment="Left"
-      columnA={getLandingColumnASections()} />
+      titleAlignment="Left">
+      <ContentSectionContainer flexDirection="Center">
+        <IntroSection />
+        <TestamonialsSection />
+      </ContentSectionContainer>
+    </PageContainer>
   )
 }
 

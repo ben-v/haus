@@ -6,9 +6,9 @@ const TermsPage = () => {
     <PageContainer
       id="terms"
       titlePartA="Terms &amp; Conditions"
-      description="Last Updated On: April 13, 2024"
-      showContentBackground={false}
-      columnA={<TermsDetailSection />} />
+      description="Last Updated On: April 13, 2024">
+        <TermsDetailSection />
+      </PageContainer>
   )
 }
 

@@ -5,8 +5,9 @@ const ServicesPage = () => {
   return (
     <PageContainer
       id="services"
-      titlePartA="Services"
-      columnA={<ServicesDetailSection />} />
+      titlePartA="Services">
+        <ServicesDetailSection />
+      </PageContainer>
   )
 }
 

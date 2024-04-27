@@ -10,6 +10,9 @@
   @apply selection:bg-primary/10;
   @apply selection:text-primary;
   @apply dark:bg-gray-900;
+  @apply bg-[radial-gradient(circle_at_top_left,_var(--tw-gradient-stops))];
+  @apply from-secondaryLight/10;
+  @apply dark:from-secondary/10;
 }
 
 .container-header-text,
@@ -41,7 +44,7 @@
   @apply relative;
   @apply flex;
   @apply flex-col;
-  @apply overflow-visible;
+  @apply overflow-hidden;
   @apply pt-24;
   @apply lg:pt-32;
 
@@ -317,8 +320,10 @@
 
 /* Landing Page  */
 #landing-container svg, 
-#contact-marketing-worker svg,
-#faqs-marketing-person svg {
+#service-area-body svg,
+#contact-body svg,
+#faqs-body svg,
+#error-page-container svg {
   @apply fill-gray-600;
   @apply dark:fill-gray-300;
 }
