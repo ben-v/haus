@@ -2,6 +2,7 @@ import { Toaster } from "react-hot-toast"
 
 const CommonToastNotificationConfig = () => {
     return (
+        <div className="z-50">
         <Toaster
             position="top-center"
             toastOptions={{
@@ -25,15 +26,16 @@ const CommonToastNotificationConfig = () => {
                 error: {
                     iconTheme: {
                         primary: 'white',
-                        secondary: 'red',
+                        secondary: '#EC0014',
                     },
                     style: {
                         color: 'white',
-                        background: 'red'
+                        background: '#EC0014'
                     },
                     duration: 5000
                 },
             }} />
+        </div>
     )
 }
 

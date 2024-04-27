@@ -53,7 +53,7 @@ const Header = () => {
 
   return (
     <header>
-      <nav id="navbar" className={`fixed inset-x-0 z-50 w-full border-b border-gray-100 bg-white/80 backdrop-blur dark:border-gray-700/30 dark:bg-gray-900/80 ${isNavbarActive ? "navbar-active" : ""}`}>
+      <nav id="navbar" className={`page-body-start-highlight-line fixed inset-x-0 z-40 w-full border-b border-gray-100 bg-white/80 backdrop-blur dark:border-gray-700/30 dark:bg-gray-900/80 ${isNavbarActive ? "navbar-active" : ""}`}>
         <div className="mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
           <div className="relative flex flex-wrap items-center justify-between gap-6 lg:gap-0 lg:py-4 app-tooltip-container">
             <div className="relative z-50 flex w-full justify-between md:px-0 lg:w-max">

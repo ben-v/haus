@@ -1,4 +1,4 @@
-import PageContainer from "../../components/layouts/PageContainer";
+import PageContainer from "../../components/containers/PageContainer";
 import PrivacyDetailSection from "./sections/PrivacyDetailSection";
 
 const PrivacyPage = () => {

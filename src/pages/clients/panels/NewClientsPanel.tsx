@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { HashLink } from "react-router-hash-link";
 import { THEMES, ThemeContext } from "../../../contexts/ThemeContext";
 
 import ContentIconContainer from "../../../components/containers/ContentIconContainer";
@@ -10,6 +9,7 @@ import CardHeader from "../../../components/layouts/CardHeader";
 import PngNewRequest from "../../../../public/images/screenshots/new-request.png";
 import SvgRectangleListSolid from "../../../components/images/SvgRectangleListSolid";
 import SvgClipboardQuestionSolid from "../../../components/images/icons/SvgClipboardQuestionSolid";
+import ButtonLink from "../../../components/buttons/ButtonLink";
 
 const NewClientsPanel = () => {
     const { theme, } = useContext(ThemeContext);
@@ -37,13 +37,10 @@ const NewClientsPanel = () => {
                             <SvgClipboardQuestionSolid fill={theme === THEMES.DARK ? 'white' : 'dark'} className="m-auto w-auto" width={40} height={48} />
                         </ContentIconContainer>
 
-                        <HashLink to="/work-request/#" smooth className="relative mb-6 flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 active:duration-75 active:before:scale-95 dark:before:bg-primaryLight">
-                            <div className="pr-2">
-                                <SvgRectangleListSolid width={16} height={16} className='relative m-auto' fill={theme === THEMES.DARK ? 'dark' : 'white'} />
-                            </div>
-
-                            <span className="relative text-base font-semibold text-white dark:text-dark">Work Request</span>
-                        </HashLink>
+                        <ButtonLink
+                            url="/work-request/#"
+                            prefixIcon={<SvgRectangleListSolid />}
+                            title="Work Request" />
                     </div>
                 </div>
             </div>

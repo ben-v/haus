@@ -261,6 +261,30 @@
 }
 
 /* Navigation/Link/Button Styles */
+/* Applied to the nav element because its z-index keeps it above everything else and applying to the wrapping div in
+the App.tsx is hidden.  */
+.page-body-start-highlight-line, .page-body-end-highlight-line {
+  @apply after:absolute;
+  @apply after:inset-0;
+  @apply after:mt-auto;
+  @apply after:h-px;
+  @apply after:w-8/12;
+  @apply after:from-yellow-300;
+  @apply after:via-pink-400;
+  @apply after:to-transparent;
+}
+
+.page-body-start-highlight-line {
+  @apply after:mr-auto;
+  @apply after:bg-gradient-to-r;
+}
+
+.page-body-end-highlight-line {
+  @apply relative;
+  @apply after:ml-auto;
+  @apply after:bg-gradient-to-l;
+}
+
 #navbar .nav-button {
   @apply text-gray-600;
   @apply dark:text-gray-300;
@@ -276,6 +300,25 @@
 #navbar .nav-button:hover svg {
   @apply fill-primary;
   @apply dark:fill-primaryLight;
+}
+
+.content-button {
+  @apply relative;
+  @apply flex;
+  @apply h-11;
+  @apply w-full;
+  @apply items-center;
+  @apply justify-center;
+  @apply px-6;
+  @apply before:absolute;
+  @apply before:inset-0;
+  @apply before:rounded-full;
+  @apply before:bg-primary;
+  @apply before:transition-transform;
+  @apply before:duration-300;
+  @apply active:duration-75;
+  @apply active:before:scale-95;
+  @apply dark:before:bg-primaryLight;
 }
 
 /* Tab Strip Styles */
@@ -318,12 +361,12 @@
   width: 90%;
 }
 
-/* Landing Page  */
-#landing-container svg, 
-#service-area-body svg,
-#contact-body svg,
-#faqs-body svg,
-#error-page-container svg {
+/* Stick Figures Fill Colors */
+#landing-person svg, 
+#service-area-marketing-person svg,
+#contact-marketing-worker svg,
+#faqs-marketing-person svg,
+#error-sign svg {
   @apply fill-gray-600;
   @apply dark:fill-gray-300;
 }

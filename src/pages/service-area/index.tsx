@@ -1,5 +1,5 @@
 
-import PageContainer from "../../components/layouts/PageContainer";
+import PageContainer from "../../components/containers/PageContainer";
 import ContentSectionContainer from '../../components/containers/ContentSectionContainer';
 import GenericContentContainer from '../../components/containers/GenericContentContainer';
 import TabStripTemplate, { TabTemplateProps } from '../../components/templates/TabStripTemplate';
@@ -28,7 +28,7 @@ const ServiceAreaPage = () => {
       titlePartA="Service"
       titlePartB=" Area"
       description="Our primary service area encompasses the greater Bozeman area community and Gallatin County. Check out the list below for communities we commonly serve.">
-      <ContentSectionContainer id="service-area-body">
+      <ContentSectionContainer id="service-area-body-container">
         <ContentSectionContainer flexDirection="Center" containerClassNames="w-auto pb-6 md:pt-0 md:w-4/5 md:max-w-2xl">
           <GenericContentContainer id="service-area-marketing-person" padding="None">
             <SvgPersonDriving className="w-auto" />

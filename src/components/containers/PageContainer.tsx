@@ -1,5 +1,5 @@
-import PageHeader, { PageHeaderProps, defaultPageHeaderProps } from "./PageHeader"
-import ContentSectionContainer from "../containers/ContentSectionContainer";
+import PageHeader, { PageHeaderProps, defaultPageHeaderProps } from "../layouts/PageHeader"
+import ContentSectionContainer from "./ContentSectionContainer";
 import { BaseProps } from "../BaseProps";
 
 export interface PageContainerProps extends BaseProps, PageHeaderProps {
