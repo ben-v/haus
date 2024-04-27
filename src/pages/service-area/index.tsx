@@ -1,5 +1,5 @@
 
-import PageContainer from "../../components/layouts/PageContainer";
+import PageContainer from "../../components/containers/PageContainer";
 import ContentSectionContainer from '../../components/containers/ContentSectionContainer';
 import GenericContentContainer from '../../components/containers/GenericContentContainer';
 import TabStripTemplate, { TabTemplateProps } from '../../components/templates/TabStripTemplate';

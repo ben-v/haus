@@ -1,4 +1,4 @@
-import PageContainer from '../layouts/PageContainer'
+import PageContainer from '../containers/PageContainer'
 import ContentSectionContainer from '../containers/ContentSectionContainer'
 import GenericContentContainer from '../containers/GenericContentContainer'
 import SvgPersonOopsSign from '../images/stick-figures/SvgPersonOopsSign'

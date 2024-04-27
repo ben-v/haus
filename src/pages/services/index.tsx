@@ -1,4 +1,4 @@
-import PageContainer from "../../components/layouts/PageContainer";
+import PageContainer from "../../components/containers/PageContainer";
 import ServicesDetailSection from "./sections/ServicesDetailSection"
 
 const ServicesPage = () => {
