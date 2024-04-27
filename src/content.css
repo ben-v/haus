@@ -359,6 +359,7 @@ the App.tsx is hidden.  */
   @apply dark:text-gray-200;
   max-width: 400px;
   width: 90%;
+  z-index: 100;
 }
 
 /* Stick Figures Fill Colors */
