@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import { ThemeContext, THEMES } from "../../../contexts/ThemeContext";
 
@@ -12,6 +12,7 @@ import PngExistingClientHub from "../../../../public/images/screenshots/client-h
 import SvgMobileScreenButtonSolid from "../../../components/images/icons/SvgMobileScreenButtonSolid";
 import SvgAddressBookSolid from "../../../components/images/SvgAddressBookSolid";
 import SvgArrowUpRightFromSquareSolid from "../../../components/images/SvgArrowUpRightFromSquareSolid";
+import ButtonLink from "../../../components/buttons/ButtonLink";
 
 const ExistingClientsPanel = () => {
     const { theme, } = useContext(ThemeContext);
@@ -33,20 +34,14 @@ const ExistingClientsPanel = () => {
                             <SvgMobileScreenButtonSolid fill={theme === THEMES.DARK ? 'white' : 'dark'} className="m-auto w-auto" width={40} height={48} />
                         </ContentIconContainer>
 
-                        <Link to="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" target="_blank" className="relative flex h-11 mb-6 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 active:duration-75 active:before:scale-95 dark:before:bg-primaryLight">
-                            <div className="pr-2">
-                                <SvgAddressBookSolid width={16} height={16} className='relative m-auto' fill={theme === THEMES.DARK ? 'dark' : 'white'} />
-                            </div>
-
-                            <div>
-                                <span className="relative text-base font-semibold text-white dark:text-dark">
-                                    Client Hub
-                                </span>
-                            </div>
-                            <div className="pl-2">
-                                <SvgArrowUpRightFromSquareSolid width={12} height={12} className='relative m-auto' fill={theme === THEMES.DARK ? 'dark' : 'white'} />
-                            </div>
-                        </Link>
+                        <ButtonLink
+                            url="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login"
+                            target="_blank"
+                            prefixIcon={<SvgAddressBookSolid />}
+                            suffixIcon={<SvgArrowUpRightFromSquareSolid />}
+                            suffixIconHeight={12}
+                            suffixIconWidth={12} 
+                            title="Client Hub" />
                     </div>
                 </div>
             </div>

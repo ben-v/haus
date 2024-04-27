@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { HashLink } from "react-router-hash-link";
 import ContentIconContainer from "../../../components/containers/ContentIconContainer";
 import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
 import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
 import SvgMapLocationDotSolid from "../../../components/images/icons/SvgMapLocationDotSolid";
 import { ThemeContext, THEMES } from "../../../contexts/ThemeContext";
+import ButtonLink from "../../../components/buttons/ButtonLink";
 
 const ServiceAreaDetailPanel = () => {
   const { theme, } = useContext(ThemeContext);
@@ -34,9 +34,7 @@ const ServiceAreaDetailPanel = () => {
 
         <p className="general-body-text">Don't see your community listed or have questions about our service area? Feel free to reach out to us for more information. We're here to help!</p>
 
-        <HashLink to="/contact/#" smooth className="relative flex h-11 w-full items-center justify-center px-6 mb-4 md:mb-auto before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 active:duration-75 active:before:scale-95 dark:before:bg-primaryLight">
-          <span className="relative text-base font-semibold text-white dark:text-dark">Contact Us</span>
-        </HashLink>
+        <ButtonLink url="/contact/#" title="Contact Us" />
       </RoundCornerContainer>
     </ContentSectionContainer>
   )
