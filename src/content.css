@@ -268,7 +268,8 @@ the App.tsx is hidden.  */
   @apply after:inset-0;
   @apply after:mt-auto;
   @apply after:h-px;
-  @apply after:w-8/12;
+  @apply after:w-5/12;
+  @apply after:md:w-4/12;
   @apply after:from-yellow-300;
   @apply after:via-pink-400;
   @apply after:to-transparent;
