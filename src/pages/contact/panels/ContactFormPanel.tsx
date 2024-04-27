@@ -63,7 +63,7 @@ const ContactFormPanel = () => {
     return (
         <ContentSectionContainer flexDirection="Center">
             <RoundCornerContainer id="contact-panel" padding="Small" containerClassNames="w-full" bodyClassNames="gap-4">
-                <CardHeader title="What's on your mind?" titleAlignment="Left" />
+                <CardHeader title="What's on your mind?" headerType="Subheader" titleAlignment="Left" />
                 <form onSubmit={onSubmitHandler} className="w-auto">
                     <div className="relative">
                         <div className="space-y-4">

@@ -23,7 +23,7 @@ const ContactOtherPanel = () => {
                 <SvgQuestion className="m-auto w-auto" width={64} height={64} />
             </ContentIconContainer> */}
 
-                <CardHeader title="Other Contact Information" titleAlignment="Left" />
+                <CardHeader title="Other Contact Information" headerType="Subheader" titleAlignment="Left" />
                 <div className="flex items-center gap-2 md:gap-3">
                     <SvgPhoneSolid width={16} height={16} className='relative mr-1 md:mr-2' fill={theme === THEMES.DARK ? 'white' : 'dark'} />
                     <Typography className="text-sm lg:text-base text-dark dark:text-white">
