@@ -2,7 +2,6 @@ import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import toast from 'react-hot-toast';
 import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
-import CommonToastNotificationConfig from "../../../components/notifications/common-toast-notification-config";
 
 import React from "react";
 import { HashLink } from "react-router-hash-link";
@@ -108,7 +107,6 @@ const ContactFormPanel = () => {
                     </div>
                 </form>              
             </RoundCornerContainer>
-            <CommonToastNotificationConfig />
         </ContentSectionContainer>
     )
 }

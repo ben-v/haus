@@ -14,6 +14,7 @@ import ContactPage from "./pages/contact";
 import WorkRequestPage from "./pages/work-request";
 import PrivacyPage from "./pages/privacy";
 import TermsPage from "./pages/terms";
+import CommonToastNotificationConfig from "./components/notifications/common-toast-notification-config";
 // import WorkRequestPage2 from "./pages/work-request-2";
 // import PartnersPage from "./pages/partners";
 
@@ -39,6 +40,7 @@ function App() {
         <Route path="*" element={<GenericHttpError title="404" description="Hmm, we did not find the requested page."/>} />
       </Routes>
       <Footer />
+      <CommonToastNotificationConfig />
     </>
   )
 }
