@@ -14,7 +14,7 @@ const tabData: TabTemplateProps[] = [
     children: <ContactFormPanel />
   },
   {
-    title: "Other Contact Info",
+    title: "More Contacts",
     key: "contact-other",
     children: <ContactOtherPanel />
   },
