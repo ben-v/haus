@@ -19,7 +19,6 @@ const PageContainer = (props: PageContainerProps) => {
           titlePartB={propsWithDefaults.titlePartB}
           description={propsWithDefaults.description}
           highlightType={propsWithDefaults.highlightType}
-          highlightPart={propsWithDefaults.highlightPart}
           titleAlignment={propsWithDefaults.titleAlignment}
           descriptionAlignment={propsWithDefaults.descriptionAlignment} />
         <ContentSectionContainer>
