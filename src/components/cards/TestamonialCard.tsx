@@ -74,7 +74,7 @@ const TestamonialCard = (props: TestamonialCardProps) => {
               width={48} height={48} 
               fill={theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.gray[700]}
               color={theme === THEMES.DARK ? fullConfig.theme.colors.gray[800] : fullConfig.theme.colors.white} />
-            <span className="grow">{propsWithDefaults.reviewerName}</span>
+            <span className="grow font-semibold">{propsWithDefaults.reviewerName}</span>
             <span className="items-end">
               <Link to={socialProfileUrl} target="_blank" aria-label={`${propsWithDefaults.source.toLocaleLowerCase()}`}>
                 {reviewLogo}
