@@ -7,22 +7,6 @@
   @apply scroll-smooth
 }
 
-html {
-  overflow-x: auto;
-  overflow-y: scroll;
-}
-
-body, div, a, label, span, button, input, form {
-  font-family: "Urbanist";
-}
-
-body {
-  @apply text-base;
-  @apply text-gray-600;
-  @apply dark:text-gray-300;
-  /* @apply md:text-lg;   */
-}
-
 @layer components {
   .navbar-active #hamburger div:first-child {
     @apply translate-y-1.5 rotate-45;

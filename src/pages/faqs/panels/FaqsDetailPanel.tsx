@@ -34,8 +34,8 @@ const FaqsDetailPanel = () => {
       <RoundCornerContainer id="faqs-detail" padding="Small" containerClassNames="w-full" bodyClassNames="gap-8">
         {faqs.map(({ question, answer }) => (
           <div key={question}>
-            {question}
-            <div className="border-t border-gray-200 pt-3">
+            <span className="font-bold">{question}</span>
+            <div className="border-t border-gray-200 pt-2">
                 {answer}
             </div>
           </div>

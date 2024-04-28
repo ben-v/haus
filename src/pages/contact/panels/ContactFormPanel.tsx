@@ -1,5 +1,7 @@
 import emailjs from "@emailjs/browser";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { THEMES, ThemeContext } from "../../../contexts/ThemeContext";
+
 import toast from 'react-hot-toast';
 import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
 
@@ -7,10 +9,15 @@ import React from "react";
 import { HashLink } from "react-router-hash-link";
 import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
 import SvgPaperPlaneSolid from "../../../components/images/icons/SvgPaperPlaneSolid";
-import CardHeader from "../../../components/layouts/CardHeader";
 import ButtonLink from "../../../components/buttons/ButtonLink";
+import ContentIconContainer from "../../../components/containers/ContentIconContainer";
+import SvgMessageWriteDark from "../../../components/images/icons/SvgMessageWriteDark";
+import SvgMessageWriteLight from "../../../components/images/icons/SvgMessageWriteLight";
+import { ICON_SIZES } from "../../../components/images/icons/IconConfig";
 
 const ContactFormPanel = () => {
+    const { theme, } = useContext(ThemeContext);
+
     const [mailData, setMailData] = useState({
         name: "",
         email: "",
@@ -60,7 +67,9 @@ const ContactFormPanel = () => {
     return (
         <ContentSectionContainer flexDirection="Center">
             <RoundCornerContainer id="contact-panel" padding="Small" containerClassNames="w-full" bodyClassNames="gap-4">
-                <CardHeader title="What's on your mind?" headerType="Subheader" titleAlignment="Left" />
+                <ContentIconContainer title="What's on your mind?">
+                    {theme === THEMES.DARK ? <SvgMessageWriteDark width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} /> : <SvgMessageWriteLight width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} />}
+                </ContentIconContainer>
                 <form onSubmit={onSubmitHandler} className="w-auto">
                     <div className="relative">
                         <div className="space-y-4">

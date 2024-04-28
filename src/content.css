@@ -3,6 +3,31 @@
 @tailwind utilities;
 
 /* App Styles */
+html {
+  overflow-x: auto;
+  overflow-y: scroll;
+}
+
+body, div, a, label, span, button, input, form {
+  font-family: "Urbanist";
+  @apply text-base;
+  @apply text-gray-600;
+  @apply dark:text-gray-300;  
+}
+
+/* body {
+  @apply text-base;
+  @apply text-gray-600;
+  @apply dark:text-gray-300;
+  @apply md:text-lg;  
+} */
+
+.body-container .body-text {
+  @apply text-base;
+  @apply text-blue-500;
+  @apply dark:text-gray-300;  
+}
+
 .body-container {
   @apply min-h-screen;
   @apply scroll-smooth;
@@ -69,7 +94,7 @@
 }
 
 .page-header-container .page-header-heading-standard,
-.page-header-heading-vibrant {
+.page-header-container .page-header-heading-vibrant {
   @apply relative;
   @apply text-center;
   @apply font-bold;
@@ -83,10 +108,10 @@
   @apply dark:text-white;
 }
 
-.page-header-container .page-header-heading-vibrant {
+/* .page-header-container .page-header-heading-vibrant {
   @apply text-blue-900;
   @apply dark:text-white;
-}
+} */
 
 .page-header-container .page-header-description {
   @apply m-4;
