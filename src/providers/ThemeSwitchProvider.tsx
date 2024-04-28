@@ -60,9 +60,6 @@ export const ThemeSwitchProvider: React.FC<Props> = (props): JSX.Element => {
   // User initiated theme change
   const toggleTheme = (): void => {
     updateTheme(themeState === THEMES.LIGHT);
-    // const val = themeState === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT;
-    
-    // saveCurrentTheme(val);
   };
   
   return (
