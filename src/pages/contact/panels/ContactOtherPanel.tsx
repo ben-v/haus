@@ -2,7 +2,6 @@ import ContentSectionContainer from "../../../components/containers/ContentSecti
 import CommonToastNotificationConfig from "../../../components/notifications/common-toast-notification-config";
 import { THEMES, ThemeContext } from "../../../contexts/ThemeContext";
 
-import { Typography } from "@material-tailwind/react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import SocialLinksCard from "../../../components/common/SocalLinksCard";
@@ -16,25 +15,15 @@ const ContactOtherPanel = () => {
 
     return (
         <ContentSectionContainer flexDirection="Center">
-            <RoundCornerContainer id="contact-other" padding="Small" containerClassNames="w-full" bodyClassNames="gap-4">
-                {/* <ContentIconContainer 
-                title={"Have other questions?"}
-                description="Have other questions? Feel free to reach out with any you might have!" >
-                <SvgQuestion className="m-auto w-auto" width={64} height={64} />
-            </ContentIconContainer> */}
-
-                <CardHeader title="Other Contact Information" headerType="Subheader" titleAlignment="Left" />
-                <div className="flex items-center gap-2 md:gap-3">
+            <RoundCornerContainer id="contact-other" padding="Small" containerClassNames="w-full" bodyClassNames="gap-2">
+                <CardHeader title="Addtional Contact Details" headerType="Subheader" titleAlignment="Left" />
+                <div className="pt-4 flex items-center gap-2 md:gap-3">
                     <SvgPhoneSolid width={16} height={16} className='relative mr-1 md:mr-2' fill={theme === THEMES.DARK ? 'white' : 'dark'} />
-                    <Typography className="text-sm lg:text-base text-dark dark:text-white">
-                        <Link to="tel:4063129989">(406) 312-9989</Link>
-                    </Typography>
+                    <Link to="tel:4063129989">(406) 312-9989</Link>
                 </div>
-                <div className="my-4 pb-6 flex items-center gap-2 md:gap-3">
+                <div className="pb-4 flex items-center gap-2 md:gap-3">
                     <SvgEmailSolid width={16} height={16} className='relative mr-1 md:mr-2' fill={theme === THEMES.DARK ? 'white' : 'dark'} />
-                    <Typography className="text-sm lg:text-base text-dark dark:text-white">
-                        <Link to="mailto:hello@hauspropertyservices.com">hello@hauspropertyservices.com</Link>
-                    </Typography>
+                    <Link to="mailto:hello@hauspropertyservices.com">hello@hauspropertyservices.com</Link>
                 </div>
 
                 <CardHeader title="Also, find us on:" titleAlignment="Left" headerType="Subheader" />

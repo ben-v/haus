@@ -15,7 +15,7 @@ const ContentIconContainer = (props: ContentIconContainerProps) => {
             </div>
             <div className="content-icon-container-header">
                 <h4 className={`content-icon-container-header-title container-header-text`}>{props.title}</h4>
-                { props.description ? parse(`<p className="content-icon-container-header-body general-body-text">${props.description}</p>`) : ""}                
+                { props.description ? parse(`<p className="content-icon-container-header-body">${props.description}</p>`) : ""}                
             </div>
         </div>
     );

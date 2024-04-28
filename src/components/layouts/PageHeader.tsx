@@ -102,7 +102,7 @@ const PageHeader = (props: PageHeaderProps) => {
         (propsWithDefaults.titlePartA || propsWithDefaults.titlePartB || propsWithDefaults.description) ?
             <div className="page-header-container">
                 {propsWithDefaults.titlePartA || propsWithDefaults.titlePartB ? <div className={`${headingClassNames} ${titleAlignment}`}>{parse(title)}</div> : ""}
-                {propsWithDefaults.description ? <div className={`page-header-description general-body-text ${descriptionAlignment}`}>{parse(description)}</div> : ""}
+                {propsWithDefaults.description ? <div className={`page-header-description ${descriptionAlignment}`}>{parse(description)}</div> : ""}
             </div>
         : ""
     )

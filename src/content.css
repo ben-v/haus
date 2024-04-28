@@ -29,16 +29,6 @@
   @apply font-semibold;
 }
 
-.general-body-text {
-  @apply text-base;
-  @apply md:text-lg;
-}
-
-.general-body-text {
-  @apply text-gray-600;
-  @apply dark:text-gray-300;
-}
-
 /* Page Styles */
 .page-container {
   @apply relative;
@@ -341,10 +331,8 @@ the App.tsx is hidden.  */
 .tab-strip .tab-strip-header .tab-strip-header-tab {
   @apply text-base;
   @apply md:text-lg;
+  @apply lg:text-xl;
   @apply font-bold;
-}
-
-.tab-strip .tab-strip-body {
 }
 
 .tab-strip .tab-strip-body .tab-strip-body-panel {
