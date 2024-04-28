@@ -13,7 +13,7 @@
     @apply focus-visible:outline-2;
     @apply focus-visible:outline-offset-2;
 
-    @apply w-auto;
+    @apply w-full;
     @apply justify-center;
   
     @apply text-white;
