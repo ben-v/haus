@@ -31,11 +31,11 @@ const faqs: { question: string, answer: string }[] = [
 const FaqsDetailPanel = () => {
   return (
     <ContentSectionContainer id="faqs-detail-container" flexDirection="Center" containerClassNames="items-start">
-      <RoundCornerContainer id="faqs-detail" padding="Small" containerClassNames="w-full" bodyClassNames="gap-8">
+      <RoundCornerContainer id="faqs-detail" padding="Small" containerClassNames="w-full" bodyClassNames="gap-6">
         {faqs.map(({ question, answer }) => (
           <div key={question}>
-            <span className="font-bold">{question}</span>
-            <div className="border-t border-gray-200 pt-2">
+            <span className="!font-bold body-text">{question}</span>
+            <div className="border-t border-gray-200 pt-2 body-text">
                 {answer}
             </div>
           </div>

@@ -6,7 +6,7 @@ const defaultProps = {
     descriptionAlignment: "Center"
 } satisfies Partial<ContentElementProps>
 
-const ContenSectionHeader = (props: ContentElementProps) => {
+const ContentSectionHeader = (props: ContentElementProps) => {
     const propsWithDefaults = {
         ...defaultProps,
         ...props
@@ -23,4 +23,4 @@ const ContenSectionHeader = (props: ContentElementProps) => {
     )
   }
   
-  export default ContenSectionHeader
+  export default ContentSectionHeader

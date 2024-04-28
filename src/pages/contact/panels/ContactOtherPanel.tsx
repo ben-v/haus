@@ -9,10 +9,6 @@ import RoundCornerContainer from "../../../components/containers/RoundCornerCont
 import SvgEmailSolid from "../../../components/images/SvgEmailSolid";
 import SvgPhoneSolid from "../../../components/images/SvgPhoneSolid";
 import CardHeader from "../../../components/layouts/CardHeader";
-// import SvgContactChannels from "../../../components/images/icons/SvgContactChannels";
-import ContentIconContainer from "../../../components/containers/ContentIconContainer";
-import SvgContactChannelsDark from "../../../components/images/icons/SvgContactChannelsDark";
-import SvgContactChannelsLight from "../../../components/images/icons/SvgContactChannelsLight";
 import { ICON_SIZES } from "../../../components/images/icons/IconConfig";
 import colors from "@material-tailwind/react/theme/base/colors";
 
@@ -22,9 +18,7 @@ const ContactOtherPanel = () => {
     return (
         <ContentSectionContainer flexDirection="Center">
             <RoundCornerContainer id="contact-other" padding="Small" containerClassNames="w-full" bodyClassNames="gap-2">
-                <ContentIconContainer title="Addtional Contact Channels" description="Test desc for font tests">
-                    {theme === THEMES.DARK ? <SvgContactChannelsDark width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} /> : <SvgContactChannelsLight width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} />}
-                </ContentIconContainer>
+                <CardHeader title="Addtional Contact Channels" titleAlignment="Left" />
                 <div className="pt-4 flex items-center gap-2 md:gap-3">
                     <SvgPhoneSolid width={ICON_SIZES.sm.height} height={ICON_SIZES.sm.height} className='relative mr-1 md:mr-2' fill={theme === THEMES.DARK ? colors["blue-gray"][300] : colors["blue-gray"][700]} />
                     <Link to="tel:4063129989" className="body-text">(406) 312-9989</Link>

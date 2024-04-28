@@ -3,12 +3,10 @@
 @tailwind utilities;
 
 .button-small, .button-medium, .button-large {
-    /* @apply inline-flex; */
     @apply flex;
     @apply flex-row;
     @apply items-center;
     @apply rounded-full;
-    /* @apply text-sm; */
     
     @apply shadow-sm;
     @apply focus-visible:outline;
@@ -20,13 +18,9 @@
   
     @apply text-white;
     @apply bg-primary;
-    /* @apply hover:bg-slate-300 outline-slate-500;
-    @apply focus-visible:outline-slate-500; */
 
     @apply dark:text-slate-800;
     @apply dark:bg-primaryLight;
-    /* @apply dark:hover:bg-slate-300 outline-slate-500;
-    @apply dark:focus-visible:outline-slate-500; */
 }
 
 .button-small {
@@ -51,12 +45,6 @@
     @apply py-2.5;
     @apply text-lg;
     @apply font-bold;
-}
-
-.button-icon-prefix, .button-icon-suffix
-{
-    /* @apply relative;
-    @apply m-auto; */
 }
 
 .button-icon-prefix {

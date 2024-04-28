@@ -10,10 +10,7 @@ import { HashLink } from "react-router-hash-link";
 import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
 import SvgPaperPlaneSolid from "../../../components/images/icons/SvgPaperPlaneSolid";
 import ButtonLink from "../../../components/buttons/ButtonLink";
-import ContentIconContainer from "../../../components/containers/ContentIconContainer";
-import SvgMessageWriteDark from "../../../components/images/icons/SvgMessageWriteDark";
-import SvgMessageWriteLight from "../../../components/images/icons/SvgMessageWriteLight";
-import { ICON_SIZES } from "../../../components/images/icons/IconConfig";
+import CardHeader from "../../../components/layouts/CardHeader";
 
 const ContactFormPanel = () => {
     const { theme, } = useContext(ThemeContext);
@@ -67,9 +64,7 @@ const ContactFormPanel = () => {
     return (
         <ContentSectionContainer flexDirection="Center">
             <RoundCornerContainer id="contact-panel" padding="Small" containerClassNames="w-full" bodyClassNames="gap-4">
-                <ContentIconContainer title="What's on your mind?">
-                    {theme === THEMES.DARK ? <SvgMessageWriteDark width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} /> : <SvgMessageWriteLight width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} />}
-                </ContentIconContainer>
+            <CardHeader title="What's on your mind?" titleAlignment="Left" />
                 <form onSubmit={onSubmitHandler} className="w-auto">
                     <div className="relative">
                         <div className="space-y-4">
@@ -110,7 +105,7 @@ const ContactFormPanel = () => {
                             </div>
                         </div>
 
-                        <p className="my-8 text-sm text-gray-600 dark:text-gray-300">By clicking submit below, you agree to the processing of your personal information by HAUS Property Services as described in our <HashLink to="/privacy/#" smooth>Privacy Policy</HashLink>.</p>
+                        <p className="my-8 body-text">By clicking submit below, you agree to the processing of your personal information by HAUS Property Services as described in our <HashLink to="/privacy/#" smooth>Privacy Policy</HashLink>.</p>
 
                         <ButtonLink type="submit" prefixIcon={<SvgPaperPlaneSolid />} title="Send Message" prefixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"} />
                     </div>
