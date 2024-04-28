@@ -5,11 +5,15 @@ export interface IconSize {
 
 const DEFAULT_ICON_SIZE: IconSize = {width: 32, height: 32};
 
-export const ICON_SIZES: {default: IconSize, sm: IconSize, md:IconSize, lg: IconSize, xl: IconSize, "2xl": IconSize } = {
+export const ICON_SIZES: {default: IconSize, xs: IconSize, sm: IconSize, md:IconSize, lg: IconSize, xl: IconSize, "2xl": IconSize } = {
     // Unable to find out quickly how to init multiple properties, i.e. default and lg, at once. This is workaround as of 4/28/24.
     default: {
         width: DEFAULT_ICON_SIZE.width,
         height: DEFAULT_ICON_SIZE.height
+    },
+    xs: {
+        width: 12,
+        height: 12
     },
     sm: {
         width: 16,

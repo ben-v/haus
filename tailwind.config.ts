@@ -33,7 +33,7 @@ const config: Config = {
       black: colors.black,
       white: colors.white,
       slate: colors.slate,
-      gray: colors.slate,
+      gray: colors.gray,
       blue: {
         50: "#F7FBFF",
         100: "#CEE6FC",

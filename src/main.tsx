@@ -4,6 +4,7 @@ import App from './App.tsx'
 // import ThemeProvider from './providers/ThemeProvider.tsx'
 import './index.css'
 import './content.css'
+import './content2.css'
 import { BrowserRouter } from 'react-router-dom'
 import { initTheming, ThemeSwitchProvider } from './providers/ThemeSwitchProvider.tsx'
 import { ThemeProvider } from "@material-tailwind/react";

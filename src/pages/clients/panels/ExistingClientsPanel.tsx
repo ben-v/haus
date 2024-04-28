@@ -38,8 +38,9 @@ const ExistingClientsPanel = () => {
                             target="_blank"
                             prefixIcon={<SvgAddressBookSolid />}
                             suffixIcon={<SvgArrowUpRightFromSquareSolid />}
-                            suffixIconHeight={12}
-                            suffixIconWidth={12} 
+                            suffixIconSize={ICON_SIZES.xs}
+                            prefixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"}
+                            suffixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"}                            
                             title="Client Hub" />
                     </div>
                 </div>
