@@ -49,11 +49,11 @@ const Footer = () => {
                   <HashLink to="/#" smooth aria-label="HAUS Property Services Logo" className="flex items-center">
                     <SvgLogo fill="currentColor" className="bi bi-logo h-8 w-auto" />
                   </HashLink>
-                  <p className='pt-5'>HAUS Property Services</p>
-                  <p>A Bozeman, Montana Company.</p>
+                  <p className='pt-5 footer-text'>HAUS Property Services</p>
+                  <p className="footer-text">A Bozeman, Montana Company.</p>
                 </div>
 
-                <div className="flex gap-3 pt-2">
+                <div className="inline-flex gap-2 pt-2">
                   <Link to={SocialProfileUrls.GOOGLE} target="_blank" aria-label="google">
                     <span className="sr-only">Google</span>
                     <SvgGoogleFontAwesomeGeneric fill="currentColor" width={20} height={20} />
@@ -77,11 +77,11 @@ const Footer = () => {
               <div className="grid grid-cols-2 gap-6 pb-16 sm:grid-cols-3 md:pl-16">
                 {sectionLinkGroups.map((section, index) => (
                   <div key={index}>
-                    <h2 className="text-base font-medium text-gray-800 dark:text-gray-200">{section.title}</h2>
-                    <ul className="mt-4 list-inside space-y-4">
+                    <h2 className="footer-header-text">{section.title}</h2>
+                    <ul className="mt-3 list-inside space-y-2">
                       {section.links.map((link, linkIndex) => (
                         <li key={linkIndex}>
-                          <HashLink to={link.url} target={link.target === undefined ? "_self" : link.target} smooth className="text-sm duration-100 hover:text-primary dark:hover:text-white">
+                          <HashLink to={link.url} target={link.target === undefined ? "_self" : link.target} smooth className="footer-link-text">
                             <div className="inline-flex items-center justify-left">
                               <div>
                                 {link.label}
@@ -95,8 +95,8 @@ const Footer = () => {
                   </div>
                 ))}
               </div>
-              <div className="flex justify-between text-sm md:pl-16">
-                <span>Copyright &copy; {(new Date()).getFullYear()} HAUS Property Services</span>
+              <div className="flex justify-between md:pl-16">
+                <span className="footer-text">Copyright &copy; {(new Date()).getFullYear()} HAUS Property Services</span>
               </div>
             </div>
           </div>

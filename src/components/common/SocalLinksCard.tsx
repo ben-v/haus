@@ -7,53 +7,30 @@ import PngInstagramColor from "../../../public/icons/instagram-color.png";
 import SvgGoogleGLogo from "../images/icons/SvgGoogleGLogo";
 import SocialProfileUrls from "../../navigation/SocialProfileUrls";
 import ContentSectionContainer from "../containers/ContentSectionContainer";
+import { ICON_SIZES, IconSize } from "../images/icons/IconConfig";
 
-export interface ContentIconContainerProps {
-    size: "16x16" | "24x24" | "32x32" | "48x48" | "64x64"
+export interface SocialLinksCardProps {
+    size?: IconSize;
     showHeader: boolean;
 }
 
 const defaultProps = {
-    size: "24x24",
+    size: ICON_SIZES.md,
     showHeader: true
-} satisfies Partial<ContentIconContainerProps>
+} satisfies Partial<SocialLinksCardProps>
 
-const SocialLinksCard = (props: ContentIconContainerProps) => {
+const SocialLinksCard = (props: SocialLinksCardProps) => {
     const propsWithDefaults = {
         ...defaultProps,
         ...props
     };
 
-    let width: number;
-    let height: number;
-
-    switch (propsWithDefaults.size) {
-        case "16x16": {
-            width = height = 16;
-            break;
-        }
-        case "32x32": {
-            width = height = 32;
-            break;
-        }
-        case "48x48": {
-            width = height = 48;
-            break;
-        }
-        case "64x64": {
-            width = height = 64;
-            break;
-        }
-        case "24x24":
-        default: {
-            width = height = 24;            
-            break;
-        }
-    }
+    const width: number = propsWithDefaults.size.width;
+    const height: number = propsWithDefaults.size.height;
 
     return (
         <ContentSectionContainer flexDirection="Center">
-            <div className="relative flex gap-4">
+            <div className="relative inline-flex gap-2">
                 <Link to={SocialProfileUrls.GOOGLE} target="_blank" aria-label="google">
                     {/* No need for a separate color image file for Yelp. Use generic and apply color. Got the Facebook "blue" color by color sampling in another app and applyling here via fill property. */}
                     <SvgGoogleGLogo width={width} height={height} />
