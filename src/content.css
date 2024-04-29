@@ -23,7 +23,9 @@ body,
 .footer-header-text,
 .footer-text,
 .footer-link-text,
-#navbar .nav-button
+#navbar .nav-button,
+.tab-strip .tab-strip-header .tab-strip-header-tab,
+.app-tooltip-container .app-tooltip
 {
   font-family: "Urbanist";
   @apply !antialiased;
@@ -39,6 +41,7 @@ body,
 .footer-header-text,
 #navbar .nav-button
 {
+  @apply !font-medium;
   @apply !text-base;
 }
 
@@ -56,6 +59,7 @@ body,
 }
 
 .footer-link-text {
+  @apply !font-medium;
   @apply hover:!text-primary;
   @apply dark:hover:!text-white;
 }
@@ -233,15 +237,6 @@ body, .body-container {
 
 .content-icon-container
   .content-icon-container-header
-  .content-icon-container-header-title {
-  @apply text-2xl;
-  @apply sm:text-3xl;
-  @apply md:text-2xl;
-  @apply lg:text-3xl;
-}
-
-.content-icon-container
-  .content-icon-container-header
   .content-icon-container-description {
   @apply my-1;
   @apply md:my-2;
@@ -261,7 +256,9 @@ body, .body-container {
   @apply lg:text-3xl;
 }
 
-.card-subheader-title {
+.card-subheader-title,
+.content-icon-container .content-icon-container-header .content-icon-container-header-title
+{
   @apply font-bold;
   @apply text-xl;
   @apply sm:text-2xl;
@@ -348,22 +345,22 @@ the App.tsx is hidden.  */
 }
 
 .tab-strip .tab-strip-header {
-  @apply rounded-lg;
-  @apply border;
-  @apply border-gray-200;
-  @apply dark:border-gray-700/60;
-  @apply bg-gray-50;
-  @apply dark:bg-gray-800;
-  @apply p-1;
-  @apply shadow-sm;
-  @apply shadow-gray-600/10;
+  @apply !rounded-lg;
+  @apply !border;
+  @apply !border-gray-200;
+  @apply dark:!border-gray-700/60;
+  @apply !bg-gray-50;
+  @apply dark:!bg-gray-800;
+  @apply !p-1;
+  @apply !shadow-sm;
+  @apply !shadow-gray-600/10;
 }
 
 .tab-strip .tab-strip-header .tab-strip-header-tab {
-  @apply text-base;
-  @apply md:text-lg;
-  @apply lg:text-xl;
-  @apply font-bold;
+  @apply !text-base;
+  @apply md:!text-lg;
+  @apply lg:!text-xl;
+  @apply !font-bold;
 }
 
 .tab-strip .tab-strip-body .tab-strip-body-panel {
@@ -373,10 +370,10 @@ the App.tsx is hidden.  */
 
 /* Tooltip Styes */
 .app-tooltip-container .app-tooltip {
-  @apply bg-gray-200;
-  @apply text-gray-600;
-  @apply dark:bg-gray-600;
-  @apply dark:text-gray-200;
+  @apply !bg-gray-200;
+  @apply !text-gray-600;
+  @apply dark:!bg-gray-600;
+  @apply dark:!text-gray-200;
   max-width: 400px;
   width: 90%;
   z-index: 100;

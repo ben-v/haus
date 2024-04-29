@@ -40,7 +40,7 @@ const TabStripTemplate = (props: TabStripTemplateProps) => {
             <ThemeProvider value={tabtheme}>
                 <TabsHeader className="tab-strip-header">
                     {props.tabData.map(({ title, key }) => (
-                        <Tab key={key} value={key} className="tab-strip-header-tab container-header-text">{title}</Tab>
+                        <Tab key={key} value={key} className="tab-strip-header-tab">{title}</Tab>
                     ))}
                 </TabsHeader>
             </ThemeProvider>

@@ -14,7 +14,7 @@ const ContentIconContainer = (props: ContentIconContainerProps) => {
                 {props.children}
             </div>
             <div className="content-icon-container-header">
-                <h4 className={`content-icon-container-header-title container-header-text`}>{props.title}</h4>
+                <h4 className={`content-icon-container-header-title`}>{props.title}</h4>
                 { props.description ? parse(`<p className="content-icon-container-description body-text">${props.description}</p>`) : ""}                
             </div>
         </div>
