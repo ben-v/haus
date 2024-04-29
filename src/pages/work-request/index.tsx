@@ -24,8 +24,8 @@ const WorkRequestPage = () => {
   return (
     <PageContainer
       id="work-request"
-      titlePartA="New"
-      titlePartB=" Work Request"
+      titlePartA="Work"
+      titlePartB=" Request"
       description="An easy way to get started, is to send us a new work request. Once received, we will review and follow up with you regarding next steps.">
         {workRequestForm()}
       </PageContainer>
