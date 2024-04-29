@@ -53,7 +53,7 @@ const Footer = () => {
                   <p className="footer-text">A Bozeman, Montana Company.</p>
                 </div>
 
-                <div className="inline-flex gap-2 pt-2">
+                <div className="inline-flex gap-3 pt-2">
                   <Link to={SocialProfileUrls.GOOGLE} target="_blank" aria-label="google">
                     <span className="sr-only">Google</span>
                     <SvgGoogleFontAwesomeGeneric fill="currentColor" width={20} height={20} />
