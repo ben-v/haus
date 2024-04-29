@@ -22,21 +22,24 @@ const NewClientsPanel = () => {
             <div className="relative md:w-1/2 md:mr-16">
                 <div className="relative flex flex-col gap-6">
                     <CardHeader
-                        title="Are you a new client?"
+                        title="Start Your Project Here!"
                         titleAlignment="Left"
-                        descriptionAlignment="Left">
-                            An easy way to get started, is to send us a new work request. Once received, we will review and follow up with you regarding next steps.
+                        childrenAlignment="Left"
+                        childrenClassnames="tabpanel-text">
+                            Getting started as a new client is easy: simply send us a <span className="font-semibold">work request</span>. Once received, we'll review it and follow up with you regarding the next steps.
                         </CardHeader>
                     <div className="relative flex flex-col gap-6">
                         <ContentIconContainer
                             title="To do list..."
-                            description="Have a to do list that keeps growing?">
+                            description="Have a to do list that keeps growing?"
+                            childrenClassnames="tabpanel-text">
                             {theme === THEMES.DARK ? <SvgTodoListDark width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} /> : <SvgTodoListLight width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} />}
                         </ContentIconContainer>
 
                         <ContentIconContainer
                             title="Questions?"
-                            description="Have some questions you'd like addressed before moving forward?">
+                            description="Have some questions you'd like addressed before moving forward?"
+                            childrenClassnames="tabpanel-text">
                             {theme === THEMES.DARK ? <SvgQuestionDark width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} /> : <SvgQuestionLight width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} />}
                         </ContentIconContainer>
 

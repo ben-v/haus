@@ -10,7 +10,7 @@ html {
 
 body,
 .body-text,
-.body-text-no-sizing,
+.serivce-area-list-text,
 .card-header-title,
 .card-subheader-title,
 .card-header-description,
@@ -25,7 +25,8 @@ body,
 .footer-link-text,
 #navbar .nav-button,
 .tab-strip .tab-strip-header .tab-strip-header-tab,
-.app-tooltip-container .app-tooltip
+.app-tooltip-container .app-tooltip,
+.tabpanel-text
 {
   font-family: "Urbanist";
   @apply !antialiased;
@@ -39,11 +40,23 @@ body,
 .content-icon-container-description,
 .content-section-header-description,
 .footer-header-text,
-#navbar .nav-button
+#navbar .nav-button,
+.tabpanel-text,
+.serivce-area-list-text
 {
   @apply lg:!font-medium;
   @apply !text-lg;
   @apply md:!text-base;
+}
+
+.serivce-area-list-text {
+  @apply font-semibold;  
+  @apply !text-xs;
+  @apply sm:!text-sm;
+}
+
+.tabpanel-text {
+  @apply !text-sm;
 }
 
 .footer-header-text,
@@ -270,7 +283,7 @@ body, .body-container {
 
 .card-header-description {
   @apply my-2;
-  @apply md:my-6;
+  @apply md:mt-2;
   @apply w-auto;
 }
 

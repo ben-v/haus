@@ -6,5 +6,7 @@ export interface ContentElementProps {
     title?: string,
     children?: ReactNode;
     titleAlignment?: ContentAlignment;
-    descriptionAlignment?: ContentAlignment;
+    childrenAlignment?: ContentAlignment;
+    titleClassnames?:string;
+    childrenClassnames?:string;
 }

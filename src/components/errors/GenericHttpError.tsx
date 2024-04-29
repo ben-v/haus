@@ -33,7 +33,7 @@ const GenericHttpError = (props: GenericHttpErrorProps) => {
         </ContentSectionContainer>
       </div>
       <ContentSectionContainer flexDirection="Center">
-        <CardHeader descriptionAlignment="Left">
+        <CardHeader childrenAlignment="Left">
           <h1 className="mb-14 mt-12 text-4xl font-bold text-gray-700 dark:text-white md:text-5xl">A "{propsWithDefaults.title}" Occurred</h1>
           <h2 className="mb-14 mt-12 text-2xl font-bold text-gray-700 dark:text-white md:text-5xl">{propsWithDefaults.description}</h2>
         </CardHeader>

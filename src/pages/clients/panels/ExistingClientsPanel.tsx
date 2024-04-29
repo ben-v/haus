@@ -21,15 +21,17 @@ const ExistingClientsPanel = () => {
             <div className="relative md:w-1/2 md:ml-16">
                 <div className="relative flex flex-col gap-6">
                     <CardHeader
-                        title="Existing clients, the client hub is for you!"
+                        title="Client Hub Is For You!"
                         titleAlignment="Left"
-                        descriptionAlignment="Left">
-                            The client hub is a self-serve, online experience that allows HAUS clients to approve quotes, check appointment details, pay invoices, print receipts, or request more work—all in one place.
+                        childrenAlignment="Left"
+                        childrenClassnames="tabpanel-text">
+                            For our current clients, the <span className="font-semibold">client hub</span> is a self-service, online platform that enables HAUS clients to approve quotes, check appointment details, pay invoices, print receipts, or request more work -- all from your phone, tablet, or desktop computer for added convenience.
                         </CardHeader>
                     <div className="relative flex flex-col gap-6">
                         <ContentIconContainer
                             title="Convenient Tools..."
-                            description="The self serve client hub is available from your phone, tablet or desktop PC.">
+                            description="The self serve client hub is available from your phone, tablet or desktop PC."
+                            childrenClassnames="tabpanel-text">
                             {theme === THEMES.DARK ? <SvgDevicesDark width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} /> : <SvgDevicesLight width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} />}
                         </ContentIconContainer>
 

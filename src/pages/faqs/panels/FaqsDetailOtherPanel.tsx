@@ -15,7 +15,8 @@ const FaqsDetailOtherPanel = () => {
       <CardHeader 
         title="Still looking?"
         titleAlignment="Left" 
-        descriptionAlignment="Left">
+        childrenAlignment="Left"
+        childrenClassnames="tabpanel-text">
           Have other questions? Feel free to reach out with any you might have!
         </CardHeader>
           <ButtonLink url="/contact/#" title="Contact Us" />
