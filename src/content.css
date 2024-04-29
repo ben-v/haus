@@ -41,7 +41,7 @@ body,
 .footer-header-text,
 #navbar .nav-button
 {
-  /* @apply !font-medium; */
+  @apply lg:!font-medium;
   @apply !text-lg;
   @apply md:!text-base;
 }
