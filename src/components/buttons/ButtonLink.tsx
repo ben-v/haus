@@ -1,67 +1,68 @@
+import React from 'react';
 import { HashLink } from 'react-router-hash-link';
 
 import { LinkProps } from "./LinkProps";
-import React, { useContext } from 'react';
-import { THEMES, ThemeContext } from '../../contexts/ThemeContext';
+import { ICON_SIZES } from '../images/icons/IconConfig';
 
-const DEFAULT_BUTTON_ICON_WIDTH: number = 16;
-const DEFAULT_BUTTON_ICON_HEIGHT: number = 16;
-
+export interface ButtonLinkProps extends LinkProps {
+  size?: "Small" | "Medium" | "Large",
+  prefixIconFill?: string,
+  suffixIconFill?: string
+}
 const defaultProps = {
+  size: "Medium",
   url: "/",
   title: "Default Link Title",
-  type: "button",
+  type: "link",
   target: "_self",
-  prefixIconWidth: DEFAULT_BUTTON_ICON_WIDTH,
-  prefixIconHeight: DEFAULT_BUTTON_ICON_HEIGHT,
-  suffixIconWidth: DEFAULT_BUTTON_ICON_WIDTH,
-  suffixIconHeight: DEFAULT_BUTTON_ICON_HEIGHT
-} satisfies Partial<LinkProps>
+  prefixIconSize: ICON_SIZES.sm,
+  suffixIconSize: ICON_SIZES.sm,
+  prefixIconFill: "white",
+  suffixIconFill: "white"
+} satisfies Partial<ButtonLinkProps>
 
-const getButtonBody = (props: LinkProps) => {
+const getButtonBody = (props: ButtonLinkProps) => {
   const propsWithDefaults = {
     ...defaultProps,
     ...props
   }
 
-  const { theme, } = useContext(ThemeContext);
-
   return (
     <>
-      {propsWithDefaults.prefixIcon ? <div className="pr-2">{React.cloneElement(propsWithDefaults.prefixIcon, {
-        width: propsWithDefaults.prefixIconWidth,
-        height: propsWithDefaults.prefixIconHeight,
-        className: "relative m-auto",
-        fill: theme === THEMES.DARK ? 'dark' : 'white'
-      })}</div> : ""}
+      {propsWithDefaults.prefixIcon ? React.cloneElement(propsWithDefaults.prefixIcon, {
+        width: propsWithDefaults.prefixIconSize.width,
+        height: propsWithDefaults.prefixIconSize.height,
+        className: "button-icon-prefix",
+        fill: propsWithDefaults.prefixIconFill
+      }) : ""}
 
-      <span className="relative text-base font-semibold text-white dark:text-dark">{propsWithDefaults.title}</span>
+      <span>{propsWithDefaults.title}</span>
 
-      {propsWithDefaults.suffixIcon ? <div className="pl-2">{React.cloneElement(propsWithDefaults.suffixIcon, {
-        width: propsWithDefaults.suffixIconWidth,
-        height: propsWithDefaults.suffixIconHeight,
-        className: "relative m-auto",
-        fill: theme === THEMES.DARK ? 'dark' : 'white'
-      })}</div> : ""}
+      {propsWithDefaults.suffixIcon ? React.cloneElement(propsWithDefaults.suffixIcon, {
+        width: propsWithDefaults.suffixIconSize.width,
+        height: propsWithDefaults.suffixIconSize.height,
+        className: "button-icon-suffix",
+        fill: propsWithDefaults.suffixIconFill
+      }) : ""}
     </>
   );
 }
 
-const ButtonLink = (props: LinkProps) => {
+const ButtonLink = (props: ButtonLinkProps) => {
   const propsWithDefaults = {
     ...defaultProps,
     ...props
   }
+  const buttonClassName: string = `button-${defaultProps.size.toLowerCase()}`;
 
   return (
     <>
-      {propsWithDefaults.type === "button" ?
-        <HashLink to={propsWithDefaults.url} target={propsWithDefaults.target} smooth className="content-button">
+      {propsWithDefaults.type === "link" ?
+        <HashLink to={propsWithDefaults.url} target={propsWithDefaults.target} smooth className={buttonClassName}>
           {getButtonBody(props)}
         </HashLink>
         :
-        // If a "submit" or "reset", i.e. a form button ...
-        <button type={propsWithDefaults.type} className="content-button">
+        <button type={propsWithDefaults.type} className={buttonClassName}>
           {getButtonBody(props)}
         </button>
       }

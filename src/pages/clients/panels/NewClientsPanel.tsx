@@ -1,15 +1,18 @@
-import { useContext } from "react";
-import { THEMES, ThemeContext } from "../../../contexts/ThemeContext";
-
 import ContentIconContainer from "../../../components/containers/ContentIconContainer";
 import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
 import SharpCornerClipContainer from "../../../components/containers/SharpCornerClipContainer";
 import CardHeader from "../../../components/layouts/CardHeader";
 
+import { useContext } from "react";
 import PngNewRequest from "../../../../public/images/screenshots/new-request.png";
-import SvgRectangleListSolid from "../../../components/images/SvgRectangleListSolid";
-import SvgClipboardQuestionSolid from "../../../components/images/icons/SvgClipboardQuestionSolid";
 import ButtonLink from "../../../components/buttons/ButtonLink";
+import { ICON_SIZES } from "../../../components/images/icons/IconConfig";
+import SvgQuestionDark from "../../../components/images/icons/SvgQuestionDark";
+import SvgQuestionLight from "../../../components/images/icons/SvgQuestionLight";
+import SvgTodoListDark from "../../../components/images/icons/SvgTodoListDark";
+import SvgTodoListLight from "../../../components/images/icons/SvgTodoListLight";
+import SvgRectangleListSolid from "../../../components/images/SvgRectangleListSolid";
+import { ThemeContext, THEMES } from "../../../contexts/ThemeContext";
 
 const NewClientsPanel = () => {
     const { theme, } = useContext(ThemeContext);
@@ -28,19 +31,21 @@ const NewClientsPanel = () => {
                         <ContentIconContainer
                             title="To do list..."
                             description="Have a to do list that keeps growing?">
-                            <SvgRectangleListSolid fill={theme === THEMES.DARK ? 'white' : 'dark'} className="m-auto w-auto" width={40} height={48} />
+                            {theme === THEMES.DARK ? <SvgTodoListDark width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} /> : <SvgTodoListLight width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} />}
                         </ContentIconContainer>
 
                         <ContentIconContainer
                             title="Questions?"
                             description="Have some questions you'd like addressed before moving forward?">
-                            <SvgClipboardQuestionSolid fill={theme === THEMES.DARK ? 'white' : 'dark'} className="m-auto w-auto" width={40} height={48} />
+                            {theme === THEMES.DARK ? <SvgQuestionDark width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} /> : <SvgQuestionLight width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} />}
                         </ContentIconContainer>
 
                         <ButtonLink
                             url="/work-request/#"
                             prefixIcon={<SvgRectangleListSolid />}
-                            title="Work Request" />
+                            title="Work Request"
+                            prefixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"}
+                            />
                     </div>
                 </div>
             </div>

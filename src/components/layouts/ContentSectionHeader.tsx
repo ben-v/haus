@@ -6,7 +6,7 @@ const defaultProps = {
     descriptionAlignment: "Center"
 } satisfies Partial<ContentElementProps>
 
-const ContenSectionHeader = (props: ContentElementProps) => {
+const ContentSectionHeader = (props: ContentElementProps) => {
     const propsWithDefaults = {
         ...defaultProps,
         ...props
@@ -18,9 +18,9 @@ const ContenSectionHeader = (props: ContentElementProps) => {
     return (
         <div className="content-section-header-container">
             {propsWithDefaults.title ? <div className={`content-section-header-title container-header-text ${titleAlignment}`}>{parse(propsWithDefaults.title.trim())}</div> : ""}
-            {propsWithDefaults.children ? <div className={`content-section-header-description general-body-text ${descriptionAlignment}`}>{propsWithDefaults.children}</div> : ""}
+            {propsWithDefaults.children ? <div className={`content-section-header-description ${descriptionAlignment}`}>{propsWithDefaults.children}</div> : ""}
         </div>
     )
   }
   
-  export default ContenSectionHeader
+  export default ContentSectionHeader

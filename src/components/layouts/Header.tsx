@@ -17,6 +17,7 @@ import { Tooltip } from "react-tooltip";
 
 import Toggle from "react-toggle";
 import "react-toggle/style.css" // for ES6 modules
+import { ICON_SIZES } from "../images/icons/IconConfig";
 
 const Header = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -83,7 +84,7 @@ const Header = () => {
                   <div>
                     <HashLink to="/work-request/#" smooth onClick={closeNavbar} data-tooltip-id="new-client-tooltip-selector-large" className="relative ml-auto flex h-9 w-full items-center justify-center before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-primaryLight sm:px-4 lg:before:border lg:before:border-gray-200 lg:before:bg-gray-100 lg:dark:before:bg-gray-800 nav-button">
                       <div className="pr-2">
-                        <SvgRectangleListSolid width={16} height={16} className="relative m-auto nav-button-icon" />
+                        <SvgRectangleListSolid width={ICON_SIZES.sm.height} height={ICON_SIZES.sm.height} className="relative m-auto nav-button-icon" />
                       </div>
                       <div>
                         <span className="relative text-sm font-semibold whitespace-nowrap">Work Request</span>
@@ -93,7 +94,7 @@ const Header = () => {
                   {/* <div>
                     <HashLink to="/work-request-2/#" smooth onClick={closeNavbar} data-tooltip-id="new-client-tooltip-selector-large" className="relative ml-auto flex h-9 w-full items-center justify-center before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-primaryLight sm:px-4 lg:before:border lg:before:border-gray-200 lg:before:bg-gray-100 lg:dark:before:bg-gray-800">
                       <div className="pr-2">
-                        <SvgRectangleListSolid width={16} height={16} className="relative m-auto" fill={theme === THEMES.DARK ? "white" : "primary"} />
+                        <SvgRectangleListSolid width={ICON_SIZES.sm.height} height={ICON_SIZES.sm.height} className="relative m-auto" fill={theme === THEMES.DARK ? "white" : "primary"} />
                       </div>
                       <div>
                         <span className="relative text-sm font-semibold text-white dark:text-gray-900 lg:text-primary lg:dark:text-white whitespace-nowrap">Work Request 2</span>
@@ -104,7 +105,7 @@ const Header = () => {
                     <Link to="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" target="_blank" onClick={closeNavbar} data-tooltip-id="existing-client-tooltip-selector-large" className=" relative flex h-9 w-full items-center justify-center before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-primaryLight sm:px-4 lg:before:border lg:before:border-gray-200 lg:before:bg-gray-100 lg:dark:before:bg-gray-800 nav-button">
                       <div className="inline-flex items-center justify-left">
                         <div className="pr-2">
-                          <SvgAddressBookSolid width={16} height={16} className="relative m-auto" />
+                          <SvgAddressBookSolid width={ICON_SIZES.sm.height} height={ICON_SIZES.sm.height} className="relative m-auto" />
                         </div>
                         <div>
                           <span className="relative text-sm font-semibold whitespace-nowrap">
@@ -119,7 +120,7 @@ const Header = () => {
                   </div>
                   <div>
                     <Link to="tel:4063129989" onClick={closeNavbar} className="relative hidden h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex nav-button">
-                      <SvgPhoneSolid width={16} height={16} className="relative m-auto" />
+                      <SvgPhoneSolid width={ICON_SIZES.sm.height} height={ICON_SIZES.sm.height} className="relative m-auto" />
                     </Link>
                     </div>
                 </div>
@@ -145,22 +146,22 @@ const Header = () => {
             <div className="fixed top-3 right-14 z-50 sm:right-24 lg:hidden">
               <HashLink to="/work-request/#" smooth onClick={closeNavbar}>
                 <button className="ml-2 switcher group relative h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex nav-button">
-                  <SvgRectangleListSolid width={16} height={16} className="relative m-auto" fill={theme === THEMES.DARK ? "white" : "primary"} />
+                  <SvgRectangleListSolid width={ICON_SIZES.sm.height} height={ICON_SIZES.sm.height} className="relative m-auto" fill={theme === THEMES.DARK ? "white" : "primary"} />
                 </button>
               </HashLink>
               {/* <Link to="/work-request-2/#" onClick={closeNavbar}>
                 <button className="ml-2 switcher group relative h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex">
-                  <SvgRectangleListSolid width={16} height={16} className="relative m-auto" fill={theme === THEMES.DARK ? "white" : "primary"} />
+                  <SvgRectangleListSolid width={ICON_SIZES.sm.height} height={ICON_SIZES.sm.height} className="relative m-auto" fill={theme === THEMES.DARK ? "white" : "primary"} />
                 </button>
               </Link> */}
               <Link to="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" target="_blank" onClick={closeNavbar}>
                 <button className="ml-2 switcher group relative h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex nav-button">
-                  <SvgAddressBookSolid width={16} height={16} className="relative m-auto" fill={theme === THEMES.DARK ? "white" : "primary"} />
+                  <SvgAddressBookSolid width={ICON_SIZES.sm.height} height={ICON_SIZES.sm.height} className="relative m-auto" fill={theme === THEMES.DARK ? "white" : "primary"} />
                 </button>
               </Link>
               <Link to="tel:4063129989" onClick={closeNavbar}>
                 <button className="ml-2 switcher group relative h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex nav-button">
-                  <SvgPhoneSolid width={16} height={16} className="relative m-auto" fill={theme === THEMES.DARK ? "white" : "primary"} />
+                  <SvgPhoneSolid width={ICON_SIZES.sm.height} height={ICON_SIZES.sm.height} className="relative m-auto" fill={theme === THEMES.DARK ? "white" : "primary"} />
                 </button>
               </Link>
             </div>    

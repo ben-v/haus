@@ -1,22 +1,21 @@
-import { useContext } from "react";
-// import { Link } from "react-router-dom";
-
-import { ThemeContext, THEMES } from "../../../contexts/ThemeContext";
-
 import ContentIconContainer from "../../../components/containers/ContentIconContainer";
 import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
 import SharpCornerClipContainer from "../../../components/containers/SharpCornerClipContainer";
 import CardHeader from "../../../components/layouts/CardHeader";
 
 import PngExistingClientHub from "../../../../public/images/screenshots/client-hub.png";
-import SvgMobileScreenButtonSolid from "../../../components/images/icons/SvgMobileScreenButtonSolid";
 import SvgAddressBookSolid from "../../../components/images/SvgAddressBookSolid";
 import SvgArrowUpRightFromSquareSolid from "../../../components/images/SvgArrowUpRightFromSquareSolid";
 import ButtonLink from "../../../components/buttons/ButtonLink";
+import { ICON_SIZES } from "../../../components/images/icons/IconConfig";
+import SvgDevicesLight from "../../../components/images/icons/SvgDevicesLight";
+import SvgDevicesDark from "../../../components/images/icons/SvgDevicesDark";
+import { useContext } from "react";
+import { ThemeContext, THEMES } from "../../../contexts/ThemeContext";
 
 const ExistingClientsPanel = () => {
     const { theme, } = useContext(ThemeContext);
-
+    
     return (
         <ContentSectionContainer flexDirection="RTL">
             <div className="relative md:w-1/2 md:ml-16">
@@ -31,7 +30,7 @@ const ExistingClientsPanel = () => {
                         <ContentIconContainer
                             title="Convenient Tools..."
                             description="The self serve client hub is available from your phone, tablet or desktop PC.">
-                            <SvgMobileScreenButtonSolid fill={theme === THEMES.DARK ? 'white' : 'dark'} className="m-auto w-auto" width={40} height={48} />
+                            {theme === THEMES.DARK ? <SvgDevicesDark width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} /> : <SvgDevicesLight width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} />}
                         </ContentIconContainer>
 
                         <ButtonLink
@@ -39,8 +38,9 @@ const ExistingClientsPanel = () => {
                             target="_blank"
                             prefixIcon={<SvgAddressBookSolid />}
                             suffixIcon={<SvgArrowUpRightFromSquareSolid />}
-                            suffixIconHeight={12}
-                            suffixIconWidth={12} 
+                            suffixIconSize={ICON_SIZES.xs}
+                            prefixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"}
+                            suffixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"}                            
                             title="Client Hub" />
                     </div>
                 </div>

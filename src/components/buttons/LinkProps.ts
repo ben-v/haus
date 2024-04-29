@@ -1,14 +1,17 @@
 import { HTMLAttributeAnchorTarget, ReactElement } from "react";
+import { IconSize } from '../images/icons/IconConfig';
 
 export interface LinkProps {
     title: string,
     url?: string,
-    type?: "submit" | "reset" | "button" ,
+    type?: "submit" | "reset" | "button" | "link" ,
     target?: HTMLAttributeAnchorTarget,
+
     prefixIcon?: ReactElement,
-    prefixIconWidth?: number,
-    prefixIconHeight?: number,
+    prefixIconSize?: IconSize,
+    prefixIconFill?: string,
+
     suffixIcon?: ReactElement,
-    suffixIconWidth?: number,
-    suffixIconHeight?: number,
+    suffixIconSize?: IconSize,
+    suffixIconFill?: string
 }

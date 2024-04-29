@@ -15,6 +15,7 @@ import SvgReviewAvatarTemplate from '../images/SvgReviewAvatarTemplate';
 import SvgArrowUpRightFromSquareSolid from '../images/SvgArrowUpRightFromSquareSolid';
 import withMaterialTailwind from '../../../tailwind.config';
 import { Config } from 'tailwindcss';
+import { ICON_SIZES } from '../images/icons/IconConfig';
 
 export interface TestamonialCardProps {
   reviewerName: string;
@@ -71,10 +72,10 @@ const TestamonialCard = (props: TestamonialCardProps) => {
           <div className="relative flex flex-row gap-2 items-center">
             <SvgReviewAvatarTemplate 
               values={`${propsWithDefaults.reviewerName.charAt(0).toUpperCase()}`} 
-              width={48} height={48} 
+              width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} 
               fill={theme === THEMES.DARK ? fullConfig.theme.colors.white : fullConfig.theme.colors.gray[700]}
               color={theme === THEMES.DARK ? fullConfig.theme.colors.gray[800] : fullConfig.theme.colors.white} />
-            <span className="grow">{propsWithDefaults.reviewerName}</span>
+            <span className="grow font-semibold">{propsWithDefaults.reviewerName}</span>
             <span className="items-end">
               <Link to={socialProfileUrl} target="_blank" aria-label={`${propsWithDefaults.source.toLocaleLowerCase()}`}>
                 {reviewLogo}

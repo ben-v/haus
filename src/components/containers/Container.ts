@@ -29,7 +29,7 @@ const getContainerBodyPaddingClassNames = (props: BaseContainerProps): string =>
 
     switch(propsWithDefaults.padding) {
         case ("Small"): {
-            classNames = "space-y-3 p-4 sm:p-6";
+            classNames = "p-4 sm:p-6";
             break;
         }
         case ("None"): {
@@ -37,7 +37,7 @@ const getContainerBodyPaddingClassNames = (props: BaseContainerProps): string =>
         }
         case ("Large"):
         default: {
-            classNames = "space-y-6 p-8 sm:p-12";
+            classNames = "p-8 sm:p-12";
             break;
         }
     }

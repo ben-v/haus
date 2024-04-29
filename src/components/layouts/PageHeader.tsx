@@ -41,7 +41,7 @@ const PageHeader = (props: PageHeaderProps) => {
         case "Vibrant": {
             headingClassNames = "page-header-heading-vibrant";
 
-            const titlePartB: string = propsWithDefaults.titlePartB ? `<span className="relative">${renderToString(<SvgAccentLine className="absolute inset-x-0 -bottom-1 w-full opacity-50" />)}<span className="relative bg-gradient-to-r from-primary to-secondaryLight bg-clip-text text-transparent dark:from-primaryLight dark:to-secondaryLight md:px-2">${propsWithDefaults.titlePartB}</span></span>` : "";
+            const titlePartB: string = propsWithDefaults.titlePartB ? `<span className="relative">${renderToString(<SvgAccentLine className="absolute inset-x-0 -bottom-1 w-full opacity-50" />)}<span className="page-header-heading-vibrant bg-gradient-to-r from-primary to-secondaryLight bg-clip-text text-transparent dark:from-primaryLight dark:to-secondaryLight md:px-2">${propsWithDefaults.titlePartB}</span></span>` : "";
         
             title = `${propsWithDefaults.titlePartA ? propsWithDefaults.titlePartA : ""}${propsWithDefaults.titlePartB ? titlePartB : ""}`
 
@@ -49,7 +49,7 @@ const PageHeader = (props: PageHeaderProps) => {
             break;
         }
         case "Standard": {
-            const titlePartB: string = propsWithDefaults.titlePartB ? `<span className="opacity-80">${propsWithDefaults.titlePartB}</span>` : "";
+            const titlePartB: string = propsWithDefaults.titlePartB ? `<span className="page-header-heading-standard opacity-80">${propsWithDefaults.titlePartB}</span>` : "";
                 
             title = `${propsWithDefaults.titlePartA ? propsWithDefaults.titlePartA : ""}${propsWithDefaults.titlePartB ? titlePartB : ""}`
 
@@ -102,7 +102,7 @@ const PageHeader = (props: PageHeaderProps) => {
         (propsWithDefaults.titlePartA || propsWithDefaults.titlePartB || propsWithDefaults.description) ?
             <div className="page-header-container">
                 {propsWithDefaults.titlePartA || propsWithDefaults.titlePartB ? <div className={`${headingClassNames} ${titleAlignment}`}>{parse(title)}</div> : ""}
-                {propsWithDefaults.description ? <div className={`page-header-description general-body-text ${descriptionAlignment}`}>{parse(description)}</div> : ""}
+                {propsWithDefaults.description ? <div className={`page-header-description body-text ${descriptionAlignment}`}>{parse(description)}</div> : ""}
             </div>
         : ""
     )

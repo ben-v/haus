@@ -25,8 +25,6 @@ const SvgReviewAvatarTemplate = (props: SVGProps<SVGSVGElement>) => (
         </g>
 
     <g>
-      {/* <circle cx="500" cy="500" r="250" fill="#07485E" /> */}
-      {/* <text fill="#E1EBF0" x="200" y="200" font-size="120" text-anchor="middle" alignment-baseline="central">{props.values}</text> */}
     </g>
   </svg>
 );
