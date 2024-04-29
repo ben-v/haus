@@ -37,7 +37,7 @@ const TestamonialsSection = () => {
             We pride ourselves on forging lasting relationships based on communication, collaboration, and trust with each of our clients.
           </ContentSectionHeader>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2 md:mt-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {testamonials.map((testamonial,) => (
           <div className="flex">
             <TestamonialCard
