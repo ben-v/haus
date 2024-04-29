@@ -8,10 +8,6 @@ html {
   overflow-y: scroll;
 }
 
-body {
-  @apply !text-sm;
-}
-
 body,
 .body-text,
 .body-text-no-sizing,
@@ -31,12 +27,12 @@ body,
   @apply dark:!text-slate-100;
 }
 
+body,
 .body-text,
 .card-header-description,
 .content-icon-container-description,
 .content-section-header-description {
-  /* @apply !text-sm; */
-  @apply sm:!text-base;
+  @apply !text-base;
 }
 
 /* body {
