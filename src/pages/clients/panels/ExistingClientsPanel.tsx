@@ -25,7 +25,7 @@ const ExistingClientsPanel = () => {
                         titleAlignment="Left"
                         childrenAlignment="Left"
                         childrenClassnames="tabpanel-text">
-                            For our current clients, the <span className="font-semibold">client hub</span> is a self-service, online platform that enables HAUS clients to approve quotes, check appointment details, pay invoices, print receipts, or request more work -- all from your phone, tablet, or desktop computer for added convenience.
+                            For our current clients, the <span className="font-semibold">client hub</span> is a self-service, online platform that enables HAUS clients to approve quotes, check appointment details, pay invoices, print receipts, or request more work -- all from your phone, tablet, or desktop computer.
                         </CardHeader>
                     <div className="relative flex flex-col gap-6">
                         <ContentIconContainer
