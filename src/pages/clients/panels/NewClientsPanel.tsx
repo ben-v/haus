@@ -53,7 +53,7 @@ const NewClientsPanel = () => {
                 </div>
             </div>
             <div className="relative w-full md:w-1/2">
-                <div className="w-full flex flex-col items-center mt-8 md:mt-4">
+                <div className="w-full flex flex-col items-center mt-6 md:mt-4">
                     <SharpCornerClipContainer>
                         <img src={JpgNewRequest} className="mx-auto h-80 w-96 rounded-t-3xl border border-gray-300/100 object-cover object-top shadow-2xl dark:border-transparent sm:h-[28rem]" alt="work request screenshot" width="850" height="1780" />
                     </SharpCornerClipContainer>
