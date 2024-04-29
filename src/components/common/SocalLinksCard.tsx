@@ -30,7 +30,7 @@ const SocialLinksCard = (props: SocialLinksCardProps) => {
 
     return (
         <ContentSectionContainer flexDirection="Center">
-            <div className="relative inline-flex gap-2">
+            <div className="relative inline-flex gap-3">
                 <Link to={SocialProfileUrls.GOOGLE} target="_blank" aria-label="google">
                     {/* No need for a separate color image file for Yelp. Use generic and apply color. Got the Facebook "blue" color by color sampling in another app and applyling here via fill property. */}
                     <SvgGoogleGLogo width={width} height={height} />
