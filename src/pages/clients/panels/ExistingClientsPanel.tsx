@@ -15,18 +15,18 @@ import { ThemeContext, THEMES } from "../../../contexts/ThemeContext";
 
 const ExistingClientsPanel = () => {
     const { theme, } = useContext(ThemeContext);
-    
+
     return (
         <ContentSectionContainer flexDirection="RTL">
-            <div className="relative md:w-1/2 md:ml-16">
+            <div className="relative w-full md:w-1/2">
                 <div className="relative flex flex-col gap-6">
                     <CardHeader
                         title="Client Hub Is For You!"
                         titleAlignment="Left"
                         childrenAlignment="Left"
                         childrenClassnames="tabpanel-text">
-                            For our current clients, the <span className="font-semibold">client hub</span> is a self-service, online platform that enables HAUS clients to approve quotes, check appointment details, pay invoices, print receipts, or request more work.
-                        </CardHeader>
+                        For our current clients, the <span className="font-semibold">client hub</span> is a self-service, online platform that enables HAUS clients to approve quotes, check appointment details, pay invoices, print receipts, or request more work.
+                    </CardHeader>
                     <div className="relative flex flex-col gap-6">
                         <ContentIconContainer
                             title="Convenient Tools..."
@@ -42,14 +42,18 @@ const ExistingClientsPanel = () => {
                             suffixIcon={<SvgArrowUpRightFromSquareSolid />}
                             suffixIconSize={ICON_SIZES.xs}
                             prefixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"}
-                            suffixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"}                            
+                            suffixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"}
                             title="Client Hub" />
                     </div>
                 </div>
             </div>
-            <SharpCornerClipContainer>
-                <img src={JpgExistingClientHub} className="mx-auto h-80 w-96 rounded-t-3xl border border-gray-300/100 object-cover object-top shadow-2xl dark:border-transparent sm:h-[28rem]" alt="client hub screenshot" width="850" height="1780" />
-            </SharpCornerClipContainer>
+            <div className="relative w-full md:w-1/2">
+                <div className="w-full flex flex-col items-center mt-8 md:mt-4">
+                    <SharpCornerClipContainer>
+                        <img src={JpgExistingClientHub} className="mx-auto h-80 w-96 rounded-t-3xl border border-gray-300/100 object-cover object-top shadow-2xl dark:border-transparent sm:h-[28rem]" alt="client hub screenshot" width="850" height="1780" />
+                    </SharpCornerClipContainer>
+                </div>
+            </div>
         </ContentSectionContainer>
     )
 }

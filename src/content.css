@@ -172,11 +172,13 @@ body, .body-container {
 .content-section-container.content-section-ltr {
   @apply flex-col;
   @apply md:flex-row;
+  @apply self-center;
 }
 
 .content-section-container.content-section-rtl {
   @apply flex-col;
   @apply md:flex-row-reverse;
+  @apply self-center;
 }
 
 .content-section-container.content-section-center {
