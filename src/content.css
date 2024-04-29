@@ -55,10 +55,6 @@ body,
   @apply sm:!text-sm;
 }
 
-.tabpanel-text {
-  @apply !text-sm;
-}
-
 .footer-header-text,
 .footer-link-text,
 .footer-text
