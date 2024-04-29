@@ -378,7 +378,6 @@ the App.tsx is hidden.  */
 
 .tab-strip .tab-strip-body .tab-strip-body-panel {
   @apply mt-4;
-  @apply md:mt-8;
 }
 
 /* Tooltip Styes */
