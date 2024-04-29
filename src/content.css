@@ -41,7 +41,7 @@ body,
 .footer-header-text,
 #navbar .nav-button
 {
-  @apply !font-medium;
+  @apply lg:!font-medium;
   @apply !text-lg;
   @apply md:!text-base;
 }
@@ -146,8 +146,7 @@ body, .body-container {
 
 .page-header-container .page-header-description {
   @apply mx-4;
-  @apply mt-4;
-  @apply md:my-6;
+  @apply my-6;
   @apply md:mx-12;
   @apply w-auto;
 }
@@ -180,6 +179,7 @@ body, .body-container {
 }
 
 .content-section-header-title {
+  @apply font-bold;
   @apply my-4;
   @apply md:mx-2;
   @apply text-2xl;
