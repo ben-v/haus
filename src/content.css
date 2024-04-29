@@ -28,15 +28,15 @@ body,
   font-family: "Urbanist";
   @apply !antialiased;
   @apply !text-slate-700;
-  @apply dark:!text-slate-300;
+  @apply dark:!text-slate-100;
 }
 
 .body-text,
 .card-header-description,
 .content-icon-container-description,
 .content-section-header-description {
-  @apply !text-sm;
-  @apply md:!text-base;
+  /* @apply !text-sm; */
+  @apply sm:!text-base;
 }
 
 /* body {
@@ -403,5 +403,5 @@ the App.tsx is hidden.  */
 #faqs-marketing-person svg,
 #error-sign svg {
   @apply fill-gray-700;
-  @apply dark:fill-gray-400;
+  @apply dark:fill-gray-300;
 }
