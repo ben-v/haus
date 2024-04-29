@@ -4,7 +4,7 @@ import SharpCornerClipContainer from "../../../components/containers/SharpCorner
 import CardHeader from "../../../components/layouts/CardHeader";
 
 import { useContext } from "react";
-import PngNewRequest from "../../../../public/images/screenshots/new-request.png";
+import JpgNewRequest from "../../../../public/images/screenshots/new-request.jpeg";
 import ButtonLink from "../../../components/buttons/ButtonLink";
 import { ICON_SIZES } from "../../../components/images/icons/IconConfig";
 import SvgQuestionDark from "../../../components/images/icons/SvgQuestionDark";
@@ -53,7 +53,7 @@ const NewClientsPanel = () => {
                 </div>
             </div>
             <SharpCornerClipContainer>
-                <img src={PngNewRequest} className="mx-auto h-80 w-96 rounded-t-3xl border border-gray-300/100 object-cover object-top shadow-2xl dark:border-transparent sm:h-[28rem]" alt="work request screenshot" width="850" height="1780" />
+                <img src={JpgNewRequest} className="mx-auto h-80 w-96 rounded-t-3xl border border-gray-300/100 object-cover object-top shadow-2xl dark:border-transparent sm:h-[28rem]" alt="work request screenshot" width="850" height="1780" />
             </SharpCornerClipContainer>
         </ContentSectionContainer>
     )

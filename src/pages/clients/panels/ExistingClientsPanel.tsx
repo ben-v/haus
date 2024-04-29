@@ -3,7 +3,7 @@ import ContentSectionContainer from "../../../components/containers/ContentSecti
 import SharpCornerClipContainer from "../../../components/containers/SharpCornerClipContainer";
 import CardHeader from "../../../components/layouts/CardHeader";
 
-import PngExistingClientHub from "../../../../public/images/screenshots/client-hub.png";
+import JpgExistingClientHub from "../../../../public/images/screenshots/client-hub.jpeg";
 import SvgAddressBookSolid from "../../../components/images/SvgAddressBookSolid";
 import SvgArrowUpRightFromSquareSolid from "../../../components/images/SvgArrowUpRightFromSquareSolid";
 import ButtonLink from "../../../components/buttons/ButtonLink";
@@ -48,7 +48,7 @@ const ExistingClientsPanel = () => {
                 </div>
             </div>
             <SharpCornerClipContainer>
-                <img src={PngExistingClientHub} className="mx-auto h-80 w-96 rounded-t-3xl border border-gray-300/100 object-cover object-top shadow-2xl dark:border-transparent sm:h-[28rem]" alt="client hub screenshot" width="850" height="1780" />
+                <img src={JpgExistingClientHub} className="mx-auto h-80 w-96 rounded-t-3xl border border-gray-300/100 object-cover object-top shadow-2xl dark:border-transparent sm:h-[28rem]" alt="client hub screenshot" width="850" height="1780" />
             </SharpCornerClipContainer>
         </ContentSectionContainer>
     )
