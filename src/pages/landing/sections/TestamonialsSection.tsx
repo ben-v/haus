@@ -31,10 +31,10 @@ const TestamonialsSection = () => {
     <ContentSectionContainer flexDirection="Center">
       <div className="w-auto p-2 md:px-12">
         <ContentSectionHeader
-          title="Building Lasting Relationships"
+          title="What Our Clients Say"
           titleAlignment="Center"
-          descriptionAlignment="Center">
-            We pride ourselves on forging lasting relationships based on communication, collaberation and trust with each of our clients. See what they have to say about working with us!
+          childrenAlignment="Center">
+            We pride ourselves on forging lasting relationships based on communication, collaboration, and trust with each of our clients. See what they have to say about working with us!
           </ContentSectionHeader>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2 md:mt-6">

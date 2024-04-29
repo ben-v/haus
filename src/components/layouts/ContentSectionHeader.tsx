@@ -3,7 +3,9 @@ import { ContentElementProps } from "./LayoutTypes";
 
 const defaultProps = {
     titleAlignment: "Center",
-    descriptionAlignment: "Center"
+    childrenAlignment: "Center",
+    titleClassnames: "",
+    childrenClassnames: ""
 } satisfies Partial<ContentElementProps>
 
 const ContentSectionHeader = (props: ContentElementProps) => {
@@ -13,12 +15,12 @@ const ContentSectionHeader = (props: ContentElementProps) => {
     }
 
     const titleAlignment: string = `content-section-header-title-align-${propsWithDefaults.titleAlignment.toLowerCase()}`;
-    const descriptionAlignment: string = `content-section-header-description-align-${propsWithDefaults.descriptionAlignment.toLowerCase()}`;
+    const descriptionAlignment: string = `content-section-header-description-align-${propsWithDefaults.childrenAlignment.toLowerCase()}`;
 
     return (
         <div className="content-section-header-container">
-            {propsWithDefaults.title ? <div className={`content-section-header-title container-header-text ${titleAlignment}`}>{parse(propsWithDefaults.title.trim())}</div> : ""}
-            {propsWithDefaults.children ? <div className={`content-section-header-description ${descriptionAlignment}`}>{propsWithDefaults.children}</div> : ""}
+            {propsWithDefaults.title ? <div className={`content-section-header-title container-header-text ${titleAlignment} ${propsWithDefaults.titleClassnames}`}>{parse(propsWithDefaults.title.trim())}</div> : ""}
+            {propsWithDefaults.children ? <div className={`content-section-header-description ${descriptionAlignment} ${propsWithDefaults.childrenClassnames}`}>{propsWithDefaults.children}</div> : ""}
         </div>
     )
   }
