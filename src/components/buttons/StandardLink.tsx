@@ -20,11 +20,11 @@ const StandardLink = (props: NavLinkProps) => {
     return (
         <>
             {propsWithDefaults.isExternalRoute ?
-                <a href={propsWithDefaults.url} target={propsWithDefaults.target}>
+                <a href={propsWithDefaults.url} target={propsWithDefaults.target} className={propsWithDefaults.className}>
                     {propsWithDefaults.children}
                 </a>
                 :
-                <Link to={propsWithDefaults.url} target={propsWithDefaults.target}>
+                <Link to={propsWithDefaults.url} target={propsWithDefaults.target} className={propsWithDefaults.className}>
                     {propsWithDefaults.children}
                 </Link>
             }

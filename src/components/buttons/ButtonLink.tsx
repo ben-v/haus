@@ -53,7 +53,7 @@ const ButtonLink = (props: ButtonLinkProps) => {
     ...defaultProps,
     ...props
   }
-  const buttonClassName: string = `button-${defaultProps.size.toLowerCase()}`;
+  const buttonClassName: string = `${propsWithDefaults.className} button-${defaultProps.size.toLowerCase()}`;
 
   return (
     <>

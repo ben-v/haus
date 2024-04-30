@@ -65,7 +65,7 @@ const ContactFormPanel = () => {
         <ContentSectionContainer flexDirection="Center">
             <RoundCornerContainer id="contact-panel" padding="Small" containerClassNames="w-full" bodyClassNames="gap-4">
             <CardHeader title="What's on your mind?" titleAlignment="Left" />
-                <form onSubmit={onSubmitHandler} className="w-auto">
+                <form onSubmit={onSubmitHandler} className="w-auto" autoComplete="off">
                     <div className="relative">
                         <div className="space-y-4">
                             <div>
@@ -77,7 +77,7 @@ const ContactFormPanel = () => {
                                     onChange={(e) => onChangeHandler(e)}
                                     value={name}
                                     type="text"
-                                    autoComplete="given-name"
+                                    autoComplete="off"
                                     className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 body-text tabpanel-text transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
                             </div>
                             <div>
@@ -89,7 +89,7 @@ const ContactFormPanel = () => {
                                     onChange={(e) => onChangeHandler(e)}
                                     value={email}
                                     type="email"
-                                    autoComplete="email"
+                                    autoComplete="off"
                                     className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 body-text tabpanel-text transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
                             </div>
                             <div>
