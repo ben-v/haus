@@ -1,19 +1,19 @@
 import React from 'react';
-import { HashLink } from 'react-router-hash-link';
 
-import { LinkProps } from "./LinkProps";
 import { ICON_SIZES } from '../images/icons/IconConfig';
+import { Link } from 'react-router-dom';
+import { ButtonNavLinkProps } from '../../navigation/NavLinkProps';
 
-export interface ButtonLinkProps extends LinkProps {
+export interface ButtonLinkProps extends ButtonNavLinkProps {
   size?: "Small" | "Medium" | "Large",
   prefixIconFill?: string,
   suffixIconFill?: string
 }
+
 const defaultProps = {
   size: "Medium",
-  url: "/",
-  title: "Default Link Title",
   type: "link",
+  isExternalRoute: false,
   target: "_self",
   prefixIconSize: ICON_SIZES.sm,
   suffixIconSize: ICON_SIZES.sm,
@@ -36,7 +36,7 @@ const getButtonBody = (props: ButtonLinkProps) => {
         fill: propsWithDefaults.prefixIconFill
       }) : ""}
 
-      <span>{propsWithDefaults.title}</span>
+      <span>{propsWithDefaults.children}</span>
 
       {propsWithDefaults.suffixIcon ? React.cloneElement(propsWithDefaults.suffixIcon, {
         width: propsWithDefaults.suffixIconSize.width,
@@ -58,9 +58,18 @@ const ButtonLink = (props: ButtonLinkProps) => {
   return (
     <>
       {propsWithDefaults.type === "link" ?
-        <HashLink to={propsWithDefaults.url} target={propsWithDefaults.target} smooth className={buttonClassName}>
-          {getButtonBody(props)}
-        </HashLink>
+        <>
+          {
+            propsWithDefaults.isExternalRoute ?
+              <a href={propsWithDefaults.url} target={propsWithDefaults.target} className={buttonClassName}>
+                {getButtonBody(props)}
+              </a>
+              :
+              <Link to={propsWithDefaults.url ? propsWithDefaults.url : ""} target={propsWithDefaults.target} className={buttonClassName}>
+                {getButtonBody(props)}
+              </Link>
+          }
+        </>
         :
         <button type={propsWithDefaults.type} className={buttonClassName}>
           {getButtonBody(props)}

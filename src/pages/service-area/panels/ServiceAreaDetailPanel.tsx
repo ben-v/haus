@@ -29,7 +29,7 @@ const ServiceAreaDetailPanel = () => {
 
         <p className="body-text tabpanel-text">Don't see your community listed, or have questions about our service area? Feel free to reach out to us for more information. We're here to help!</p>
 
-        <ButtonLink url="/contact/#" title="Contact Us" />
+        <ButtonLink url="/contact">Contact Us</ButtonLink>
       </RoundCornerContainer>
     </ContentSectionContainer>
   )

@@ -38,12 +38,12 @@ const ExistingClientsPanel = () => {
                         <ButtonLink
                             url="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login"
                             target="_blank"
+                            isExternalRoute={true}
                             prefixIcon={<SvgAddressBookSolid />}
                             suffixIcon={<SvgArrowUpRightFromSquareSolid />}
                             suffixIconSize={ICON_SIZES.xs}
                             prefixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"}
-                            suffixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"}
-                            title="Client Hub" />
+                            suffixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"}>Client Hub</ButtonLink>
                     </div>
                 </div>
             </div>

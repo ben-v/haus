@@ -38,7 +38,7 @@ const GenericHttpError = (props: GenericHttpErrorProps) => {
           <h2 className="mb-14 mt-12 text-2xl font-bold text-gray-700 dark:text-white md:text-5xl">{propsWithDefaults.description}</h2>
         </CardHeader>
         <div className='w-full md:w-1/2'>
-          <ButtonLink url={propsWithDefaults.actionUrl} title={propsWithDefaults.actionTitle} />
+          <ButtonLink url={propsWithDefaults.actionUrl}>{propsWithDefaults.actionTitle}</ButtonLink>
         </div>
       </ContentSectionContainer>
     </PageContainer >

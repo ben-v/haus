@@ -44,9 +44,9 @@ const NewClientsPanel = () => {
                         </ContentIconContainer>
 
                         <ButtonLink
-                            url="/work-request/#"
+                            url="/work-request"
                             prefixIcon={<SvgRectangleListSolid />}
-                            title="Work Request"
+                            children="Work Request"
                             prefixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"}
                         />
                     </div>

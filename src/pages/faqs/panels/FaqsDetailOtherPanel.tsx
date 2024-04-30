@@ -19,7 +19,7 @@ const FaqsDetailOtherPanel = () => {
         childrenClassnames="tabpanel-text">
           Have other questions? Feel free to reach out with any you might have!
         </CardHeader>
-          <ButtonLink url="/contact/#" title="Contact Us" />
+          <ButtonLink url="/contact">Contact Us</ButtonLink>
       </RoundCornerContainer>
     </ContentSectionContainer>
   );

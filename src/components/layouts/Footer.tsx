@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import { HashLink } from "react-router-hash-link";
 
 import SvgArrowUpRightFromSquareSolid from "../images/SvgArrowUpRightFromSquareSolid";
 import SvgLogo from "../images/SvgLogo";
@@ -9,31 +8,33 @@ import SvgYelpGeneric from "../images/icons/SvgYelpGneric";
 import SvgGoogleFontAwesomeGeneric from "../images/icons/SvgGoogleFontAwesomeGeneric";
 
 import SocialProfileUrls from "../../navigation/SocialProfileUrls";
+import { NavLinkGroup } from "../../navigation/NavLinkProps";
+import StandardLink from "../buttons/StandardLink";
 
 const sectionLinkGroups: NavLinkGroup[] = [
   {
     title: "Company",
     links: [
-      { label: "Clients", url: "/clients/#" },
-      // { label: "Services", url: "/services/#" },
-      { label: "Service Area", url: "/service-area/#" },
-      { label: "FAQs", url: "/faqs/#" },
-      { label: "Contact", url: "/contact/#" }
+      { children: "Clients", url: "clients", isExternalRoute: false },
+      // { label: "Services", url: "services", isExternalRoute: false },
+      { children: "Service Area", url: "service-area", isExternalRoute: false },
+      { children: "FAQs", url: "faqs", isExternalRoute: false },
+      { children: "Contact", url: "contact", isExternalRoute: false }
     ]
   },
   {
     title: "Client Tools",
     links: [
-      { label: "Work Request", url: "/work-request/#" },
-      { label: "Client Hub", url: "https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login", target: "_blank" }
+      { children: "Work Request", url: "work-request", isExternalRoute: false },
+      { children: "Client Hub", url: "https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login", target: "_blank", isExternalRoute: true }
     ]
   },
   {
     title: "Resources",
     links: [
-      { label: "Privacy Policy", url: "/privacy/#" },
-      { label: "Terms & Conditions", url: "/terms/#" },
-      { label: "Partners", url: "/partners/#" },
+      { children: "Privacy Policy", url: "privacy", isExternalRoute: false },
+      { children: "Terms & Conditions", url: "terms", isExternalRoute: false },
+      { children: "Partners", url: "partners", isExternalRoute: false },
     ]
   }
 ];
@@ -46,30 +47,30 @@ const Footer = () => {
             <div className="col-span-8 md:col-span-2 lg:col-span-3">
               <div className="flex h-full items-start justify-between gap-6 border-b border-white py-6 dark:border-gray-800 md:flex-col md:items-start md:justify-between md:space-y-6 md:border-none md:py-0">
                 <div>
-                  <HashLink to="/#" smooth aria-label="HAUS Property Services Logo" className="flex items-center">
+                  <Link to="/" aria-label="HAUS Property Services Logo" className="flex items-center">
                     <SvgLogo fill="currentColor" className="bi bi-logo h-8 w-auto" />
-                  </HashLink>
+                  </Link>
                   <p className='pt-5 footer-text'>HAUS Property Services</p>
                   <p className="footer-text">A Bozeman, Montana Company.</p>
                 </div>
 
                 <div className="inline-flex gap-3 pt-2">
-                  <Link to={SocialProfileUrls.GOOGLE} target="_blank" aria-label="google">
+                  <StandardLink url={SocialProfileUrls.GOOGLE} target="_blank" aria-label="google" isExternalRoute={true}>
                     <span className="sr-only">Google</span>
                     <SvgGoogleFontAwesomeGeneric fill="currentColor" width={20} height={20} />
-                  </Link>
-                  <Link to={SocialProfileUrls.FACEBOOK} target="_blank" aria-label="facebook">
+                  </StandardLink>
+                  <StandardLink url={SocialProfileUrls.FACEBOOK} target="_blank" aria-label="facebook" isExternalRoute={true}>
                     <span className="sr-only">Facebook</span>
                     <SvgFacebookGeneric fill="currentColor" width={20} height={20} />
-                  </Link>
-                  <Link to={SocialProfileUrls.INSTAGRAM} target="_blank" aria-label="instagram">
+                  </StandardLink>
+                  <StandardLink url={SocialProfileUrls.INSTAGRAM} target="_blank" aria-label="instagram" isExternalRoute={true}>
                     <span className="sr-only">Instagram</span>
                     <SvgInstagramGeneric fill="currentColor" width={20} height={20} />
-                  </Link>
-                  <Link to={SocialProfileUrls.YELP} target="_blank" aria-label="yelp">
+                  </StandardLink>
+                  <StandardLink url={SocialProfileUrls.YELP} target="_blank" aria-label="yelp" isExternalRoute={true}>
                     <span className="sr-only">Yelp</span>
                     <SvgYelpGeneric fill="currentColor" width={20} height={20} />
-                  </Link>
+                  </StandardLink>
                 </div>
               </div>
             </div>
@@ -81,14 +82,14 @@ const Footer = () => {
                     <ul className="mt-3 list-inside space-y-2">
                       {section.links.map((link, linkIndex) => (
                         <li key={linkIndex}>
-                          <HashLink to={link.url} target={link.target === undefined ? "_self" : link.target} smooth className="footer-link-text">
+                          <StandardLink url={link.url} target={link.target === undefined ? "_self" : link.target} className="footer-link-text" isExternalRoute={link.isExternalRoute}>
                             <div className="inline-flex items-center justify-left">
                               <div>
-                                {link.label}
+                                {link.children}
                               </div>
                               {link.target === "_blank" ? <div className="pl-2"><SvgArrowUpRightFromSquareSolid width={10} height={10} fill="currentColor" /></div> : ""}
                             </div>
-                          </HashLink>
+                          </StandardLink>
                         </li>
                       ))}
                     </ul>

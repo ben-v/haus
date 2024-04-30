@@ -6,11 +6,11 @@ import toast from 'react-hot-toast';
 import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
 
 import React from "react";
-import { HashLink } from "react-router-hash-link";
 import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
 import SvgPaperPlaneSolid from "../../../components/images/icons/SvgPaperPlaneSolid";
 import ButtonLink from "../../../components/buttons/ButtonLink";
 import CardHeader from "../../../components/layouts/CardHeader";
+import { Link } from "react-router-dom";
 
 const ContactFormPanel = () => {
     const { theme, } = useContext(ThemeContext);
@@ -105,9 +105,9 @@ const ContactFormPanel = () => {
                             </div>
                         </div>
 
-                        <p className="my-8 body-text tabpanel-text">By clicking submit below, you agree to the processing of your personal information by HAUS Property Services as described in our <HashLink to="/privacy/#" smooth>Privacy Policy</HashLink>.</p>
+                        <p className="my-8 body-text tabpanel-text">By clicking submit below, you agree to the processing of your personal information by HAUS Property Services as described in our <Link to="/privacy">Privacy Policy</Link>.</p>
 
-                        <ButtonLink type="submit" prefixIcon={<SvgPaperPlaneSolid />} title="Send Message" prefixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"} />
+                        <ButtonLink type="submit" prefixIcon={<SvgPaperPlaneSolid />} prefixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"}>Send Message</ButtonLink>
                     </div>
                 </form>              
             </RoundCornerContainer>
