@@ -145,11 +145,11 @@ const Header = () => {
                   <SvgAddressBookSolid width={ICON_SIZES.sm.height} height={ICON_SIZES.sm.height} className="relative m-auto" fill={theme === THEMES.DARK ? "white" : "primary"} />
                 </button>
               </Link>
-              <Link to="tel:4063129989" onClick={closeNavbar}>
+              <StandardLink url="tel:4063129989" onClick={closeNavbar} isExternalRoute={true}>
                 <button className="ml-2 switcher group relative h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex nav-button">
                   <SvgPhoneSolid width={ICON_SIZES.sm.height} height={ICON_SIZES.sm.height} className="relative m-auto" fill={theme === THEMES.DARK ? "white" : "primary"} />
                 </button>
-              </Link>
+              </StandardLink>
             </div>    
 
             {/*
