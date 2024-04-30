@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom"
-
 import SvgArrowUpRightFromSquareSolid from "../images/SvgArrowUpRightFromSquareSolid";
 import SvgLogo from "../images/SvgLogo";
 import SvgFacebookGeneric from "../images/icons/SvgFacebookGeneric";
@@ -47,9 +45,9 @@ const Footer = () => {
             <div className="col-span-8 md:col-span-2 lg:col-span-3">
               <div className="flex h-full items-start justify-between gap-6 border-b border-white py-6 dark:border-gray-800 md:flex-col md:items-start md:justify-between md:space-y-6 md:border-none md:py-0">
                 <div>
-                  <Link to="/" aria-label="HAUS Property Services Logo" className="flex items-center">
+                  <StandardLink url="/" aria-label="HAUS Property Services Logo" className="flex items-center">
                     <SvgLogo fill="currentColor" className="bi bi-logo h-8 w-auto" />
-                  </Link>
+                  </StandardLink>
                   <p className='pt-5 footer-text'>HAUS Property Services</p>
                   <p className="footer-text">A Bozeman, Montana Company.</p>
                 </div>
