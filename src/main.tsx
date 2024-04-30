@@ -8,6 +8,7 @@ import './content2.css'
 import { BrowserRouter } from 'react-router-dom'
 import { initTheming, ThemeSwitchProvider } from './providers/ThemeSwitchProvider.tsx'
 import { ThemeProvider } from "@material-tailwind/react";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const root = ReactDOM.createRoot(document.getElementById('root')!);
 
@@ -20,7 +21,13 @@ root.render(
     <BrowserRouter>
       <ThemeProvider>
         <ThemeSwitchProvider>
-          <App />
+          <HelmetProvider>
+            <Helmet>
+              {/* Load font in header via link to use "preload" rel setting. Still need to ref in CSS though. */}
+              <link rel="preload" href="'https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" as="font" crossOrigin="anonymous" />
+            </Helmet>
+            <App />
+          </HelmetProvider>
         </ThemeSwitchProvider>
       </ThemeProvider>
     </BrowserRouter>
