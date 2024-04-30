@@ -400,3 +400,57 @@ the App.tsx is hidden.  */
   @apply fill-gray-700;
   @apply dark:fill-gray-300;
 }
+
+
+.button-small, .button-medium, .button-large {
+  @apply flex;
+  @apply flex-row;
+  @apply items-center;
+  @apply rounded-full;
+  
+  @apply shadow-sm;
+  @apply focus-visible:outline;
+  @apply focus-visible:outline-2;
+  @apply focus-visible:outline-offset-2;
+
+  @apply w-full;
+  @apply justify-center;
+
+  @apply text-white;
+  @apply bg-primary;
+
+  @apply dark:text-slate-800;
+  @apply dark:bg-primaryLight;
+}
+
+.button-small {
+  @apply gap-x-1.5;
+  @apply px-2.5;
+  @apply py-1.5;
+  @apply text-sm;
+  @apply font-semibold;
+}
+
+.button-medium {
+  @apply gap-x-1.5;
+  @apply px-3;
+  @apply py-2;
+  @apply text-base;
+  @apply font-bold;
+}
+
+.button-large {
+  @apply gap-x-2;
+  @apply px-3.5;
+  @apply py-2.5;
+  @apply text-lg;
+  @apply font-bold;
+}
+
+.button-icon-prefix {
+  @apply -ml-0.5;
+}
+
+.button-icon-suffix {
+  @apply -mr-0.5;
+}
