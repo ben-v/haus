@@ -10,7 +10,7 @@ import RoundCornerContainer from "../../../components/containers/RoundCornerCont
 import SvgPaperPlaneSolid from "../../../components/images/icons/SvgPaperPlaneSolid";
 import ButtonLink from "../../../components/buttons/ButtonLink";
 import CardHeader from "../../../components/layouts/CardHeader";
-import { Link } from "react-router-dom";
+import StandardLink from "../../../components/buttons/StandardLink";
 
 const ContactFormPanel = () => {
     const { theme, } = useContext(ThemeContext);
@@ -105,7 +105,7 @@ const ContactFormPanel = () => {
                             </div>
                         </div>
 
-                        <p className="my-8 body-text tabpanel-text">By clicking submit below, you agree to the processing of your personal information by HAUS Property Services as described in our <Link to="/privacy">Privacy Policy</Link>.</p>
+                        <p className="my-8 body-text tabpanel-text">By clicking submit below, you agree to the processing of your personal information by HAUS Property Services as described in our <StandardLink url="/privacy">Privacy Policy</StandardLink>.</p>
 
                         <ButtonLink type="submit" prefixIcon={<SvgPaperPlaneSolid />} prefixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"}>Send Message</ButtonLink>
                     </div>
