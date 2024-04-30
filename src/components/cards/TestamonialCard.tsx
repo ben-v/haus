@@ -1,5 +1,4 @@
 import { ReactNode, useContext } from 'react';
-import { Link } from 'react-router-dom';
 
 import { Rating } from 'react-simple-star-rating'
 
@@ -16,6 +15,7 @@ import SvgArrowUpRightFromSquareSolid from '../images/SvgArrowUpRightFromSquareS
 import withMaterialTailwind from '../../../tailwind.config';
 import { Config } from 'tailwindcss';
 import { ICON_SIZES } from '../images/icons/IconConfig';
+import StandardLink from '../buttons/StandardLink';
 
 export interface TestamonialCardProps {
   reviewerName: string;
@@ -77,9 +77,9 @@ const TestamonialCard = (props: TestamonialCardProps) => {
               color={theme === THEMES.DARK ? fullConfig.theme.colors.gray[800] : fullConfig.theme.colors.white} />
             <span className="grow font-semibold">{propsWithDefaults.reviewerName}</span>
             <span className="items-end">
-              <Link to={socialProfileUrl} target="_blank" aria-label={`${propsWithDefaults.source.toLocaleLowerCase()}`}>
+              <StandardLink url={socialProfileUrl} target="_blank" aria-label={`${propsWithDefaults.source.toLocaleLowerCase()}`} isExternalRoute={true}>
                 {reviewLogo}
-              </Link>
+              </StandardLink>
             </span>
           </div>
           <div className="flex flex-row h-auto">
@@ -94,7 +94,7 @@ const TestamonialCard = (props: TestamonialCardProps) => {
           </div>
           <div>{propsWithDefaults.reviewText}</div>
           <div className="flex flex-row-reverse grow items-end">
-            <Link to={socialProfileUrl} target="_blank">
+            <StandardLink url={socialProfileUrl} target="_blank" isExternalRoute={true}>
               <div className="inline-flex items-center justify-left">
                 <div>
                   Read more reviews on {propsWithDefaults.source}
@@ -103,7 +103,7 @@ const TestamonialCard = (props: TestamonialCardProps) => {
                   <SvgArrowUpRightFromSquareSolid width={10} height={10} fill="currentColor" />
                 </div>
               </div>
-            </Link>
+            </StandardLink>
           </div>
         </div>
       </RoundCornerContainer>
