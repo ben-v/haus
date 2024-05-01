@@ -15,7 +15,7 @@ const services: { serviceGroup: string, serviceGroupDetails: string[] }[] = [
       "Interior Woodwork, Trim, Baseboards, Handrails, etc.", 
       "Furniture Repair & Assembly", 
       "Locks & Latches, Bifold, Pocket, Sliding Door Repairs", 
-      "Closet Shelving all types"
+      "Closet Shelving All Types"
     ]
   },
   {
