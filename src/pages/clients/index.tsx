@@ -12,7 +12,7 @@ const tabData: TabTemplateProps[] = [
     children: <NewClientsPanel />
   },
   {
-    title: "Existing Clients",
+    title: "Current Clients",
     key: "clients-existing",
     children: <ExistingClientsPanel />
   },
