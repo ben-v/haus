@@ -12,6 +12,7 @@ import SvgDevicesLight from "../../../components/images/icons/SvgDevicesLight";
 import SvgDevicesDark from "../../../components/images/icons/SvgDevicesDark";
 import { useContext } from "react";
 import { ThemeContext, THEMES } from "../../../contexts/ThemeContext";
+import StandardLink from "../../../components/buttons/StandardLink";
 
 const ExistingClientsPanel = () => {
     const { theme, } = useContext(ThemeContext);
@@ -25,12 +26,12 @@ const ExistingClientsPanel = () => {
                         titleAlignment="Left"
                         childrenAlignment="Left"
                         childrenClassnames="tabpanel-text">
-                        For our current clients, the <span className="font-semibold">client hub</span> is a self-service, online platform that enables HAUS clients to approve quotes, check appointment details, pay invoices, print receipts, or request more work.
+                        For our current clients, the <StandardLink url="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" isExternalRoute={true} target="_blank"><span className="font-semibold">Client Hub</span></StandardLink> is a self-service, online platform that enables HAUS clients to approve quotes, check appointment details, pay invoices, print receipts, or request more work.
                     </CardHeader>
                     <div className="relative flex flex-col gap-6">
                         <ContentIconContainer
                             title="Convenient Tools..."
-                            description="The self serve client hub is available from your phone, tablet or desktop PC."
+                            description="The self serve Client Hub is available from your phone, tablet or desktop PC."
                             childrenClassnames="tabpanel-text">
                             {theme === THEMES.DARK ? <SvgDevicesDark width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} /> : <SvgDevicesLight width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} />}
                         </ContentIconContainer>
