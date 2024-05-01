@@ -5,6 +5,7 @@ import './index.css'
 import './content.css'
 import { initTheming, ThemeSwitchProvider } from './providers/ThemeSwitchProvider.tsx'
 import { ThemeProvider } from "@material-tailwind/react";
+import { Helmet, HelmetProvider } from 'react-helmet-async'
 
 const root = ReactDOM.createRoot(document.getElementById('root')!);
 
@@ -16,7 +17,16 @@ root.render(
   <React.StrictMode>
     <ThemeProvider>
       <ThemeSwitchProvider>
-        <App />
+      <HelmetProvider>
+            <Helmet>
+              {/* Load font in header via link to use "preload" rel setting. Still need to ref in CSS though. */}
+              {/* Preconnect to Google fonts to speed loading of font from their CDN */}
+              <link rel="preconnect" href="https://fonts.googleapis.com" />
+              <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+              <link rel="stylesheet preload" as="style" href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" crossOrigin="anonymous" />
+            </Helmet>
+            <App />
+          </HelmetProvider>
       </ThemeSwitchProvider>
     </ThemeProvider>
   </React.StrictMode>,
