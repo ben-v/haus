@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 import './content.css'
-import './content2.css'
 import { initTheming, ThemeSwitchProvider } from './providers/ThemeSwitchProvider.tsx'
 import { ThemeProvider } from "@material-tailwind/react";
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+
+import "/fonts/Urbanist-VariableFont_wght.ttf";
+import "/fonts/Urbanist-Italic-VariableFont_wght.ttf";
 
 const root = ReactDOM.createRoot(document.getElementById('root')!);
 
@@ -18,13 +19,7 @@ root.render(
   <React.StrictMode>
     <ThemeProvider>
       <ThemeSwitchProvider>
-        <HelmetProvider>
-          <Helmet>
-            {/* Load font in header via link to use "preload" rel setting. Still need to ref in CSS though. */}
-            <link rel="preload" href="'https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" as="font" crossOrigin="anonymous" />
-          </Helmet>
-          <App />
-        </HelmetProvider>
+        <App />
       </ThemeSwitchProvider>
     </ThemeProvider>
   </React.StrictMode>,
