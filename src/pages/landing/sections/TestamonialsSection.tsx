@@ -1,7 +1,7 @@
 import TestamonialCard, { TestamonialCardProps } from "../../../components/cards/TestamonialCard"
 import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
 import ContentSectionHeader from "../../../components/layouts/ContentSectionHeader";
-import { SocialPlatforms } from "../../../navigation/SocialProfileLink";
+import { SocialPlatforms } from "../../../components/navigation/SocialProfileLink";
 
 const testamonials: TestamonialCardProps[] = [
   {

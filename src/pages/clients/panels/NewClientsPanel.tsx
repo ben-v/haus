@@ -5,7 +5,7 @@ import CardHeader from "../../../components/layouts/CardHeader";
 
 import { useContext } from "react";
 import JpgNewRequest from "../../../../public/images/screenshots/new-request.jpeg";
-import ButtonLink from "../../../components/buttons/ButtonLink";
+import ButtonLink from "../../../components/navigation/ButtonLink";
 import { ICON_SIZES } from "../../../components/images/icons/IconConfig";
 import SvgQuestionDark from "../../../components/images/icons/SvgQuestionDark";
 import SvgQuestionLight from "../../../components/images/icons/SvgQuestionLight";
@@ -13,7 +13,7 @@ import SvgTodoListDark from "../../../components/images/icons/SvgTodoListDark";
 import SvgTodoListLight from "../../../components/images/icons/SvgTodoListLight";
 import SvgRectangleListSolid from "../../../components/images/SvgRectangleListSolid";
 import { ThemeContext, THEMES } from "../../../contexts/ThemeContext";
-import StandardLink from "../../../components/buttons/StandardLink";
+import StandardLink from "../../../components/navigation/StandardLink";
 
 const NewClientsPanel = () => {
     const { theme, } = useContext(ThemeContext);

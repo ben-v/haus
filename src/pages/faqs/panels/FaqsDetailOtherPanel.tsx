@@ -4,7 +4,7 @@ import ContentSectionContainer from "../../../components/containers/ContentSecti
 // For more info see https://stackoverflow.com/questions/78296875/typescript-error-using-material-tailwind-react-with-nextjs14
 
 import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
-import ButtonLink from "../../../components/buttons/ButtonLink";
+import ButtonLink from "../../../components/navigation/ButtonLink";
 import CardHeader from "../../../components/layouts/CardHeader";
 
 const FaqsDetailOtherPanel = () => {

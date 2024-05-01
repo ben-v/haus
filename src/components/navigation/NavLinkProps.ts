@@ -1,5 +1,5 @@
 import { AnchorHTMLAttributes, ReactElement, ReactNode } from "react";
-import { IconSize } from '../components/images/icons/IconConfig';
+import { IconSize } from '../images/icons/IconConfig';
 
 export interface NavLinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> {
     url?: string,

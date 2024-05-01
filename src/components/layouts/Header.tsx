@@ -16,8 +16,8 @@ import { Tooltip } from "react-tooltip";
 import Toggle from "react-toggle";
 import "react-toggle/style.css" // for ES6 modules
 import { ICON_SIZES } from "../images/icons/IconConfig";
-import { NavLinkGroup } from "../../navigation/NavLinkProps";
-import StandardLink from "../buttons/StandardLink";
+import { NavLinkGroup } from "../navigation/NavLinkProps";
+import StandardLink from "../navigation/StandardLink";
 
 const Header = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);

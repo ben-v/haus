@@ -6,13 +6,13 @@ import CardHeader from "../../../components/layouts/CardHeader";
 import JpgExistingClientHub from "../../../../public/images/screenshots/client-hub.jpeg";
 import SvgAddressBookSolid from "../../../components/images/SvgAddressBookSolid";
 import SvgArrowUpRightFromSquareSolid from "../../../components/images/SvgArrowUpRightFromSquareSolid";
-import ButtonLink from "../../../components/buttons/ButtonLink";
+import ButtonLink from "../../../components/navigation/ButtonLink";
 import { ICON_SIZES } from "../../../components/images/icons/IconConfig";
 import SvgDevicesLight from "../../../components/images/icons/SvgDevicesLight";
 import SvgDevicesDark from "../../../components/images/icons/SvgDevicesDark";
 import { useContext } from "react";
 import { ThemeContext, THEMES } from "../../../contexts/ThemeContext";
-import StandardLink from "../../../components/buttons/StandardLink";
+import StandardLink from "../../../components/navigation/StandardLink";
 import { renderToString } from "react-dom/server";
 
 const CurrentClientsPanel = () => {

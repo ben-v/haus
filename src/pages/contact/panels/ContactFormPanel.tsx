@@ -8,9 +8,9 @@ import ContentSectionContainer from "../../../components/containers/ContentSecti
 import React from "react";
 import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
 import SvgPaperPlaneSolid from "../../../components/images/icons/SvgPaperPlaneSolid";
-import ButtonLink from "../../../components/buttons/ButtonLink";
+import ButtonLink from "../../../components/navigation/ButtonLink";
 import CardHeader from "../../../components/layouts/CardHeader";
-import StandardLink from "../../../components/buttons/StandardLink";
+import StandardLink from "../../../components/navigation/StandardLink";
 
 const ContactFormPanel = () => {
     const { theme, } = useContext(ThemeContext);

@@ -1,7 +1,7 @@
 
 import ContentSectionContainer from "../containers/ContentSectionContainer";
 import { ICON_SIZES, IconSize } from "../images/icons/IconConfig";
-import SocialProfileLink, { SocialPlatforms } from "../../navigation/SocialProfileLink";
+import SocialProfileLink, { SocialPlatforms } from "../navigation/SocialProfileLink";
 
 export interface SocialLinksCardProps {
     size?: IconSize;

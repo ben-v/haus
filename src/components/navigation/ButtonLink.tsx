@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ICON_SIZES } from '../images/icons/IconConfig';
 import { Link } from 'react-router-dom';
-import { ButtonNavLinkProps } from '../../navigation/NavLinkProps';
+import { ButtonNavLinkProps } from './NavLinkProps';
 
 export interface ButtonLinkProps extends ButtonNavLinkProps {
   size?: "Small" | "Medium" | "Large",

@@ -1,13 +1,13 @@
 
 import React, { ReactElement, ReactNode } from "react"
-import { ICON_SIZES, IconSize } from "../components/images/icons/IconConfig"
-import StandardLink from "../components/buttons/StandardLink"
-import SvgGoogleGLogo from "../components/images/icons/SvgGoogleGLogo";
-import SvgFacebookFontAwesomeGeneric from "../components/images/icons/SvgFacebookFontAwesomeGeneric";
-import SvgGoogleFontAwesomeGeneric from "../components/images/icons/SvgGoogleFontAwesomeGeneric";
-import SvgYelpFontAwesomeGeneric from "../components/images/icons/SvgYelpFontAwesomeGeneric";
-import SvgInstagramGeneric from "../components/images/icons/SvgInstagramGeneric";
-import PngInstagramColor from "../../public/icons/instagram-color.png";
+import { ICON_SIZES, IconSize } from "../images/icons/IconConfig"
+import StandardLink from "./StandardLink"
+import SvgGoogleGLogo from "../images/icons/SvgGoogleGLogo";
+import SvgFacebookFontAwesomeGeneric from "../images/icons/SvgFacebookFontAwesomeGeneric";
+import SvgGoogleFontAwesomeGeneric from "../images/icons/SvgGoogleFontAwesomeGeneric";
+import SvgYelpFontAwesomeGeneric from "../images/icons/SvgYelpFontAwesomeGeneric";
+import SvgInstagramGeneric from "../images/icons/SvgInstagramGeneric";
+import PngInstagramColor from "../../../public/icons/instagram-color.png";
 
 export enum SocialPlatforms {
     GOOGLE = "Google",

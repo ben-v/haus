@@ -10,7 +10,7 @@ import SvgPhoneSolid from "../../../components/images/SvgPhoneSolid";
 import CardHeader from "../../../components/layouts/CardHeader";
 import { ICON_SIZES } from "../../../components/images/icons/IconConfig";
 import colors from "@material-tailwind/react/theme/base/colors";
-import StandardLink from "../../../components/buttons/StandardLink";
+import StandardLink from "../../../components/navigation/StandardLink";
 
 const ContactOtherPanel = () => {
     const { theme, } = useContext(ThemeContext);

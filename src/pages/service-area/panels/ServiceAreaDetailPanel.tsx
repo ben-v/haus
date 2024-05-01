@@ -1,6 +1,6 @@
 import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
 import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
-import ButtonLink from "../../../components/buttons/ButtonLink";
+import ButtonLink from "../../../components/navigation/ButtonLink";
 import CardHeader from "../../../components/layouts/CardHeader";
 
 const ServiceAreaDetailPanel = () => {

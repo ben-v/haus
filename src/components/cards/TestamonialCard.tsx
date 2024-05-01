@@ -11,7 +11,7 @@ import SvgArrowUpRightFromSquareSolid from '../images/SvgArrowUpRightFromSquareS
 import withMaterialTailwind from '../../../tailwind.config';
 import { Config } from 'tailwindcss';
 import { ICON_SIZES } from '../images/icons/IconConfig';
-import SocialProfileLink, { SocialPlatforms } from '../../navigation/SocialProfileLink';
+import SocialProfileLink, { SocialPlatforms } from '../navigation/SocialProfileLink';
 
 export interface TestamonialCardProps {
   reviewerName: string;
