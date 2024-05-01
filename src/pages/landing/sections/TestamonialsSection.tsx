@@ -1,27 +1,28 @@
 import TestamonialCard, { TestamonialCardProps } from "../../../components/cards/TestamonialCard"
 import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
 import ContentSectionHeader from "../../../components/layouts/ContentSectionHeader";
+import { SocialPlatforms } from "../../../navigation/SocialProfileLink";
 
 const testamonials: TestamonialCardProps[] = [
   {
     reviewerName: "Pam D.",
     date: "4/14/24",
     stars: 5,
-    source: "Google",
+    source: SocialPlatforms.GOOGLE,
     reviewText: "Ben is a hard worker who also has good suggestions and ideas. He's versatile, thorough and makes things better than new!"
   },
   {
     reviewerName: "Liz A.",
     date: "4/14/24",
     stars: 5,
-    source: "Google",
+    source: SocialPlatforms.GOOGLE,
     reviewText: "Ben is creative and came up with a beautiful and practical piece of furniture to support my handcycle! I cant wait to see what he does with some other projects.",
   },
   {
     reviewerName: "Suzi B.",
     date: "4/14/24",
     stars: 5,
-    source: "Google",
+    source: SocialPlatforms.GOOGLE,
     reviewText: "HAUS Property Services is very professional and easy to work with. They come by and give you an estimate and everything is done electronically fast and efficiently. Our project was done on time and in budget. The finished product was completed beyond my expectations!"
   }
 ];
