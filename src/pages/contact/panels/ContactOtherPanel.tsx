@@ -32,7 +32,7 @@ const ContactOtherPanel = () => {
 
                 <CardHeader title="Also, find us on:" titleAlignment="Left" headerType="Subheader" />
                 <div className="flex items-center gap-1.5">
-                    <SocialLinksCard showHeader={false} />
+                    <SocialLinksCard />
                 </div>
             </RoundCornerContainer>
             <CommonToastNotificationConfig />

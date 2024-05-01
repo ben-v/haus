@@ -5,12 +5,10 @@ import SocialProfileLink, { SocialPlatforms } from "../../navigation/SocialProfi
 
 export interface SocialLinksCardProps {
     size?: IconSize;
-    showHeader: boolean;
 }
 
 const defaultProps = {
     size: ICON_SIZES.md,
-    showHeader: true
 } satisfies Partial<SocialLinksCardProps>
 
 const SocialLinksCard = (props: SocialLinksCardProps) => {
