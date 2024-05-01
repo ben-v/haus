@@ -8,6 +8,10 @@ html {
   overflow-y: scroll;
 }
 
+body {
+  @apply overscroll-none;
+}
+
 body,
 .body-text,
 .serivce-area-list-text,
