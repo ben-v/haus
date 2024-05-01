@@ -12,7 +12,7 @@ import SvgQuestionLight from "../../../components/images/icons/SvgQuestionLight"
 import SvgTodoListDark from "../../../components/images/icons/SvgTodoListDark";
 import SvgTodoListLight from "../../../components/images/icons/SvgTodoListLight";
 import SvgRectangleListSolid from "../../../components/images/SvgRectangleListSolid";
-import { ThemeContext, THEMES } from "../../../contexts/ThemeContext";
+import { ThemeContext, THEMES } from "../../../components/contexts/ThemeContext";
 import StandardLink from "../../../components/navigation/StandardLink";
 
 const NewClientsPanel = () => {

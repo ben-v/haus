@@ -1,6 +1,6 @@
 import emailjs from "@emailjs/browser";
 import { useContext, useState } from "react";
-import { THEMES, ThemeContext } from "../../../contexts/ThemeContext";
+import { THEMES, ThemeContext } from "../../../components/contexts/ThemeContext";
 
 import toast from 'react-hot-toast';
 import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";

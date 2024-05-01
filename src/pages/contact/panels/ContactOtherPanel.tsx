@@ -1,6 +1,6 @@
 import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
 import CommonToastNotificationConfig from "../../../components/notifications/common-toast-notification-config";
-import { THEMES, ThemeContext } from "../../../contexts/ThemeContext";
+import { THEMES, ThemeContext } from "../../../components/contexts/ThemeContext";
 
 import { useContext } from "react";
 import SocialLinksCard from "../../../components/common/SocalLinksCard";

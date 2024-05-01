@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { } from "@material-tailwind/react/theme/base/colors";
 
-import { ThemeContext, THEMES } from "../../contexts/ThemeContext";
+import { ThemeContext, THEMES } from "../contexts/ThemeContext";
 
 import SvgPhoneSolid from "../images/SvgPhoneSolid";
 import SvgArrowUpRightFromSquareSolid from "../images/SvgArrowUpRightFromSquareSolid";

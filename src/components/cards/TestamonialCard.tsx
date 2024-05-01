@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { Rating } from 'react-simple-star-rating';
 
 import resolveConfig from 'tailwindcss/resolveConfig';
-import { THEMES, ThemeContext } from "../../contexts/ThemeContext";
+import { THEMES, ThemeContext } from "../contexts/ThemeContext";
 
 import RoundCornerContainer from '../containers/RoundCornerContainer';
 import SvgReviewAvatarTemplate from '../images/SvgReviewAvatarTemplate';

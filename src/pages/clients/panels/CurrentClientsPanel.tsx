@@ -11,7 +11,7 @@ import { ICON_SIZES } from "../../../components/images/icons/IconConfig";
 import SvgDevicesLight from "../../../components/images/icons/SvgDevicesLight";
 import SvgDevicesDark from "../../../components/images/icons/SvgDevicesDark";
 import { useContext } from "react";
-import { ThemeContext, THEMES } from "../../../contexts/ThemeContext";
+import { ThemeContext, THEMES } from "../../../components/contexts/ThemeContext";
 import StandardLink from "../../../components/navigation/StandardLink";
 import { renderToString } from "react-dom/server";
 
