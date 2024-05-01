@@ -25,7 +25,7 @@ const Header = () => {
   const navLinkGroup: NavLinkGroup = {
     links: [
       { url: "clients", children: "Clients", isExternalRoute: false },
-      // { url: "services", children: "Services" },
+      { url: "services", children: "Services", isExternalRoute: false },
       { url: "service-area", children: "Service Area", isExternalRoute: false },
       { url: "faqs", children: "FAQs", isExternalRoute: false },
       { url: "contact", children: "Contact", isExternalRoute: false },      

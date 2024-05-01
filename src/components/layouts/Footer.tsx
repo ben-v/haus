@@ -11,7 +11,7 @@ const sectionLinkGroups: NavLinkGroup[] = [
     title: "Company",
     links: [
       { children: "Clients", url: "clients", isExternalRoute: false },
-      // { label: "Services", url: "services", isExternalRoute: false },
+      { children: "Services", url: "services", isExternalRoute: false },
       { children: "Service Area", url: "service-area", isExternalRoute: false },
       { children: "FAQs", url: "faqs", isExternalRoute: false },
       { children: "Contact", url: "contact", isExternalRoute: false }
