@@ -1,21 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   @apply scroll-smooth
-}
-
-
-@layer base {
-  @font-face {
-    font-family: 'Urbanist';
-    src: local("Urbanist-VariableFont_wght"), url("/fonts/Urbanist-VariableFont_wght.ttf") format("truetype");
-  }
-
-  html {
-    font-family: "Urbanist";
-  }
 }
 
 @layer components {

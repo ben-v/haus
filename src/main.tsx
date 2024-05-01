@@ -6,9 +6,6 @@ import './content.css'
 import { initTheming, ThemeSwitchProvider } from './providers/ThemeSwitchProvider.tsx'
 import { ThemeProvider } from "@material-tailwind/react";
 
-import "/fonts/Urbanist-VariableFont_wght.ttf";
-import "/fonts/Urbanist-Italic-VariableFont_wght.ttf";
-
 const root = ReactDOM.createRoot(document.getElementById('root')!);
 
 // Init theme BEFORE rendering as to prevent any flickerings of light > dark. This also is necessary to get the theming applied
