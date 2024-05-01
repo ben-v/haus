@@ -5,7 +5,7 @@ import TabStripTemplate, { TabTemplateProps } from '../../components/templates/T
 
 import SvgPersonWithList from "../../components/images/stick-figures/SvgPersonWithList";
 import ServicesDetailPanel from "./panels/ServicesDetailPanel";
-import ServicesPricingModelPanel from "./panels/ServicesPricingModelPanel";
+// import ServicesPricingModelPanel from "./panels/ServicesPricingModelPanel";
 
 const tabData: TabTemplateProps[] = [
   {
@@ -13,11 +13,11 @@ const tabData: TabTemplateProps[] = [
     key: "services-detail",
     children: <ServicesDetailPanel />
   },
-  {
-    title: "Pricing",
-    key: "services-pricing",
-    children: <ServicesPricingModelPanel />
-  },
+  // {
+  //   title: "Pricing",
+  //   key: "services-pricing",
+  //   children: <ServicesPricingModelPanel />
+  // },
 ];
 
 const ServicesPage = () => {
@@ -26,7 +26,8 @@ const ServicesPage = () => {
       id="faqs"
       titlePartA="Our"
       titlePartB=" Services"
-      description="Page summary goes here">
+      // description="Page summary goes here"
+      >
       <ContentSectionContainer id="faqs-bodycontainer" flexDirection='RTL'>
         <ContentSectionContainer flexDirection="Center" containerClassNames="w-auto pb-6 md:pt-0 md:w-4/5 md:max-w-2xl">
           <GenericContentContainer id="faqs-marketing-person" padding="None">
