@@ -2,7 +2,7 @@ import PageContainer from '../../components/containers/PageContainer';
 import ContentSectionContainer from '../../components/containers/ContentSectionContainer';
 import TabStripTemplate, { TabTemplateProps } from '../../components/templates/TabStripTemplate';
 
-import ExistingClientsPanel from './panels/ExistingClientsPanel';
+import CurrentClientsPanel from './panels/CurrentClientsPanel';
 import NewClientsPanel from './panels/NewClientsPanel';
 
 const tabData: TabTemplateProps[] = [
@@ -13,8 +13,8 @@ const tabData: TabTemplateProps[] = [
   },
   {
     title: "Current Clients",
-    key: "clients-existing",
-    children: <ExistingClientsPanel />
+    key: "clients-current",
+    children: <CurrentClientsPanel />
   },
 ];
 

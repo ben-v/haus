@@ -15,7 +15,7 @@ import { ThemeContext, THEMES } from "../../../contexts/ThemeContext";
 import StandardLink from "../../../components/buttons/StandardLink";
 import { renderToString } from "react-dom/server";
 
-const ExistingClientsPanel = () => {
+const CurrentClientsPanel = () => {
     const { theme, } = useContext(ThemeContext);
 
     return (
@@ -60,4 +60,4 @@ const ExistingClientsPanel = () => {
     )
 }
 
-export default ExistingClientsPanel
+export default CurrentClientsPanel
