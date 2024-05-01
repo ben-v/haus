@@ -7,7 +7,7 @@ import {
     TabsBody,
     TabsHeader,
 } from "@material-tailwind/react";
-import { THEMES, ThemeContext } from "../../contexts/ThemeContext";
+import { THEMES, ThemeContext } from "../contexts/ThemeContext";
 import { BaseTemplateProps } from "./Template";
 
 export interface TabTemplateProps extends BaseTemplateProps {

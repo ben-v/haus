@@ -4,25 +4,23 @@ import ContentSectionContainer from "../../../components/containers/ContentSecti
 // For more info see https://stackoverflow.com/questions/78296875/typescript-error-using-material-tailwind-react-with-nextjs14
 
 import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
-import ButtonLink from "../../../components/navigation/ButtonLink";
 import CardHeader from "../../../components/layouts/CardHeader";
 
-const FaqsDetailOtherPanel = () => {
+const ServicesPricingModelPanel = () => {
     
   return (
     <ContentSectionContainer id="faqs-detail-container" flexDirection="Center" containerClassNames="items-start">
       <RoundCornerContainer id="faqs-detail" padding="Small" containerClassNames="w-full" bodyClassNames="gap-4">
       <CardHeader 
-        title="Still looking?"
+        title="Pricing Panel Title"
         titleAlignment="Left" 
         childrenAlignment="Left"
         childrenClassnames="tabpanel-text">
-          Have other questions? Feel free to reach out with any you might have!
+          Pricing model goes here
         </CardHeader>
-          <ButtonLink url="/contact">Contact Us</ButtonLink>
       </RoundCornerContainer>
     </ContentSectionContainer>
   );
 }
 
-export default FaqsDetailOtherPanel
+export default ServicesPricingModelPanel

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 import './content.css'
-import { initTheming, ThemeSwitchProvider } from './providers/ThemeSwitchProvider.tsx'
+import { initTheming, ThemeSwitchProvider } from './components/providers/ThemeSwitchProvider.tsx'
 import { ThemeProvider } from "@material-tailwind/react";
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 

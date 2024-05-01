@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { Rating } from 'react-simple-star-rating';
 
 import resolveConfig from 'tailwindcss/resolveConfig';
-import { THEMES, ThemeContext } from "../../contexts/ThemeContext";
+import { THEMES, ThemeContext } from "../contexts/ThemeContext";
 
 import RoundCornerContainer from '../containers/RoundCornerContainer';
 import SvgReviewAvatarTemplate from '../images/SvgReviewAvatarTemplate';
@@ -11,7 +11,7 @@ import SvgArrowUpRightFromSquareSolid from '../images/SvgArrowUpRightFromSquareS
 import withMaterialTailwind from '../../../tailwind.config';
 import { Config } from 'tailwindcss';
 import { ICON_SIZES } from '../images/icons/IconConfig';
-import SocialProfileLink, { SocialPlatforms } from '../../navigation/SocialProfileLink';
+import SocialProfileLink, { SocialPlatforms } from '../navigation/SocialProfileLink';
 
 export interface TestamonialCardProps {
   reviewerName: string;

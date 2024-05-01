@@ -1,6 +1,6 @@
 import emailjs from "@emailjs/browser";
 import { useContext, useState } from "react";
-import { THEMES, ThemeContext } from "../../../contexts/ThemeContext";
+import { THEMES, ThemeContext } from "../../../components/contexts/ThemeContext";
 
 import toast from 'react-hot-toast';
 import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
@@ -8,9 +8,9 @@ import ContentSectionContainer from "../../../components/containers/ContentSecti
 import React from "react";
 import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
 import SvgPaperPlaneSolid from "../../../components/images/icons/SvgPaperPlaneSolid";
-import ButtonLink from "../../../components/buttons/ButtonLink";
+import ButtonLink from "../../../components/navigation/ButtonLink";
 import CardHeader from "../../../components/layouts/CardHeader";
-import StandardLink from "../../../components/buttons/StandardLink";
+import StandardLink from "../../../components/navigation/StandardLink";
 
 const ContactFormPanel = () => {
     const { theme, } = useContext(ThemeContext);
@@ -105,7 +105,7 @@ const ContactFormPanel = () => {
                             </div>
                         </div>
 
-                        <p className="my-8 body-text tabpanel-text">By clicking submit below, you agree to the processing of your personal information by HAUS Property Services as described in our <StandardLink url="/privacy">Privacy Policy</StandardLink>.</p>
+                        <p className="my-8 body-text tabpanel-text">By clicking submit below, you agree to the processing of your personal information by HAUS Property Services as described in our <StandardLink url="/privacy"><span className="font-semibold">Privacy Policy</span></StandardLink>.</p>
 
                         <ButtonLink type="submit" prefixIcon={<SvgPaperPlaneSolid />} prefixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"}>Send Message</ButtonLink>
                     </div>

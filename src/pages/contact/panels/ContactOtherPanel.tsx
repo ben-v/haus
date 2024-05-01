@@ -1,6 +1,6 @@
 import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
 import CommonToastNotificationConfig from "../../../components/notifications/common-toast-notification-config";
-import { THEMES, ThemeContext } from "../../../contexts/ThemeContext";
+import { THEMES, ThemeContext } from "../../../components/contexts/ThemeContext";
 
 import { useContext } from "react";
 import SocialLinksCard from "../../../components/common/SocalLinksCard";
@@ -10,7 +10,7 @@ import SvgPhoneSolid from "../../../components/images/SvgPhoneSolid";
 import CardHeader from "../../../components/layouts/CardHeader";
 import { ICON_SIZES } from "../../../components/images/icons/IconConfig";
 import colors from "@material-tailwind/react/theme/base/colors";
-import StandardLink from "../../../components/buttons/StandardLink";
+import StandardLink from "../../../components/navigation/StandardLink";
 
 const ContactOtherPanel = () => {
     const { theme, } = useContext(ThemeContext);
@@ -32,7 +32,7 @@ const ContactOtherPanel = () => {
 
                 <CardHeader title="Also, find us on:" titleAlignment="Left" headerType="Subheader" />
                 <div className="flex items-center gap-1.5">
-                    <SocialLinksCard showHeader={false} />
+                    <SocialLinksCard />
                 </div>
             </RoundCornerContainer>
             <CommonToastNotificationConfig />

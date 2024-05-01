@@ -1,17 +1,17 @@
 import SvgArrowUpRightFromSquareSolid from "../images/SvgArrowUpRightFromSquareSolid";
 import SvgLogo from "../images/SvgLogo";
 
-import { NavLinkGroup } from "../../navigation/NavLinkProps";
-import StandardLink from "../buttons/StandardLink";
+import { NavLinkGroup } from "../navigation/NavLinkProps";
+import StandardLink from "../navigation/StandardLink";
 import { ICON_SIZES } from "../images/icons/IconConfig";
-import SocialProfileLink, { SocialPlatforms } from "../../navigation/SocialProfileLink";
+import SocialProfileLink, { SocialPlatforms } from "../navigation/SocialProfileLink";
 
 const sectionLinkGroups: NavLinkGroup[] = [
   {
     title: "Company",
     links: [
       { children: "Clients", url: "clients", isExternalRoute: false },
-      // { label: "Services", url: "services", isExternalRoute: false },
+      { children: "Services", url: "services", isExternalRoute: false },
       { children: "Service Area", url: "service-area", isExternalRoute: false },
       { children: "FAQs", url: "faqs", isExternalRoute: false },
       { children: "Contact", url: "contact", isExternalRoute: false }

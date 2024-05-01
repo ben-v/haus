@@ -5,14 +5,15 @@ import CardHeader from "../../../components/layouts/CardHeader";
 
 import { useContext } from "react";
 import JpgNewRequest from "../../../../public/images/screenshots/new-request.jpeg";
-import ButtonLink from "../../../components/buttons/ButtonLink";
+import ButtonLink from "../../../components/navigation/ButtonLink";
 import { ICON_SIZES } from "../../../components/images/icons/IconConfig";
 import SvgQuestionDark from "../../../components/images/icons/SvgQuestionDark";
 import SvgQuestionLight from "../../../components/images/icons/SvgQuestionLight";
 import SvgTodoListDark from "../../../components/images/icons/SvgTodoListDark";
 import SvgTodoListLight from "../../../components/images/icons/SvgTodoListLight";
 import SvgRectangleListSolid from "../../../components/images/SvgRectangleListSolid";
-import { ThemeContext, THEMES } from "../../../contexts/ThemeContext";
+import { ThemeContext, THEMES } from "../../../components/contexts/ThemeContext";
+import StandardLink from "../../../components/navigation/StandardLink";
 
 const NewClientsPanel = () => {
     const { theme, } = useContext(ThemeContext);
@@ -26,7 +27,7 @@ const NewClientsPanel = () => {
                         titleAlignment="Left"
                         childrenAlignment="Left"
                         childrenClassnames="tabpanel-text">
-                        Getting started as a new client is easy: simply send us a <span className="font-semibold">work request</span>. Once received, we'll review it and follow up with you regarding the next steps.
+                        Getting started as a new client is easy: simply send us a <StandardLink url="/work-request"><span className="font-semibold">Work Request</span></StandardLink>. Once received, we'll review it and follow up with you regarding the next steps.
                     </CardHeader>
                     <div className="relative flex flex-col gap-6">
                         <ContentIconContainer

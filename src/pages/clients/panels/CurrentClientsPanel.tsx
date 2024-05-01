@@ -6,14 +6,16 @@ import CardHeader from "../../../components/layouts/CardHeader";
 import JpgExistingClientHub from "../../../../public/images/screenshots/client-hub.jpeg";
 import SvgAddressBookSolid from "../../../components/images/SvgAddressBookSolid";
 import SvgArrowUpRightFromSquareSolid from "../../../components/images/SvgArrowUpRightFromSquareSolid";
-import ButtonLink from "../../../components/buttons/ButtonLink";
+import ButtonLink from "../../../components/navigation/ButtonLink";
 import { ICON_SIZES } from "../../../components/images/icons/IconConfig";
 import SvgDevicesLight from "../../../components/images/icons/SvgDevicesLight";
 import SvgDevicesDark from "../../../components/images/icons/SvgDevicesDark";
 import { useContext } from "react";
-import { ThemeContext, THEMES } from "../../../contexts/ThemeContext";
+import { ThemeContext, THEMES } from "../../../components/contexts/ThemeContext";
+import StandardLink from "../../../components/navigation/StandardLink";
+import { renderToString } from "react-dom/server";
 
-const ExistingClientsPanel = () => {
+const CurrentClientsPanel = () => {
     const { theme, } = useContext(ThemeContext);
 
     return (
@@ -25,12 +27,12 @@ const ExistingClientsPanel = () => {
                         titleAlignment="Left"
                         childrenAlignment="Left"
                         childrenClassnames="tabpanel-text">
-                        For our current clients, the <span className="font-semibold">client hub</span> is a self-service, online platform that enables HAUS clients to approve quotes, check appointment details, pay invoices, print receipts, or request more work.
+                        For our current clients, the <StandardLink url="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" isExternalRoute={true} target="_blank"><span className="font-semibold">Client Hub</span></StandardLink> is a self-service, online platform that enables HAUS clients to approve quotes, check appointment details, pay invoices, print receipts, or request more work.
                     </CardHeader>
                     <div className="relative flex flex-col gap-6">
                         <ContentIconContainer
                             title="Convenient Tools..."
-                            description="The self serve client hub is available from your phone, tablet or desktop PC."
+                            description={renderToString(<>The self serve <StandardLink url="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" isExternalRoute={true} target="_blank"><span className="font-semibold">Client Hub</span></StandardLink> is available from your phone, tablet or desktop PC.</>)}
                             childrenClassnames="tabpanel-text">
                             {theme === THEMES.DARK ? <SvgDevicesDark width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} /> : <SvgDevicesLight width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} />}
                         </ContentIconContainer>
@@ -58,4 +60,4 @@ const ExistingClientsPanel = () => {
     )
 }
 
-export default ExistingClientsPanel
+export default CurrentClientsPanel

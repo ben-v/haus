@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { NavLinkProps } from '../../navigation/NavLinkProps';
+import { NavLinkProps } from './NavLinkProps';
 
 // export interface StandardLinkProps extends ExtendedNavLinkProps {
 //     children?: ReactNode;

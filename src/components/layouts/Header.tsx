@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { } from "@material-tailwind/react/theme/base/colors";
 
-import { ThemeContext, THEMES } from "../../contexts/ThemeContext";
+import { ThemeContext, THEMES } from "../contexts/ThemeContext";
 
 import SvgPhoneSolid from "../images/SvgPhoneSolid";
 import SvgArrowUpRightFromSquareSolid from "../images/SvgArrowUpRightFromSquareSolid";
@@ -16,8 +16,8 @@ import { Tooltip } from "react-tooltip";
 import Toggle from "react-toggle";
 import "react-toggle/style.css" // for ES6 modules
 import { ICON_SIZES } from "../images/icons/IconConfig";
-import { NavLinkGroup } from "../../navigation/NavLinkProps";
-import StandardLink from "../buttons/StandardLink";
+import { NavLinkGroup } from "../navigation/NavLinkProps";
+import StandardLink from "../navigation/StandardLink";
 
 const Header = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -25,7 +25,7 @@ const Header = () => {
   const navLinkGroup: NavLinkGroup = {
     links: [
       { url: "clients", children: "Clients", isExternalRoute: false },
-      // { url: "services", children: "Services" },
+      { url: "services", children: "Services", isExternalRoute: false },
       { url: "service-area", children: "Service Area", isExternalRoute: false },
       { url: "faqs", children: "FAQs", isExternalRoute: false },
       { url: "contact", children: "Contact", isExternalRoute: false },      

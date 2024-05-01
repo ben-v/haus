@@ -3,7 +3,7 @@ import ContentSectionContainer from '../containers/ContentSectionContainer'
 import GenericContentContainer from '../containers/GenericContentContainer'
 import SvgPersonOopsSign from '../images/stick-figures/SvgPersonOopsSign'
 import CardHeader from '../layouts/CardHeader'
-import ButtonLink from '../buttons/ButtonLink'
+import ButtonLink from '../navigation/ButtonLink'
 
 export interface GenericHttpErrorProps {
   title: string,
