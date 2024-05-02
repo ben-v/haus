@@ -1,5 +1,7 @@
-
+import { useEffect } from "react";
 import { Outlet, RouterProvider, createBrowserRouter, useLocation } from "react-router-dom"
+
+import toast from 'react-hot-toast';
 
 import Header from "./components/layouts/Header"
 import Footer from "./components/layouts/Footer"
@@ -16,7 +18,6 @@ import PrivacyPage from "./pages/privacy";
 import TermsPage from "./pages/terms";
 import CommonToastNotificationConfig from "./components/notifications/common-toast-notification-config";
 import PartnersPage from "./pages/partners";
-import { useEffect } from "react";
 
 // This hook is to fix the lack of support of scrolling to top of new page upon navigating to new page. 
 // There is ScrollRestoration in the ReactRouter, however, it does NOT work with nested routes, which have in this app.
@@ -112,6 +113,11 @@ const router = createBrowserRouter([
     ]
   }
 ]);
+
+router.subscribe(() => {
+  // Dismiss any lingering toast message.
+  toast.dismiss();
+})
 
 function App() {
   return <RouterProvider router={router} />;
