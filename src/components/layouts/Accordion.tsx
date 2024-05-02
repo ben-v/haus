@@ -1,7 +1,7 @@
 import { ReactNode, useRef, useState } from "react";
 import { ICON_SIZES } from "../images/icons/IconConfig";
-import SvgRightChevron from "../images/icons/SvgRightChevron";
 import StandardLink from "../navigation/StandardLink";
+import SvgChevronDownSolid from "../images/icons/SvgChevronDownSolid";
 
 export interface AccordionItem {
     title: string,
@@ -36,8 +36,8 @@ const Accordion = (props: AccordionProps) => {
                                 <StandardLink aria-controls={item.title} onClick={expandItemClickHandler} data-value={`${index}`}>
                                     <div className="flex w-full items-start justify-between py-2 expandable-container">
                                         <span className="body-text tabpanel-text w-full expandable-item-header">{item.title}</span>
-                                        <span className={`flex h-7 items-center expandable-item-header transform duration-300 ${currentExpandedItem === `${index}` ? "rotate-90" : "rotate-0"}`}>
-                                            <SvgRightChevron width={ICON_SIZES.sm.width} height={ICON_SIZES.sm.height} fill="currentColor" />
+                                        <span className={`flex h-7 items-center expandable-item-header transform duration-300 ${currentExpandedItem === `${index}` ? "rotate-180" : "rotate-0"}`}>
+                                            <SvgChevronDownSolid width={ICON_SIZES.sm.width} height={ICON_SIZES.sm.height} fill="currentColor" />
                                         </span>
                                     </div>
                                 </StandardLink>

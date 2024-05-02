@@ -1,4 +1,4 @@
-import SvgArrowUpRightFromSquareSolid from "../images/SvgArrowUpRightFromSquareSolid";
+import SvgArrowUpRightFromSquareSolid from "../images/icons/SvgArrowUpRightFromSquareSolid";
 import SvgLogo from "../images/SvgLogo";
 
 import { NavLinkGroup } from "../navigation/NavLinkProps";

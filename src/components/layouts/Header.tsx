@@ -3,12 +3,12 @@ import { } from "@material-tailwind/react/theme/base/colors";
 
 import { ThemeContext, THEMES } from "../contexts/ThemeContext";
 
-import SvgPhoneSolid from "../images/SvgPhoneSolid";
-import SvgArrowUpRightFromSquareSolid from "../images/SvgArrowUpRightFromSquareSolid";
-import SvgRectangleListSolid from "../images/SvgRectangleListSolid";
-import SvgAddressBookSolid from "../images/SvgAddressBookSolid";
-import SvgMoon from "../images/SvgMoon";
-import SvgSun from "../images/SvgSun";
+import SvgPhoneSolid from "../images/icons/SvgPhoneSolid";
+import SvgArrowUpRightFromSquareSolid from "../images/icons/SvgArrowUpRightFromSquareSolid";
+import SvgRectangleListSolid from "../images/icons/SvgRectangleListSolid";
+import SvgAddressBookSolid from "../images/icons/SvgAddressBookSolid";
+import SvgMoon from "../images/icons/SvgMoon";
+import SvgSun from "../images/icons/SvgSun";
 import SvgLogo from "../images/SvgLogo";
 
 import { Tooltip } from "react-tooltip";
