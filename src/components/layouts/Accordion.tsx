@@ -3,16 +3,16 @@ import { ICON_SIZES } from "../images/icons/IconConfig";
 import SvgRightChevron from "../images/icons/SvgRightChevron";
 import StandardLink from "../navigation/StandardLink";
 
-export interface AccordianItem {
+export interface AccordionItem {
     title: string,
     children: ReactNode
 }
 
-export interface AccordianProps {
-    items: AccordianItem[]
+export interface AccordionProps {
+    items: AccordionItem[]
 }
 
-const Accordian = (props: AccordianProps) => {
+const Accordion = (props: AccordionProps) => {
     const [currentExpandedItem, setCurrentExpandedItem] = useState<string | null>();
     let currentExpandedItemBodyRef = useRef<HTMLDivElement>(null);
 
@@ -61,4 +61,4 @@ const Accordian = (props: AccordianProps) => {
     )
 }
 
-export default Accordian;
+export default Accordion;
