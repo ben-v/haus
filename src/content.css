@@ -26,7 +26,10 @@ body,
 #navbar .nav-button,
 .tab-strip .tab-strip-header .tab-strip-header-tab,
 .app-tooltip-container .app-tooltip,
-.tabpanel-text
+.tabpanel-text,
+.expandable-item-header, 
+.expandable-item-detail,
+.body-link
 {
   font-family: "Urbanist";
   @apply !antialiased;
@@ -353,13 +356,13 @@ the App.tsx is hidden.  */
   @apply dark:!fill-primaryLight;
 }
 
-/* Expandable Item Styles */
 .expandable-item-header, .expandable-item-detail {
   @apply !text-gray-600;
   @apply dark:!text-gray-300;
 }
 
-.expandable-container:hover .expandable-item-header {
+.expandable-container:hover .expandable-item-header, 
+.body-link:hover {
   @apply !text-primary;
   @apply dark:!text-primaryLight;
   

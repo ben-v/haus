@@ -6,8 +6,8 @@ import resolveConfig from 'tailwindcss/resolveConfig';
 import { THEMES, ThemeContext } from "../contexts/ThemeContext";
 
 import RoundCornerContainer from '../containers/RoundCornerContainer';
-import SvgReviewAvatarTemplate from '../images/SvgReviewAvatarTemplate';
-import SvgArrowUpRightFromSquareSolid from '../images/SvgArrowUpRightFromSquareSolid';
+import SvgReviewAvatarTemplate from '../images/templates/SvgReviewAvatarTemplate';
+import SvgArrowUpRightFromSquareSolid from '../images/icons/SvgArrowUpRightFromSquareSolid';
 import withMaterialTailwind from '../../../tailwind.config';
 import { Config } from 'tailwindcss';
 import { ICON_SIZES } from '../images/icons/IconConfig';

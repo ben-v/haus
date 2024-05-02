@@ -5,8 +5,8 @@ import { THEMES, ThemeContext } from "../../../components/contexts/ThemeContext"
 import { useContext } from "react";
 import SocialLinksCard from "../../../components/common/SocalLinksCard";
 import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
-import SvgEmailSolid from "../../../components/images/SvgEmailSolid";
-import SvgPhoneSolid from "../../../components/images/SvgPhoneSolid";
+import SvgEmailSolid from "../../../components/images/icons/SvgEmailSolid";
+import SvgPhoneSolid from "../../../components/images/icons/SvgPhoneSolid";
 import CardHeader from "../../../components/layouts/CardHeader";
 import { ICON_SIZES } from "../../../components/images/icons/IconConfig";
 import colors from "@material-tailwind/react/theme/base/colors";
