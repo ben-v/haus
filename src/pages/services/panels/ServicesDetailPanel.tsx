@@ -9,12 +9,11 @@ import { ReactNode } from "react";
 
 const serviceData: { serviceGroup: string, serviceGroupDetails: string[] }[] = [
   {
-    serviceGroup: "​Carpentry & Doors",
+    serviceGroup: "General ​Carpentry",
     serviceGroupDetails: [
       "Fence & Gate Repair",
+      "Deck &Patio Repair",
       "Interior Woodwork, Trim, Baseboards, Handrails, etc.",
-      "Furniture Repair & Assembly",
-      "Locks & Latches, Bifold, Pocket, Sliding Door Repairs",
       "Closet Shelving All Types"
     ]
   },
@@ -39,8 +38,7 @@ const serviceData: { serviceGroup: string, serviceGroupDetails: string[] }[] = [
       "Medicine Cabinet Install",
       "Shower Curtain Rod Install",
       "Replace GFCI Outlets",
-      "Light Fixture Install & Replacement",
-      "Emergency Water Leak Mitigation"
+      "Light Fixture Install & Replacement"
     ]
   },
   {
@@ -72,8 +70,11 @@ const serviceData: { serviceGroup: string, serviceGroupDetails: string[] }[] = [
       "Smart Device Setup & Replacement",
       "System Updates",
       "Printer Setup & Troubleshooting",
+      "Network Setup & Troubleshooting",
       "Computer, Phone, Tablet Setup & Troubleshooting",
-      "Media Center Wiring Cleanup"
+      "Workspace Wiring Organization",
+      "Router Wiring Organization",
+      "Media Center Wiring Organization"
     ]
   },
   {
@@ -81,6 +82,7 @@ const serviceData: { serviceGroup: string, serviceGroupDetails: string[] }[] = [
     serviceGroupDetails: [
       "Prepping Rental/Vacation Home for the Coming Season",
       "Garage Storage & Organization",
+      "Furniture Repair & Assembly",
       "Smoke & Carbon Detectors",
       "Portable A/C or Window A/C Installs",
       "Pressure Washing",
