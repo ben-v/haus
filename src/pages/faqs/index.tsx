@@ -14,7 +14,7 @@ const tabData: TabTemplateProps[] = [
     children: <FaqsDetailPanel />
   },
   {
-    title: "Other Questions?",
+    title: "Questions?",
     key: "faqs-other",
     children: <FaqsDetailOtherPanel />
   },
