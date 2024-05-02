@@ -353,6 +353,21 @@ the App.tsx is hidden.  */
   @apply dark:!fill-primaryLight;
 }
 
+/* Expandable Item Styles */
+.expandable-item-header, .expandable-item-detail {
+  @apply !text-gray-600;
+  @apply dark:!text-gray-300;
+}
+
+.expandable-container:hover .expandable-item-header {
+  @apply !text-primary;
+  @apply dark:!text-primaryLight;
+  
+}
+.expandable-item-header {
+  @apply !font-semibold;
+}
+
 /* Tab Strip Styles */
 .tab-strip {
 }

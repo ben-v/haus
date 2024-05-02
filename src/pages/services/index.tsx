@@ -5,6 +5,7 @@ import TabStripTemplate, { TabTemplateProps } from '../../components/templates/T
 
 import SvgPersonWithList from "../../components/images/stick-figures/SvgPersonWithList";
 import ServicesDetailPanel from "./panels/ServicesDetailPanel";
+import ServicesDetailOtherPanel from "./panels/ServicesDetailOtherPanel";
 // import ServicesPricingModelPanel from "./panels/ServicesPricingModelPanel";
 
 const tabData: TabTemplateProps[] = [
@@ -18,6 +19,11 @@ const tabData: TabTemplateProps[] = [
   //   key: "services-pricing",
   //   children: <ServicesPricingModelPanel />
   // },
+  {
+    title: "Questions?",
+    key: "services-other",
+    children: <ServicesDetailOtherPanel />
+  },
 ];
 
 const ServicesPage = () => {
