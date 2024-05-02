@@ -32,7 +32,7 @@ const ServicesPage = () => {
       id="faqs"
       titlePartA="Our"
       titlePartB=" Services"
-      // description="Page summary goes here"
+      description="Our services cover a broad spectrum of needs, including furniture assembly, light fixture installation, and smart home device setup and troubleshooting. Whether you need help with  shelving, installing blinds, or ensuring your smart home devices are running smoothly, we have the expertise to assist you."
       >
       <ContentSectionContainer id="faqs-bodycontainer" flexDirection='RTL'>
         <ContentSectionContainer flexDirection="Center" containerClassNames="w-auto pb-6 md:pt-0 md:w-4/5 md:max-w-2xl">
