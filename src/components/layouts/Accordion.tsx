@@ -21,13 +21,9 @@ const Accordion = (props: AccordionProps) => {
 
         const value: string | null = e.currentTarget.getAttribute('data-value');
 
-        // If the value of the element initiating the event is the same of the current expanded item, just close it but setting current to null,
+        // If the value of the element initiating the event is the same of the current expanded item, just close it by setting current to null,
         // otherwise, open it, but setting current to new value.
-        if (value === currentExpandedItem) {
-            setCurrentExpandedItem(null);
-        } else {
-            setCurrentExpandedItem(value);
-        }
+        setCurrentExpandedItem(value === currentExpandedItem ? null : value);
     }
 
     return (
@@ -37,7 +33,7 @@ const Accordion = (props: AccordionProps) => {
                     <div>
                         <dl>
                             <dt>
-                                <StandardLink type="button" aria-controls={item.title} onClick={expandItemClickHandler} data-value={`${index}`}>
+                                <StandardLink aria-controls={item.title} onClick={expandItemClickHandler} data-value={`${index}`}>
                                     <div className="flex w-full items-start justify-between py-2 expandable-container">
                                         <span className="body-text tabpanel-text w-full expandable-item-header">{item.title}</span>
                                         <span className={`flex h-7 items-center expandable-item-header transform duration-300 ${currentExpandedItem === `${index}` ? "rotate-90" : "rotate-0"}`}>
