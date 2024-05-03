@@ -6,7 +6,7 @@ import TabStripTemplate, { TabTemplateProps } from '../../components/templates/T
 import SvgPersonWithList from "../../components/images/stick-figures/SvgPersonWithList";
 import ServicesDetailPanel from "./panels/ServicesDetailPanel";
 import ServicesDetailOtherPanel from "./panels/ServicesDetailOtherPanel";
-import ServicesPricingModelPanel from "./panels/ServicesPricingModelPanel";
+// import ServicesPricingModelPanel from "./panels/ServicesPricingModelPanel";
 
 const tabData: TabTemplateProps[] = [
   {
@@ -14,11 +14,11 @@ const tabData: TabTemplateProps[] = [
     key: "services-detail",
     children: <ServicesDetailPanel />
   },
-  {
-    title: "Pricing",
-    key: "services-pricing",
-    children: <ServicesPricingModelPanel />
-  },
+  // {
+  //   title: "Pricing",
+  //   key: "services-pricing",
+  //   children: <ServicesPricingModelPanel />
+  // },
   {
     title: "Questions?",
     key: "services-other",
@@ -32,7 +32,7 @@ const ServicesPage = () => {
       id="faqs"
       titlePartA="Our"
       titlePartB=" Services"
-      description="Our services cover a broad spectrum of needs, including furniture assembly, light fixture installation, and smart home device setup and troubleshooting. Whether you need help with  shelving, installing blinds, or ensuring your smart home devices are running smoothly, we have the expertise to assist you."
+      description="Our services cover a broad spectrum including furniture assembly, light fixture installation, and smart home device setup and troubleshooting. Whether you need help with shelving, installing blinds, or ensuring your smart home devices are running smoothly, we can help you."
       >
       <ContentSectionContainer id="faqs-bodycontainer" flexDirection='RTL'>
         <ContentSectionContainer flexDirection="Center" containerClassNames="w-auto pb-6 md:pt-0 md:w-4/5 md:max-w-2xl">
