@@ -1,6 +1,7 @@
 import emailjs from "@emailjs/browser";
 import { useContext, useState } from "react";
 import { THEMES, ThemeContext } from "../../../components/contexts/ThemeContext";
+import { Input, Textarea, ThemeProvider } from "@material-tailwind/react";
 
 import toast from 'react-hot-toast';
 import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
@@ -14,6 +15,85 @@ import StandardLink from "../../../components/navigation/StandardLink";
 
 const ContactFormPanel = () => {
     const { theme, } = useContext(ThemeContext);
+    const [isNameValidState, setIsNameValidState] = useState<boolean>(true);
+    const [isEmailValidState, setIsEmailValidState] = useState<boolean>(true);
+    const [isMessageValidState, setIsMessageValidState] = useState<boolean>(true);
+
+    // Override the input/textarea theme colors to match applications. Have to repurpose
+    // material's defined colors...can't add new ones.
+    const inputTheme = {
+        input: {
+            styles: {
+                variants: {
+                    standard: {
+                        colors: {
+                            input: {
+                                white: {
+                                    color: "!text-slate-100",
+                                    borderColor: "border-slate-100",
+                                    borderColorFocused: "focus:border-slate-100",
+                                  },                                
+                                  gray: {
+                                    color: "!text-slate-100",
+                                    borderColor: "border-slate-100",
+                                    borderColorFocused: "focus:border-slate-100",
+                                  }
+                            },
+                            label: {
+                                white: {
+                                    color: "!text-slate-100",
+                                    borderColor: "border-slate-100",
+                                    borderColorFocused: "focus:border-slate-100",
+                                  },     
+                                  gray: {
+                                    color: "!text-slate-100",
+                                    borderColor: "border-slate-100",
+                                    borderColorFocused: "focus:border-slate-100",
+                                  }
+                            } 
+                        }
+                    },
+                },
+            },
+        }
+    };
+
+    const textAreaTheme = {
+        textarea: {
+            styles: {
+                variants: {
+                    standard: {
+                        colors: {
+                            textarea: {
+                                white: {
+                                    color: "!text-slate-100",
+                                    borderColor: "border-slate-100",
+                                    borderColorFocused: "focus:border-slate-100",
+                                  },                                
+                                  gray: {
+                                    color: "!text-slate-100",
+                                    borderColor: "border-slate-100",
+                                    borderColorFocused: "focus:border-slate-100",
+                                  }
+                            },
+                            label: {
+                                white: {
+                                    color: "!text-slate-100",
+                                    borderColor: "border-slate-100",
+                                    borderColorFocused: "focus:border-slate-100",
+                                  },     
+                                  gray: {
+                                    color: "!text-slate-100",
+                                    borderColor: "border-slate-100",
+                                    borderColorFocused: "focus:border-slate-100",
+                                  }
+                            } 
+                        }
+                    },
+                },
+            },
+        }
+    };
 
     const [mailData, setMailData] = useState({
         name: "",
@@ -32,6 +112,10 @@ const ContactFormPanel = () => {
         if (name.length === 0 || email.length === 0 || message.length === 0) {
             toast.dismiss();
             toast.error("All fields are required. Please try again.")
+
+            setIsNameValidState(name.length > 0);
+            setIsEmailValidState(email.length > 0);
+            setIsMessageValidState(message.length > 0);
         } else {
             toast.promise(
                 emailjs
@@ -43,11 +127,19 @@ const ContactFormPanel = () => {
                     ), {
                 loading: "Sending message...",
                 success: (data) => {
+                    setIsNameValidState(true);
+                    setIsEmailValidState(true);
+                    setIsMessageValidState(true);
+
                     setMailData({ name: "", email: "", message: "" });
                     console.log('SEND MESSAGE SUCCESS!', data.status, data.text);
                     return "Message sent!";
                 },
                 error: (err) => {
+                    setIsNameValidState(true);
+                    setIsEmailValidState(true);
+                    setIsMessageValidState(true);
+
                     console.log('SEND MESSAGE FAILED...', err);
                     return "Send message failed! Please check fields and try again."
                 }
@@ -69,39 +161,56 @@ const ContactFormPanel = () => {
                     <div className="relative">
                         <div className="space-y-4">
                             <div>
-                                <label htmlFor="name" className="mb-2 block body-text tabpanel-text">Name <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
-                                <input
+                            <ThemeProvider value={inputTheme}>
+                                <Input
                                     id="name"
                                     name="name"
+                                    variant="standard"
+                                    label="Name"
+                                    color={theme == THEMES.DARK ? "white" : "blue-gray"}
+                                    required={true}
                                     maxLength={50}
                                     onChange={(e) => onChangeHandler(e)}
                                     value={name}
                                     type="text"
                                     autoComplete="off"
-                                    className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 body-text tabpanel-text transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
+                                    crossOrigin=""
+                                    error={!isNameValidState}/>
+                                </ThemeProvider>
                             </div>
                             <div>
-                                <label htmlFor="email" className="mb-2 block body-text tabpanel-text">Email <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
-                                <input
+                            <ThemeProvider value={inputTheme}>
+                                <Input
                                     id="email"
                                     name="email"
+                                    variant="standard"
+                                    label="Email"
+                                    color={theme == THEMES.DARK ? "white" : "blue-gray"}
+                                    required={true}
                                     maxLength={50}
                                     onChange={(e) => onChangeHandler(e)}
                                     value={email}
                                     type="email"
                                     autoComplete="off"
-                                    className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 body-text tabpanel-text transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
+                                    crossOrigin=""
+                                    error={!isEmailValidState}/>
+                                </ThemeProvider>
                             </div>
                             <div>
-                                <label htmlFor="message" className="mb-2 block body-text tabpanel-text">Message <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
-                                <textarea
+                            <ThemeProvider value={textAreaTheme}>
+                                <Textarea
                                     id="message"
                                     name="message"
+                                    variant="standard"
+                                    label="Message"
+                                    color={theme == THEMES.DARK ? "white" : "blue-gray"}
+                                    required={true}
                                     onChange={(e) => onChangeHandler(e)}
                                     value={message}
                                     defaultValue={""}
                                     maxLength={4000}
-                                    className="peer block h-28 w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 body-text tabpanel-text transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700"></textarea>
+                                    error={!isMessageValidState} />
+                            </ThemeProvider>
                             </div>
                         </div>
 
