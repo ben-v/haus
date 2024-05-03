@@ -21,7 +21,7 @@ const PageContainer = (props: PageContainerProps) => {
           highlightType={propsWithDefaults.highlightType}
           titleAlignment={propsWithDefaults.titleAlignment}
           descriptionAlignment={propsWithDefaults.descriptionAlignment} />
-        <ContentSectionContainer>
+        <ContentSectionContainer containerClassNames="min-h-[48px]">
           {propsWithDefaults.children}
         </ContentSectionContainer>
       </div>
