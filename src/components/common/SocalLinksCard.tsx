@@ -1,5 +1,5 @@
 
-import ContentSectionContainer from "../containers/ContentSectionContainer";
+// import ContentSectionContainer from "../containers/ContentSectionContainer";
 import { ICON_SIZES, IconSize } from "../images/icons/IconConfig";
 import SocialProfileLink, { SocialPlatforms } from "../navigation/SocialProfileLink";
 
@@ -18,14 +18,12 @@ const SocialLinksCard = (props: SocialLinksCardProps) => {
     };
 
     return (
-        <ContentSectionContainer flexDirection="Center">
-            <div className="relative inline-flex gap-3">
-                <SocialProfileLink platform={SocialPlatforms.GOOGLE} size={propsWithDefaults.size}  />
-                <SocialProfileLink platform={SocialPlatforms.FACEBOOK} size={propsWithDefaults.size}  />
-                <SocialProfileLink platform={SocialPlatforms.INSTAGRAM} size={propsWithDefaults.size}  />
-                <SocialProfileLink platform={SocialPlatforms.YELP} size={propsWithDefaults.size}  />
-            </div>
-        </ContentSectionContainer>
+        <div className="relative inline-flex gap-3">
+            <SocialProfileLink platform={SocialPlatforms.GOOGLE} size={propsWithDefaults.size} />
+            <SocialProfileLink platform={SocialPlatforms.FACEBOOK} size={propsWithDefaults.size} />
+            <SocialProfileLink platform={SocialPlatforms.INSTAGRAM} size={propsWithDefaults.size} />
+            <SocialProfileLink platform={SocialPlatforms.YELP} size={propsWithDefaults.size} />
+        </div>
     )
 }
 

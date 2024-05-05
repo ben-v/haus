@@ -3,6 +3,9 @@ import ContentSectionContainer from "../../components/containers/ContentSectionC
 
 import IntroSection from "./sections/IntroSection";
 import TestamonialsSection from "./sections/TestamonialsSection";
+import SocialLinksCard from "../../components/common/SocalLinksCard";
+import { ICON_SIZES } from "../../components/images/icons/IconConfig";
+import ContentSectionHeader from "../../components/layouts/ContentSectionHeader";
 
 const LandingPage = () => {
   return (
@@ -15,6 +18,14 @@ const LandingPage = () => {
       <ContentSectionContainer flexDirection="Center">
         <IntroSection />
         <TestamonialsSection />
+        <ContentSectionContainer flexDirection="Center">
+        <ContentSectionHeader
+          title="Find Us On"
+          titleAlignment="Center"
+          childrenAlignment="Center">
+            <SocialLinksCard size={ICON_SIZES.xl} />
+          </ContentSectionHeader>
+        </ContentSectionContainer>
       </ContentSectionContainer>
     </PageContainer>
   )
