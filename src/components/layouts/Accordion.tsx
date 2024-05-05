@@ -44,7 +44,10 @@ const Accordion = (props: AccordionProps) => {
                             </dt>
                             <dd>
                                 <div ref={currentExpandedItemBodyRef} className="block overflow-hidden duration-300 ease-in-out expandable-item-detail" style={{
-                                    maxHeight: currentExpandedItem === `${index}` ? `${currentExpandedItemBodyRef.current?.scrollHeight}px` : "0px"
+                                    // Not getting the right scrollHeight for a div (such as a faq)...and does not display entire content. 
+                                    // For now, comment out and use 'fit-content'; works but the east-in-out animation does not work.
+                                    // maxHeight: currentExpandedItem === `${index}` ? `${currentExpandedItemBodyRef.current?.scrollHeight}px` : "0px"
+                                    maxHeight: currentExpandedItem === `${index}` ? "fit-content" : "0px"
                                 }}>
                                     {item.children}
                                 </div>
