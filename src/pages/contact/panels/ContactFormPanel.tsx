@@ -11,7 +11,7 @@ import SvgPaperPlaneSolid from "../../../components/images/icons/SvgPaperPlaneSo
 import ButtonLink from "../../../components/navigation/ButtonLink";
 import CardHeader from "../../../components/layouts/CardHeader";
 import StandardLink from "../../../components/navigation/StandardLink";
-import { Input } from "@material-tailwind/react";
+import { Input, Textarea } from "@material-tailwind/react";
 
 const ContactFormPanel = () => {
     const { theme, } = useContext(ThemeContext);
@@ -70,7 +70,20 @@ const ContactFormPanel = () => {
                     <div className="relative">
                         <div className="space-y-4">
                             <div>
-                                <Input id="name" name="name" maxLength={50} autoComplete="off" variant="standard" label="Name" placeholder="Name" size="md" required={true} shrink={true} crossOrigin={undefined}/>
+                                <Input 
+                                    id="name" 
+                                    name="name" 
+                                    maxLength={50} 
+                                    autoComplete="off" 
+                                    variant="standard" 
+                                    label="Name" 
+                                    // placeholder="Name" 
+                                    onChange={(e) => onChangeHandler(e)}
+                                    value={name}
+                                    size="md" 
+                                    type="text"
+                                    required={true} 
+                                    crossOrigin={undefined}/>
 {/*                                 
                                 <label htmlFor="name" className="mb-2 block body-text tabpanel-text">Name <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
                                 <input
@@ -84,7 +97,22 @@ const ContactFormPanel = () => {
                                     className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 body-text tabpanel-text transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" /> */}
                             </div>
                             <div>
-                                <label htmlFor="email" className="mb-2 block body-text tabpanel-text">Email <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
+                            <Input 
+                                    id="email" 
+                                    name="email" 
+                                    maxLength={50} 
+                                    autoComplete="off" 
+                                    variant="standard" 
+                                    label="Email" 
+                                    // placeholder="Email" 
+                                    onChange={(e) => onChangeHandler(e)}
+                                    value={email}
+                                    size="md" 
+                                    type="email"
+                                    required={true} 
+                                    crossOrigin={undefined}/>
+
+                                {/* <label htmlFor="email" className="mb-2 block body-text tabpanel-text">Email <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
                                 <input
                                     id="email"
                                     name="email"
@@ -93,10 +121,22 @@ const ContactFormPanel = () => {
                                     value={email}
                                     type="email"
                                     autoComplete="off"
-                                    className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 body-text tabpanel-text transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
+                                    className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 body-text tabpanel-text transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" /> */}
                             </div>
                             <div>
-                                <label htmlFor="message" className="mb-2 block body-text tabpanel-text">Message <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
+                                <Textarea 
+                                    id="message" 
+                                    name="message" 
+                                    maxLength={50} 
+                                    autoComplete="off" 
+                                    variant="standard" 
+                                    label="Message" 
+                                    onChange={(e) => onChangeHandler(e)}
+                                    value={message}
+                                    // placeholder="Message" 
+                                    size="md" 
+                                    required={true} />
+                                {/* <label htmlFor="message" className="mb-2 block body-text tabpanel-text">Message <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
                                 <textarea
                                     id="message"
                                     name="message"
@@ -104,7 +144,7 @@ const ContactFormPanel = () => {
                                     value={message}
                                     defaultValue={""}
                                     maxLength={4000}
-                                    className="peer block h-28 w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 body-text tabpanel-text transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700"></textarea>
+                                    className="peer block h-28 w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 body-text tabpanel-text transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700"></textarea> */}
                             </div>
                         </div>
 
