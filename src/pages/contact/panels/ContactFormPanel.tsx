@@ -11,6 +11,8 @@ import SvgPaperPlaneSolid from "../../../components/images/icons/SvgPaperPlaneSo
 import ButtonLink from "../../../components/navigation/ButtonLink";
 import CardHeader from "../../../components/layouts/CardHeader";
 import StandardLink from "../../../components/navigation/StandardLink";
+import { Input, Textarea } from "@material-tailwind/react";
+import { ThemeProvider } from "@material-tailwind/react";
 
 const ContactFormPanel = () => {
     const { theme, } = useContext(ThemeContext);
@@ -20,6 +22,42 @@ const ContactFormPanel = () => {
         email: "",
         message: "",
     });
+
+    const inputTheme = {
+        input: {
+            styles: {
+                variants: {
+                    standard: {
+                        base: {
+                            input: {
+                                // The border by default is rounded, and on iPhone appears, whereas on desktop, even in emulator, 
+                                // appears correct. Force to be a square edge input using theme.
+                                borderWidth: "border-b !rounded-none"
+                            }
+                        }
+                    }
+                },
+            },
+        }
+    };
+
+    const textareaTheme = {
+        textarea: {
+            styles: {
+                variants: {
+                    standard: {
+                        base: {
+                            textarea: {
+                                // The border by default is rounded, and on iPhone appears, whereas on desktop, even in emulator, 
+                                // appears correct. Force to be a square edge textarea using theme.
+                                borderWidth: "border-b !rounded-none"
+                            }
+                        }
+                    }
+                },
+            },
+        }
+    };    
 
     const { name, email, message } = mailData;
     const onChangeHandler = (e: any) => setMailData({ ...mailData, [e.currentTarget.name]: e.currentTarget.value });
@@ -64,44 +102,58 @@ const ContactFormPanel = () => {
     return (
         <ContentSectionContainer flexDirection="Center">
             <RoundCornerContainer id="contact-panel" padding="Small" containerClassNames="w-full" bodyClassNames="gap-4">
-            <CardHeader title="What's on your mind?" titleAlignment="Left" />
-                <form onSubmit={onSubmitHandler} className="w-auto" autoComplete="off">
+                <CardHeader title="What's on your mind?" titleAlignment="Left" />
+                <form onSubmit={onSubmitHandler} className="w-auto round" autoComplete="off">
                     <div className="relative">
                         <div className="space-y-4">
                             <div>
-                                <label htmlFor="name" className="mb-2 block body-text tabpanel-text">Name <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
-                                <input
-                                    id="name"
-                                    name="name"
-                                    maxLength={50}
-                                    onChange={(e) => onChangeHandler(e)}
-                                    value={name}
-                                    type="text"
-                                    autoComplete="off"
-                                    className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 body-text tabpanel-text transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
+                                <ThemeProvider value={inputTheme}>
+                                    <Input
+                                        id="name"
+                                        name="name"
+                                        maxLength={50}
+                                        autoComplete="off"
+                                        variant="standard"
+                                        label="Name"
+                                        onChange={(e) => onChangeHandler(e)}
+                                        value={name}
+                                        size="md"
+                                        type="text"
+                                        required={true}
+                                        crossOrigin={undefined} />
+                                </ThemeProvider>
                             </div>
                             <div>
-                                <label htmlFor="email" className="mb-2 block body-text tabpanel-text">Email <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
-                                <input
-                                    id="email"
-                                    name="email"
-                                    maxLength={50}
-                                    onChange={(e) => onChangeHandler(e)}
-                                    value={email}
-                                    type="email"
-                                    autoComplete="off"
-                                    className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 body-text tabpanel-text transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
+                                <ThemeProvider value={inputTheme}>
+                                    <Input
+                                        id="email"
+                                        name="email"
+                                        maxLength={50}
+                                        autoComplete="off"
+                                        variant="standard"
+                                        label="Email"
+                                        onChange={(e) => onChangeHandler(e)}
+                                        value={email}
+                                        size="md"
+                                        type="email"
+                                        required={true}
+                                        crossOrigin={undefined} />
+                                </ThemeProvider>
                             </div>
                             <div>
-                                <label htmlFor="message" className="mb-2 block body-text tabpanel-text">Message <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
-                                <textarea
-                                    id="message"
-                                    name="message"
-                                    onChange={(e) => onChangeHandler(e)}
-                                    value={message}
-                                    defaultValue={""}
-                                    maxLength={4000}
-                                    className="peer block h-28 w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 body-text tabpanel-text transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700"></textarea>
+                                <ThemeProvider value={textareaTheme}>
+                                    <Textarea
+                                        id="message"
+                                        name="message"
+                                        maxLength={4000}
+                                        autoComplete="off"
+                                        variant="standard"
+                                        label="Message"
+                                        onChange={(e) => onChangeHandler(e)}
+                                        value={message}
+                                        size="md"
+                                        required={true} />
+                                </ThemeProvider>
                             </div>
                         </div>
 
@@ -109,7 +161,7 @@ const ContactFormPanel = () => {
 
                         <ButtonLink type="submit" prefixIcon={<SvgPaperPlaneSolid />} prefixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"}>Send Message</ButtonLink>
                     </div>
-                </form>              
+                </form>
             </RoundCornerContainer>
         </ContentSectionContainer>
     )
