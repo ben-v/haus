@@ -14,7 +14,8 @@ const faqData: { question: string, answers: ReactNode[] }[] = [
   {
     question: "What forms of payment do you accept?",
     answers: [
-      <>All major credit cards, Apple Pay, Google Pay and ACH bank payments can be used through the <StandardLink url="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" isExternalRoute={true} target="_blank"><span className="font-semibold body-link">Client Hub</span></StandardLink>. We also accept cash and Venmo payments.</>
+      <>All major credit cards, Apple Pay, Google Pay and ACH bank payments can be used through the <StandardLink url="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" isExternalRoute={true} target="_blank"><span className="font-semibold body-link">Client Hub</span></StandardLink>.</>,
+      "We also accept cash and Venmo payments."
     ]
   },
   {
