@@ -34,7 +34,7 @@ const Accordion = (props: AccordionProps) => {
                         <dl>
                             <dt>
                                 <StandardLink aria-controls={item.title} onClick={expandItemClickHandler} data-value={`${index}`}>
-                                    <div className="flex w-full items-start justify-between py-2 expandable-container">
+                                    <div className="flex w-full items-start justify-between py-1 expandable-container">
                                         <span className="body-text tabpanel-text w-full expandable-item-header">{item.title}</span>
                                         <span className={`flex h-7 items-center expandable-item-header transform duration-300 ${currentExpandedItem === `${index}` ? "rotate-180" : "rotate-0"}`}>
                                             <SvgChevronDownSolid width={ICON_SIZES.sm.width} height={ICON_SIZES.sm.height} fill="currentColor" />
