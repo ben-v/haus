@@ -49,7 +49,7 @@ const ContactFormPanel = () => {
                         base: {
                             textarea: {
                                 // The border by default is rounded, and on iPhone appears, whereas on desktop, even in emulator, 
-                                // appears correct. Force to be a square edge input using theme.
+                                // appears correct. Force to be a square edge textarea using theme.
                                 borderWidth: "border-b !rounded-none"
                             }
                         }
