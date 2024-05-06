@@ -75,26 +75,14 @@ const ContactFormPanel = () => {
                                     name="name" 
                                     maxLength={50} 
                                     autoComplete="off" 
-                                    variant="outlined" 
+                                    variant="standard" 
                                     label="Name" 
-                                    // placeholder="Name" 
                                     onChange={(e) => onChangeHandler(e)}
                                     value={name}
                                     size="md" 
                                     type="text"
                                     required={true} 
                                     crossOrigin={undefined}/>
-{/*                                 
-                                <label htmlFor="name" className="mb-2 block body-text tabpanel-text">Name <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
-                                <input
-                                    id="name"
-                                    name="name"
-                                    maxLength={50}
-                                    onChange={(e) => onChangeHandler(e)}
-                                    value={name}
-                                    type="text"
-                                    autoComplete="off"
-                                    className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 body-text tabpanel-text transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" /> */}
                             </div>
                             <div>
                             <Input 
@@ -102,49 +90,27 @@ const ContactFormPanel = () => {
                                     name="email" 
                                     maxLength={50} 
                                     autoComplete="off" 
-                                    variant="outlined" 
+                                    variant="standard" 
                                     label="Email" 
-                                    // placeholder="Email" 
                                     onChange={(e) => onChangeHandler(e)}
                                     value={email}
                                     size="md" 
                                     type="email"
                                     required={true} 
                                     crossOrigin={undefined}/>
-
-                                {/* <label htmlFor="email" className="mb-2 block body-text tabpanel-text">Email <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
-                                <input
-                                    id="email"
-                                    name="email"
-                                    maxLength={50}
-                                    onChange={(e) => onChangeHandler(e)}
-                                    value={email}
-                                    type="email"
-                                    autoComplete="off"
-                                    className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 body-text tabpanel-text transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" /> */}
                             </div>
                             <div>
                                 <Textarea 
                                     id="message" 
                                     name="message" 
-                                    maxLength={50} 
+                                    maxLength={4000} 
                                     autoComplete="off" 
-                                    variant="outlined" 
+                                    variant="standard" 
                                     label="Message" 
                                     onChange={(e) => onChangeHandler(e)}
                                     value={message}
-                                    // placeholder="Message" 
                                     size="md" 
                                     required={true} />
-                                {/* <label htmlFor="message" className="mb-2 block body-text tabpanel-text">Message <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
-                                <textarea
-                                    id="message"
-                                    name="message"
-                                    onChange={(e) => onChangeHandler(e)}
-                                    value={message}
-                                    defaultValue={""}
-                                    maxLength={4000}
-                                    className="peer block h-28 w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 body-text tabpanel-text transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700"></textarea> */}
                             </div>
                         </div>
 
