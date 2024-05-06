@@ -30,6 +30,8 @@ const ContactFormPanel = () => {
                     standard: {
                         base: {
                             input: {
+                                // The border by default is rounded, and on iPhone appears, whereas on desktop, even in emulator, 
+                                // appears correct. Force to be a square edge input using theme.
                                 borderWidth: "border-b !rounded-none"
                             }
                         }
@@ -104,32 +106,36 @@ const ContactFormPanel = () => {
                                 </ThemeProvider>
                             </div>
                             <div>
-                                <Input
-                                    id="email"
-                                    name="email"
-                                    maxLength={50}
-                                    autoComplete="off"
-                                    variant="standard"
-                                    label="Email"
-                                    onChange={(e) => onChangeHandler(e)}
-                                    value={email}
-                                    size="md"
-                                    type="email"
-                                    required={true}
-                                    crossOrigin={undefined} />
+                                <ThemeProvider value={inputTheme}>
+                                    <Input
+                                        id="email"
+                                        name="email"
+                                        maxLength={50}
+                                        autoComplete="off"
+                                        variant="standard"
+                                        label="Email"
+                                        onChange={(e) => onChangeHandler(e)}
+                                        value={email}
+                                        size="md"
+                                        type="email"
+                                        required={true}
+                                        crossOrigin={undefined} />
+                                </ThemeProvider>
                             </div>
                             <div>
-                                <Textarea
-                                    id="message"
-                                    name="message"
-                                    maxLength={4000}
-                                    autoComplete="off"
-                                    variant="standard"
-                                    label="Message"
-                                    onChange={(e) => onChangeHandler(e)}
-                                    value={message}
-                                    size="md"
-                                    required={true} />
+                                <ThemeProvider value={inputTheme}>
+                                    <Textarea
+                                        id="message"
+                                        name="message"
+                                        maxLength={4000}
+                                        autoComplete="off"
+                                        variant="standard"
+                                        label="Message"
+                                        onChange={(e) => onChangeHandler(e)}
+                                        value={message}
+                                        size="md"
+                                        required={true} />
+                                </ThemeProvider>
                             </div>
                         </div>
 
