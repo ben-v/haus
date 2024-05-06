@@ -75,7 +75,7 @@ const ContactFormPanel = () => {
                                     name="name" 
                                     maxLength={50} 
                                     autoComplete="off" 
-                                    variant="standard" 
+                                    variant="outlined" 
                                     label="Name" 
                                     // placeholder="Name" 
                                     onChange={(e) => onChangeHandler(e)}
@@ -102,7 +102,7 @@ const ContactFormPanel = () => {
                                     name="email" 
                                     maxLength={50} 
                                     autoComplete="off" 
-                                    variant="standard" 
+                                    variant="outlined" 
                                     label="Email" 
                                     // placeholder="Email" 
                                     onChange={(e) => onChangeHandler(e)}
@@ -129,7 +129,7 @@ const ContactFormPanel = () => {
                                     name="message" 
                                     maxLength={50} 
                                     autoComplete="off" 
-                                    variant="standard" 
+                                    variant="outlined" 
                                     label="Message" 
                                     onChange={(e) => onChangeHandler(e)}
                                     value={message}
