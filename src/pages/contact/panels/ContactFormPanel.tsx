@@ -11,6 +11,7 @@ import SvgPaperPlaneSolid from "../../../components/images/icons/SvgPaperPlaneSo
 import ButtonLink from "../../../components/navigation/ButtonLink";
 import CardHeader from "../../../components/layouts/CardHeader";
 import StandardLink from "../../../components/navigation/StandardLink";
+import { Input } from "@material-tailwind/react";
 
 const ContactFormPanel = () => {
     const { theme, } = useContext(ThemeContext);
@@ -69,6 +70,8 @@ const ContactFormPanel = () => {
                     <div className="relative">
                         <div className="space-y-4">
                             <div>
+                                <Input id="name" name="name" maxLength={50} autoComplete="off" variant="standard" label="Name" placeholder="Name" required={true} shrink={true} crossOrigin={undefined}/>
+{/*                                 
                                 <label htmlFor="name" className="mb-2 block body-text tabpanel-text">Name <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
                                 <input
                                     id="name"
@@ -78,7 +81,7 @@ const ContactFormPanel = () => {
                                     value={name}
                                     type="text"
                                     autoComplete="off"
-                                    className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 body-text tabpanel-text transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" />
+                                    className="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 body-text tabpanel-text transition-shadow duration-300 invalid:ring-2 invalid:ring-red-400 focus:ring-2 dark:border-gray-700" /> */}
                             </div>
                             <div>
                                 <label htmlFor="email" className="mb-2 block body-text tabpanel-text">Email <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
