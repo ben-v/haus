@@ -70,7 +70,7 @@ const ContactFormPanel = () => {
                     <div className="relative">
                         <div className="space-y-4">
                             <div>
-                                <Input id="name" name="name" maxLength={50} autoComplete="off" variant="standard" label="Name" placeholder="Name" size="lg" required={true} shrink={true} crossOrigin={undefined}/>
+                                <Input id="name" name="name" maxLength={50} autoComplete="off" variant="standard" label="Name" placeholder="Name" size="md" required={true} shrink={true} crossOrigin={undefined}/>
 {/*                                 
                                 <label htmlFor="name" className="mb-2 block body-text tabpanel-text">Name <span className="text-xl text-red-500 dark:text-red-400">*</span></label>
                                 <input
