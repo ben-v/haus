@@ -14,29 +14,29 @@ const faqData: { question: string, answers: ReactNode[] }[] = [
   {
     question: "What forms of payment do you accept?",
     answers: [
-      <>All major credit cards, Apple Pay, Google Pay and ACH bank payments can be used through the <StandardLink url="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" isExternalRoute={true} target="_blank"><span className="font-semibold body-link">Client Hub</span></StandardLink>.</>,
-      "We also accept cash and Venmo payments."
+      <>Major credit cards, Apple Pay, Google Pay, and ACH bank payments can be used through the <StandardLink url="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" isExternalRoute={true} target="_blank"><span className="font-semibold body-link">Client Hub</span></StandardLink>.</>,
+      <>Cash and Venmo payments are also accepted but are processed outside of the <StandardLink url="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" isExternalRoute={true} target="_blank"><span className="font-semibold body-link">Client Hub</span></StandardLink>.</>
     ]
   },
   {
     question: "Are you Available for Emergencies?",
     answers: [
-      "Yes, for existing customers on a case-by-case basis.", 
-      "Emergencies in the Bozeman, Belgrade, and Gallatin Gateway city/community limits, have a trip fee of $250 and an hourly rate of $150, plus materials, with a two hour minimum.",
+      "For existing customers, emergency services are provided on a case-by-case basis.", 
+      "For emergencies in the Bozeman, Belgrade, and Gallatin Gateway city/community limits, there is a trip fee of $250, an hourly rate of $150 (plus materials), with a two hour minimum.",
       "Emergencies outside the Bozeman, Belgrade, and Gallatin Gateway city/community limits are addressed on a case-by-case basis and with a scaling trip fee, hourly rate and minimum number of hours."
     ]
   },
   {
     question: "What if I want to cancel or reschedule my appointment?",
     answers: [
-      "Cancellation and/or rescheduling of an appointment must be done 24 hours in advance in order to avoid a cancellation fee.",
-      "If cancellation is done with less than 24 hours notice, a cancellation fee equavalent to the trip fee associated with the cancelled appointment will be charged to the credit card on file."
+      "To cancel or reschedule an appointment, please provide at least 24 hours' notice to avoid a cancellation fee.",
+      "If cancellation occurs with less than 24 hours' notice, a cancellation fee equivalent to the trip fee associated with the appointment will be charged to the credit card on file."
     ]
   },
   {
     question: "What if I forget about my appointment?",
     answers: [
-      "In the event a client is not at the designated address at the time of the appointment, we will wait fifteen (15) minutes on site before assuming the appointment has been canceled and a cancellation fee will be charged."
+      "If a client is not present at the designated address at the appointment time, we will wait fifteen (15) minutes on site. After this time, if the client has not arrived, the appointment will be considered canceled and a cancellation fee will be charged."
     ]
   }
 ];
