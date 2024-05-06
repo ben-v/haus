@@ -12,6 +12,7 @@ import ButtonLink from "../../../components/navigation/ButtonLink";
 import CardHeader from "../../../components/layouts/CardHeader";
 import StandardLink from "../../../components/navigation/StandardLink";
 import { Input, Textarea } from "@material-tailwind/react";
+import { ThemeProvider } from "@material-tailwind/react";
 
 const ContactFormPanel = () => {
     const { theme, } = useContext(ThemeContext);
@@ -21,6 +22,22 @@ const ContactFormPanel = () => {
         email: "",
         message: "",
     });
+
+    const inputTheme = {
+        input: {
+            styles: {
+                variants: {
+                    standard: {
+                        base: {
+                            input: {
+                                borderWidth: "border-b !rounded-none"
+                            }
+                        }
+                    }
+                },
+            },
+        }
+    };
 
     const { name, email, message } = mailData;
     const onChangeHandler = (e: any) => setMailData({ ...mailData, [e.currentTarget.name]: e.currentTarget.value });
@@ -65,51 +82,53 @@ const ContactFormPanel = () => {
     return (
         <ContentSectionContainer flexDirection="Center">
             <RoundCornerContainer id="contact-panel" padding="Small" containerClassNames="w-full" bodyClassNames="gap-4">
-            <CardHeader title="What's on your mind?" titleAlignment="Left" />
-                <form onSubmit={onSubmitHandler} className="w-auto" autoComplete="off">
+                <CardHeader title="What's on your mind?" titleAlignment="Left" />
+                <form onSubmit={onSubmitHandler} className="w-auto round" autoComplete="off">
                     <div className="relative">
                         <div className="space-y-4">
                             <div>
-                                <Input 
-                                    id="name" 
-                                    name="name" 
-                                    maxLength={50} 
-                                    autoComplete="off" 
-                                    variant="standard" 
-                                    label="Name" 
-                                    onChange={(e) => onChangeHandler(e)}
-                                    value={name}
-                                    size="md" 
-                                    type="text"
-                                    required={true} 
-                                    crossOrigin={undefined}/>
+                                <ThemeProvider value={inputTheme}>
+                                    <Input
+                                        id="name"
+                                        name="name"
+                                        maxLength={50}
+                                        autoComplete="off"
+                                        variant="standard"
+                                        label="Name"
+                                        onChange={(e) => onChangeHandler(e)}
+                                        value={name}
+                                        size="md"
+                                        type="text"
+                                        required={true}
+                                        crossOrigin={undefined} />
+                                </ThemeProvider>
                             </div>
                             <div>
-                            <Input 
-                                    id="email" 
-                                    name="email" 
-                                    maxLength={50} 
-                                    autoComplete="off" 
-                                    variant="standard" 
-                                    label="Email" 
+                                <Input
+                                    id="email"
+                                    name="email"
+                                    maxLength={50}
+                                    autoComplete="off"
+                                    variant="standard"
+                                    label="Email"
                                     onChange={(e) => onChangeHandler(e)}
                                     value={email}
-                                    size="md" 
+                                    size="md"
                                     type="email"
-                                    required={true} 
-                                    crossOrigin={undefined}/>
+                                    required={true}
+                                    crossOrigin={undefined} />
                             </div>
                             <div>
-                                <Textarea 
-                                    id="message" 
-                                    name="message" 
-                                    maxLength={4000} 
-                                    autoComplete="off" 
-                                    variant="standard" 
-                                    label="Message" 
+                                <Textarea
+                                    id="message"
+                                    name="message"
+                                    maxLength={4000}
+                                    autoComplete="off"
+                                    variant="standard"
+                                    label="Message"
                                     onChange={(e) => onChangeHandler(e)}
                                     value={message}
-                                    size="md" 
+                                    size="md"
                                     required={true} />
                             </div>
                         </div>
@@ -118,7 +137,7 @@ const ContactFormPanel = () => {
 
                         <ButtonLink type="submit" prefixIcon={<SvgPaperPlaneSolid />} prefixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"}>Send Message</ButtonLink>
                     </div>
-                </form>              
+                </form>
             </RoundCornerContainer>
         </ContentSectionContainer>
     )
