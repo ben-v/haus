@@ -41,6 +41,24 @@ const ContactFormPanel = () => {
         }
     };
 
+    const textareaTheme = {
+        textarea: {
+            styles: {
+                variants: {
+                    standard: {
+                        base: {
+                            input: {
+                                // The border by default is rounded, and on iPhone appears, whereas on desktop, even in emulator, 
+                                // appears correct. Force to be a square edge input using theme.
+                                borderWidth: "border-b !rounded-none"
+                            }
+                        }
+                    }
+                },
+            },
+        }
+    };    
+
     const { name, email, message } = mailData;
     const onChangeHandler = (e: any) => setMailData({ ...mailData, [e.currentTarget.name]: e.currentTarget.value });
     const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
@@ -123,7 +141,7 @@ const ContactFormPanel = () => {
                                 </ThemeProvider>
                             </div>
                             <div>
-                                <ThemeProvider value={inputTheme}>
+                                <ThemeProvider value={textareaTheme}>
                                     <Textarea
                                         id="message"
                                         name="message"
