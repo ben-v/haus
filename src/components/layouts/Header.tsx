@@ -103,7 +103,7 @@ const Header = () => {
                           </span>
                         </div>
                         <div className="pl-2">
-                          <SvgArrowUpRightFromSquareSolid width={10} height={10} className="relative m-auto" />
+                          <SvgArrowUpRightFromSquareSolid width={ICON_SIZES["2xs"].width} height={ICON_SIZES["2xs"].height} className="relative m-auto" />
                         </div>
                       </div>
                     </a>

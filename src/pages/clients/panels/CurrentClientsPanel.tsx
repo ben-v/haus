@@ -43,7 +43,7 @@ const CurrentClientsPanel = () => {
                             isExternalRoute={true}
                             prefixIcon={<SvgAddressBookSolid />}
                             suffixIcon={<SvgArrowUpRightFromSquareSolid />}
-                            suffixIconSize={ICON_SIZES.xs}
+                            suffixIconSize={ICON_SIZES["2xs"]}
                             prefixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"}
                             suffixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"}>Client Hub</ButtonLink>
                     </div>
