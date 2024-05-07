@@ -35,7 +35,7 @@ const ContactFormPanel = () => {
                     label: {
                         color: `peer-placeholder-shown:${theme === THEMES.DARK ? "text-slate-100" : "text-slate-700"}`
                     }
-                },                
+                },
                 variants: {
                     standard: {
                         base: {
@@ -47,9 +47,25 @@ const ContactFormPanel = () => {
                                 borderColor: `placeholder-shown:${theme === THEMES.DARK ? "border-slate-100" : "border-slate-700"}`
                             },
                             label: {
-                                fontFamily: "Urbanist"
+                                fontFamily: "Urbanist",
+                                fontSize: "peer-placeholder-shown:text-base",
+                                floated: {
+                                    fontSize: "text-[14px] peer-focus:text-[14px]",
+                                },
                             }
-                        },                        
+                        },
+                        sizes: {
+                            md: {
+                                input: {
+                                    fontSize: "text-base",
+                                }
+                            },
+                            lg: {
+                                input: {
+                                    fontSize: "text-base",
+                                }
+                            }
+                        },
                         colors: {
                             input: {
                                 gray: {
@@ -84,21 +100,37 @@ const ContactFormPanel = () => {
                     label: {
                         color: `peer-placeholder-shown:${theme === THEMES.DARK ? "text-slate-100" : "text-slate-700"}`
                     }
-                },                
+                },
                 variants: {
                     standard: {
                         base: {
                             textarea: {
                                 color: theme === THEMES.DARK ? "!text-slate-100" : "!text-slate-700",
                                 // The border by default is rounded, and on iPhone appears, whereas on desktop, even in emulator, 
-                                // appears correct. Force to be a square edge input using theme.
+                                // appears correct. Force to be a square edge input using theme provider.
                                 borderWidth: "border-b !rounded-none",
                                 borderColor: `placeholder-shown:${theme === THEMES.DARK ? "border-slate-100" : "border-slate-700"}`
                             },
                             label: {
-                                fontFamily: "Urbanist"
+                                fontFamily: "Urbanist",
+                                fontSize: "peer-placeholder-shown:text-base",
+                                floated: {
+                                    fontSize: "text-[14px] peer-focus:text-[14px]",
+                                },
                             }
-                        },                        
+                        },
+                        sizes: {
+                            md: {
+                                textarea: {
+                                    fontSize: "text-base",
+                                }
+                            },
+                            lg: {
+                                textarea: {
+                                    fontSize: "text-base",
+                                }
+                            }
+                        },
                         colors: {
                             textarea: {
                                 gray: {
@@ -189,20 +221,20 @@ const ContactFormPanel = () => {
                             </div>
                             <div>
                                 <ThemeProvider value={inputTheme}>
-                                <Input
-                                    id="email"
-                                    name="email"
-                                    maxLength={50}
-                                    autoComplete="off"
-                                    variant="standard"
-                                    label="Email"
-                                    onChange={(e) => onChangeHandler(e)}
-                                    value={email}
-                                    size="lg"
-                                    type="email"
-                                    // color="gray"
-                                    required={true}
-                                    crossOrigin={undefined} />
+                                    <Input
+                                        id="email"
+                                        name="email"
+                                        maxLength={50}
+                                        autoComplete="off"
+                                        variant="standard"
+                                        label="Email"
+                                        onChange={(e) => onChangeHandler(e)}
+                                        value={email}
+                                        size="lg"
+                                        type="email"
+                                        // color="gray"
+                                        required={true}
+                                        crossOrigin={undefined} />
                                 </ThemeProvider>
                             </div>
                             <div>
