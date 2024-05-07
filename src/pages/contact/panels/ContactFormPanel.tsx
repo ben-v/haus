@@ -180,7 +180,7 @@ const ContactFormPanel = () => {
                                         label="Name"
                                         onChange={(e) => onChangeHandler(e)}
                                         value={name}
-                                        size="md"
+                                        size="lg"
                                         type="text"
                                         color="gray"
                                         required={true}
@@ -198,7 +198,7 @@ const ContactFormPanel = () => {
                                     label="Email"
                                     onChange={(e) => onChangeHandler(e)}
                                     value={email}
-                                    size="md"
+                                    size="lg"
                                     type="email"
                                     // color="gray"
                                     required={true}
@@ -217,7 +217,7 @@ const ContactFormPanel = () => {
                                         onChange={(e) => onChangeHandler(e)}
                                         value={message}
                                         color="gray"
-                                        size="md"
+                                        size="lg"
                                         required={true} />
                                 </ThemeProvider>
                             </div>
