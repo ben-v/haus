@@ -70,7 +70,7 @@ const Footer = () => {
                               <div>
                                 {link.children}
                               </div>
-                              {link.target === "_blank" ? <div className="pl-2"><SvgArrowUpRightFromSquareSolid width={10} height={10} fill="currentColor" /></div> : ""}
+                              {link.target === "_blank" ? <div className="pl-2"><SvgArrowUpRightFromSquareSolid width={ICON_SIZES["2xs"].width} height={ICON_SIZES["2xs"].height} fill="currentColor" /></div> : ""}
                             </div>
                           </StandardLink>
                         </li>
