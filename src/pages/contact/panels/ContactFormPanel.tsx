@@ -23,16 +23,48 @@ const ContactFormPanel = () => {
         message: "",
     });
 
+
     const inputTheme = {
         input: {
             styles: {
+                base: {
+                    input: {
+                        color: theme === THEMES.DARK ? "text-slate-100" : "text-slate-700",
+                        fontFamily: "Urbanist"
+                    },
+                    label: {
+                        color: `peer-placeholder-shown:${theme === THEMES.DARK ? "text-slate-100" : "text-slate-700"}`
+                    }
+                },                
                 variants: {
                     standard: {
                         base: {
                             input: {
+                                color: theme === THEMES.DARK ? "!text-slate-100" : "!text-slate-700",
                                 // The border by default is rounded, and on iPhone appears, whereas on desktop, even in emulator, 
-                                // appears correct. Force to be a square edge input using theme.
-                                borderWidth: "border-b !rounded-none"
+                                // appears correct. Force to be a square edge input using theme provider.
+                                borderWidth: "border-b !rounded-none",
+                                borderColor: `placeholder-shown:${theme === THEMES.DARK ? "border-slate-100" : "border-slate-700"}`
+                            },
+                            label: {
+                                fontFamily: "Urbanist"
+                            }
+                        },                        
+                        colors: {
+                            input: {
+                                gray: {
+                                    borderColor: `${theme === THEMES.DARK ? "border-slate-100" : "border-slate-700"}`,
+
+                                    // The following is the color of the border when the input/textarea received focus.
+                                    borderColorFocused: `focus:${theme === THEMES.DARK ? "border-slate-100" : "border-slate-700"}`,
+                                }
+                            },
+                            label: {
+                                gray: {
+                                    color: theme === THEMES.DARK ? "text-slate-100" : "text-slate-700",
+                                    // The following is the color of the border after the input/textarea received focus and, depending on the applied variant, animation/effect.
+                                    after: `${theme === THEMES.DARK ? "after:border-slate-100 peer-focus:after:border-slate-100" : "after:border-slate-700 peer-focus:border-slate-700"}`,
+                                }
                             }
                         }
                     }
@@ -44,20 +76,51 @@ const ContactFormPanel = () => {
     const textareaTheme = {
         textarea: {
             styles: {
+                base: {
+                    textarea: {
+                        color: theme === THEMES.DARK ? "text-slate-100" : "text-slate-700",
+                        fontFamily: "Urbanist"
+                    },
+                    label: {
+                        color: `peer-placeholder-shown:${theme === THEMES.DARK ? "text-slate-100" : "text-slate-700"}`
+                    }
+                },                
                 variants: {
                     standard: {
                         base: {
                             textarea: {
+                                color: theme === THEMES.DARK ? "!text-slate-100" : "!text-slate-700",
                                 // The border by default is rounded, and on iPhone appears, whereas on desktop, even in emulator, 
-                                // appears correct. Force to be a square edge textarea using theme.
-                                borderWidth: "border-b !rounded-none"
+                                // appears correct. Force to be a square edge input using theme.
+                                borderWidth: "border-b !rounded-none",
+                                borderColor: `placeholder-shown:${theme === THEMES.DARK ? "border-slate-100" : "border-slate-700"}`
+                            },
+                            label: {
+                                fontFamily: "Urbanist"
+                            }
+                        },                        
+                        colors: {
+                            textarea: {
+                                gray: {
+                                    borderColor: `${theme === THEMES.DARK ? "border-slate-100" : "border-slate-700"}`,
+
+                                    // The following is the color of the border when the input/textarea received focus.
+                                    borderColorFocused: `focus:${theme === THEMES.DARK ? "border-slate-100" : "border-slate-700"}`,
+                                }
+                            },
+                            label: {
+                                gray: {
+                                    color: theme === THEMES.DARK ? "text-slate-100" : "text-slate-700",
+                                    // The following is the color of the border after the input/textarea received focus and, depending on the applied variant, animation/effect.
+                                    after: `${theme === THEMES.DARK ? "after:border-slate-100 peer-focus:after:border-slate-100" : "after:border-slate-700 peer-focus:border-slate-700"}`,
+                                }
                             }
                         }
                     }
                 },
             },
         }
-    };    
+    };
 
     const { name, email, message } = mailData;
     const onChangeHandler = (e: any) => setMailData({ ...mailData, [e.currentTarget.name]: e.currentTarget.value });
@@ -119,25 +182,27 @@ const ContactFormPanel = () => {
                                         value={name}
                                         size="md"
                                         type="text"
+                                        color="gray"
                                         required={true}
                                         crossOrigin={undefined} />
                                 </ThemeProvider>
                             </div>
                             <div>
                                 <ThemeProvider value={inputTheme}>
-                                    <Input
-                                        id="email"
-                                        name="email"
-                                        maxLength={50}
-                                        autoComplete="off"
-                                        variant="standard"
-                                        label="Email"
-                                        onChange={(e) => onChangeHandler(e)}
-                                        value={email}
-                                        size="md"
-                                        type="email"
-                                        required={true}
-                                        crossOrigin={undefined} />
+                                <Input
+                                    id="email"
+                                    name="email"
+                                    maxLength={50}
+                                    autoComplete="off"
+                                    variant="standard"
+                                    label="Email"
+                                    onChange={(e) => onChangeHandler(e)}
+                                    value={email}
+                                    size="md"
+                                    type="email"
+                                    // color="gray"
+                                    required={true}
+                                    crossOrigin={undefined} />
                                 </ThemeProvider>
                             </div>
                             <div>
@@ -151,6 +216,7 @@ const ContactFormPanel = () => {
                                         label="Message"
                                         onChange={(e) => onChangeHandler(e)}
                                         value={message}
+                                        color="gray"
                                         size="md"
                                         required={true} />
                                 </ThemeProvider>
