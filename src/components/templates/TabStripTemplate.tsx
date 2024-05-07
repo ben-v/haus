@@ -11,8 +11,8 @@ import { THEMES, ThemeContext } from "../contexts/ThemeContext";
 import { BaseTemplateProps } from "./Template";
 
 export interface TabTemplateProps extends BaseTemplateProps {
-    key: string,
-    title: string
+    key: string;
+    title: string;
 }
 
 export interface TabStripTemplateProps extends BaseTemplateProps {
@@ -21,38 +21,58 @@ export interface TabStripTemplateProps extends BaseTemplateProps {
 }
 
 const TabStripTemplate = (props: TabStripTemplateProps) => {
-    const { theme, } = useContext(ThemeContext);
+    const { theme } = useContext(ThemeContext);
 
-    const tabtheme = {
+    const tabHeadertheme = {
         tab: {
             styles: {
                 base: {
                     indicator: {
-                        bg: theme === THEMES.DARK ? "bg-gray-700" : "bg-white"
+                        bg: theme === THEMES.DARK ? "bg-gray-700" : "bg-white",
                     },
                 },
             },
-        }
+        },
+    };
+
+    const tabPanelTheme = {
+        tabPanel: {
+            styles: {
+                base: {
+                    color: theme === THEMES.DARK ? "text-slate-100" : "text-slate-700",
+                    fontFamily: "Urbanist",
+                    fontSize: "text-base",
+                    fontWeight: "font-normal",
+                },
+            },
+        },
     };
 
     return (
         <Tabs id={props.id} value={props.defaultTabKey} className="tab-strip">
-            <ThemeProvider value={tabtheme}>
+            <ThemeProvider value={tabHeadertheme}>
                 <TabsHeader className="tab-strip-header">
                     {props.tabData.map(({ title, key }) => (
-                        <Tab key={key} value={key} className="tab-strip-header-tab">{title}</Tab>
+                        <Tab key={key} value={key} className="tab-strip-header-tab">
+                            {title}
+                        </Tab>
                     ))}
                 </TabsHeader>
             </ThemeProvider>
-            <TabsBody animate={{ initial: { y: 250 }, mount: { y: 0 }, unmount: { y: 250 } }} className="tab-strip-body">
+            <TabsBody
+                animate={{ initial: { y: 250 }, mount: { y: 0 }, unmount: { y: 250 } }}
+                className="tab-strip-body"
+            >
                 {props.tabData.map(({ key, children }) => (
-                    <TabPanel key={key} value={key} className="tab-strip-body-panel">
-                        {children}
-                    </TabPanel>
+                    <ThemeProvider value={tabPanelTheme}>
+                        <TabPanel key={key} value={key} className="tab-strip-body-panel">
+                            {children}
+                        </TabPanel>
+                    </ThemeProvider>
                 ))}
             </TabsBody>
         </Tabs>
-    )
-}
+    );
+};
 
-export default TabStripTemplate
+export default TabStripTemplate;
