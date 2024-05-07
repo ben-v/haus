@@ -21,7 +21,7 @@ const faqData: { question: string, answers: ReactNode[] }[] = [
   {
     question: "Are you Available for Emergencies?",
     answers: [
-      "For existing customers, emergency services are provided on a case-by-case basis.", 
+      "For existing clients, emergency services are provided on a case-by-case basis.", 
       "For emergencies in the Bozeman, Belgrade, and Gallatin Gateway city/community limits, there is a trip fee of $250, an hourly rate of $150 (plus materials), with a two hour minimum.",
       "Emergencies outside the Bozeman, Belgrade, and Gallatin Gateway city/community limits are addressed on a case-by-case basis and with a scaling trip fee, hourly rate and minimum number of hours."
     ]
