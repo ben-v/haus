@@ -1,22 +1,9 @@
-import { AnchorHTMLAttributes, ReactElement, ReactNode } from "react";
-import { IconSize } from '../images/icons/IconConfig';
+import { AnchorHTMLAttributes } from "react";
+import { CommonLinkProps } from "./CommonLinkProps";
 
-export interface NavLinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> {
+export interface NavLinkProps extends CommonLinkProps, Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href" | "children"> {
     url?: string,
-    children: ReactNode,
     isExternalRoute?: boolean
-}
-
-export interface ButtonNavLinkProps extends NavLinkProps {
-    type?: "submit" | "reset" | "button" | "link" ,
-
-    prefixIcon?: ReactElement,
-    prefixIconSize?: IconSize,
-    prefixIconFill?: string,
-
-    suffixIcon?: ReactElement,
-    suffixIconSize?: IconSize,
-    suffixIconFill?: string
 }
 
 export interface NavLinkGroup {

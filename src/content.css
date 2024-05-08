@@ -439,6 +439,8 @@ the App.tsx is hidden.  */
 
   @apply dark:text-slate-800;
   @apply dark:bg-primaryLight;
+
+  @apply disabled:opacity-75;
 }
 
 .button-small {

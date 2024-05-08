@@ -3,7 +3,7 @@ import ContentSectionContainer from '../containers/ContentSectionContainer'
 import GenericContentContainer from '../containers/GenericContentContainer'
 import SvgPersonOopsSign from '../images/stick-figures/SvgPersonOopsSign'
 import CardHeader from '../layouts/CardHeader'
-import ButtonLink from '../navigation/ButtonLink'
+import NavLink from '../navigation/NavLink'
 
 export interface GenericHttpErrorProps {
   title: string,
@@ -38,7 +38,7 @@ const GenericHttpError = (props: GenericHttpErrorProps) => {
           <h2 className="mb-14 mt-12 text-2xl font-bold text-gray-700 dark:text-white md:text-5xl">{propsWithDefaults.description}</h2>
         </CardHeader>
         <div className='w-full md:w-1/2'>
-          <ButtonLink url={propsWithDefaults.actionUrl}>{propsWithDefaults.actionTitle}</ButtonLink>
+          <NavLink url={propsWithDefaults.actionUrl}>{propsWithDefaults.actionTitle}</NavLink>
         </div>
       </ContentSectionContainer>
     </PageContainer >

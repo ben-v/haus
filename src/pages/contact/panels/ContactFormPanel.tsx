@@ -16,6 +16,7 @@ import { ThemeProvider } from "@material-tailwind/react";
 
 const ContactFormPanel = () => {
     const { theme, } = useContext(ThemeContext);
+    const [isSubmitButtonDisabled, setSubmitButtonDisabledState] = useState(false);
 
     const [mailData, setMailData] = useState({
         name: "",
@@ -166,22 +167,28 @@ const ContactFormPanel = () => {
             toast.dismiss();
             toast.error("All fields are required. Please try again.")
         } else {
+            setSubmitButtonDisabledState(true);
+
             toast.promise(
                 emailjs
                     .send(
-                        "service_0dzhd2z",  // service id
+                        "service_209h8xe",  // service id
                         "template_x639n8l", // template id
                         mailData,
                         "cGpfsTEjddquOdhTO" // public api key
                     ), {
                 loading: "Sending message...",
                 success: (data) => {
+                    setSubmitButtonDisabledState(false);
+
                     setMailData({ name: "", email: "", message: "" });
                     console.log('SEND MESSAGE SUCCESS!', data.status, data.text);
+                    
                     return "Message sent!";
                 },
                 error: (err) => {
                     console.log('SEND MESSAGE FAILED...', err);
+                    setSubmitButtonDisabledState(false);
                     return "Send message failed! Please check fields and try again."
                 }
             },
@@ -257,7 +264,7 @@ const ContactFormPanel = () => {
 
                         <p className="my-8 body-text tabpanel-text">By clicking submit below, you agree to the processing of your personal information by HAUS Property Services as described in our <StandardLink url="/privacy"><span className="font-semibold body-link">Privacy Policy</span></StandardLink>.</p>
 
-                        <ButtonLink type="submit" prefixIcon={<SvgPaperPlaneSolid />} prefixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"}>Send Message</ButtonLink>
+                        <ButtonLink type="submit" prefixIcon={<SvgPaperPlaneSolid />} prefixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"} disabled={isSubmitButtonDisabled}>Send Message</ButtonLink>
                     </div>
                 </form>
             </RoundCornerContainer>

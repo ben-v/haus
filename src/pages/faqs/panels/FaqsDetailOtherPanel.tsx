@@ -4,7 +4,7 @@ import ContentSectionContainer from "../../../components/containers/ContentSecti
 // For more info see https://stackoverflow.com/questions/78296875/typescript-error-using-material-tailwind-react-with-nextjs14
 
 import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
-import ButtonLink from "../../../components/navigation/ButtonLink";
+import NavLink from "../../../components/navigation/NavLink";
 import CardHeader from "../../../components/layouts/CardHeader";
 
 const FaqsDetailOtherPanel = () => {
@@ -19,7 +19,7 @@ const FaqsDetailOtherPanel = () => {
         childrenClassnames="tabpanel-text">
           Have other questions? Feel free to reach out with any you might have!
         </CardHeader>
-          <ButtonLink url="/contact">Contact Us</ButtonLink>
+          <NavLink url="/contact">Contact Us</NavLink>
       </RoundCornerContainer>
     </ContentSectionContainer>
   );

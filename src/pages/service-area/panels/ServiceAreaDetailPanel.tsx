@@ -1,6 +1,6 @@
 import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
 import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
-import ButtonLink from "../../../components/navigation/ButtonLink";
+import NavLink from "../../../components/navigation/NavLink";
 import CardHeader from "../../../components/layouts/CardHeader";
 
 const ServiceAreaDetailPanel = () => {
@@ -29,7 +29,7 @@ const ServiceAreaDetailPanel = () => {
 
         <p className="body-text tabpanel-text">Don't see your community listed, or have questions about our service area? Feel free to reach out to us for more information. We're here to help!</p>
 
-        <ButtonLink url="/contact">Contact Us</ButtonLink>
+        <NavLink url="/contact">Contact Us</NavLink>
       </RoundCornerContainer>
     </ContentSectionContainer>
   )
