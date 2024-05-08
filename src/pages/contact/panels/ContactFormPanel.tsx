@@ -29,8 +29,9 @@ const ContactFormPanel = () => {
     const refCaptcha = createRef<ReCAPTCHA>();
 
     const [mailData, setMailData] = useState({
-        name: "",
-        email: "",
+        from_name: "",
+        from_email: "",
+        reply_to: "",
         message: "",
     });
 
@@ -165,7 +166,7 @@ const ContactFormPanel = () => {
         }
     };
 
-    const { name, email, message } = mailData;
+    const { from_name, from_email, message } = mailData;
     const onChangeHandler = (e: any) => setMailData({ ...mailData, [e.currentTarget.name]: e.currentTarget.value });
     const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -173,7 +174,7 @@ const ContactFormPanel = () => {
         // Dismiss any lingering toast message.
         toast.dismiss();
 
-        if (name.length === 0 || email.length === 0 || message.length === 0) {
+        if (from_name.length === 0 || from_email.length === 0 || message.length === 0) {
             toast.dismiss();
             toast.error("All fields are required. Please try again.")
         } else {
@@ -187,6 +188,8 @@ const ContactFormPanel = () => {
                             // executeAsync can timeout and/or token can be an empty string at this point
                             // make sure it has a value before trying to send.
                             if (token && token.length > 0) {
+                                mailData.reply_to = mailData.from_email;
+
                                 const params = {
                                     ...mailData,
                                     "g-recaptcha-response": token,
@@ -228,7 +231,7 @@ const ContactFormPanel = () => {
                     , {
                         loading: "Sending message...",
                         success: () => {
-                            setMailData({ name: "", email: "", message: "" });
+                            setMailData({ from_name: "", from_email: "", reply_to: "", message: "" });
 
                             return "Message sent!";
                         },
@@ -261,14 +264,14 @@ const ContactFormPanel = () => {
                             <div>
                                 <ThemeProvider value={inputTheme}>
                                     <Input
-                                        id="name"
-                                        name="name"
+                                        id="from_name"
+                                        name="from_name"
                                         maxLength={50}
                                         autoComplete="off"
                                         variant="standard"
                                         label="Name"
                                         onChange={(e) => onChangeHandler(e)}
-                                        value={name}
+                                        value={from_name}
                                         size="lg"
                                         type="text"
                                         color="gray"
@@ -279,14 +282,14 @@ const ContactFormPanel = () => {
                             <div>
                                 <ThemeProvider value={inputTheme}>
                                     <Input
-                                        id="email"
-                                        name="email"
+                                        id="from_email"
+                                        name="from_email"
                                         maxLength={50}
                                         autoComplete="off"
                                         variant="standard"
                                         label="Email"
                                         onChange={(e) => onChangeHandler(e)}
-                                        value={email}
+                                        value={from_email}
                                         size="lg"
                                         type="email"
                                         color="gray"
