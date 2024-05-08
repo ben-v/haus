@@ -1,8 +1,13 @@
-import emailjs from "@emailjs/browser";
-import { useContext, useState } from "react";
-import { THEMES, ThemeContext } from "../../../components/contexts/ThemeContext";
+import { createRef, useContext, useState } from "react";
 
 import toast from 'react-hot-toast';
+import emailjs from "@emailjs/browser";
+import ReCAPTCHA from "react-google-recaptcha";
+import { Input, Textarea } from "@material-tailwind/react";
+import { ThemeProvider } from "@material-tailwind/react";
+
+import { THEMES, ThemeContext } from "../../../components/contexts/ThemeContext";
+
 import ContentSectionContainer from "../../../components/containers/ContentSectionContainer";
 
 import React from "react";
@@ -11,12 +16,17 @@ import SvgPaperPlaneSolid from "../../../components/images/icons/SvgPaperPlaneSo
 import ButtonLink from "../../../components/navigation/ButtonLink";
 import CardHeader from "../../../components/layouts/CardHeader";
 import StandardLink from "../../../components/navigation/StandardLink";
-import { Input, Textarea } from "@material-tailwind/react";
-import { ThemeProvider } from "@material-tailwind/react";
+import { ErrorBase } from "../../../Common/ErrorBase";
+
+type ErrorName = "EMAILJS_ERROR" | "RECAPTCHA_ERROR" | "RECAPTCHA_TIMEOUT_ERROR";
+
+class ContactError extends ErrorBase<ErrorName> { };
 
 const ContactFormPanel = () => {
     const { theme, } = useContext(ThemeContext);
     const [isSubmitButtonDisabled, setSubmitButtonDisabledState] = useState(false);
+
+    const refCaptcha = createRef<ReCAPTCHA>();
 
     const [mailData, setMailData] = useState({
         name: "",
@@ -157,7 +167,7 @@ const ContactFormPanel = () => {
 
     const { name, email, message } = mailData;
     const onChangeHandler = (e: any) => setMailData({ ...mailData, [e.currentTarget.name]: e.currentTarget.value });
-    const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    const onSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         // Dismiss any lingering toast message.
@@ -167,37 +177,77 @@ const ContactFormPanel = () => {
             toast.dismiss();
             toast.error("All fields are required. Please try again.")
         } else {
-            setSubmitButtonDisabledState(true);
 
-            toast.promise(
-                emailjs
-                    .send(
-                        "service_209h8xe",  // service id
-                        "template_x639n8l", // template id
-                        mailData,
-                        "cGpfsTEjddquOdhTO" // public api key
-                    ), {
-                loading: "Sending message...",
-                success: (data) => {
-                    setSubmitButtonDisabledState(false);
+            if (refCaptcha.current) {
+                setSubmitButtonDisabledState(true);
 
-                    setMailData({ name: "", email: "", message: "" });
-                    console.log('SEND MESSAGE SUCCESS!', data.status, data.text);
-                    
-                    return "Message sent!";
-                },
-                error: (err) => {
-                    console.log('SEND MESSAGE FAILED...', err);
-                    setSubmitButtonDisabledState(false);
-                    return "Send message failed! Please check fields and try again."
-                }
-            },
-                {
-                    style: {
-                        minWidth: '390px',
-                    }
-                }
-            );
+                toast.promise(
+                    refCaptcha.current.executeAsync()
+                        .then(async (token) => {
+                            // executeAsync can timeout and/or token can be an empty string at this point
+                            // make sure it has a value before trying to send.
+                            if (token && token.length > 0) {
+                                const params = {
+                                    ...mailData,
+                                    "g-recaptcha-response": token,
+                                };
+
+                                return await emailjs
+                                    .send(
+                                        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                                        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                                        params,
+                                        import.meta.env.VITE_EMAILJS_API_KEY
+                                    )
+                                    .catch((err) => {
+                                        throw new ContactError({
+                                            name: "EMAILJS_ERROR",
+                                            message: "Send message failed! Please check fields and try again.",
+                                            cause: err
+                                        })
+                                    })
+                            } else {
+                                throw new ContactError({
+                                    name: "RECAPTCHA_TIMEOUT_ERROR",
+                                    message: "Unabled to complete reCAPTCHA verification. Please try again in a few minutes.",
+                                    cause: null
+                                })
+                            }
+                        })
+                        .catch((err) => {
+                            if (err instanceof ContactError) {
+                                throw err;
+                            } else {
+                                throw new ContactError({
+                                    name: "RECAPTCHA_ERROR",
+                                    message: "reCAPTCHA verification failed. Please try again in a few minutes.",
+                                    cause: err
+                                })
+                            }
+                        })
+                    , {
+                        loading: "Sending message...",
+                        success: () => {
+                            setMailData({ name: "", email: "", message: "" });
+
+                            return "Message sent!";
+                        },
+                        error: (err) => {
+                            return err.message ? err.message : "Send message failed!";
+                        }
+                    },
+                    {
+                        style: {
+                            minWidth: '365px',
+                        }
+                    })
+                    .catch((err) => {
+                        console.log(err)
+                    })
+                    .finally(() => {
+                        setSubmitButtonDisabledState(false);
+                    });
+            }
         }
     };
 
@@ -239,7 +289,7 @@ const ContactFormPanel = () => {
                                         value={email}
                                         size="lg"
                                         type="email"
-                                        // color="gray"
+                                        color="gray"
                                         required={true}
                                         crossOrigin={undefined} />
                                 </ThemeProvider>
@@ -264,6 +314,11 @@ const ContactFormPanel = () => {
 
                         <p className="my-8 body-text tabpanel-text">By clicking submit below, you agree to the processing of your personal information by HAUS Property Services as described in our <StandardLink url="/privacy"><span className="font-semibold body-link">Privacy Policy</span></StandardLink>.</p>
 
+                        <ReCAPTCHA
+                            sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                            ref={refCaptcha}
+                            size="invisible"
+                        />
                         <ButtonLink type="submit" prefixIcon={<SvgPaperPlaneSolid />} prefixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"} disabled={isSubmitButtonDisabled}>Send Message</ButtonLink>
                     </div>
                 </form>
