@@ -169,7 +169,7 @@ const ContactFormPanel = () => {
             toast.promise(
                 emailjs
                     .send(
-                        "service_0dzhd2z",  // service id
+                        "service_209h8xe",  // service id
                         "template_x639n8l", // template id
                         mailData,
                         "cGpfsTEjddquOdhTO" // public api key
