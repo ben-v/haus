@@ -5,7 +5,7 @@ import CardHeader from "../../../components/layouts/CardHeader";
 
 import { useContext } from "react";
 import JpgNewRequest from "../../../../public/images/screenshots/new-request.jpeg";
-import ButtonLink from "../../../components/navigation/ButtonLink";
+import NavLink from "../../../components/navigation/NavLink";
 import { ICON_SIZES } from "../../../components/images/icons/IconConfig";
 import SvgQuestionDark from "../../../components/images/icons/SvgQuestionDark";
 import SvgQuestionLight from "../../../components/images/icons/SvgQuestionLight";
@@ -44,7 +44,7 @@ const NewClientsPanel = () => {
                             {theme === THEMES.DARK ? <SvgQuestionDark width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} /> : <SvgQuestionLight width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} />}
                         </ContentIconContainer>
 
-                        <ButtonLink
+                        <NavLink
                             url="/work-request"
                             prefixIcon={<SvgRectangleListSolid />}
                             children="Work Request"

@@ -6,7 +6,7 @@ import CardHeader from "../../../components/layouts/CardHeader";
 import JpgExistingClientHub from "../../../../public/images/screenshots/client-hub.jpeg";
 import SvgAddressBookSolid from "../../../components/images/icons/SvgAddressBookSolid";
 import SvgArrowUpRightFromSquareSolid from "../../../components/images/icons/SvgArrowUpRightFromSquareSolid";
-import ButtonLink from "../../../components/navigation/ButtonLink";
+import NavLink from "../../../components/navigation/NavLink";
 import { ICON_SIZES } from "../../../components/images/icons/IconConfig";
 import SvgDevicesLight from "../../../components/images/icons/SvgDevicesLight";
 import SvgDevicesDark from "../../../components/images/icons/SvgDevicesDark";
@@ -37,7 +37,7 @@ const CurrentClientsPanel = () => {
                             {theme === THEMES.DARK ? <SvgDevicesDark width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} /> : <SvgDevicesLight width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} />}
                         </ContentIconContainer>
 
-                        <ButtonLink
+                        <NavLink
                             url="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login"
                             target="_blank"
                             isExternalRoute={true}
@@ -45,7 +45,7 @@ const CurrentClientsPanel = () => {
                             suffixIcon={<SvgArrowUpRightFromSquareSolid />}
                             suffixIconSize={ICON_SIZES["2xs"]}
                             prefixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"}
-                            suffixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"}>Client Hub</ButtonLink>
+                            suffixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"}>Client Hub</NavLink>
                     </div>
                 </div>
             </div>
