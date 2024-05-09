@@ -9,7 +9,7 @@ import SvgPersonInformation from '../../components/images/stick-figures/SvgPerso
 
 const tabData: TabTemplateProps[] = [
   {
-    title: "Our FAQs",
+    title: "FAQs",
     key: "our-faqs",
     children: <FaqsDetailPanel />
   },
@@ -25,8 +25,7 @@ const FaqsPage = () => {
     <PageContainer
       id="faqs"
       titlePartA="Frequently Asked"
-      titlePartB=" Questions"
-      description="We've pulled together answers to some commonly asked questions about HAUS, what we do, and how we do it.">
+      titlePartB="Ask a Question">
       <ContentSectionContainer id="faqs-bodycontainer" flexDirection='RTL'>
         <ContentSectionContainer flexDirection="Center" containerClassNames="w-auto pb-6 md:pt-0 md:w-4/5 md:max-w-2xl">
           <GenericContentContainer id="faqs-marketing-person" padding="None">

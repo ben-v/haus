@@ -35,7 +35,7 @@ const TestamonialsSection = () => {
           title="What Our Clients Say"
           titleAlignment="Center"
           childrenAlignment="Center">
-            We pride ourselves on forging lasting relationships based on communication, collaboration, and trust with each of our clients.
+            We pride ourselves on forging lasting client relationships based on communication, collaboration, and trust.
           </ContentSectionHeader>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
