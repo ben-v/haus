@@ -29,7 +29,7 @@ const sectionLinkGroups: NavLinkGroup[] = [
     links: [
       { children: "Privacy Policy", url: "privacy", isExternalRoute: false },
       { children: "Terms & Conditions", url: "terms", isExternalRoute: false },
-      { children: "Partners", url: "partners", isExternalRoute: false },
+      // { children: "Partners", url: "partners", isExternalRoute: false },
     ]
   }
 ];
