@@ -28,17 +28,12 @@ const AccordionTemplate = (props: AccordionProps) => {
                         initial: {
                             color: theme === THEMES.DARK ? "!text-gray-100" : "!text-gray-700",
                             py: "py-2",
-                            fontFamily: "Urbanist",
-                            fontSize: "text-base",
                             borderWidth: "border-0",
                         },
                     },
                     body: {
                         py: "py-0",
                         color: theme === THEMES.DARK ? "!text-gray-300" : "!text-gray-600",
-                        fontFamily: "Urbanist",
-                        fontSize: "text-base",
-                        fontWeight: "font-normal",
                     }
                 },
             },
@@ -56,8 +51,8 @@ const AccordionTemplate = (props: AccordionProps) => {
                         </span>
                     }>
                     <ThemeProvider value={accordionTheme}>
-                        <AccordionHeader onClick={() => handleOpen(index)}>{item.title}</AccordionHeader>
-                        <AccordionBody>
+                        <AccordionHeader onClick={() => handleOpen(index)} className="expandable-item-header">{item.title}</AccordionHeader>
+                        <AccordionBody className="expandable-item-detail">
                             {item.children}
                         </AccordionBody>
                     </ThemeProvider>

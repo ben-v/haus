@@ -42,7 +42,6 @@ const ContactFormPanel = () => {
                 base: {
                     input: {
                         color: theme === THEMES.DARK ? "text-slate-100" : "text-slate-700",
-                        fontFamily: "Urbanist"
                     },
                     label: {
                         color: `peer-placeholder-shown:${theme === THEMES.DARK ? "text-slate-100" : "text-slate-700"}`
@@ -59,7 +58,6 @@ const ContactFormPanel = () => {
                                 borderColor: `placeholder-shown:${theme === THEMES.DARK ? "border-slate-100" : "border-slate-700"}`
                             },
                             label: {
-                                fontFamily: "Urbanist",
                                 fontSize: "peer-placeholder-shown:text-base",
                                 floated: {
                                     fontSize: "text-[14px] peer-focus:text-[14px]",
@@ -107,7 +105,6 @@ const ContactFormPanel = () => {
                 base: {
                     textarea: {
                         color: theme === THEMES.DARK ? "text-slate-100" : "text-slate-700",
-                        fontFamily: "Urbanist"
                     },
                     label: {
                         color: `peer-placeholder-shown:${theme === THEMES.DARK ? "text-slate-100" : "text-slate-700"}`
@@ -124,7 +121,6 @@ const ContactFormPanel = () => {
                                 borderColor: `placeholder-shown:${theme === THEMES.DARK ? "border-slate-100" : "border-slate-700"}`
                             },
                             label: {
-                                fontFamily: "Urbanist",
                                 fontSize: "peer-placeholder-shown:text-base",
                                 floated: {
                                     fontSize: "text-[14px] peer-focus:text-[14px]",
@@ -256,76 +252,80 @@ const ContactFormPanel = () => {
 
     return (
         <ContentSectionContainer flexDirection="Center">
-            <RoundCornerContainer id="contact-panel" padding="Small" containerClassNames="w-full" bodyClassNames="gap-4">
-                <CardHeader title="What's on your mind?" titleAlignment="Left" />
-                <form onSubmit={onSubmitHandler} className="w-auto round" autoComplete="off">
-                    <div className="relative">
-                        <div className="space-y-4">
-                            <div>
-                                <ThemeProvider value={inputTheme}>
-                                    <Input
-                                        id="from_name"
-                                        name="from_name"
-                                        maxLength={50}
-                                        autoComplete="off"
-                                        variant="standard"
-                                        label="Name"
-                                        onChange={(e) => onChangeHandler(e)}
-                                        value={from_name}
-                                        size="lg"
-                                        type="text"
-                                        color="gray"
-                                        required={true}
-                                        crossOrigin={undefined} />
-                                </ThemeProvider>
+            <div className="flex flex-col items-center w-full gap-8">
+                <RoundCornerContainer id="contact-panel" padding="Small" containerClassNames="w-full" bodyClassNames="gap-4">
+                    <CardHeader title="What's on your mind?" titleAlignment="Left" />
+                    <form onSubmit={onSubmitHandler} className="w-auto round" autoComplete="off">
+                        <div className="relative">
+                            <div className="space-y-4">
+                                <div>
+                                    <ThemeProvider value={inputTheme}>
+                                        <Input
+                                            id="from_name"
+                                            name="from_name"
+                                            maxLength={50}
+                                            autoComplete="off"
+                                            variant="standard"
+                                            label="Name"
+                                            onChange={(e) => onChangeHandler(e)}
+                                            value={from_name}
+                                            size="lg"
+                                            type="text"
+                                            color="gray"
+                                            required={true}
+                                            crossOrigin={undefined} />
+                                    </ThemeProvider>
+                                </div>
+                                <div>
+                                    <ThemeProvider value={inputTheme}>
+                                        <Input
+                                            id="from_email"
+                                            name="from_email"
+                                            maxLength={50}
+                                            autoComplete="off"
+                                            variant="standard"
+                                            label="Email"
+                                            onChange={(e) => onChangeHandler(e)}
+                                            value={from_email}
+                                            size="lg"
+                                            type="email"
+                                            color="gray"
+                                            required={true}
+                                            crossOrigin={undefined} />
+                                    </ThemeProvider>
+                                </div>
+                                <div>
+                                    <ThemeProvider value={textareaTheme}>
+                                        <Textarea
+                                            id="message"
+                                            name="message"
+                                            maxLength={4000}
+                                            autoComplete="off"
+                                            variant="standard"
+                                            label="Message"
+                                            onChange={(e) => onChangeHandler(e)}
+                                            value={message}
+                                            color="gray"
+                                            size="lg"
+                                            required={true} />
+                                    </ThemeProvider>
+                                </div>
                             </div>
-                            <div>
-                                <ThemeProvider value={inputTheme}>
-                                    <Input
-                                        id="from_email"
-                                        name="from_email"
-                                        maxLength={50}
-                                        autoComplete="off"
-                                        variant="standard"
-                                        label="Email"
-                                        onChange={(e) => onChangeHandler(e)}
-                                        value={from_email}
-                                        size="lg"
-                                        type="email"
-                                        color="gray"
-                                        required={true}
-                                        crossOrigin={undefined} />
-                                </ThemeProvider>
-                            </div>
-                            <div>
-                                <ThemeProvider value={textareaTheme}>
-                                    <Textarea
-                                        id="message"
-                                        name="message"
-                                        maxLength={4000}
-                                        autoComplete="off"
-                                        variant="standard"
-                                        label="Message"
-                                        onChange={(e) => onChangeHandler(e)}
-                                        value={message}
-                                        color="gray"
-                                        size="lg"
-                                        required={true} />
-                                </ThemeProvider>
-                            </div>
+
+                            <p className="my-8 body-text tabpanel-text">By clicking submit below, you agree to the processing of your personal information by HAUS Property Services as described in our <StandardLink url="/privacy"><span className="font-semibold body-link">Privacy Policy</span></StandardLink>.</p>
+                            <ButtonLink type="submit" prefixIcon={<SvgPaperPlaneSolid />} prefixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"} disabled={isSubmitButtonDisabled}>Send Message</ButtonLink>
                         </div>
-
-                        <p className="my-8 body-text tabpanel-text">By clicking submit below, you agree to the processing of your personal information by HAUS Property Services as described in our <StandardLink url="/privacy"><span className="font-semibold body-link">Privacy Policy</span></StandardLink>.</p>
-
-                        <ReCAPTCHA
-                            sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
-                            ref={refCaptcha}
-                            size="invisible"
-                        />
-                        <ButtonLink type="submit" prefixIcon={<SvgPaperPlaneSolid />} prefixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"} disabled={isSubmitButtonDisabled}>Send Message</ButtonLink>
-                    </div>
-                </form>
-            </RoundCornerContainer>
+                    </form>
+                </RoundCornerContainer>
+                <div className="w-fit">
+                    <ReCAPTCHA
+                        sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                        ref={refCaptcha}
+                        size="invisible"
+                        badge="inline"
+                    />
+                </div>
+            </div>
         </ContentSectionContainer>
     )
 }

@@ -40,7 +40,6 @@ const TabStripTemplate = (props: TabStripTemplateProps) => {
             styles: {
                 base: {
                     color: theme === THEMES.DARK ? "text-slate-100" : "text-slate-700",
-                    fontFamily: "Urbanist",
                     fontSize: "text-base",
                     fontWeight: "font-normal",
                 },
