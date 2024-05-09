@@ -25,7 +25,7 @@ const FaqsPage = () => {
     <PageContainer
       id="faqs"
       titlePartA="Frequently Asked"
-      titlePartB="Ask a Question">
+      titlePartB=" Questions">
       <ContentSectionContainer id="faqs-bodycontainer" flexDirection='RTL'>
         <ContentSectionContainer flexDirection="Center" containerClassNames="w-auto pb-6 md:pt-0 md:w-4/5 md:max-w-2xl">
           <GenericContentContainer id="faqs-marketing-person" padding="None">
