@@ -68,8 +68,8 @@ const Header = () => {
             </div>
             <div aria-hidden="true" id="layer" className="fixed inset-0 z-40 h-screen w-screen origin-bottom scale-y-0 bg-white/70 backdrop-blur-2xl transition duration-500 dark:bg-darker/70 lg:hidden"></div>
             <div id="navlinks" className="invisible absolute top-full left-0 z-50 w-full origin-top-right translate-y-1 scale-90 flex-col flex-wrap justify-end gap-6 rounded-3xl border border-gray-100 bg-white p-8 opacity-0 shadow-2xl shadow-gray-600/10 transition-all duration-300 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none lg:visible lg:relative lg:flex lg:w-auto lg:translate-y-0 lg:scale-100 lg:flex-row lg:items-center lg:gap-0 lg:border-none lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none dark:lg:bg-transparent">
-              <div className="lg:pr-4">
-                <ul className="space-y-6 sm:space-y-3 md:space-y-6 text-base font-medium tracking-wide lg:flex lg:space-y-0 lg:text-sm md:gap-[18px]">
+              <div className="lg:pr-3">
+                <ul className="space-y-2 md:space-y-4 text-base font-medium tracking-wide lg:flex lg:space-y-0 lg:text-sm md:gap-[13px]">
                   {navLinkGroup.links.map((link, index) => (
                     <li key={index}>
                       <StandardLink url={link.url ? link.url : "#"} onClick={closeNavbar} className="nav-link block transition nav-button">
@@ -80,7 +80,7 @@ const Header = () => {
                 </ul>
               </div>
               <div className="hidden lg:flex">
-                <div className="mt-12 flex w-full flex-col gap-3 space-y-2 border-primary/10 dark:border-gray-700 sm:flex-row md:w-max lg:mt-0 lg:mr-4 lg:space-y-0 lg:border-l lg:pl-4">
+                <div className="mt-12 flex w-full flex-col gap-[11px] space-y-2 border-primary/10 dark:border-gray-700 sm:flex-row md:w-max lg:mt-0 lg:mr-3 lg:space-y-0 lg:border-l lg:pl-3">
                   <div>
                     <StandardLink url="/work-request" onClick={closeNavbar} data-tooltip-id="new-client-tooltip-selector-large" className="relative ml-auto flex h-9 w-full items-center justify-center before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-primaryLight sm:px-4 lg:before:border lg:before:border-gray-200 lg:before:bg-gray-100 lg:dark:before:bg-gray-800 nav-button">
                       <div className="pr-2">
@@ -115,14 +115,14 @@ const Header = () => {
                     </div>
                 </div>
               </div>
-              <div className="mt-12 hidden flex-col space-y-2 border-primary/10 dark:border-gray-700 lg:mt-0 lg:space-y-0 lg:border-l lg:pl-4 lg:flex">
+              <div className="mt-12 hidden flex-col space-y-2 border-primary/10 dark:border-gray-700 lg:mt-0 lg:space-y-0 lg:border-l lg:pl-3 lg:flex">
                   <button onClick={toggleTheme} className="switcher group relative h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex">
                     <SvgSun fill="currentColor" className="transistion relative m-auto hidden h-5 w-5 fill-gray-500 duration-300 group-hover:rotate-180 group-hover:fill-yellow-400 dark:block dark:fill-gray-300" />
                     <SvgMoon fill="currentColor" className="transistion relative m-auto h-5 w-5 fill-gray-500 duration-300 group-hover:-rotate-90 group-hover:fill-blue-900 dark:hidden" />
                   </button>
               </div>
-              <div className="mt-6 w-full border-primary/10 dark:border-gray-700 sm:flex-row lg:hidden inline-flex items-center justify-start hover:cursor-pointer" onClick={toggleThemeCloseMenu}>
-                <div className="nav-button md:mr-3 w-full">Dark Mode Is <span className="font-semibold">{theme === THEMES.DARK ? "On" : "Off" }</span></div>
+              <div className="mt-6 pt-6 border-t w-full border-primary/10 dark:border-gray-700 sm:flex-row lg:hidden inline-flex items-center justify-start hover:cursor-pointer" onClick={toggleThemeCloseMenu}>
+                <div className="nav-button md:mr-3 w-full">Dark Mode Is <span className="font-bold">{theme === THEMES.DARK ? "On" : "Off" }</span></div>
                 <Toggle
                   id="theme-switcher-small-displays"
                   defaultChecked={theme === THEMES.DARK}

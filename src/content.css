@@ -31,7 +31,7 @@ body,
 .expandable-item-detail,
 .body-link
 {
-  font-family: "Urbanist";
+  @apply !font-sans;
   @apply !antialiased;
   @apply !text-slate-700;
   @apply dark:!text-slate-100;
@@ -45,10 +45,16 @@ body,
 .footer-header-text,
 #navbar .nav-button,
 .tabpanel-text,
+.expandable-item-header,
 .serivce-area-list-text
 {
-  @apply lg:!font-medium;
-  @apply !text-lg;
+  @apply !text-base;
+}
+
+.expandable-item-detail 
+{
+  @apply !font-normal;
+  @apply !text-sm;
   @apply md:!text-base;
 }
 
