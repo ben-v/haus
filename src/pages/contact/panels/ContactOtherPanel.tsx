@@ -17,9 +17,7 @@ const ContactOtherPanel = () => {
     return (
         <ContentSectionContainer flexDirection="Center">
             <RoundCornerContainer id="contact-other" padding="Small" containerClassNames="w-full" bodyClassNames="gap-2">
-                <CardHeader title="Additional Ways to Connect" titleAlignment="Left" childrenAlignment="Left" childrenClassnames="tabpanel-text">
-                    Here are a few more ways to connect with us:
-                </CardHeader>
+                <CardHeader title="HAUS Property Services" titleAlignment="Left" childrenAlignment="Left" childrenClassnames="tabpanel-text" />
                 <div className="pt-2 flex items-center gap-2 md:gap-3">
                     <SvgPhoneSolid width={ICON_SIZES.sm.height} height={ICON_SIZES.sm.height} className='relative mr-1 md:mr-2' fill={theme === THEMES.DARK ? colors["blue-gray"][100] : colors["blue-gray"][700]} />
                     <StandardLink url="tel:4063129989" className="body-text tabpanel-text" isExternalRoute={true}>(406) 312-9989</StandardLink>

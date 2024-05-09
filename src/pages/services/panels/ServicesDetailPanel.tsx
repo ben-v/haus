@@ -12,7 +12,7 @@ const serviceData: { serviceGroup: string, serviceGroupDetails: string[] }[] = [
     serviceGroup: "General ​Carpentry",
     serviceGroupDetails: [
       "Fence & Gate Repair",
-      "Deck &Patio Repair",
+      "Deck & Patio Repair",
       "Interior Woodwork, Trim, Baseboards, Handrails, etc.",
       "Closet Shelving All Types"
     ]
@@ -45,7 +45,7 @@ const serviceData: { serviceGroup: string, serviceGroupDetails: string[] }[] = [
     serviceGroup: "Kitchens",
     serviceGroupDetails: [
       "Faucet Install",
-      "Garbage Disposal Install, Replacement",
+      "Garbage Disposal Install & Replacement",
       "Insta Hot & Water Filtration Systems",
       "Hinge & Drawer Slider Replacements",
       "Light Appliance Repairs",
@@ -83,7 +83,7 @@ const serviceData: { serviceGroup: string, serviceGroupDetails: string[] }[] = [
       "Prepping Rental/Vacation Home for the Coming Season",
       "Garage Storage & Organization",
       "Furniture Repair & Assembly",
-      "Smoke & Carbon Detectors",
+      "Smoke & Carbon Dioxide/Monoxide Detectors",
       "Portable A/C or Window A/C Installs",
       "Pressure Washing",
       "Dryer Vent Clean-Out",

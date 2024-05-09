@@ -162,7 +162,7 @@ const Header = () => {
             </Tooltip>
 
             <Tooltip id="existing-client-tooltip-selector-large" className="app-tooltip" opacity={1}>
-              <p className="font-bold pb-2 text-base">Are you already working with us?</p>
+              <p className="font-bold pb-2 text-base">Already working with us?</p>
               <p>Visit the <span className="font-semibold">Client Hub</span> to approve quotes, check appointment details, pay invoices, print receipts, or request more work—all in one place.</p>
             </Tooltip>      
           </div>

@@ -13,11 +13,11 @@ const FaqsDetailOtherPanel = () => {
     <ContentSectionContainer id="faqs-detail-container" flexDirection="Center" containerClassNames="items-start">
       <RoundCornerContainer id="faqs-detail" padding="Small" containerClassNames="w-full" bodyClassNames="gap-4">
       <CardHeader 
-        title="Still looking?"
+        title="Have other questions?"
         titleAlignment="Left" 
         childrenAlignment="Left"
         childrenClassnames="tabpanel-text">
-          Have other questions? Feel free to reach out with any you might have!
+          Feel free to reach out with any questions you may have.
         </CardHeader>
           <NavLink url="/contact">Contact Us</NavLink>
       </RoundCornerContainer>

@@ -31,8 +31,8 @@ const NewClientsPanel = () => {
                     </CardHeader>
                     <div className="relative flex flex-col gap-6">
                         <ContentIconContainer
-                            title="To do list..."
-                            description="Have a to do list that keeps growing?"
+                            title="To Do List"
+                            description="Have a 'to do' list that keeps growing?"
                             childrenClassnames="tabpanel-text">
                             {theme === THEMES.DARK ? <SvgTodoListDark width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} /> : <SvgTodoListLight width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} />}
                         </ContentIconContainer>

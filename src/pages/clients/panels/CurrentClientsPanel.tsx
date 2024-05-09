@@ -31,8 +31,8 @@ const CurrentClientsPanel = () => {
                     </CardHeader>
                     <div className="relative flex flex-col gap-6">
                         <ContentIconContainer
-                            title="Convenient Tools..."
-                            description={renderToString(<>The self serve <StandardLink url="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" isExternalRoute={true} target="_blank"><span className="font-semibold body-link">Client Hub</span></StandardLink> is available from your phone, tablet or desktop PC.</>)}
+                            title="Convenient Tools"
+                            description={renderToString(<>The self-serve <StandardLink url="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" isExternalRoute={true} target="_blank"><span className="font-semibold body-link">Client Hub</span></StandardLink> is available on your phone, tablet or desktop PC.</>)}
                             childrenClassnames="tabpanel-text">
                             {theme === THEMES.DARK ? <SvgDevicesDark width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} /> : <SvgDevicesLight width={ICON_SIZES.default.height} height={ICON_SIZES.default.height} />}
                         </ContentIconContainer>
