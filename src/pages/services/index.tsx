@@ -20,7 +20,7 @@ const tabData: TabTemplateProps[] = [
   //   children: <ServicesPricingModelPanel />
   // },
   {
-    title: "Questions?",
+    title: "Ask a Question",
     key: "services-other",
     children: <ServicesDetailOtherPanel />
   },
