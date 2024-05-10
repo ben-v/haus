@@ -1,6 +1,6 @@
-import { BaseProps } from "../BaseProps";
+import { PropsBase } from "../PropsBase";
 
-export interface BaseContainerProps extends BaseProps {
+export interface BaseContainerProps extends PropsBase {
     containerClassNames?: string;
     bodyClassNames?: string;
     padding?: "Large" | "Small" | "None";

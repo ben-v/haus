@@ -1,8 +1,8 @@
 import PageHeader, { PageHeaderProps, defaultPageHeaderProps } from "../layouts/PageHeader"
 import ContentSectionContainer from "./ContentSectionContainer";
-import { BaseProps } from "../BaseProps";
+import { PropsBase } from "../PropsBase";
 
-export interface PageContainerProps extends BaseProps, PageHeaderProps {
+export interface PageContainerProps extends PropsBase, PageHeaderProps {
 }
 
 const PageContainer = (props: PageContainerProps) => {

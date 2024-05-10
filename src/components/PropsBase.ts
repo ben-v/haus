@@ -1,6 +1,6 @@
 import { ReactNode } from "react"
 
-export interface BaseProps {
+export interface PropsBase {
     id?:string
     children?: ReactNode
 }

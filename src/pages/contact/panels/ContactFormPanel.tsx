@@ -16,7 +16,7 @@ import SvgPaperPlaneSolid from "../../../components/images/icons/SvgPaperPlaneSo
 import ButtonLink from "../../../components/navigation/ButtonLink";
 import CardHeader from "../../../components/layouts/CardHeader";
 import StandardLink from "../../../components/navigation/StandardLink";
-import { ErrorBase } from "../../../Common/ErrorBase";
+import { ErrorBase } from "../../../components/ErrorBase";
 
 type ErrorName = "EMAILJS_ERROR" | "RECAPTCHA_ERROR" | "RECAPTCHA_TIMEOUT_ERROR";
 

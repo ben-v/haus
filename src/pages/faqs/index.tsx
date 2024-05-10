@@ -1,7 +1,7 @@
 import PageContainer from "../../components/containers/PageContainer";
 import ContentSectionContainer from "../../components/containers/ContentSectionContainer";
 import GenericContentContainer from '../../components/containers/GenericContentContainer';
-import TabStripTemplate, { TabTemplateProps } from '../../components/templates/TabStripTemplate';
+import TabStripContainer, { TabTemplateProps } from '../../components/containers/TabStripContainer';
 
 import FaqsDetailOtherPanel from "./panels/FaqsDetailOtherPanel";
 import FaqsDetailPanel from "./panels/FaqsDetailPanel";
@@ -33,7 +33,7 @@ const FaqsPage = () => {
           </GenericContentContainer>
         </ContentSectionContainer>
         <ContentSectionContainer id="faqs-detail" flexDirection="Center">
-          <TabStripTemplate id="faqs-tab-strip" defaultTabKey="our-faqs" tabData={tabData} />
+          <TabStripContainer id="faqs-tab-strip" defaultTabKey="our-faqs" tabData={tabData} />
         </ContentSectionContainer>
       </ContentSectionContainer>
     </PageContainer>

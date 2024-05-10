@@ -8,19 +8,19 @@ import {
     TabsHeader,
 } from "@material-tailwind/react";
 import { THEMES, ThemeContext } from "../contexts/ThemeContext";
-import { BaseTemplateProps } from "./Template";
+import { PropsBase } from "../PropsBase";
 
-export interface TabTemplateProps extends BaseTemplateProps {
+export interface TabTemplateProps extends PropsBase {
     key: string;
     title: string;
 }
 
-export interface TabStripTemplateProps extends BaseTemplateProps {
+export interface TabStripTemplateProps extends PropsBase {
     defaultTabKey: string;
     tabData: TabTemplateProps[];
 }
 
-const TabStripTemplate = (props: TabStripTemplateProps) => {
+const TabStripContainer = (props: TabStripTemplateProps) => {
     const { theme } = useContext(ThemeContext);
 
     const tabHeadertheme = {
@@ -74,4 +74,4 @@ const TabStripTemplate = (props: TabStripTemplateProps) => {
     );
 };
 
-export default TabStripTemplate;
+export default TabStripContainer;

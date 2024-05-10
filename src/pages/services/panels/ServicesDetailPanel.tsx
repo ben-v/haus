@@ -4,7 +4,7 @@ import ContentSectionContainer from "../../../components/containers/ContentSecti
 // For more info see https://stackoverflow.com/questions/78296875/typescript-error-using-material-tailwind-react-with-nextjs14
 
 import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
-import AccordionTemplate, { AccordionItem } from "../../../components/templates/AccordionTemplate";
+import AccordionContainer, { AccordionItem } from "../../../components/containers/AccordionContainer";
 import { ReactNode } from "react";
 
 const serviceData: { serviceGroup: string, serviceGroupDetails: string[] }[] = [
@@ -117,7 +117,7 @@ const ServicesDetailPanel = () => {
   return (
     <ContentSectionContainer flexDirection="Center" containerClassNames="items-start">
       <RoundCornerContainer padding="Small" containerClassNames="w-full">
-        <AccordionTemplate items={servicesAccordianList} />
+        <AccordionContainer items={servicesAccordianList} />
       </RoundCornerContainer>
     </ContentSectionContainer>
   );
