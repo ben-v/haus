@@ -2,7 +2,7 @@ import ContentSectionContainer from "../../../components/containers/ContentSecti
 import { THEMES, ThemeContext } from "../../../components/contexts/ThemeContext";
 
 import { useContext } from "react";
-import SocialLinksCard from "../../../components/common/SocalLinksCard";
+import SocialLinksCard from "../../../components/cards/SocalLinksCard";
 import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
 import SvgEmailSolid from "../../../components/images/icons/SvgEmailSolid";
 import SvgPhoneSolid from "../../../components/images/icons/SvgPhoneSolid";

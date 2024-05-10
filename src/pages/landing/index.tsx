@@ -3,7 +3,7 @@ import ContentSectionContainer from "../../components/containers/ContentSectionC
 
 import IntroSection from "./sections/IntroSection";
 import TestamonialsSection from "./sections/TestamonialsSection";
-import SocialLinksCard from "../../components/common/SocalLinksCard";
+import SocialLinksCard from "../../components/cards/SocalLinksCard";
 import { ICON_SIZES } from "../../components/images/icons/IconConfig";
 import ContentSectionHeader from "../../components/layouts/ContentSectionHeader";
 

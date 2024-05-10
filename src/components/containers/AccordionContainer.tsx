@@ -14,7 +14,7 @@ export interface AccordionProps {
     items: AccordionItem[]
 }
 
-const AccordionTemplate = (props: AccordionProps) => {
+const AccordionContainer = (props: AccordionProps) => {
     const { theme, } = useContext(ThemeContext);
     const [isOpen, setOpen] = React.useState(-1);
 
@@ -62,4 +62,4 @@ const AccordionTemplate = (props: AccordionProps) => {
     );
 }
 
-export default AccordionTemplate;
+export default AccordionContainer;

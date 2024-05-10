@@ -6,7 +6,7 @@ import ContentSectionContainer from "../../../components/containers/ContentSecti
 // For more info see https://stackoverflow.com/questions/78296875/typescript-error-using-material-tailwind-react-with-nextjs14
 
 import RoundCornerContainer from "../../../components/containers/RoundCornerContainer";
-import AccordionTemplate, { AccordionItem } from "../../../components/templates/AccordionTemplate";
+import AccordionContainer, { AccordionItem } from "../../../components/containers/AccordionContainer";
 import StandardLink from "../../../components/navigation/StandardLink";
 import { ReactNode } from "react";
 
@@ -69,7 +69,7 @@ const FaqsDetailPanel = () => {
   return (
     <ContentSectionContainer id="faqs-detail-container" flexDirection="Center" containerClassNames="items-start">
       <RoundCornerContainer id="faqs-detail" padding="Small" containerClassNames="w-full">
-        <AccordionTemplate items={faqList} />
+        <AccordionContainer items={faqList} />
       </RoundCornerContainer>
     </ContentSectionContainer>
   );

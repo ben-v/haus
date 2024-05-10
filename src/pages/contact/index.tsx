@@ -1,7 +1,7 @@
 import PageContainer from "../../components/containers/PageContainer";
 import ContentSectionContainer from "../../components/containers/ContentSectionContainer";
 import GenericContentContainer from '../../components/containers/GenericContentContainer';
-import TabStripTemplate, { TabTemplateProps } from '../../components/templates/TabStripTemplate';
+import TabStripContainer, { TabTemplateProps } from '../../components/containers/TabStripContainer';
 
 import ContactFormPanel from "./panels/ContactFormPanel";
 import ContactOtherPanel from "./panels/ContactOtherPanel";
@@ -34,7 +34,7 @@ const ContactPage = () => {
           </GenericContentContainer>
         </ContentSectionContainer>
         <ContentSectionContainer id="contact-detail" flexDirection="Center">
-          <TabStripTemplate id="contact-tab-strip" defaultTabKey="contact-form" tabData={tabData} />
+          <TabStripContainer id="contact-tab-strip" defaultTabKey="contact-form" tabData={tabData} />
         </ContentSectionContainer>
       </ContentSectionContainer>
     </PageContainer>

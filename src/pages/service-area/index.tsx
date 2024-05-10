@@ -2,7 +2,7 @@
 import PageContainer from "../../components/containers/PageContainer";
 import ContentSectionContainer from '../../components/containers/ContentSectionContainer';
 import GenericContentContainer from '../../components/containers/GenericContentContainer';
-import TabStripTemplate, { TabTemplateProps } from '../../components/templates/TabStripTemplate';
+import TabStripContainer, { TabTemplateProps } from '../../components/containers/TabStripContainer';
 
 import ServiceAreaDetailPanel from './panels/ServiceAreaDetailPanel';
 import ServiceAreaMapPanel from "./panels/ServiceAreaMapPanel";
@@ -35,7 +35,7 @@ const ServiceAreaPage = () => {
           </GenericContentContainer>
         </ContentSectionContainer>
         <ContentSectionContainer id="service-area-detail" flexDirection="Center">
-          <TabStripTemplate id="service-area-tab-strip" defaultTabKey="service-area-communities" tabData={tabData} />
+          <TabStripContainer id="service-area-tab-strip" defaultTabKey="service-area-communities" tabData={tabData} />
         </ContentSectionContainer>
       </ContentSectionContainer>
     </PageContainer>

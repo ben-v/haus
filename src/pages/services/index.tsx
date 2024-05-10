@@ -1,7 +1,7 @@
 import PageContainer from "../../components/containers/PageContainer";
 import ContentSectionContainer from "../../components/containers/ContentSectionContainer";
 import GenericContentContainer from '../../components/containers/GenericContentContainer';
-import TabStripTemplate, { TabTemplateProps } from '../../components/templates/TabStripTemplate';
+import TabStripContainer, { TabTemplateProps } from '../../components/containers/TabStripContainer';
 
 import SvgPersonWithList from "../../components/images/stick-figures/SvgPersonWithList";
 import ServicesDetailPanel from "./panels/ServicesDetailPanel";
@@ -40,7 +40,7 @@ const ServicesPage = () => {
           </GenericContentContainer>
         </ContentSectionContainer>
         <ContentSectionContainer id="faqs-detail" flexDirection="Center">
-          <TabStripTemplate id="services-tab-strip" defaultTabKey="services-detail" tabData={tabData} />
+          <TabStripContainer id="services-tab-strip" defaultTabKey="services-detail" tabData={tabData} />
         </ContentSectionContainer>
       </ContentSectionContainer>
     </PageContainer>
