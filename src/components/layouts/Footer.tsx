@@ -38,7 +38,7 @@ const sectionLinkGroups: NavLinkGroup[] = [
 const Footer = () => {
   const logClick = (label: string | undefined) => {
     if (label) {
-      logClickAction("Footer", label);
+      logClickAction("Footer Navigation", label);
     }
   };
   
