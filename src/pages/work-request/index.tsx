@@ -2,6 +2,8 @@ import { useEffect } from "react";
 
 import PageContainer from "../../components/containers/PageContainer";
 
+import { logPageView } from "../../components/analytics/GA";
+
 const workRequestForm = () => {
   useEffect(() => {
     const script = document.createElement("script");
@@ -21,6 +23,9 @@ const workRequestForm = () => {
 };
 
 const WorkRequestPage = () => {
+  // Send page view analytics
+  logPageView("/work-request", "Work Request Page");
+
   return (
     <PageContainer
       id="work-request"

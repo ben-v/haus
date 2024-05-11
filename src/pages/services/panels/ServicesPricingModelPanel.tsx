@@ -7,7 +7,6 @@ import RoundCornerContainer from "../../../components/containers/RoundCornerCont
 import CardHeader from "../../../components/layouts/CardHeader";
 
 const ServicesPricingModelPanel = () => {
-    
   return (
     <ContentSectionContainer id="faqs-detail-container" flexDirection="Center" containerClassNames="items-start">
       <RoundCornerContainer id="faqs-detail" padding="Small" containerClassNames="w-full" bodyClassNames="gap-4">

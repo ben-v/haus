@@ -18,11 +18,17 @@ import CardHeader from "../../../components/layouts/CardHeader";
 import StandardLink from "../../../components/navigation/StandardLink";
 import { ErrorBase } from "../../../components/ErrorBase";
 
+import { logClickAction } from "../../../components/analytics/GA";
+
 type ErrorName = "EMAILJS_ERROR" | "RECAPTCHA_ERROR" | "RECAPTCHA_TIMEOUT_ERROR";
 
 class ContactError extends ErrorBase<ErrorName> { };
 
 const ContactFormPanel = () => {
+  const logClick = (label: string) => {
+    logClickAction("Contact Form Panel", label);
+  };
+
     const { theme, } = useContext(ThemeContext);
     const [isSubmitButtonDisabled, setSubmitButtonDisabledState] = useState(false);
 
@@ -312,8 +318,8 @@ const ContactFormPanel = () => {
                                 </div>
                             </div>
 
-                            <p className="my-8 body-text tabpanel-text">By clicking submit below, you agree to the processing of your personal information by HAUS Property Services as described in our <StandardLink url="/privacy"><span className="font-semibold body-link">Privacy Policy</span></StandardLink>.</p>
-                            <ButtonLink type="submit" prefixIcon={<SvgPaperPlaneSolid />} prefixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"} disabled={isSubmitButtonDisabled}>Send Message</ButtonLink>
+                            <p className="my-8 body-text tabpanel-text">By clicking submit below, you agree to the processing of your personal information by HAUS Property Services as described in our <StandardLink url="/privacy" onClick={() => logClick("Privacy Link")}><span className="font-semibold body-link">Privacy Policy</span></StandardLink>.</p>
+                            <ButtonLink type="submit" prefixIcon={<SvgPaperPlaneSolid />} prefixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"} disabled={isSubmitButtonDisabled} onClick={() => logClick("Send Message Button")}>Send Message</ButtonLink>
                         </div>
                     </form>
                 </RoundCornerContainer>

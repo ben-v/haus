@@ -1,13 +1,15 @@
 import PageContainer from "../../components/containers/PageContainer";
 import ContentSectionContainer from "../../components/containers/ContentSectionContainer";
 import GenericContentContainer from '../../components/containers/GenericContentContainer';
-import TabStripContainer, { TabTemplateProps } from '../../components/containers/TabStripContainer';
+import TabStripContainer, { TabProps } from '../../components/containers/TabStripContainer';
 
 import FaqsDetailOtherPanel from "./panels/FaqsDetailOtherPanel";
 import FaqsDetailPanel from "./panels/FaqsDetailPanel";
 import SvgPersonInformation from '../../components/images/stick-figures/SvgPersonInformation';
 
-const tabData: TabTemplateProps[] = [
+import { logPageView } from "../../components/analytics/GA";
+
+const tabData: TabProps[] = [
   {
     title: "FAQs",
     key: "our-faqs",
@@ -21,6 +23,9 @@ const tabData: TabTemplateProps[] = [
 ];
 
 const FaqsPage = () => {
+  // Send page view analytics
+  logPageView("/faqs", "FAQs Page");
+
   return (
     <PageContainer
       id="faqs"
@@ -33,7 +38,7 @@ const FaqsPage = () => {
           </GenericContentContainer>
         </ContentSectionContainer>
         <ContentSectionContainer id="faqs-detail" flexDirection="Center">
-          <TabStripContainer id="faqs-tab-strip" defaultTabKey="our-faqs" tabData={tabData} />
+          <TabStripContainer id="faqs-tab-strip" defaultTabKey="our-faqs" tabData={tabData} source="FAQs Page" />
         </ContentSectionContainer>
       </ContentSectionContainer>
     </PageContainer>

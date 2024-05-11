@@ -117,7 +117,7 @@ const ServicesDetailPanel = () => {
   return (
     <ContentSectionContainer flexDirection="Center" containerClassNames="items-start">
       <RoundCornerContainer padding="Small" containerClassNames="w-full">
-        <AccordionContainer items={servicesAccordianList} />
+        <AccordionContainer items={servicesAccordianList} source="Service Detail Panel" />
       </RoundCornerContainer>
     </ContentSectionContainer>
   );
