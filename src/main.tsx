@@ -5,6 +5,7 @@ import './index.css'
 import './content.css'
 import { initTheming, ThemeSwitchProvider } from './components/providers/ThemeSwitchProvider.tsx'
 import { ThemeProvider } from "@material-tailwind/react";
+import loadAnalytics from './components/analytics/LoadAnalytics.ts'
 
 const root = ReactDOM.createRoot(document.getElementById('root')!);
 
@@ -21,3 +22,5 @@ root.render(
     </ThemeProvider>
   </React.StrictMode>,
 )
+
+loadAnalytics();

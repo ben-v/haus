@@ -15,7 +15,13 @@ import { ThemeContext, THEMES } from "../../../components/contexts/ThemeContext"
 import StandardLink from "../../../components/navigation/StandardLink";
 import { renderToString } from "react-dom/server";
 
+import { logClickAction } from "../../../components/analytics/GA";
+
 const CurrentClientsPanel = () => {
+  const logClick = (label: string) => {
+    logClickAction("Current Clients Panel", label);
+  };
+
     const { theme, } = useContext(ThemeContext);
 
     return (
@@ -27,7 +33,7 @@ const CurrentClientsPanel = () => {
                         titleAlignment="Left"
                         childrenAlignment="Left"
                         childrenClassnames="tabpanel-text">
-                        For our current clients, the <StandardLink url="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" isExternalRoute={true} target="_blank"><span className="font-semibold body-link">Client Hub</span></StandardLink> is a self-service, online platform that enables HAUS clients to approve quotes, check appointment details, pay invoices, print receipts, or request more work.
+                        For our current clients, the <StandardLink url="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" isExternalRoute={true} target="_blank" onClick={() => logClick("Client Hub Link")}><span className="font-semibold body-link">Client Hub</span></StandardLink> is a self-service, online platform that enables HAUS clients to approve quotes, check appointment details, pay invoices, print receipts, or request more work.
                     </CardHeader>
                     <div className="relative flex flex-col gap-6">
                         <ContentIconContainer
@@ -40,6 +46,7 @@ const CurrentClientsPanel = () => {
                         <NavLink
                             url="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login"
                             target="_blank"
+                            onClick={() => logClick("Client Hub Button")}
                             isExternalRoute={true}
                             prefixIcon={<SvgAddressBookSolid />}
                             suffixIcon={<SvgArrowUpRightFromSquareSolid />}

@@ -1,7 +1,11 @@
+import { logPageView } from "../../components/analytics/GA";
 import PageContainer from "../../components/containers/PageContainer";
 import TermsDetailSection from "./sections/TermsDetailSection"
 
 const TermsPage = () => {
+  // Send page view analytics
+  logPageView("/terms", "Terms & Conditions Page");
+
   return (
     <PageContainer
       id="terms"

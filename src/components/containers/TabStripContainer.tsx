@@ -9,20 +9,28 @@ import {
 } from "@material-tailwind/react";
 import { THEMES, ThemeContext } from "../contexts/ThemeContext";
 import { PropsBase } from "../PropsBase";
+import { logClickAction } from "../analytics/GA";
 
-export interface TabTemplateProps extends PropsBase {
+export interface TabProps extends PropsBase {
     key: string;
     title: string;
 }
 
-export interface TabStripTemplateProps extends PropsBase {
+export interface TabStripProps extends PropsBase {
+    source: string,
     defaultTabKey: string;
-    tabData: TabTemplateProps[];
+    tabData: TabProps[];
 }
 
-const TabStripContainer = (props: TabStripTemplateProps) => {
+const TabStripContainer = (props: TabStripProps) => {
     const { theme } = useContext(ThemeContext);
 
+    const logClick = (label: string | undefined) => {
+        if (label) {
+            logClickAction(`Tab Strip - ${props.source}`, label);
+        }
+      };
+    
     const tabHeadertheme = {
         tab: {
             styles: {
@@ -52,7 +60,7 @@ const TabStripContainer = (props: TabStripTemplateProps) => {
             <ThemeProvider value={tabHeadertheme}>
                 <TabsHeader className="tab-strip-header">
                     {props.tabData.map(({ title, key }) => (
-                        <Tab key={key} value={key} className="tab-strip-header-tab">
+                        <Tab key={key} value={key} className="tab-strip-header-tab" onClick={() => {logClick(title)}}>
                             {title}
                         </Tab>
                     ))}

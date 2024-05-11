@@ -15,9 +15,15 @@ import SvgRectangleListSolid from "../../../components/images/icons/SvgRectangle
 import { ThemeContext, THEMES } from "../../../components/contexts/ThemeContext";
 import StandardLink from "../../../components/navigation/StandardLink";
 
-const NewClientsPanel = () => {
-    const { theme, } = useContext(ThemeContext);
+import { logClickAction } from "../../../components/analytics/GA";
 
+const NewClientsPanel = () => {
+  const logClick = (label: string) => {
+    logClickAction("New Clients Panel", label);
+  };
+  
+    const { theme, } = useContext(ThemeContext);
+    
     return (
         <ContentSectionContainer>
             <div className="relative w-full md:w-1/2">
@@ -27,7 +33,7 @@ const NewClientsPanel = () => {
                         titleAlignment="Left"
                         childrenAlignment="Left"
                         childrenClassnames="tabpanel-text">
-                        Getting started as a new client is easy: simply send us a <StandardLink url="/work-request"><span className="font-semibold body-link">Work Request</span></StandardLink>. Once received, we'll review it and follow up with you regarding the next steps.
+                        Getting started as a new client is easy: simply send us a <StandardLink url="/work-request" onClick={() => logClick("Work Request Link")}><span className="font-semibold body-link">Work Request</span></StandardLink>. Once received, we'll review it and follow up with you regarding the next steps.
                     </CardHeader>
                     <div className="relative flex flex-col gap-6">
                         <ContentIconContainer
@@ -48,6 +54,7 @@ const NewClientsPanel = () => {
                             url="/work-request"
                             prefixIcon={<SvgRectangleListSolid />}
                             children="Work Request"
+                            onClick={() => logClick("Work Request Button")}
                             prefixIconFill={theme === THEMES.DARK ? "#1e293b" : "white"}
                         />
                     </div>

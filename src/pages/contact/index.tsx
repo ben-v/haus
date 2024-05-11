@@ -1,13 +1,15 @@
 import PageContainer from "../../components/containers/PageContainer";
 import ContentSectionContainer from "../../components/containers/ContentSectionContainer";
 import GenericContentContainer from '../../components/containers/GenericContentContainer';
-import TabStripContainer, { TabTemplateProps } from '../../components/containers/TabStripContainer';
+import TabStripContainer, { TabProps } from '../../components/containers/TabStripContainer';
 
 import ContactFormPanel from "./panels/ContactFormPanel";
 import ContactOtherPanel from "./panels/ContactOtherPanel";
 import SvgWorkerEmailing from '../../components/images/stick-figures/SvgWorkerEmailing';
 
-const tabData: TabTemplateProps[] = [
+import { logPageView } from "../../components/analytics/GA";
+
+const tabData: TabProps[] = [
   {
     title: "Message Us",
     key: "contact-form",
@@ -21,6 +23,9 @@ const tabData: TabTemplateProps[] = [
 ];
 
 const ContactPage = () => {
+  // Send page view analytics
+  logPageView("/contact", "Contact Page");
+
   return (
     <PageContainer
       id="contact"
@@ -34,7 +39,7 @@ const ContactPage = () => {
           </GenericContentContainer>
         </ContentSectionContainer>
         <ContentSectionContainer id="contact-detail" flexDirection="Center">
-          <TabStripContainer id="contact-tab-strip" defaultTabKey="contact-form" tabData={tabData} />
+          <TabStripContainer id="contact-tab-strip" defaultTabKey="contact-form" tabData={tabData} source="Contact Page" />
         </ContentSectionContainer>
       </ContentSectionContainer>
     </PageContainer>

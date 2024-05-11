@@ -8,6 +8,7 @@ import SvgGoogleFontAwesomeGeneric from "../images/icons/SvgGoogleFontAwesomeGen
 import SvgYelpFontAwesomeGeneric from "../images/icons/SvgYelpFontAwesomeGeneric";
 import SvgInstagramGeneric from "../images/icons/SvgInstagramGeneric";
 import PngInstagramColor from "../../../public/icons/instagram-color.png";
+import { NavLinkProps } from "./NavLinkProps";
 
 export enum SocialPlatforms {
     GOOGLE = "Google",
@@ -45,19 +46,19 @@ const SocialProfileUrls: Record<SocialPlatforms, SocialPlatformLinkConfig> = {
     }
 }
 
-export interface SocialProfileLinkProps {
+export interface SocialProfileLinkProps extends Omit<NavLinkProps, "children"> {
     platform: SocialPlatforms,
     type?: "DisplayIcon" | "DisplayChildren",
     useGenericIcon?: boolean,
     genericIconFill?: string,
-    size?: IconSize,
+    iconSize?: IconSize,
     children?: ReactNode
 }
 
 const defaultProps = {
     type: "DisplayIcon",
     useGenericIcon: false,
-    size: ICON_SIZES.default,
+    iconSize: ICON_SIZES.default,
     genericIconFill: "white"
 } satisfies Partial<SocialProfileLinkProps>
 
@@ -86,14 +87,14 @@ const SocialProfileLink = (props: SocialProfileLinkProps) => {
                     (
                         propsWithDefaults.useGenericIcon ? 
                             React.cloneElement(icon, {
-                                width: propsWithDefaults.size.width,
-                                height: propsWithDefaults.size.height,
+                                width: propsWithDefaults.iconSize.width,
+                                height: propsWithDefaults.iconSize.height,
                                 fill: propsWithDefaults.genericIconFill
                             })
                         :
                         React.cloneElement(icon, {
-                            width: propsWithDefaults.size.width,
-                            height: propsWithDefaults.size.height
+                            width: propsWithDefaults.iconSize.width,
+                            height: propsWithDefaults.iconSize.height
                         })
                 )
             :

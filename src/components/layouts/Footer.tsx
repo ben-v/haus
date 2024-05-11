@@ -5,6 +5,7 @@ import { NavLinkGroup } from "../navigation/NavLinkProps";
 import StandardLink from "../navigation/StandardLink";
 import { ICON_SIZES } from "../images/icons/IconConfig";
 import SocialProfileLink, { SocialPlatforms } from "../navigation/SocialProfileLink";
+import { logClickAction } from "../analytics/GA";
 
 const sectionLinkGroups: NavLinkGroup[] = [
   {
@@ -35,6 +36,12 @@ const sectionLinkGroups: NavLinkGroup[] = [
 ];
 
 const Footer = () => {
+  const logClick = (label: string | undefined) => {
+    if (label) {
+      logClickAction("Footer", label);
+    }
+  };
+  
   return (
     <footer className="border-t border-gray-100 pt-4 md:pt-8 pb-8 px-4 dark:border-gray-800">
         <div className="text-sm m-auto text-gray-600 dark:text-gray-400 sm:px-12 xl:max-w-6xl xl:px-0">
@@ -42,7 +49,7 @@ const Footer = () => {
             <div className="col-span-8 md:col-span-2 lg:col-span-3">
               <div className="flex h-full items-start justify-between gap-6 border-b border-white py-6 dark:border-gray-800 md:flex-col md:items-start md:justify-between md:space-y-6 md:border-none md:py-0">
                 <div>
-                  <StandardLink url="/" aria-label="HAUS Property Services Logo" className="flex items-center">
+                  <StandardLink url="/" aria-label="HAUS Property Services Logo" className="flex items-center" onClick={() => logClick("Logo")}>
                     <SvgLogo fill="currentColor" className="bi bi-logo h-8 w-auto" />
                   </StandardLink>
                   <p className='pt-5 footer-text'>HAUS Property Services</p>
@@ -50,10 +57,10 @@ const Footer = () => {
                 </div>
 
                 <div className="inline-flex gap-3 pt-2">
-                  <SocialProfileLink platform={SocialPlatforms.GOOGLE} size={ICON_SIZES.md} useGenericIcon={true} genericIconFill="currentColor"/>
-                  <SocialProfileLink platform={SocialPlatforms.FACEBOOK} size={ICON_SIZES.md} useGenericIcon={true}  genericIconFill="currentColor"/>
-                  <SocialProfileLink platform={SocialPlatforms.INSTAGRAM} size={ICON_SIZES.md} useGenericIcon={true}  genericIconFill="currentColor"/>
-                  <SocialProfileLink platform={SocialPlatforms.YELP} size={ICON_SIZES.md} useGenericIcon={true}  genericIconFill="currentColor"/>
+                  <SocialProfileLink platform={SocialPlatforms.GOOGLE} iconSize={ICON_SIZES.md} useGenericIcon={true} genericIconFill="currentColor" onClick={() => logClick(SocialPlatforms.GOOGLE)}/>
+                  <SocialProfileLink platform={SocialPlatforms.FACEBOOK} iconSize={ICON_SIZES.md} useGenericIcon={true}  genericIconFill="currentColor" onClick={() => logClick(SocialPlatforms.FACEBOOK)}/>
+                  <SocialProfileLink platform={SocialPlatforms.INSTAGRAM} iconSize={ICON_SIZES.md} useGenericIcon={true}  genericIconFill="currentColor" onClick={() => logClick(SocialPlatforms.INSTAGRAM)}/>
+                  <SocialProfileLink platform={SocialPlatforms.YELP} iconSize={ICON_SIZES.md} useGenericIcon={true}  genericIconFill="currentColor" onClick={() => logClick(SocialPlatforms.YELP)}/>
                 </div>
               </div>
             </div>
@@ -65,7 +72,7 @@ const Footer = () => {
                     <ul className="mt-3 list-inside space-y-2">
                       {section.links.map((link, linkIndex) => (
                         <li key={linkIndex}>
-                          <StandardLink url={link.url} target={link.target === undefined ? "_self" : link.target} className="footer-link-text" isExternalRoute={link.isExternalRoute}>
+                          <StandardLink url={link.url} target={link.target === undefined ? "_self" : link.target} className="footer-link-text" isExternalRoute={link.isExternalRoute} onClick={() => logClick(link.url)}>
                             <div className="inline-flex items-center justify-left">
                               <div>
                                 {link.children}

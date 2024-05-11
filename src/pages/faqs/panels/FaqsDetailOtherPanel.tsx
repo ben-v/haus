@@ -7,8 +7,13 @@ import RoundCornerContainer from "../../../components/containers/RoundCornerCont
 import NavLink from "../../../components/navigation/NavLink";
 import CardHeader from "../../../components/layouts/CardHeader";
 
+import { logClickAction } from "../../../components/analytics/GA";
+
 const FaqsDetailOtherPanel = () => {
-    
+  const logClick = (label: string) => {
+    logClickAction("Service Area Detail Panel", label);
+  };
+  
   return (
     <ContentSectionContainer id="faqs-detail-container" flexDirection="Center" containerClassNames="items-start">
       <RoundCornerContainer id="faqs-detail" padding="Small" containerClassNames="w-full" bodyClassNames="gap-4">
@@ -19,7 +24,7 @@ const FaqsDetailOtherPanel = () => {
         childrenClassnames="tabpanel-text">
           Feel free to reach out with any questions you may have.
         </CardHeader>
-          <NavLink url="/contact">Contact Us</NavLink>
+          <NavLink url="/contact" onClick={() => logClick("Contact Us Button")}>Contact Us</NavLink>
       </RoundCornerContainer>
     </ContentSectionContainer>
   );

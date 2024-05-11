@@ -69,7 +69,7 @@ const FaqsDetailPanel = () => {
   return (
     <ContentSectionContainer id="faqs-detail-container" flexDirection="Center" containerClassNames="items-start">
       <RoundCornerContainer id="faqs-detail" padding="Small" containerClassNames="w-full">
-        <AccordionContainer items={faqList} />
+        <AccordionContainer items={faqList} source="FAQs Detail Panel" />
       </RoundCornerContainer>
     </ContentSectionContainer>
   );

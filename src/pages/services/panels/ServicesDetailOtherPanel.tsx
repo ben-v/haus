@@ -7,8 +7,13 @@ import RoundCornerContainer from "../../../components/containers/RoundCornerCont
 import NavLink from "../../../components/navigation/NavLink";
 import CardHeader from "../../../components/layouts/CardHeader";
 
+import { logClickAction } from "../../../components/analytics/GA";
+
 const ServicesDetailOtherPanel = () => {
-    
+  const logClick = (label: string) => {
+    logClickAction("Services Other Panel", label);
+  };
+
   return (
     <ContentSectionContainer id="faqs-detail-container" flexDirection="Center" containerClassNames="items-start">
       <RoundCornerContainer padding="Small" containerClassNames="w-full" bodyClassNames="gap-4">
@@ -19,7 +24,7 @@ const ServicesDetailOtherPanel = () => {
           childrenClassnames="tabpanel-text">
           If you don't see the services you're interested in listed, please reach out to us. We may still be able to assist you!
         </CardHeader>
-        <NavLink url="/contact">Contact Us</NavLink>
+        <NavLink url="/contact" onClick={() => logClick("Contact Us Button")}>Contact Us</NavLink>
       </RoundCornerContainer>
     </ContentSectionContainer>
   );

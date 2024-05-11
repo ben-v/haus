@@ -12,6 +12,7 @@ import withMaterialTailwind from '../../../tailwind.config';
 import { Config } from 'tailwindcss';
 import { ICON_SIZES } from '../images/icons/IconConfig';
 import SocialProfileLink, { SocialPlatforms } from '../navigation/SocialProfileLink';
+import { logClickAction } from '../analytics/GA';
 
 export interface TestamonialCardProps {
   reviewerName: string;
@@ -38,6 +39,10 @@ const TestamonialCard = (props: TestamonialCardProps) => {
     ...props
   }
 
+  const logClick = (label: string) => {
+    logClickAction("Testamonial Card", label);
+};
+
   return (
     <RoundCornerContainer padding={propsWithDefaults.padding}>
       <div className="relative z-10 text-gray-600 dark:text-gray-300 text-sm flex flex-col gap-3 w-auto h-full" >
@@ -49,7 +54,7 @@ const TestamonialCard = (props: TestamonialCardProps) => {
             color={theme === THEMES.DARK ? fullConfig.theme.colors.gray[800] : fullConfig.theme.colors.white} />
           <span className="grow font-semibold">{propsWithDefaults.reviewerName}</span>
           <span className="items-end">
-            <SocialProfileLink platform={propsWithDefaults.source} size={ICON_SIZES.md} />
+            <SocialProfileLink platform={propsWithDefaults.source} iconSize={ICON_SIZES.md} onClick={() => logClick(propsWithDefaults.source)} />
           </span>
         </div>
         <div className="flex flex-row h-auto">
@@ -64,7 +69,7 @@ const TestamonialCard = (props: TestamonialCardProps) => {
         </div>
         <div>{propsWithDefaults.reviewText}</div>
         <div className="flex flex-row-reverse grow items-end">
-          <SocialProfileLink platform={propsWithDefaults.source} type={"DisplayChildren"} size={ICON_SIZES.md}>
+          <SocialProfileLink platform={propsWithDefaults.source} type={"DisplayChildren"} iconSize={ICON_SIZES.md} onClick={() => logClick(propsWithDefaults.source)}>
             <div className="inline-flex items-center justify-left">
               <div>
                 Read more reviews on {propsWithDefaults.source}

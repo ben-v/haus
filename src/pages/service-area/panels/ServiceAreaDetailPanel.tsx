@@ -3,7 +3,12 @@ import RoundCornerContainer from "../../../components/containers/RoundCornerCont
 import NavLink from "../../../components/navigation/NavLink";
 import CardHeader from "../../../components/layouts/CardHeader";
 
+import { logClickAction } from "../../../components/analytics/GA";
+
 const ServiceAreaDetailPanel = () => {
+  const logClick = (label: string) => {
+    logClickAction("Service Area Detail Panel", label);
+  };
   
   return (
     <ContentSectionContainer flexDirection="Center">
@@ -29,7 +34,7 @@ const ServiceAreaDetailPanel = () => {
 
         <p className="body-text tabpanel-text">Don't see your community listed, or have questions about our service area? Feel free to reach out to us for more information. We're here to help!</p>
 
-        <NavLink url="/contact">Contact Us</NavLink>
+        <NavLink url="/contact" onClick={() => logClick("Contact Us Button")}>Contact Us</NavLink>
       </RoundCornerContainer>
     </ContentSectionContainer>
   )

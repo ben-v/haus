@@ -2,13 +2,14 @@
 import PageContainer from "../../components/containers/PageContainer";
 import ContentSectionContainer from '../../components/containers/ContentSectionContainer';
 import GenericContentContainer from '../../components/containers/GenericContentContainer';
-import TabStripContainer, { TabTemplateProps } from '../../components/containers/TabStripContainer';
+import TabStripContainer, { TabProps } from '../../components/containers/TabStripContainer';
 
 import ServiceAreaDetailPanel from './panels/ServiceAreaDetailPanel';
 import ServiceAreaMapPanel from "./panels/ServiceAreaMapPanel";
 import SvgPersonDriving from '../../components/images/stick-figures/SvgPersonDriving';
+import { logPageView } from "../../components/analytics/GA";
 
-const tabData: TabTemplateProps[] = [
+const tabData: TabProps[] = [
   {
     title: "Communities",
     key: "service-area-communities",
@@ -22,6 +23,9 @@ const tabData: TabTemplateProps[] = [
 ];
 
 const ServiceAreaPage = () => {
+  // Send page view analytics
+  logPageView("/service-area", "Service Area Page");
+
   return (
     <PageContainer
       id="service-area"
@@ -35,7 +39,7 @@ const ServiceAreaPage = () => {
           </GenericContentContainer>
         </ContentSectionContainer>
         <ContentSectionContainer id="service-area-detail" flexDirection="Center">
-          <TabStripContainer id="service-area-tab-strip" defaultTabKey="service-area-communities" tabData={tabData} />
+          <TabStripContainer id="service-area-tab-strip" defaultTabKey="service-area-communities" tabData={tabData} source="Service Area Page" />
         </ContentSectionContainer>
       </ContentSectionContainer>
     </PageContainer>

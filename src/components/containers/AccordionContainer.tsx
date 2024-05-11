@@ -4,6 +4,7 @@ import SvgChevronDownSolid from "../images/icons/SvgChevronDownSolid";
 import { Accordion, AccordionHeader, AccordionBody, ThemeProvider } from "@material-tailwind/react";
 import React from "react";
 import { THEMES, ThemeContext } from "../contexts/ThemeContext";
+import { logClickAction } from "../analytics/GA";
 
 export interface AccordionItem {
     title: string,
@@ -11,14 +12,18 @@ export interface AccordionItem {
 }
 
 export interface AccordionProps {
-    items: AccordionItem[]
+    items: AccordionItem[],
+    source: string
 }
 
 const AccordionContainer = (props: AccordionProps) => {
     const { theme, } = useContext(ThemeContext);
     const [isOpen, setOpen] = React.useState(-1);
 
-    const handleOpen = (value: number) => setOpen(isOpen === value ? -1 : value);
+    const handleOpen = (value: number, label: string) => {
+        setOpen(isOpen === value ? -1 : value);
+        logClickAction(`Accordion - ${props.source}`, label);
+    }
 
     const accordionTheme = {
         accordion: {
@@ -51,7 +56,7 @@ const AccordionContainer = (props: AccordionProps) => {
                         </span>
                     }>
                     <ThemeProvider value={accordionTheme}>
-                        <AccordionHeader onClick={() => handleOpen(index)} className="expandable-item-header">{item.title}</AccordionHeader>
+                        <AccordionHeader onClick={() => handleOpen(index, item.title)} className="expandable-item-header">{item.title}</AccordionHeader>
                         <AccordionBody className="expandable-item-detail">
                             {item.children}
                         </AccordionBody>
