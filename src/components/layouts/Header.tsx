@@ -142,12 +142,16 @@ const Header = () => {
                   <SvgMoon fill="currentColor" className="transistion relative m-auto h-5 w-5 fill-gray-500 duration-300 group-hover:-rotate-90 group-hover:fill-blue-900 dark:hidden" />
                 </button>
               </div>
-              <div className="mt-6 pt-6 border-t w-full border-primary/10 dark:border-gray-700 sm:flex-row lg:hidden inline-flex items-center justify-start gap-3 hover:cursor-pointer" onClick={() => toggleThemeCloseMenu(`Toggle Theme Menu/Toggle Switch Click: Current ${theme}`)}>
-                <div>
-                  <SvgSun fill="currentColor" className="transistion relative m-auto hidden h-5 w-5 dark:block dark:fill-gray-300" />
-                  <SvgMoon fill="currentColor" className="transistion relative m-auto h-5 w-5 dark:hidden" />
-                </div>
-                <div className="nav-button md:mr-3 w-full">Dark Mode Is <span className="font-bold">{theme === THEMES.DARK ? "On" : "Off"}</span></div>
+              <div className="nav-button mt-6 pt-6 border-t w-full border-primary/10 dark:border-gray-700 sm:flex-row lg:hidden inline-flex items-center justify-start gap-3 hover:cursor-pointer" onClick={() => toggleThemeCloseMenu(`Toggle Theme Menu/Toggle Switch Click: Current ${theme}`)}>
+                <div className="inline-flex flex-row w-full gap-3">
+                  <div>
+                    <SvgSun fill="currentColor" className="transistion relative m-auto hidden h-5 w-5 dark:block dark:fill-gray-300" />
+                    <SvgMoon fill="currentColor" className="transistion relative m-auto h-5 w-5 dark:hidden" />
+                  </div>
+                  <div className="md:mr-3 grow">
+                    Dark Mode Is <span className="font-bold">{theme === THEMES.DARK ? "On" : "Off"}</span>
+                  </div>
+                  </div>
                 <Toggle
                   id="theme-switcher-small-displays"
                   defaultChecked={theme === THEMES.DARK}
