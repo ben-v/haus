@@ -22,9 +22,9 @@ import StandardLink from "../navigation/StandardLink";
 import { logClickAction } from "../analytics/GA";
 import SvgAtSolid from "../images/icons/SvgAtSolid";
 import SvgUsersSolid from "../images/icons/SvgUsersSolid";
-import SvgArrowsToDotSolid from "../images/icons/SvgArrowsToDotSolid";
 import SvgCircleInfoSolid from "../images/icons/SvgCircleInfoSolid";
 import SvgTruckSolid from "../images/icons/SvgTruckSolid";
+import SvgClipboardCheckSolid from "../images/icons/SvgClipboardCheckSolid";
 
 const Header = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -32,7 +32,7 @@ const Header = () => {
   const navLinkGroup: NavLinkGroup = {
     links: [
       { url: "clients", children: "Clients", isExternalRoute: false, prefixIcon: <SvgUsersSolid fill="currentColor" className="transistion relative m-auto h-5 w-5 lg:hidden" /> },
-      { url: "services", children: "Services", isExternalRoute: false, prefixIcon: <SvgArrowsToDotSolid fill="currentColor" className="transistion relative m-auto h-5 w-5 lg:hidden" /> },
+      { url: "services", children: "Services", isExternalRoute: false, prefixIcon: <SvgClipboardCheckSolid fill="currentColor" className="transistion relative m-auto h-5 w-5 lg:hidden" /> },
       { url: "service-area", children: "Service Area", isExternalRoute: false, prefixIcon: <SvgTruckSolid fill="currentColor" className="transistion relative m-auto h-5 w-5 lg:hidden" /> },
       { url: "faqs", children: "FAQs", isExternalRoute: false, prefixIcon: <SvgCircleInfoSolid fill="currentColor" className="transistion relative m-auto h-5 w-5 lg:hidden" /> },
       { url: "contact", children: "Contact", isExternalRoute: false, prefixIcon: <SvgAtSolid fill="currentColor" className="transistion relative m-auto h-5 w-5 lg:hidden" /> },
