@@ -86,7 +86,7 @@ const Header = () => {
             <div aria-hidden="true" id="layer" className="fixed inset-0 z-40 h-screen w-screen origin-bottom scale-y-0 bg-white/70 backdrop-blur-2xl transition duration-500 dark:bg-darker/70 lg:hidden"></div>
             <div id="navlinks" className="invisible absolute top-full left-0 z-50 w-full origin-top-right translate-y-1 scale-90 flex-col flex-wrap justify-end gap-6 rounded-3xl border border-gray-100 bg-white p-8 opacity-0 shadow-2xl shadow-gray-600/10 transition-all duration-300 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none lg:visible lg:relative lg:flex lg:w-auto lg:translate-y-0 lg:scale-100 lg:flex-row lg:items-center lg:gap-0 lg:border-none lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none dark:lg:bg-transparent">
               <div className="lg:pr-3">
-                <ul className="space-y-4 text-base font-medium tracking-wide lg:flex lg:space-y-0 lg:text-sm md:gap-[13px]">
+                <ul className="space-y-3 text-base font-medium tracking-wide lg:flex lg:space-y-0 lg:text-sm md:gap-[13px]">
                   {navLinkGroup.links.map((link, index) => (
                     <li key={index}>
                       {/* <SvgSun fill="currentColor" className="transistion relative m-auto hidden h-5 w-5 dark:block dark:fill-gray-300" /> */}
@@ -142,7 +142,7 @@ const Header = () => {
                   <SvgMoon fill="currentColor" className="transistion relative m-auto h-5 w-5 fill-gray-500 duration-300 group-hover:-rotate-90 group-hover:fill-blue-900 dark:hidden" />
                 </button>
               </div>
-              <div className="nav-button mt-6 pt-6 border-t w-full border-primary/10 dark:border-gray-700 sm:flex-row lg:hidden inline-flex items-center justify-start gap-3 hover:cursor-pointer" onClick={() => toggleThemeCloseMenu(`Toggle Theme Menu/Toggle Switch Click: Current ${theme}`)}>
+              <div className="nav-button mt-4 pt-4 border-t w-full border-primary/10 dark:border-gray-700 sm:flex-row lg:hidden inline-flex items-center justify-start gap-3 hover:cursor-pointer" onClick={() => toggleThemeCloseMenu(`Toggle Theme Menu/Toggle Switch Click: Current ${theme}`)}>
                 <div className="inline-flex flex-row w-full gap-3">
                   <div>
                     <SvgSun fill="currentColor" className="transistion relative m-auto hidden h-5 w-5 dark:block dark:fill-gray-300" />
