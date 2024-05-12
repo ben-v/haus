@@ -20,17 +20,22 @@ import { NavLinkGroup } from "../navigation/NavLinkProps";
 import StandardLink from "../navigation/StandardLink";
 
 import { logClickAction } from "../analytics/GA";
+import SvgAtSolid from "../images/icons/SvgAtSolid";
+import SvgUsersSolid from "../images/icons/SvgUsersSolid";
+import SvgArrowsToDotSolid from "../images/icons/SvgArrowsToDotSolid";
+import SvgCircleInfoSolid from "../images/icons/SvgCircleInfoSolid";
+import SvgTruckSolid from "../images/icons/SvgTruckSolid";
 
 const Header = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
-  
+
   const navLinkGroup: NavLinkGroup = {
     links: [
-      { url: "clients", children: "Clients", isExternalRoute: false },
-      { url: "services", children: "Services", isExternalRoute: false },
-      { url: "service-area", children: "Service Area", isExternalRoute: false },
-      { url: "faqs", children: "FAQs", isExternalRoute: false },
-      { url: "contact", children: "Contact", isExternalRoute: false },      
+      { url: "clients", children: "Clients", isExternalRoute: false, prefixIcon: <SvgUsersSolid fill="currentColor" className="transistion relative m-auto h-5 w-5 lg:hidden" /> },
+      { url: "services", children: "Services", isExternalRoute: false, prefixIcon: <SvgArrowsToDotSolid fill="currentColor" className="transistion relative m-auto h-5 w-5 lg:hidden" /> },
+      { url: "service-area", children: "Service Area", isExternalRoute: false, prefixIcon: <SvgTruckSolid fill="currentColor" className="transistion relative m-auto h-5 w-5 lg:hidden" /> },
+      { url: "faqs", children: "FAQs", isExternalRoute: false, prefixIcon: <SvgCircleInfoSolid fill="currentColor" className="transistion relative m-auto h-5 w-5 lg:hidden" /> },
+      { url: "contact", children: "Contact", isExternalRoute: false, prefixIcon: <SvgAtSolid fill="currentColor" className="transistion relative m-auto h-5 w-5 lg:hidden" /> },
     ]
   }
 
@@ -39,7 +44,7 @@ const Header = () => {
   const toggleNavbar = () => {
     setIsNavbarActive(prevState => !prevState);
   }
-  
+
   const closeNavbar = (label: string | undefined) => {
     if (label) {
       logClick(label);
@@ -84,8 +89,12 @@ const Header = () => {
                 <ul className="space-y-4 text-base font-medium tracking-wide lg:flex lg:space-y-0 lg:text-sm md:gap-[13px]">
                   {navLinkGroup.links.map((link, index) => (
                     <li key={index}>
+                      {/* <SvgSun fill="currentColor" className="transistion relative m-auto hidden h-5 w-5 dark:block dark:fill-gray-300" /> */}
                       <StandardLink url={link.url ? link.url : "#"} onClick={() => closeNavbar(link.url)} className="nav-link block transition nav-button">
-                        <span>{link.children}</span>
+                        <div className="inline-flex flex-row gap-3">
+                          {link.prefixIcon ? link.prefixIcon : ""}
+                          <span>{link.children}</span>
+                        </div>
                       </StandardLink>
                     </li>
                   ))}
@@ -124,24 +133,28 @@ const Header = () => {
                     <StandardLink url="tel:4063129989" isExternalRoute={true} onClick={() => closeNavbar("Phone")} className="relative hidden h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex nav-button">
                       <SvgPhoneSolid width={ICON_SIZES.sm.height} height={ICON_SIZES.sm.height} className="relative m-auto" />
                     </StandardLink>
-                    </div>
+                  </div>
                 </div>
               </div>
               <div className="mt-12 hidden flex-col space-y-2 border-primary/10 dark:border-gray-700 lg:mt-0 lg:space-y-0 lg:border-l lg:pl-3 lg:flex">
-                  <button onClick={() => toggleThemeCloseMenu(`Toggle Theme Sun/Moon Button Click: Current ${theme}`)} className="switcher group relative h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex">
-                    <SvgSun fill="currentColor" className="transistion relative m-auto hidden h-5 w-5 fill-gray-500 duration-300 group-hover:rotate-180 group-hover:fill-yellow-400 dark:block dark:fill-gray-300" />
-                    <SvgMoon fill="currentColor" className="transistion relative m-auto h-5 w-5 fill-gray-500 duration-300 group-hover:-rotate-90 group-hover:fill-blue-900 dark:hidden" />
-                  </button>
+                <button onClick={() => toggleThemeCloseMenu(`Toggle Theme Sun/Moon Button Click: Current ${theme}`)} className="switcher group relative h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex">
+                  <SvgSun fill="currentColor" className="transistion relative m-auto hidden h-5 w-5 fill-gray-500 duration-300 group-hover:rotate-180 group-hover:fill-yellow-400 dark:block dark:fill-gray-300" />
+                  <SvgMoon fill="currentColor" className="transistion relative m-auto h-5 w-5 fill-gray-500 duration-300 group-hover:-rotate-90 group-hover:fill-blue-900 dark:hidden" />
+                </button>
               </div>
-              <div className="mt-6 pt-6 border-t w-full border-primary/10 dark:border-gray-700 sm:flex-row lg:hidden inline-flex items-center justify-start hover:cursor-pointer" onClick={() => toggleThemeCloseMenu(`Toggle Theme Menu/Toggle Switch Click: Current ${theme}`)}>
-                <div className="nav-button md:mr-3 w-full">Dark Mode Is <span className="font-bold">{theme === THEMES.DARK ? "On" : "Off" }</span></div>
+              <div className="mt-6 pt-6 border-t w-full border-primary/10 dark:border-gray-700 sm:flex-row lg:hidden inline-flex items-center justify-start gap-3 hover:cursor-pointer" onClick={() => toggleThemeCloseMenu(`Toggle Theme Menu/Toggle Switch Click: Current ${theme}`)}>
+                <div>
+                  <SvgSun fill="currentColor" className="transistion relative m-auto hidden h-5 w-5 dark:block dark:fill-gray-300" />
+                  <SvgMoon fill="currentColor" className="transistion relative m-auto h-5 w-5 dark:hidden" />
+                </div>
+                <div className="nav-button md:mr-3 w-full">Dark Mode Is <span className="font-bold">{theme === THEMES.DARK ? "On" : "Off"}</span></div>
                 <Toggle
                   id="theme-switcher-small-displays"
                   defaultChecked={theme === THEMES.DARK}
                   checked={theme === THEMES.DARK}
                   icons={false}
-                  onChange={() => toggleThemeCloseMenu(undefined)} />                
-                </div>
+                  onChange={() => toggleThemeCloseMenu(undefined)} />
+              </div>
             </div>
 
             {/* Quick access menu items for smaller displays */}
@@ -161,13 +174,13 @@ const Header = () => {
                   <SvgPhoneSolid width={ICON_SIZES.sm.height} height={ICON_SIZES.sm.height} className="relative m-auto" fill={theme === THEMES.DARK ? "white" : "primary"} />
                 </button>
               </StandardLink>
-            </div>    
+            </div>
 
             {/*
             4/8/24 - Do not display tooltips for menu items on mobile/smaller displays; user has to press on the StandardLink url activate and does not provide the user with 
             much additional guidance by that point. By removing, this improves the user experience by not having to coordinate the display of tooltips between small/large displays and
             orientation dchanges.
-            */}        
+            */}
             <Tooltip id="new-client-tooltip-selector-large" className="app-tooltip" opacity={1}>
               <p className="font-bold pb-2 text-base">New client?</p>
               <p>The best way to get started with us is to fill out a <span className="font-semibold">Work Request</span> for us to review.</p>
@@ -176,7 +189,7 @@ const Header = () => {
             <Tooltip id="existing-client-tooltip-selector-large" className="app-tooltip" opacity={1}>
               <p className="font-bold pb-2 text-base">Already working with us?</p>
               <p>Visit the <span className="font-semibold">Client Hub</span> to approve quotes, check appointment details, pay invoices, print receipts, or request more work—all in one place.</p>
-            </Tooltip>      
+            </Tooltip>
           </div>
         </div>
       </nav>
