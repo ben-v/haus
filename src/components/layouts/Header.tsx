@@ -21,10 +21,10 @@ import StandardLink from "../navigation/StandardLink";
 
 import { logClickAction } from "../analytics/GA";
 import SvgAtSolid from "../images/icons/SvgAtSolid";
-import SvgCommentsSolid from "../images/icons/SvgCommentsSolid";
-import SvgMapLocationDotSolid from "../images/icons/SvgMapLocationDotSolid";
 import SvgUsersSolid from "../images/icons/SvgUsersSolid";
 import SvgArrowsToDotSolid from "../images/icons/SvgArrowsToDotSolid";
+import SvgCircleInfoSolid from "../images/icons/SvgCircleInfoSolid";
+import SvgTruckSolid from "../images/icons/SvgTruckSolid";
 
 const Header = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -33,8 +33,8 @@ const Header = () => {
     links: [
       { url: "clients", children: "Clients", isExternalRoute: false, prefixIcon: <SvgUsersSolid fill="currentColor" className="transistion relative m-auto h-5 w-5 lg:hidden" /> },
       { url: "services", children: "Services", isExternalRoute: false, prefixIcon: <SvgArrowsToDotSolid fill="currentColor" className="transistion relative m-auto h-5 w-5 lg:hidden" /> },
-      { url: "service-area", children: "Service Area", isExternalRoute: false, prefixIcon: <SvgMapLocationDotSolid fill="currentColor" className="transistion relative m-auto h-5 w-5 lg:hidden" /> },
-      { url: "faqs", children: "FAQs", isExternalRoute: false, prefixIcon: <SvgCommentsSolid fill="currentColor" className="transistion relative m-auto h-5 w-5 lg:hidden" /> },
+      { url: "service-area", children: "Service Area", isExternalRoute: false, prefixIcon: <SvgTruckSolid fill="currentColor" className="transistion relative m-auto h-5 w-5 lg:hidden" /> },
+      { url: "faqs", children: "FAQs", isExternalRoute: false, prefixIcon: <SvgCircleInfoSolid fill="currentColor" className="transistion relative m-auto h-5 w-5 lg:hidden" /> },
       { url: "contact", children: "Contact", isExternalRoute: false, prefixIcon: <SvgAtSolid fill="currentColor" className="transistion relative m-auto h-5 w-5 lg:hidden" /> },
     ]
   }
