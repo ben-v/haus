@@ -138,8 +138,8 @@ const Header = () => {
               </div>
               <div className="mt-12 hidden flex-col space-y-2 border-primary/10 dark:border-gray-700 lg:mt-0 lg:space-y-0 lg:border-l lg:pl-3 lg:flex">
                 <button onClick={() => toggleThemeCloseMenu(`Toggle Theme Sun/Moon Button Click: Current ${theme}`)} className="switcher group relative h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex">
-                  <SvgSun fill="currentColor" className="transistion relative m-auto hidden h-5 w-5 fill-gray-500 duration-300 group-hover:rotate-180 group-hover:fill-yellow-400 dark:block dark:fill-gray-300" />
-                  <SvgMoon fill="currentColor" className="transistion relative m-auto h-5 w-5 fill-gray-500 duration-300 group-hover:-rotate-90 group-hover:fill-blue-900 dark:hidden" />
+                  <SvgSun fill="currentColor" className="transistion relative m-auto hidden h-5 w-5 fill-gray-300 duration-300 group-hover:rotate-180 group-hover:fill-yellow-400 dark:block dark:fill-gray-300" />
+                  <SvgMoon fill="currentColor" className="transistion relative m-auto h-5 w-5 fill-gray-600 duration-300 group-hover:-rotate-90 group-hover:fill-blue-900 dark:hidden" />
                 </button>
               </div>
               <div className="nav-button mt-4 pt-4 border-t w-full border-primary/10 dark:border-gray-700 sm:flex-row lg:hidden inline-flex items-center justify-start gap-3 hover:cursor-pointer" onClick={() => toggleThemeCloseMenu(`Toggle Theme Menu/Toggle Switch Click: Current ${theme}`)}>
