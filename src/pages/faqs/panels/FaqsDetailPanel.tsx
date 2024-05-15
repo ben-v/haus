@@ -12,6 +12,12 @@ import { ReactNode } from "react";
 
 const faqData: { question: string, answers: ReactNode[] }[] = [
   {
+    question: "Are you license and insured?",
+    answers: [
+      "Yes, we are licensed and insured."
+    ]
+  },
+  {
     question: "What forms of payment do you accept?",
     answers: [
       <>Major credit cards, Apple Pay, Google Pay, and ACH bank payments can be used through the <StandardLink url="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" isExternalRoute={true} target="_blank"><span className="font-semibold body-link">Client Hub</span></StandardLink>.</>,
@@ -37,6 +43,12 @@ const faqData: { question: string, answers: ReactNode[] }[] = [
     question: "What if I forget about my appointment?",
     answers: [
       "If a client is not present at the designated address at the appointment time, we will wait fifteen (15) minutes on site. After this time, if the client has not arrived, the appointment will be considered canceled and a cancellation fee will be charged."
+    ]
+  },
+  {
+    question: "How do I login to the Client Hub?",
+    answers: [
+      <>When you visit the <StandardLink url="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" isExternalRoute={true} target="_blank"><span className="font-semibold body-link">Client Hub</span></StandardLink>, enter the email address associated with your account and link will be emailed to you from which you can securely access to your <StandardLink url="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" isExternalRoute={true} target="_blank"><span className="font-semibold body-link">Client Hub</span></StandardLink> account.</>
     ]
   }
 ];
