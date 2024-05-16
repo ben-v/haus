@@ -48,7 +48,7 @@ const faqData: { question: string, answers: ReactNode[] }[] = [
   {
     question: "How do I login to the Client Hub?",
     answers: [
-      <>When you visit the <StandardLink url="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" isExternalRoute={true} target="_blank"><span className="font-semibold body-link">Client Hub</span></StandardLink>, enter the email address associated with your account and link will be emailed to you from which you can securely access to your <StandardLink url="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" isExternalRoute={true} target="_blank"><span className="font-semibold body-link">Client Hub</span></StandardLink> account.</>
+      <>When you visit the <StandardLink url="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" isExternalRoute={true} target="_blank"><span className="font-semibold body-link">Client Hub</span></StandardLink>, enter the email address associated with your account and a link will be emailed to you from which you can securely access to your <StandardLink url="https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login" isExternalRoute={true} target="_blank"><span className="font-semibold body-link">Client Hub</span></StandardLink> account.</>
     ]
   }
 ];
