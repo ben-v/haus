@@ -36,7 +36,7 @@ const ServicesPage = () => {
     <PageContainer
       id="faqs"
       titlePartA="Services"
-      description="Our services cover a broad spectrum including furniture assembly, light fixture installation, and smart home device setup and troubleshooting. Whether you need help with shelving, installing blinds, or ensuring your smart home devices are running smoothly, we can help you."
+      description="Our services cover a broad spectrum including furniture assembly, light fixture installation, and smart home device setup and troubleshooting. Whether you need help with shelving, installing blinds, or ensuring your smart home devices are running smoothly, we can help you...no job is too small!"
       >
       <ContentSectionContainer id="faqs-bodycontainer" flexDirection='RTL'>
         <ContentSectionContainer flexDirection="Center" containerClassNames="w-auto pb-6 md:pt-0 md:w-4/5 md:max-w-2xl">
