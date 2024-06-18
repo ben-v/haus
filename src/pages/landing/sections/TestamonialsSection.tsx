@@ -24,6 +24,13 @@ const testamonials: TestamonialCardProps[] = [
     stars: 5,
     source: SocialPlatforms.GOOGLE,
     reviewText: "HAUS Property Services is very professional and easy to work with. They come by and give you an estimate and everything is done electronically fast and efficiently. Our project was done on time and in budget. The finished product was completed beyond my expectations!"
+  },
+  {
+    reviewerName: "Carolyn B.",
+    date: "6/1/24",
+    stars: 5,
+    source: SocialPlatforms.GOOGLE,
+    reviewText: "I cannot say enough good things about my experience with Haus. From start to finish, Ben was professional, courteous, timely, and efficient. He arrived on time, listened to my needs, and completed the job in a timely manner. Not only did he do excellent work, but he also went above and beyond to ensure that everything was done to my satisfaction. I highly recommend him to anyone in need of a reliable and skilled handyman. Thank you for your exceptional service!"
   }
 ];
 

@@ -14,11 +14,7 @@ const LandingPage = () => {
 
   return (
     <PageContainer
-      id="landing"
-      titlePartA="Comfortable, Functional,&nbsp;"
-      titlePartB="Happy Homes"
-      highlightType="Vibrant"
-      titleAlignment="Left">
+      id="landing">
       <ContentSectionContainer flexDirection="Center">
         <IntroSection />
         <TestamonialsSection />
