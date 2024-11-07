@@ -4,14 +4,14 @@ import { } from "@material-tailwind/react/theme/base/colors";
 import { ThemeContext, THEMES } from "../contexts/ThemeContext";
 
 import SvgPhoneSolid from "../images/icons/SvgPhoneSolid";
-import SvgArrowUpRightFromSquareSolid from "../images/icons/SvgArrowUpRightFromSquareSolid";
-import SvgRectangleListSolid from "../images/icons/SvgRectangleListSolid";
-import SvgAddressBookSolid from "../images/icons/SvgAddressBookSolid";
+// import SvgArrowUpRightFromSquareSolid from "../images/icons/SvgArrowUpRightFromSquareSolid";
+// import SvgRectangleListSolid from "../images/icons/SvgRectangleListSolid";
+// import SvgAddressBookSolid from "../images/icons/SvgAddressBookSolid";
 import SvgMoon from "../images/icons/SvgMoon";
 import SvgSun from "../images/icons/SvgSun";
 import SvgLogo from "../images/SvgLogo";
 
-import { Tooltip } from "react-tooltip";
+// import { Tooltip } from "react-tooltip";
 
 import Toggle from "react-toggle";
 import "react-toggle/style.css" // for ES6 modules
@@ -21,7 +21,7 @@ import StandardLink from "../navigation/StandardLink";
 
 import { logClickAction } from "../analytics/GA";
 import SvgAtSolid from "../images/icons/SvgAtSolid";
-import SvgUsersSolid from "../images/icons/SvgUsersSolid";
+// import SvgUsersSolid from "../images/icons/SvgUsersSolid";
 import SvgCircleInfoSolid from "../images/icons/SvgCircleInfoSolid";
 import SvgTruckSolid from "../images/icons/SvgTruckSolid";
 import SvgClipboardCheckSolid from "../images/icons/SvgClipboardCheckSolid";
@@ -31,7 +31,7 @@ const Header = () => {
 
   const navLinkGroup: NavLinkGroup = {
     links: [
-      { url: "clients", children: "Clients", isExternalRoute: false, prefixIcon: <SvgUsersSolid fill="currentColor" className="transistion relative m-auto h-5 w-5 lg:hidden" /> },
+      // { url: "clients", children: "Clients", isExternalRoute: false, prefixIcon: <SvgUsersSolid fill="currentColor" className="transistion relative m-auto h-5 w-5 lg:hidden" /> },
       { url: "services", children: "Services", isExternalRoute: false, prefixIcon: <SvgClipboardCheckSolid fill="currentColor" className="transistion relative m-auto h-5 w-5 lg:hidden" /> },
       { url: "service-area", children: "Service Area", isExternalRoute: false, prefixIcon: <SvgTruckSolid fill="currentColor" className="transistion relative m-auto h-5 w-5 lg:hidden" /> },
       { url: "faqs", children: "FAQs", isExternalRoute: false, prefixIcon: <SvgCircleInfoSolid fill="currentColor" className="transistion relative m-auto h-5 w-5 lg:hidden" /> },
@@ -102,7 +102,7 @@ const Header = () => {
               </div>
               <div className="hidden lg:flex">
                 <div className="mt-12 flex w-full flex-col gap-[11px] space-y-2 border-primary/10 dark:border-gray-700 sm:flex-row md:w-max lg:mt-0 lg:mr-3 lg:space-y-0 lg:border-l lg:pl-3">
-                  <div>
+                  {/* <div>
                     <StandardLink url="/work-request" onClick={() => closeNavbar("Work Request")} data-tooltip-id="new-client-tooltip-selector-large" className="relative ml-auto flex h-9 w-full items-center justify-center before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-primaryLight sm:px-4 lg:before:border lg:before:border-gray-200 lg:before:bg-gray-100 lg:dark:before:bg-gray-800 nav-button">
                       <div className="pr-2">
                         <SvgRectangleListSolid width={ICON_SIZES.sm.height} height={ICON_SIZES.sm.height} className="relative m-auto nav-button-icon" />
@@ -128,7 +128,7 @@ const Header = () => {
                         </div>
                       </div>
                     </a>
-                  </div>
+                  </div> */}
                   <div>
                     <StandardLink url="tel:4063129989" isExternalRoute={true} onClick={() => closeNavbar("Phone")} className="relative hidden h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex nav-button">
                       <SvgPhoneSolid width={ICON_SIZES.sm.height} height={ICON_SIZES.sm.height} className="relative m-auto" />
@@ -163,7 +163,7 @@ const Header = () => {
 
             {/* Quick access menu items for smaller displays */}
             <div className="fixed top-3 right-14 z-50 sm:right-24 lg:hidden">
-              <StandardLink url="/work-request" onClick={() => closeNavbar("Work Request (Small Button)")}>
+              {/* <StandardLink url="/work-request" onClick={() => closeNavbar("Work Request (Small Button)")}>
                 <button className="ml-2 switcher group relative h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex nav-button">
                   <SvgRectangleListSolid width={ICON_SIZES.sm.height} height={ICON_SIZES.sm.height} className="relative m-auto" fill={theme === THEMES.DARK ? "white" : "primary"} />
                 </button>
@@ -172,7 +172,7 @@ const Header = () => {
                 <button className="ml-2 switcher group relative h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex nav-button">
                   <SvgAddressBookSolid width={ICON_SIZES.sm.height} height={ICON_SIZES.sm.height} className="relative m-auto" fill={theme === THEMES.DARK ? "white" : "primary"} />
                 </button>
-              </StandardLink>
+              </StandardLink> */}
               <StandardLink url="tel:4063129989" onClick={() => closeNavbar("Phone (Small Button)")} isExternalRoute={true}>
                 <button className="ml-2 switcher group relative h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex nav-button">
                   <SvgPhoneSolid width={ICON_SIZES.sm.height} height={ICON_SIZES.sm.height} className="relative m-auto" fill={theme === THEMES.DARK ? "white" : "primary"} />
@@ -185,7 +185,7 @@ const Header = () => {
             much additional guidance by that point. By removing, this improves the user experience by not having to coordinate the display of tooltips between small/large displays and
             orientation dchanges.
             */}
-            <Tooltip id="new-client-tooltip-selector-large" className="app-tooltip" opacity={1}>
+            {/* <Tooltip id="new-client-tooltip-selector-large" className="app-tooltip" opacity={1}>
               <p className="font-bold pb-2 text-base">New client?</p>
               <p>The best way to get started with us is to fill out a <span className="font-semibold">Work Request</span> for us to review.</p>
             </Tooltip>
@@ -193,7 +193,7 @@ const Header = () => {
             <Tooltip id="existing-client-tooltip-selector-large" className="app-tooltip" opacity={1}>
               <p className="font-bold pb-2 text-base">Already working with us?</p>
               <p>Visit the <span className="font-semibold">Client Hub</span> to approve quotes, check appointment details, pay invoices, print receipts, or request more work—all in one place.</p>
-            </Tooltip>
+            </Tooltip> */}
           </div>
         </div>
       </nav>

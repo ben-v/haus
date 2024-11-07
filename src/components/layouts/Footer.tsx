@@ -11,20 +11,20 @@ const sectionLinkGroups: NavLinkGroup[] = [
   {
     title: "Company",
     links: [
-      { children: "Clients", url: "clients", isExternalRoute: false },
+      // { children: "Clients", url: "clients", isExternalRoute: false },
       { children: "Services", url: "services", isExternalRoute: false },
       { children: "Service Area", url: "service-area", isExternalRoute: false },
       { children: "FAQs", url: "faqs", isExternalRoute: false },
       { children: "Contact", url: "contact", isExternalRoute: false }
     ]
   },
-  {
-    title: "Client Tools",
-    links: [
-      { children: "Work Request", url: "work-request", isExternalRoute: false },
-      { children: "Client Hub", url: "https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login", target: "_blank", isExternalRoute: true }
-    ]
-  },
+  // {
+  //   title: "Client Tools",
+  //   links: [
+  //     { children: "Work Request", url: "work-request", isExternalRoute: false },
+  //     { children: "Client Hub", url: "https://clienthub.getjobber.com/client_hubs/96f9f173-4904-4f62-94b1-2f43695ff40e/login/new?source=share_login", target: "_blank", isExternalRoute: true }
+  //   ]
+  // },
   {
     title: "Resources",
     links: [
