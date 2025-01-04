@@ -1,0 +1,482 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* App Styles */
+html {
+  overflow-x: auto;
+  overflow-y: scroll;
+}
+
+body,
+.body-text,
+.serivce-area-list-text,
+.card-header-title,
+.card-subheader-title,
+.card-header-description,
+.container-header-text,
+.container-sub-header-text,
+.content-icon-container-header-title,
+.content-icon-container-description,
+.content-section-header-title,
+.content-section-header-description,
+.footer-header-text,
+.footer-text,
+.footer-link-text,
+#navbar .nav-button,
+.tab-strip .tab-strip-header .tab-strip-header-tab,
+.app-tooltip-container .app-tooltip,
+.tabpanel-text,
+.expandable-item-header, 
+.expandable-item-detail,
+.body-link
+{
+  @apply !font-sans;
+  @apply !antialiased;
+  @apply !text-slate-700;
+  @apply dark:!text-slate-100;
+}
+
+body,
+.body-text,
+.card-header-description,
+.content-icon-container-description,
+.content-section-header-description,
+.footer-header-text,
+#navbar .nav-button,
+.tabpanel-text,
+.expandable-item-header,
+.serivce-area-list-text
+{
+  @apply !text-base;
+}
+
+.expandable-item-detail 
+{
+  @apply !font-normal;
+  @apply !text-sm;
+  @apply md:!text-base;
+}
+
+.serivce-area-list-text {
+  @apply font-semibold;  
+  @apply !text-xs;
+  @apply sm:!text-sm;
+}
+
+.footer-header-text,
+.footer-link-text,
+.footer-text
+{
+  @apply !text-sm;
+  @apply !text-slate-700;
+  @apply dark:!text-slate-300;
+}
+
+.footer-header-text {
+  @apply !font-bold;
+}
+
+.footer-link-text {
+  @apply !font-medium;
+  @apply hover:!text-primary;
+  @apply dark:hover:!text-white;
+}
+
+body, .body-container {
+  @apply !text-slate-700;
+  @apply dark:!text-slate-300;
+}
+
+.body-container {
+  @apply min-h-screen;
+  @apply scroll-smooth;
+  @apply bg-white;
+  @apply selection:bg-primary/10;
+  @apply selection:text-primary;
+  @apply dark:bg-gray-900;
+  @apply bg-[radial-gradient(circle_at_top_left,_var(--tw-gradient-stops))];
+  @apply from-slate-300/20;
+  @apply dark:from-secondary/10;
+}
+
+.container-header-text {
+  @apply font-bold;
+}
+
+.container-sub-header-text {
+  @apply font-semibold;
+}
+
+/* Page Styles */
+.page-container {
+  @apply relative;
+  @apply flex;
+  @apply flex-col;
+  @apply overflow-hidden;
+  @apply pt-24;
+  @apply lg:pt-32;
+
+  @apply pb-4;
+  @apply md:pb-8;
+}
+
+.page-container .page-container-width {
+  @apply relative;
+  @apply relative;
+  @apply flex;
+  @apply flex-col;
+
+  @apply px-4;
+  @apply md:px-8;
+  @apply lg:px-10;
+  @apply xl:px-20;
+
+  @apply w-full;
+  @apply xl:max-w-7xl;  
+  
+  @apply mx-auto;
+  @apply gap-6;
+}
+
+.page-container .page-header-container {
+  @apply px-0;
+  /* @apply pb-4; */
+  @apply md:px-2;
+  @apply w-auto;
+  @apply text-center;
+}
+
+.page-header-container .page-header-heading-standard,
+.page-header-container .page-header-heading-vibrant {
+  @apply relative;
+  @apply text-center;
+  @apply font-bold;
+  @apply text-4xl;
+  @apply sm:text-5xl;
+  @apply md:text-6xl;
+}
+
+.page-header-container .page-header-heading-standard {
+  @apply text-gray-900;
+  @apply dark:text-white;
+}
+
+.page-header-container .page-header-description {
+  @apply mx-4;
+  @apply my-6;
+  @apply md:mx-12;
+  @apply w-auto;
+}
+
+/* Content Styles */
+.content-section-container {
+  @apply relative;
+  @apply flex;
+  @apply w-full;
+  @apply gap-4;
+  @apply md:gap-8;
+}
+
+.content-section-container.content-section-ltr {
+  @apply flex-col;
+  @apply md:flex-row;
+  @apply self-center;
+}
+
+.content-section-container.content-section-rtl {
+  @apply flex-col;
+  @apply md:flex-row-reverse;
+  @apply self-center;
+}
+
+.content-section-container.content-section-center {
+  @apply flex-col;
+}
+
+.content-section-header-container {
+  @apply w-auto;
+}
+
+.content-section-header-title {
+  @apply font-bold;
+  @apply my-4;
+  @apply md:mx-2;
+  @apply text-2xl;
+  @apply md:text-3xl;
+}
+
+.content-section-header-title.content-section-header-title-align-left {
+  @apply text-center;
+  @apply md:text-left;
+}
+
+.content-section-header-title.content-section-header-title-align-right {
+  @apply text-center;
+  @apply md:text-right;
+}
+
+.content-section-header-title.content-section-header-title-align-center {
+  @apply text-center;
+}
+
+.content-section-header-description {
+  @apply my-2;
+  @apply md:m-2;
+  @apply w-auto;
+}
+
+.content-section-header-description.content-section-header-description-align-left {
+  @apply text-center;
+  @apply md:text-left;
+}
+
+.content-section-header-description.content-section-header-description-align-right {
+  @apply text-center;
+  @apply md:text-right;
+}
+
+.content-section-header-description.content-section-header-description-align-center {
+  @apply text-center;
+}
+
+/* Card Styles */
+.content-icon-container {
+  @apply flex;
+  @apply flex-row;
+  @apply gap-4;
+}
+
+.content-icon-container .content-icon-container-icon {
+  @apply relative;
+  @apply flex;
+  @apply p-1;
+}
+
+.content-icon-container .content-icon-container-header {
+  @apply w-full;
+}
+
+.content-icon-container
+  .content-icon-container-header
+  .content-icon-container-description {
+  @apply my-1;
+  @apply md:my-2;
+}
+
+.card-header-container,
+.content-icon-container {
+  @apply w-auto;
+}
+
+
+.card-header-title {
+  @apply font-bold;
+  @apply text-2xl;
+  @apply sm:text-3xl;
+  @apply md:text-2xl;
+  @apply lg:text-3xl;
+}
+
+.card-subheader-title,
+.content-icon-container .content-icon-container-header .content-icon-container-header-title
+{
+  @apply font-bold;
+  @apply text-xl;
+  @apply sm:text-2xl;
+  @apply md:text-xl;
+  @apply lg:text-2xl;
+}
+
+.card-header-description {
+  @apply my-2;
+  @apply md:mt-2;
+  @apply w-auto;
+}
+
+.card-header-header.card-header-header-align-left {
+  @apply text-left;
+}
+
+.card-header-header.card-header-header-align-right {
+  @apply text-right;
+}
+
+.card-header-header.card-header-header-align-center {
+  @apply text-center;
+}
+
+.card-header-description.card-header-description-align-left {
+  @apply text-left;
+}
+
+.card-header-description.card-header-description-align-right {
+  @apply text-right;
+}
+
+.card-header-description.card-header-description-align-center {
+  @apply text-center;
+}
+
+/* Navigation/Link/Button Styles */
+/* Applied to the nav element because its z-index keeps it above everything else and applying to the wrapping div in
+the App.tsx is hidden.  */
+.page-body-start-highlight-line, .page-body-end-highlight-line {
+  @apply after:absolute;
+  @apply after:inset-0;
+  @apply after:mt-auto;
+  @apply after:h-px;
+  @apply after:w-5/12;
+  @apply after:md:w-4/12;
+  @apply after:from-yellow-300;
+  @apply after:via-pink-400;
+  @apply after:to-transparent;
+}
+
+.page-body-start-highlight-line {
+  @apply after:mr-auto;
+  @apply after:bg-gradient-to-r;
+}
+
+.page-body-end-highlight-line {
+  @apply relative;
+  @apply after:ml-auto;
+  @apply after:bg-gradient-to-l;
+}
+
+#navbar .nav-button {
+  @apply !font-semibold;
+  @apply !text-gray-600;
+  @apply dark:!text-gray-300;
+  @apply hover:!text-primary;
+  @apply dark:hover:!text-primaryLight;
+}
+
+#navbar .nav-button svg {
+  @apply !fill-gray-600;
+  @apply dark:!fill-gray-300;
+}
+
+#navbar .nav-button:hover svg {
+  @apply !fill-primary;
+  @apply dark:!fill-primaryLight;
+}
+
+.expandable-item-header, .expandable-item-detail {
+  @apply !text-gray-600;
+  @apply dark:!text-gray-300;
+}
+
+.expandable-container:hover .expandable-item-header, 
+.body-link:hover {
+  @apply !text-primary;
+  @apply dark:!text-primaryLight;
+  
+}
+.expandable-item-header {
+  @apply !font-semibold;
+}
+
+/* Tab Strip Styles */
+.tab-strip {
+}
+
+.tab-strip .tab-strip-header {
+  @apply !rounded-lg;
+  @apply !border;
+  @apply !border-gray-200;
+  @apply dark:!border-gray-700/60;
+  @apply !bg-gray-50;
+  @apply dark:!bg-gray-800;
+  @apply !p-1;
+  @apply !shadow-sm;
+  @apply !shadow-gray-600/10;
+}
+
+.tab-strip .tab-strip-header .tab-strip-header-tab {
+  @apply !text-base;
+  @apply md:!text-lg;
+  @apply lg:!text-xl;
+  @apply !font-bold;
+}
+
+.tab-strip .tab-strip-body .tab-strip-body-panel {
+  @apply mt-4;
+}
+
+/* Tooltip Styes */
+.app-tooltip-container .app-tooltip {
+  @apply !bg-gray-200;
+  @apply !text-gray-600;
+  @apply dark:!bg-gray-600;
+  @apply dark:!text-gray-200;
+  max-width: 400px;
+  width: 90%;
+  z-index: 100;
+}
+
+/* Stick Figures Fill Colors */
+#landing-person svg, 
+#service-area-marketing-person svg,
+#contact-marketing-worker svg,
+#faqs-marketing-person svg,
+#error-sign svg {
+  @apply fill-gray-700;
+  @apply dark:fill-gray-300;
+}
+
+
+.button-small, .button-medium, .button-large {
+  @apply flex;
+  @apply flex-row;
+  @apply items-center;
+  @apply rounded-full;
+  
+  @apply shadow-sm;
+  @apply focus-visible:outline;
+  @apply focus-visible:outline-2;
+  @apply focus-visible:outline-offset-2;
+
+  @apply w-full;
+  @apply justify-center;
+
+  @apply text-white;
+  @apply bg-primary;
+
+  @apply dark:text-slate-800;
+  @apply dark:bg-primaryLight;
+
+  @apply disabled:opacity-75;
+}
+
+.button-small {
+  @apply gap-x-1.5;
+  @apply px-2.5;
+  @apply py-1.5;
+  @apply text-sm;
+  @apply font-semibold;
+}
+
+.button-medium {
+  @apply gap-x-1.5;
+  @apply px-3;
+  @apply py-2;
+  @apply text-base;
+  @apply font-bold;
+}
+
+.button-large {
+  @apply gap-x-2;
+  @apply px-3.5;
+  @apply py-2.5;
+  @apply text-lg;
+  @apply font-bold;
+}
+
+.button-icon-prefix {
+  @apply -ml-0.5;
+}
+
+.button-icon-suffix {
+  @apply -mr-0.5;
+}
